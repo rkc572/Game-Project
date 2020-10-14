@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TeamSplashScreen.unity
+    guid: b72d1bdf163cb054abb3b51df5a9ad32
+  - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: d4ed02af7ac3e2a428fb89e3c1e27838
+  - enabled: 1
     path: Assets/Scenes/Sandbox.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
