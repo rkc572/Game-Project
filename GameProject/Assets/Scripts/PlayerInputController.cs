@@ -16,12 +16,18 @@ public class PlayerInputController : MonoBehaviour
         playerMovementController.moveRight = Input.GetKey(playerControls.moveRightKey);
     }
 
+    private void DetectPlayerAttackInput()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Attacked!");
+        }
+    }
+
     private void Update()
     {
         DetectPlayerMovementInput();
+        DetectPlayerAttackInput();
     }
-
-
-
 
 }

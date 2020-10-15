@@ -23,6 +23,11 @@ public class GameSceneManager : MonoBehaviour
         LoadNextScene("StartMenu");
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
     public void LoadNextScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);

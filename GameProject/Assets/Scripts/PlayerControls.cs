@@ -2,7 +2,7 @@
 
 public class PlayerControls
 {
-    public KeyCode moveUpKey, moveDownKey, moveLeftKey, moveRightKey, attackKey;
+    public KeyCode moveUpKey, moveDownKey, moveLeftKey, moveRightKey, activateElemental;
 
     public PlayerControls()
     {
@@ -10,6 +10,6 @@ public class PlayerControls
         moveDownKey = KeyCode.S;
         moveLeftKey = KeyCode.A;
         moveRightKey = KeyCode.D;
-        attackKey = KeyCode.M;
+        activateElemental = KeyCode.LeftShift;
     }
 }
