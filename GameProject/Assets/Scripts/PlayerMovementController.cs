@@ -17,6 +17,7 @@ public class PlayerMovementController : MonoBehaviour
         float horizontalVelocity = player.speed * ((moveRight ? 1 : 0) + (moveLeft ? -1 : 0)) * (attack ? 0 : 1);
 
         Vector2 newVelocity = new Vector2(horizontalVelocity, verticalVelocity);
+        newVelocity = newVelocity.normalized;
         player.rigidBody.velocity = newVelocity;
 
         bool playerIsMoving = newVelocity != Vector2.zero;
