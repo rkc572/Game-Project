@@ -20,7 +20,9 @@ public class PlayerInputController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Attacked!");
+            Debug.Log("attack!");
+            playerMovementController.attack = true;
+            playerMovementController.swingSword = true;
         }
     }
 
