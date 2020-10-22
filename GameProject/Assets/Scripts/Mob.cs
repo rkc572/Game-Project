@@ -32,5 +32,6 @@ public class Mob : MonoBehaviour
         //effectStates.Add(new BurningEffect(propertiesManager, 1.0f, 10.5f));
         //effectStates.Add(new SlowedEffect(propertiesManager, 1.0f, 5.0f));
         effectStates.Add(new AgileEffect(propertiesManager, 1.0f, 5.0f));
+
     }
 }
