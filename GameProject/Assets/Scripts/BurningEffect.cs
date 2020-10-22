@@ -12,7 +12,7 @@ public class BurningEffect : EffectState
         this.actionInterval = actionInterval;
     }
 
-    public override void Effect()
+    protected override void Effect()
     {
         Debug.Log($"im burning at {Time.time}");
         propertiesManager.InflictDamage(10.0f);

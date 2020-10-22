@@ -6,6 +6,7 @@ public class PlayerInputController : MonoBehaviour
 {
 
     PlayerControls playerControls = new PlayerControls();
+    public Player player;
     public PlayerMovementController playerMovementController;
 
     private void DetectPlayerMovementInput()
@@ -18,11 +19,31 @@ public class PlayerInputController : MonoBehaviour
 
     private void DetectPlayerAttackInput()
     {
+        // Left Mouse Click
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("attack!");
-            playerMovementController.attack = true;
-            playerMovementController.swingSword = true;
+            // Holding activateElemental action key
+            if (Input.GetKey(playerControls.activateElemental))
+            {
+                player.sword.ElementalAction();
+            }
+            else
+            {
+                player.sword.Action();
+            }
+        }
+        // Right Mouse Click
+        else if (Input.GetMouseButtonDown(1))
+        {
+            // Holding activateElemental action key
+            if (Input.GetKey(playerControls.activateElemental))
+            {
+                player.selectedArtifact.ElementalAction();
+            }
+            else
+            {
+                player.selectedArtifact.Action();
+            }
         }
     }
 
