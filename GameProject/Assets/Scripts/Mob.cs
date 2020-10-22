@@ -29,6 +29,8 @@ public class Mob : MonoBehaviour
     {
         // Can test effect states like this
         // effectStates.Add(new BurningEffect(propertiesManager, 1.0f, 10.5f));
-        effectStates.Add(new BurningEffect(propertiesManager, 1.0f, 10.5f));
+        //effectStates.Add(new BurningEffect(propertiesManager, 1.0f, 10.5f));
+        //effectStates.Add(new SlowedEffect(propertiesManager, 1.0f, 5.0f));
+        effectStates.Add(new AgileEffect(propertiesManager, 1.0f, 5.0f));
     }
 }
