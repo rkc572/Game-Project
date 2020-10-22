@@ -11,46 +11,59 @@ public class PlayerInputController : MonoBehaviour
 
     private void DetectPlayerMovementInput()
     {
-        playerMovementController.moveUp = Input.GetKey(playerControls.moveUpKey);
-        playerMovementController.moveDown = Input.GetKey(playerControls.moveDownKey);
-        playerMovementController.moveLeft = Input.GetKey(playerControls.moveLeftKey);
-        playerMovementController.moveRight = Input.GetKey(playerControls.moveRightKey);
+        if (!player.AnimatorIsPlaying())
+        {
+            playerMovementController.moveUp = Input.GetKey(playerControls.moveUpKey);
+            playerMovementController.moveDown = Input.GetKey(playerControls.moveDownKey);
+            playerMovementController.moveLeft = Input.GetKey(playerControls.moveLeftKey);
+            playerMovementController.moveRight = Input.GetKey(playerControls.moveRightKey);
+        }
+        else
+        {
+            playerMovementController.moveUp = false;
+            playerMovementController.moveDown = false;
+            playerMovementController.moveLeft = false;
+            playerMovementController.moveRight = false;
+        }
     }
 
     private void DetectPlayerAttackInput()
     {
-        // Left Mouse Click
-        if (Input.GetMouseButtonDown(0))
+        if (!player.AnimatorIsPlaying())
         {
-            // Holding activateElemental action key
-            if (Input.GetKey(playerControls.activateElemental))
+            // Left Mouse Click
+            if (Input.GetMouseButtonDown(0))
             {
-                player.sword.ElementalAction();
+                // Holding activateElemental action key
+                if (Input.GetKey(playerControls.activateElemental))
+                {
+                    player.sword.ElementalAction();
+                }
+                else
+                {
+                    player.sword.Action();
+                }
             }
-            else
+            // Right Mouse Click
+            else if (Input.GetMouseButtonDown(1))
             {
-                player.sword.Action();
-            }
-        }
-        // Right Mouse Click
-        else if (Input.GetMouseButtonDown(1))
-        {
-            // Holding activateElemental action key
-            if (Input.GetKey(playerControls.activateElemental))
-            {
-                player.selectedArtifact.ElementalAction();
-            }
-            else
-            {
-                player.selectedArtifact.Action();
+                // Holding activateElemental action key
+                if (Input.GetKey(playerControls.activateElemental))
+                {
+                    player.selectedArtifact.ElementalAction();
+                }
+                else
+                {
+                    player.selectedArtifact.Action();
+                }
             }
         }
     }
 
     private void Update()
     {
-        DetectPlayerMovementInput();
         DetectPlayerAttackInput();
+        DetectPlayerMovementInput();
     }
 
 }
