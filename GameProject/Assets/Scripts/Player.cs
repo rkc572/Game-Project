@@ -14,6 +14,11 @@ public class Player : MonoBehaviour
     List<PlayerItem> artifacts;
     // List<Potions> potions;
 
+    // Detects if any animation is playing except walking and idle
+    public bool AnimatorIsPlaying()
+    {
+        return animator.GetCurrentAnimatorStateInfo(0).IsTag("pauseInput");
+    }
 
     private void Awake()
     {
