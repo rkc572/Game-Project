@@ -12,7 +12,7 @@ public class AgileEffect : EffectState
         this.actionInterval = actionInterval;
     }
 
-    public override void Effect()
+    protected override void Effect()
     {
         Debug.Log($"I'm faster! {Time.time}");
         propertiesManager.SetMobSpeed(1.5f);

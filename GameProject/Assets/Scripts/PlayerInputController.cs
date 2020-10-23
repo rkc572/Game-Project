@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public class PlayerInputController : MonoBehaviour
     PlayerControls playerControls = new PlayerControls();
     public Player player;
     public PlayerMovementController playerMovementController;
+
+    Queue<Action> playerAttackActionBuffer = new Queue<Action>();
 
     private void DetectPlayerMovementInput()
     {
@@ -29,39 +32,43 @@ public class PlayerInputController : MonoBehaviour
 
     private void DetectPlayerAttackInput()
     {
-        if (!player.AnimatorIsPlaying())
+        // Left Mouse Click
+        if (Input.GetMouseButtonDown(0))
         {
-            // Left Mouse Click
-            if (Input.GetMouseButtonDown(0))
+            // Holding activateElemental action key
+            if (Input.GetKey(playerControls.activateElemental))
             {
-                // Holding activateElemental action key
-                if (Input.GetKey(playerControls.activateElemental))
-                {
-                    player.sword.ElementalAction();
-                }
-                else
-                {
-                    player.sword.Action();
-                }
+                playerAttackActionBuffer.Enqueue(player.sword.ElementalAction);
             }
-            // Right Mouse Click
-            else if (Input.GetMouseButtonDown(1))
+            else
             {
-                // Holding activateElemental action key
-                if (Input.GetKey(playerControls.activateElemental))
-                {
-                    player.selectedArtifact.ElementalAction();
-                }
-                else
-                {
-                    player.selectedArtifact.Action();
-                }
+                playerAttackActionBuffer.Enqueue(player.sword.Action);
+            }
+        }
+        // Right Mouse Click
+        else if (Input.GetMouseButtonDown(1))
+        {
+            // Holding activateElemental action key
+            if (Input.GetKey(playerControls.activateElemental))
+            {
+                playerAttackActionBuffer.Enqueue(player.selectedArtifact.ElementalAction);
+            }
+            else
+            {
+                playerAttackActionBuffer.Enqueue(player.selectedArtifact.Action);
             }
         }
     }
 
+
     private void Update()
     {
+        // execute attack actions in queue
+        while (playerAttackActionBuffer.Count > 0)
+        {
+            playerAttackActionBuffer.Dequeue()();
+        }
+
         DetectPlayerAttackInput();
         DetectPlayerMovementInput();
     }

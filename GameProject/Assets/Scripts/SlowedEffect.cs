@@ -12,7 +12,7 @@ public class SlowedEffect : EffectState
         this.actionInterval = actionInterval;
     }
     
-    public override void Effect()
+    protected override void Effect()
     {
         Debug.Log($"I'm slowed down! {Time.time}");
         propertiesManager.SetMobSpeed(0.5f);
