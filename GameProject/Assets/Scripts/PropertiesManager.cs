@@ -73,6 +73,9 @@ public class PropertiesManager : MonoBehaviour
     public void SetMobSpeed(float newSpeed)
     {
         mob.speed = newSpeed;
+        /* To test if value is changing correctly
+        Debug.Log(mob.speed);
+        */
     }
 
     public void SetPhysicalAttackMultiplier(float newPhysicalAttackMultiplier)
