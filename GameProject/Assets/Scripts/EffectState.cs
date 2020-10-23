@@ -17,7 +17,7 @@ public abstract class EffectState
      *  Implement Effect(), this is where most of the logic
      *  involving the PropertyManager should be conducted
      */
-    public abstract void Effect();
+    protected abstract void Effect();
 
     /* 
      *  Implement ApplyEffect() to use Effect()

@@ -6,6 +6,8 @@ public class Mob : MonoBehaviour
 {
     public PropertiesManager propertiesManager;
 
+    public Rigidbody2D rigidBody;
+
     [Header("Stats")]
     public float MAX_HEALTH = 1000;
     public float MAX_MANA = 1000;
@@ -28,10 +30,7 @@ public class Mob : MonoBehaviour
     private void Awake()
     {
         // Can test effect states like this
-        // effectStates.Add(new BurningEffect(propertiesManager, 1.0f, 10.5f));
-        //effectStates.Add(new BurningEffect(propertiesManager, 1.0f, 10.5f));
-        //effectStates.Add(new SlowedEffect(propertiesManager, 1.0f, 5.0f));
-        effectStates.Add(new AgileEffect(propertiesManager, 1.0f, 5.0f));
 
+        // propertiesManager.ToggleEffectState(new BurningEffect(propertiesManager, 1.0f, 10.5f));
     }
 }

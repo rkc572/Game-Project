@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Rigidbody2D rigidBody;
+    public Mob properties;
+    public Animator animator;
+    public PlayerItem sword;
+    public PlayerItem selectedArtifact = null;
+    
+    public float gold = 0.0f;
 
-    [Header("Player Stats")]
-    [Range(0, 1000)]
-    public float health = 1000;
-    [Range(0, 1000)]
-    public float mana = 1000;
-    public float speed = 1f;
+    List<PlayerItem> artifacts;
+    // List<Potions> potions;
 
 
+    private void Awake()
+    {
+        sword = new PlayerSword(this);
+    }
 }

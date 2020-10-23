@@ -10,6 +10,6 @@ public class PlayerControls
         moveDownKey = KeyCode.S;
         moveLeftKey = KeyCode.A;
         moveRightKey = KeyCode.D;
-        activateElemental = KeyCode.LeftShift;
+        activateElemental = KeyCode.Space;
     }
 }
