@@ -34,13 +34,13 @@ public class PropertiesManager : MonoBehaviour
     public void ModifyManaByAmount(float amount)
     {
         // Limit mana to max mob mana and minimum 0
-        mob.health = Mathf.Clamp(mob.mana + amount, 0, mob.MAX_MANA);
+        mob.mana = Mathf.Clamp(mob.mana + amount, 0, mob.MAX_MANA);
     }
 
     public void ModifySpeedByAmount(float amount)
     {
         // Limit health to max mob health and minimum 0
-        mob.health = Mathf.Clamp(mob.speed + amount, 0, mob.MAX_SPEED);
+        mob.speed = Mathf.Clamp(mob.speed + amount, 0, mob.MAX_SPEED);
     }
 
     // Use InflictDamage* functions to apply damage to mob including their respective damage multiplier 
@@ -73,9 +73,6 @@ public class PropertiesManager : MonoBehaviour
     public void SetMobSpeed(float newSpeed)
     {
         mob.speed = newSpeed;
-        /* To test if value is changing correctly
-        Debug.Log(mob.speed);
-        */
     }
 
     public void SetPhysicalAttackMultiplier(float newPhysicalAttackMultiplier)

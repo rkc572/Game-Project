@@ -3,40 +3,38 @@
 public class SlowedEffect : EffectState
 {
     float effectDuration;
-    float lastInflictionTime = 0.0f;
-    float actionInterval;
 
-    public SlowedEffect(PropertiesManager propertiesManager, float actionInterval, float effectDuration) : base(propertiesManager)
+    float previousSpeed;
+    float newSpeed = 0.5f;
+
+    bool effectApplied = false;
+
+    public SlowedEffect(PropertiesManager propertiesManager, float effectDuration) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
-        this.actionInterval = actionInterval;
+        previousSpeed = propertiesManager.mob.speed;
     }
     
     protected override void Effect()
     {
         Debug.Log($"I'm slowed down! {Time.time}");
-        propertiesManager.SetMobSpeed(0.5f);
-
+        propertiesManager.SetMobSpeed(newSpeed);
     }
     
     public override void ApplyEffect()
     {
-        //Same logic as Burning Effect
-        if(lastInflictionTime == 0.0f)
+        // Apply Effect once
+        if (!effectApplied)
         {
-            lastInflictionTime = Time.time;
+            Effect();
+            effectApplied = true;
         }
-        if(Time.time < effectInitializedTime + effectDuration && !complete)
-        {
-            if(Time.time - lastInflictionTime >= actionInterval)
-            {
-                Effect();
-                lastInflictionTime = Time.time;
-            }
-        }
-        else
+
+        // Reset after effect duration has run out
+        if(Time.time > effectInitializedTime + effectDuration || complete)
         {
             complete = true;
+            propertiesManager.SetMobSpeed(previousSpeed);
             Debug.Log("I'm no longer slowed!");
         }
     }
