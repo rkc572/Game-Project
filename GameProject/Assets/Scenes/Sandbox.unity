@@ -691,4 +691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftFootstep: {fileID: 8300000, guid: 649880bb81090774abb4a96feccd6b28, type: 3}
   rightFootstep: {fileID: 8300000, guid: 2416fa80d63aa1d47a9325ed9204e6f1, type: 3}
-  swordSwing: {fileID: 0}
+  swordSwingOne: {fileID: 8300000, guid: ca328e2ae61a48d40a88f02011e261f8, type: 3}
+  swordSwingTwo: {fileID: 8300000, guid: 92f293ddbce606b4abdacddf8f5d9e38, type: 3}
+  swordSwingThree: {fileID: 8300000, guid: 5508bdfbdbfa87149b5b7731d0da64b0, type: 3}
+  swordSwingFour: {fileID: 8300000, guid: 0e10ebf9d3f47764cab4bb057c64850e, type: 3}

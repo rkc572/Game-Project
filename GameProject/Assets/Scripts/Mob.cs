@@ -30,7 +30,6 @@ public class Mob : MonoBehaviour
     private void Awake()
     {
         // Can test effect states like this
-
-        // propertiesManager.ToggleEffectState(new BurningEffect(propertiesManager, 1.0f, 10.5f));
+        // propertiesManager.ToggleEffectState(new SlowedEffect(propertiesManager, 10.5f));
     }
 }

@@ -23,5 +23,8 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         sword = new PlayerSword(this);
+
+        // For presentation use only, remove in production
+        properties.propertiesManager.ToggleEffectState(new SlowedEffect(properties.propertiesManager, 10.5f));
     }
 }

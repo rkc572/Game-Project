@@ -6,7 +6,22 @@ public class PlayerSounds : MonoBehaviour
 {
     public AudioClip leftFootstep;
     public AudioClip rightFootstep;
-    public AudioClip swordSwing;
+
+    public AudioClip swordSwingOne;
+    public AudioClip swordSwingTwo;
+    public AudioClip swordSwingThree;
+    public AudioClip swordSwingFour;
+
+    AudioClip[] swordSwings;
+
+    int swingCount = 0;
+    float lastSwing;
+
+    private void Start()
+    {
+        swordSwings = new AudioClip[] {swordSwingOne, swordSwingTwo, swordSwingThree, swordSwingFour};
+        lastSwing = Time.time;
+    }
 
     public void playLeftFootstepSound()
     {
@@ -20,7 +35,17 @@ public class PlayerSounds : MonoBehaviour
 
     public void playSwordSwingSound()
     {
-        AudioManager.Instance.Play(swordSwing);
+        AudioManager.Instance.Play(swordSwings[swingCount % 4]);
+        swingCount++;
+        lastSwing = Time.time;
+    }
+
+    private void Update()
+    {
+        if (Time.time - lastSwing > 4.0f)
+        {
+            swingCount = 0;
+        }
     }
 
 }
