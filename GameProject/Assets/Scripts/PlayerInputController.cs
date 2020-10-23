@@ -42,7 +42,7 @@ public class PlayerInputController : MonoBehaviour
         // Left Mouse Click
         if (Input.GetMouseButtonDown(0))
         {
-            playerAttackActionBuffer.timeOf = Time.deltaTime;
+            playerAttackActionBuffer.timeOf = Time.time;
 
             // Holding activateElemental action key
             if (Input.GetKey(playerControls.activateElemental))
@@ -57,7 +57,7 @@ public class PlayerInputController : MonoBehaviour
         // Right Mouse Click
         else if (Input.GetMouseButtonDown(1))
         {
-            playerAttackActionBuffer.timeOf = Time.deltaTime;
+            playerAttackActionBuffer.timeOf = Time.time;
 
             // Holding activateElemental action key
             if (Input.GetKey(playerControls.activateElemental))
@@ -77,8 +77,8 @@ public class PlayerInputController : MonoBehaviour
         // execute attack actions in queue
         if (!player.AnimatorIsPlaying())
         {
-            currTime = Time.deltaTime;
-            if (currTime - playerAttackActionBuffer.timeOf <= 0.2f && playerAttackActionBuffer.action != null)
+            currTime = Time.time;
+            if ((currTime - playerAttackActionBuffer.timeOf) <= 0.25f && playerAttackActionBuffer.action != null)
             {
                 playerAttackActionBuffer.action();
                 playerAttackActionBuffer.action = null;
