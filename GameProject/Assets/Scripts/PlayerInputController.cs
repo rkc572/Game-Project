@@ -64,7 +64,7 @@ public class PlayerInputController : MonoBehaviour
     private void Update()
     {
         // execute attack actions in queue
-        while (playerAttackActionBuffer.Count > 0)
+        if (playerAttackActionBuffer.Count > 0 && !player.AnimatorIsPlaying())
         {
             playerAttackActionBuffer.Dequeue()();
         }
