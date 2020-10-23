@@ -3,14 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+struct bufferItem
+{
+    public Action action;
+    public float timeOf;
+}
+
 public class PlayerInputController : MonoBehaviour
 {
 
     PlayerControls playerControls = new PlayerControls();
     public Player player;
     public PlayerMovementController playerMovementController;
+    float currTime;
 
-    Queue<Action> playerAttackActionBuffer = new Queue<Action>();
+    bufferItem playerAttackActionBuffer = new bufferItem();
 
     private void DetectPlayerMovementInput()
     {
@@ -35,27 +42,31 @@ public class PlayerInputController : MonoBehaviour
         // Left Mouse Click
         if (Input.GetMouseButtonDown(0))
         {
+            playerAttackActionBuffer.timeOf = Time.deltaTime;
+
             // Holding activateElemental action key
             if (Input.GetKey(playerControls.activateElemental))
             {
-                playerAttackActionBuffer.Enqueue(player.sword.ElementalAction);
+                playerAttackActionBuffer.action = player.sword.ElementalAction;
             }
             else
             {
-                playerAttackActionBuffer.Enqueue(player.sword.Action);
+                playerAttackActionBuffer.action = player.sword.Action;
             }
         }
         // Right Mouse Click
         else if (Input.GetMouseButtonDown(1))
         {
+            playerAttackActionBuffer.timeOf = Time.deltaTime;
+
             // Holding activateElemental action key
             if (Input.GetKey(playerControls.activateElemental))
             {
-                playerAttackActionBuffer.Enqueue(player.selectedArtifact.ElementalAction);
+                playerAttackActionBuffer.action = player.selectedArtifact.ElementalAction;
             }
             else
             {
-                playerAttackActionBuffer.Enqueue(player.selectedArtifact.Action);
+                playerAttackActionBuffer.action = player.selectedArtifact.Action;
             }
         }
     }
@@ -64,9 +75,14 @@ public class PlayerInputController : MonoBehaviour
     private void Update()
     {
         // execute attack actions in queue
-        if (playerAttackActionBuffer.Count > 0 && !player.AnimatorIsPlaying())
+        if (!player.AnimatorIsPlaying())
         {
-            playerAttackActionBuffer.Dequeue()();
+            currTime = Time.deltaTime;
+            if (currTime - playerAttackActionBuffer.timeOf <= 0.2f && playerAttackActionBuffer.action != null)
+            {
+                playerAttackActionBuffer.action();
+                playerAttackActionBuffer.action = null;
+            }
         }
 
         DetectPlayerAttackInput();
