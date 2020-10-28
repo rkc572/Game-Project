@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
 
         // For presentation use only, remove in production
         // properties.propertiesManager.ToggleEffectState(new SlowedEffect(properties.propertiesManager, 10.5f));
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
