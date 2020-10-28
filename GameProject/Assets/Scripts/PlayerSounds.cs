@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerSounds : MonoBehaviour
 {
+    public AudioClip playerDamage;
+
     public AudioClip leftFootstep;
     public AudioClip rightFootstep;
 
@@ -38,6 +40,11 @@ public class PlayerSounds : MonoBehaviour
         AudioManager.Instance.Play(swordSwings[swingCount % 4]);
         swingCount++;
         lastSwing = Time.time;
+    }
+
+    public void playPlayerDamageSound()
+    {
+        AudioManager.Instance.Play(playerDamage);
     }
 
     private void Update()

@@ -10,7 +10,17 @@ public class PlayerSword : PlayerItem
 
     public override void Action()
     {
-        Debug.Log("Player Swung Sword");
+        var colliders = Physics2D.OverlapCircleAll(player.transform.position, 1.0f);
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.tag == "Enemy")
+            {
+                var enemyMob = collider.GetComponentInParent<Mob>();
+                enemyMob.GetComponentInParent<Animator>().SetTrigger("TookDamage");
+                enemyMob.propertiesManager.InflictPhysicalDamage(25.0f * player.properties.physicalAttackMultiplier);
+                break;
+            }
+        }
         player.animator.SetTrigger("SwingSword");
     }
 
