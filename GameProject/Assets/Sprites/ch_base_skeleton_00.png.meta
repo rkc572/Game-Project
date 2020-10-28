@@ -1,7 +1,445 @@
 fileFormatVersion: 2
 guid: 768f28c0aa230524a9ac95a277d72faf
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4358521486560798270
+    second: ch_base_skeleton_00_0
+  - first:
+      213: -7017347393640587863
+    second: ch_base_skeleton_00_1
+  - first:
+      213: 5021612520963742155
+    second: ch_base_skeleton_00_2
+  - first:
+      213: -2529476182281170198
+    second: ch_base_skeleton_00_3
+  - first:
+      213: -5837998684216940461
+    second: ch_base_skeleton_00_4
+  - first:
+      213: -6959279220267260743
+    second: ch_base_skeleton_00_5
+  - first:
+      213: 4059789227622887034
+    second: ch_base_skeleton_00_6
+  - first:
+      213: 2109457711822676545
+    second: ch_base_skeleton_00_7
+  - first:
+      213: 965816855102812998
+    second: ch_base_skeleton_00_8
+  - first:
+      213: 3914396899138593067
+    second: ch_base_skeleton_00_9
+  - first:
+      213: 8261400738557454021
+    second: ch_base_skeleton_00_10
+  - first:
+      213: -3809559058892849622
+    second: ch_base_skeleton_00_11
+  - first:
+      213: 548900616404380234
+    second: ch_base_skeleton_00_12
+  - first:
+      213: -6252562865721849063
+    second: ch_base_skeleton_00_13
+  - first:
+      213: 2401416245839613743
+    second: ch_base_skeleton_00_14
+  - first:
+      213: -8228468512406680012
+    second: ch_base_skeleton_00_15
+  - first:
+      213: 6447141361427366633
+    second: ch_base_skeleton_00_16
+  - first:
+      213: 6351655317700229735
+    second: ch_base_skeleton_00_17
+  - first:
+      213: -4109088262413508677
+    second: ch_base_skeleton_00_18
+  - first:
+      213: 3972082300263576774
+    second: ch_base_skeleton_00_19
+  - first:
+      213: 3509497964397547647
+    second: ch_base_skeleton_00_20
+  - first:
+      213: -2584732116889289075
+    second: ch_base_skeleton_00_21
+  - first:
+      213: 8829389884223612346
+    second: ch_base_skeleton_00_22
+  - first:
+      213: 6521521991269663783
+    second: ch_base_skeleton_00_23
+  - first:
+      213: 1439846472513893447
+    second: ch_base_skeleton_00_24
+  - first:
+      213: -5359012510184153794
+    second: ch_base_skeleton_00_25
+  - first:
+      213: 5822360005457016266
+    second: ch_base_skeleton_00_26
+  - first:
+      213: -2395194640213173610
+    second: ch_base_skeleton_00_27
+  - first:
+      213: -3680868118190784382
+    second: ch_base_skeleton_00_28
+  - first:
+      213: 5871021605182172652
+    second: ch_base_skeleton_00_29
+  - first:
+      213: 4772605493108211575
+    second: ch_base_skeleton_00_30
+  - first:
+      213: 6974241081235061562
+    second: ch_base_skeleton_00_31
+  - first:
+      213: -6106812787772835977
+    second: ch_base_skeleton_00_32
+  - first:
+      213: 5926736687996789110
+    second: ch_base_skeleton_00_33
+  - first:
+      213: -724739905581187147
+    second: ch_base_skeleton_00_34
+  - first:
+      213: 6112273340426419300
+    second: ch_base_skeleton_00_35
+  - first:
+      213: 2889980636945130583
+    second: ch_base_skeleton_00_36
+  - first:
+      213: -5717495869892199878
+    second: ch_base_skeleton_00_37
+  - first:
+      213: -1846417307572259117
+    second: ch_base_skeleton_00_38
+  - first:
+      213: 8509308987933351712
+    second: ch_base_skeleton_00_39
+  - first:
+      213: 6993490252045742505
+    second: ch_base_skeleton_00_40
+  - first:
+      213: -7148425356363484193
+    second: ch_base_skeleton_00_41
+  - first:
+      213: 5585618529357200079
+    second: ch_base_skeleton_00_42
+  - first:
+      213: 2324651983826288289
+    second: ch_base_skeleton_00_43
+  - first:
+      213: -4301058835622271838
+    second: ch_base_skeleton_00_44
+  - first:
+      213: -6971354264410592536
+    second: ch_base_skeleton_00_45
+  - first:
+      213: 6711991065831678735
+    second: ch_base_skeleton_00_46
+  - first:
+      213: 3798278242626947752
+    second: ch_base_skeleton_00_47
+  - first:
+      213: 5725835447429385559
+    second: ch_base_skeleton_00_48
+  - first:
+      213: 596202893683064832
+    second: ch_base_skeleton_00_49
+  - first:
+      213: 221181808674521278
+    second: ch_base_skeleton_00_50
+  - first:
+      213: 1272377134081466821
+    second: ch_base_skeleton_00_51
+  - first:
+      213: 6300159037823984672
+    second: ch_base_skeleton_00_52
+  - first:
+      213: -5087988530122952404
+    second: ch_base_skeleton_00_53
+  - first:
+      213: -3962133797533639285
+    second: ch_base_skeleton_00_54
+  - first:
+      213: 6458067714961288430
+    second: ch_base_skeleton_00_55
+  - first:
+      213: 5257492708266831421
+    second: ch_base_skeleton_00_56
+  - first:
+      213: 2330616262889382655
+    second: ch_base_skeleton_00_57
+  - first:
+      213: 5169388669196883162
+    second: ch_base_skeleton_00_58
+  - first:
+      213: -4363817707225843476
+    second: ch_base_skeleton_00_59
+  - first:
+      213: -5302656302691578764
+    second: ch_base_skeleton_00_60
+  - first:
+      213: -5237120714316321153
+    second: ch_base_skeleton_00_61
+  - first:
+      213: 6737627438123663383
+    second: ch_base_skeleton_00_62
+  - first:
+      213: -1249239700869170952
+    second: ch_base_skeleton_00_63
+  - first:
+      213: 472550589430360288
+    second: ch_base_skeleton_00_64
+  - first:
+      213: 6719659508691796700
+    second: ch_base_skeleton_00_65
+  - first:
+      213: 2771459025720628496
+    second: ch_base_skeleton_00_66
+  - first:
+      213: 4045917189093424084
+    second: ch_base_skeleton_00_67
+  - first:
+      213: -970207989191396017
+    second: ch_base_skeleton_00_68
+  - first:
+      213: -6394076427223303478
+    second: ch_base_skeleton_00_69
+  - first:
+      213: -7336316039528160798
+    second: ch_base_skeleton_00_70
+  - first:
+      213: 7430001765927301366
+    second: ch_base_skeleton_00_71
+  - first:
+      213: -7161230499656642538
+    second: ch_base_skeleton_00_72
+  - first:
+      213: 3309853130459395434
+    second: ch_base_skeleton_00_73
+  - first:
+      213: -4672269934445783643
+    second: ch_base_skeleton_00_74
+  - first:
+      213: 3073003645256048470
+    second: ch_base_skeleton_00_75
+  - first:
+      213: 6838842663336752213
+    second: ch_base_skeleton_00_76
+  - first:
+      213: -4982450435100954917
+    second: ch_base_skeleton_00_77
+  - first:
+      213: 2407415361008674390
+    second: ch_base_skeleton_00_78
+  - first:
+      213: -1222988297312257253
+    second: ch_base_skeleton_00_79
+  - first:
+      213: 4839447427260405422
+    second: ch_base_skeleton_00_80
+  - first:
+      213: -7267262819419848274
+    second: ch_base_skeleton_00_81
+  - first:
+      213: -9000004011076395039
+    second: ch_base_skeleton_00_82
+  - first:
+      213: -2099407279207018839
+    second: ch_base_skeleton_00_83
+  - first:
+      213: -8786846229682898964
+    second: ch_base_skeleton_00_84
+  - first:
+      213: 1099344128932444483
+    second: ch_base_skeleton_00_85
+  - first:
+      213: -9120099727981553878
+    second: ch_base_skeleton_00_86
+  - first:
+      213: 460940543030717764
+    second: ch_base_skeleton_00_87
+  - first:
+      213: -784100647610829926
+    second: ch_base_skeleton_00_88
+  - first:
+      213: 3403829921462411319
+    second: ch_base_skeleton_00_89
+  - first:
+      213: -4601940212180545852
+    second: ch_base_skeleton_00_90
+  - first:
+      213: 434391700707048499
+    second: ch_base_skeleton_00_91
+  - first:
+      213: -8043925172761002680
+    second: ch_base_skeleton_00_92
+  - first:
+      213: -8683612105324251358
+    second: ch_base_skeleton_00_93
+  - first:
+      213: -6525498159719132005
+    second: ch_base_skeleton_00_94
+  - first:
+      213: 8975096463632107901
+    second: ch_base_skeleton_00_95
+  - first:
+      213: -385731833679580700
+    second: ch_base_skeleton_00_96
+  - first:
+      213: -8320144028434483745
+    second: ch_base_skeleton_00_97
+  - first:
+      213: 5428030010390228805
+    second: ch_base_skeleton_00_98
+  - first:
+      213: -6710678843277858324
+    second: ch_base_skeleton_00_99
+  - first:
+      213: -7996712786458107532
+    second: ch_base_skeleton_00_100
+  - first:
+      213: -8057091550752469189
+    second: ch_base_skeleton_00_101
+  - first:
+      213: -8467150247906003223
+    second: ch_base_skeleton_00_102
+  - first:
+      213: 1581015147366596473
+    second: ch_base_skeleton_00_103
+  - first:
+      213: -8667610414567035026
+    second: ch_base_skeleton_00_104
+  - first:
+      213: -5350103787849444195
+    second: ch_base_skeleton_00_105
+  - first:
+      213: -5453926114254374307
+    second: ch_base_skeleton_00_106
+  - first:
+      213: -8509353217678504081
+    second: ch_base_skeleton_00_107
+  - first:
+      213: 8856501143229220318
+    second: ch_base_skeleton_00_108
+  - first:
+      213: -5141831407684308706
+    second: ch_base_skeleton_00_109
+  - first:
+      213: -7197481656758821181
+    second: ch_base_skeleton_00_110
+  - first:
+      213: -6086324429418504944
+    second: ch_base_skeleton_00_111
+  - first:
+      213: -670366396047913786
+    second: ch_base_skeleton_00_112
+  - first:
+      213: 6517559014720577972
+    second: ch_base_skeleton_00_113
+  - first:
+      213: 6761096021321588654
+    second: ch_base_skeleton_00_114
+  - first:
+      213: -3809498868293021846
+    second: ch_base_skeleton_00_115
+  - first:
+      213: 7108111347875545329
+    second: ch_base_skeleton_00_116
+  - first:
+      213: -2890529885534460168
+    second: ch_base_skeleton_00_117
+  - first:
+      213: 5792325756291340500
+    second: ch_base_skeleton_00_118
+  - first:
+      213: -1816946503546745789
+    second: ch_base_skeleton_00_119
+  - first:
+      213: -8177088891245996412
+    second: ch_base_skeleton_00_120
+  - first:
+      213: 6565056684257467727
+    second: ch_base_skeleton_00_121
+  - first:
+      213: 3698188672103153673
+    second: ch_base_skeleton_00_122
+  - first:
+      213: 475321113167825303
+    second: ch_base_skeleton_00_123
+  - first:
+      213: -6383676513433397080
+    second: ch_base_skeleton_00_124
+  - first:
+      213: -1921303922736813327
+    second: ch_base_skeleton_00_125
+  - first:
+      213: -2945548561524798460
+    second: ch_base_skeleton_00_126
+  - first:
+      213: -1328663932633228207
+    second: ch_base_skeleton_00_127
+  - first:
+      213: 1798017843289130492
+    second: ch_base_skeleton_00_128
+  - first:
+      213: 7956766234510585812
+    second: ch_base_skeleton_00_129
+  - first:
+      213: -7396898280463841516
+    second: ch_base_skeleton_00_130
+  - first:
+      213: 2700548267870557000
+    second: ch_base_skeleton_00_131
+  - first:
+      213: -284286093958237694
+    second: ch_base_skeleton_00_132
+  - first:
+      213: -9163646432877580122
+    second: ch_base_skeleton_00_133
+  - first:
+      213: -7493821117306290563
+    second: ch_base_skeleton_00_134
+  - first:
+      213: 3052527581044547797
+    second: ch_base_skeleton_00_135
+  - first:
+      213: 3324418490898944509
+    second: ch_base_skeleton_00_136
+  - first:
+      213: 7925721169255987013
+    second: ch_base_skeleton_00_137
+  - first:
+      213: 7448192125969944798
+    second: ch_base_skeleton_00_138
+  - first:
+      213: -7355579864187150073
+    second: ch_base_skeleton_00_139
+  - first:
+      213: 6393401074620115705
+    second: ch_base_skeleton_00_140
+  - first:
+      213: 1993155070775382607
+    second: ch_base_skeleton_00_141
+  - first:
+      213: 8365855452198582244
+    second: ch_base_skeleton_00_142
+  - first:
+      213: -3391805450177531936
+    second: ch_base_skeleton_00_143
+  - first:
+      213: -938955619889174080
+    second: ch_base_skeleton_00_144
+  - first:
+      213: -7178548699596563892
+    second: ch_base_skeleton_00_145
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +470,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,7 +479,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -66,7 +504,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -75,7 +525,1603 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 577
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e362d5813349c7c30800000000000000
+      internalID: 4358521486560798270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 578
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad1a8899bf5d9e90800000000000000
+      internalID: -7017347393640587863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 577
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc992bf6bf950b540800000000000000
+      internalID: 5021612520963742155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 578
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2d15f50de75ecd0800000000000000
+      internalID: -2529476182281170198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_4
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 578
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3582d04b0234bfea0800000000000000
+      internalID: -5837998684216940461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 552
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b46637cb6cab6f90800000000000000
+      internalID: -6959279220267260743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_6
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 554
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e6b67fac4475830800000000000000
+      internalID: 4059789227622887034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_7
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 552
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14226edcc9c464d10800000000000000
+      internalID: 2109457711822676545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_8
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 553
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643fc760055476d00800000000000000
+      internalID: 965816855102812998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_9
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 552
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21eb0b8d3bb25630800000000000000
+      internalID: 3914396899138593067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 529
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c6edd0733466a270800000000000000
+      internalID: 8261400738557454021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_11
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 528
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ef1d7483ab12bc0800000000000000
+      internalID: -3809559058892849622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_12
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 527
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4aa6c1d3361e9700800000000000000
+      internalID: 548900616404380234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_13
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 528
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91bc9dc733f6a39a0800000000000000
+      internalID: -6252562865721849063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_14
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 527
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f4f133a5b835120800000000000000
+      internalID: 2401416245839613743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 504
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e4388fb7b9ecd80800000000000000
+      internalID: -8228468512406680012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_16
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 503
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e24b98e8e8d87950800000000000000
+      internalID: 6447141361427366633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_17
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 502
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76a3e33ebdc952850800000000000000
+      internalID: 6351655317700229735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_18
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 503
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbf9d180ff599f6c0800000000000000
+      internalID: -4109088262413508677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_19
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 502
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c4b3dd9ecbaf1730800000000000000
+      internalID: 3972082300263576774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_20
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 478
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f705fd3fdcd34b030800000000000000
+      internalID: 3509497964397547647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_21
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 478
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8e354d85df212cd0800000000000000
+      internalID: -2584732116889289075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_22
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 477
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab56390d15b488a70800000000000000
+      internalID: 8829389884223612346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_23
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 477
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 724c684d2b9118a50800000000000000
+      internalID: 6521521991269663783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_24
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 478
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7443a45fcbc5bf310800000000000000
+      internalID: 1439846472513893447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_25
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 453
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d5997e386f0a5b0800000000000000
+      internalID: -5359012510184153794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_26
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 453
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac5f4b7a39d2dc050800000000000000
+      internalID: 5822360005457016266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_27
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 452
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a9c2e3a2f82ced0800000000000000
+      internalID: -2395194640213173610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_28
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 452
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2808d26d2fdeaecc0800000000000000
+      internalID: -3680868118190784382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_29
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 453
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cede68d3b0f0a7150800000000000000
+      internalID: 5871021605182172652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_30
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 428
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ffacdd863bb3240800000000000000
+      internalID: 4772605493108211575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_31
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 428
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3bb3f0ff4b79c060800000000000000
+      internalID: 6974241081235061562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_32
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 427
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 777bcf2ff1e304ba0800000000000000
+      internalID: -6106812787772835977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_33
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 427
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671e255dd9fff3250800000000000000
+      internalID: 5926736687996789110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_34
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 428
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf784d45e431f5f0800000000000000
+      internalID: -724739905581187147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_35
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 403
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46cf43a083823d450800000000000000
+      internalID: 6112273340426419300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_36
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 403
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7542fd8d3164b1820800000000000000
+      internalID: 2889980636945130583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_37
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 402
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3aff468ccf57a0b0800000000000000
+      internalID: -5717495869892199878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_38
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 402
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d6b503dd353066e0800000000000000
+      internalID: -1846417307572259117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_39
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 403
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02f5ec5b073271670800000000000000
+      internalID: 8509308987933351712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_40
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 376
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a1f755c45edd0160800000000000000
+      internalID: 6993490252045742505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_41
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 376
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd33f8a2301bbcc90800000000000000
+      internalID: -7148425356363484193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_42
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 376
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcafc25657a148d40800000000000000
+      internalID: 5585618529357200079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_43
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 376
+        width: 33
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae7f5aa9a2d24020800000000000000
+      internalID: 2324651983826288289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_44
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 376
+        width: 36
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4eda8e6c19f44c0800000000000000
+      internalID: -4301058835622271838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_45
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 376
+        width: 41
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eae66a7b36c04f90800000000000000
+      internalID: -6971354264410592536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_46
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 376
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f032e7e0058c52d50800000000000000
+      internalID: 6711991065831678735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_47
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 376
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aacfd100f136b430800000000000000
+      internalID: 3798278242626947752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_48
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 376
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d4e5ea001467f40800000000000000
+      internalID: 5725835447429385559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_49
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 348
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0000a0c7f53264800800000000000000
+      internalID: 596202893683064832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_50
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 348
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb0c2d0eeabc11300800000000000000
+      internalID: 221181808674521278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_51
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 348
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c16149134468a110800000000000000
+      internalID: 1272377134081466821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_52
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 348
+        width: 33
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02427f5e349ae6750800000000000000
+      internalID: 6300159037823984672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_53
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 348
+        width: 36
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2172c0a365d369b0800000000000000
+      internalID: -5087988530122952404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_54
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 348
+        width: 41
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d107dad4ca309c0800000000000000
+      internalID: -3962133797533639285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_55
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 348
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eecafa5de5aaf9950800000000000000
+      internalID: 6458067714961288430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_56
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 348
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3e637543cd56f840800000000000000
+      internalID: 5257492708266831421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_57
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 348
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff225499423085020800000000000000
+      internalID: 2330616262889382655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_58
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 290
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad4d8652b9b5db740800000000000000
+      internalID: 5169388669196883162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_59
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 290
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce87e307aea9073c0800000000000000
+      internalID: -4363817707225843476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_60
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 290
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c0518ff2e2966b0800000000000000
+      internalID: -5302656302691578764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_61
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 290
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ee55135720257b0800000000000000
+      internalID: -5237120714316321153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_62
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 290
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 710494e157cd08d50800000000000000
+      internalID: 6737627438123663383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_63
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 290
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f8b06e5c1fc9aee0800000000000000
+      internalID: -1249239700869170952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_64
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 290
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8e565e146de8600800000000000000
+      internalID: 472550589430360288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_65
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 290
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2862b88b6014d50800000000000000
+      internalID: 6719659508691796700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_66
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 290
+        width: 21
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 015d0a1dc43367620800000000000000
+      internalID: 2771459025720628496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_67
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 258
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4db7f8e4f3cf52830800000000000000
+      internalID: 4045917189093424084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_68
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 251
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45300669f02982f0800000000000000
+      internalID: -970207989191396017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_69
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 247
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acaf7a0ed5da347a0800000000000000
+      internalID: -6394076427223303478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_70
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 242
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e16ce77e6b203a90800000000000000
+      internalID: -7336316039528160798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_71
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 235
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f03f928d3bac1760800000000000000
+      internalID: 7430001765927301366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_72
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 235
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610d5496dc23e9c90800000000000000
+      internalID: -7161230499656642538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_73
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 235
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a653fb3c2e5feed20800000000000000
+      internalID: 3309853130459395434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_74
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 235
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a51f96df33c82fb0800000000000000
+      internalID: -4672269934445783643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_skeleton_00_75
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 228
+        width: 21
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f97fca88085aa20800000000000000
+      internalID: 3073003645256048470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

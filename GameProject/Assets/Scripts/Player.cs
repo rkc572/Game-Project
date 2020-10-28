@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public PlayerItem sword;
     public PlayerItem selectedArtifact = null;
-    
+
     public float gold = 0.0f;
 
     List<PlayerItem> artifacts;
@@ -25,6 +25,14 @@ public class Player : MonoBehaviour
         sword = new PlayerSword(this);
 
         // For presentation use only, remove in production
-        properties.propertiesManager.ToggleEffectState(new SlowedEffect(properties.propertiesManager, 10.5f));
+        // properties.propertiesManager.ToggleEffectState(new SlowedEffect(properties.propertiesManager, 10.5f));
+    }
+
+    private void Update()
+    {
+        if (properties.health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
