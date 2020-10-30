@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class Skeleton : MonoBehaviour
 {
-    public enum Mode
+    public enum MovementMode
     {
-        Sentry,
+        Patrol,
         Pursuit,
         Attack,
         Disabled,
         Dead
+    };
+
+    public enum PatrolMode
+    {
+        HorizontallyRight,
+        HorizontallyLeft,
+        VerticallyUp,
+        VerticallyDown,
     };
 
     public Mob properties;
@@ -19,15 +27,13 @@ public class Skeleton : MonoBehaviour
     public float sightRadius = 0.4f;
     public float attackRadius = 0.15f;
 
-    public Mode movementMode = Mode.Sentry;
+    public MovementMode movementMode = MovementMode.Patrol;
+    public PatrolMode patrolMode = PatrolMode.HorizontallyRight;
 
     Player playerReference;
 
 
-    // Sentry Mode variables;
-    bool patrolVertical = false;
-    bool patrolHorizontal = true;
-    bool up, down, left, right = false;
+    // Patrol Mode variables;
     float minHorizontalMovement = 1.0f;
     float maxHorizontalMovement = 1.0f;
     float minVerticalMovement = 1.0f;
@@ -41,73 +47,74 @@ public class Skeleton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // initialize starting movement direction
-        right = true;
         // Assign random range of gold to drop upon death
         goldDropOnDeath = Random.Range(0.0f, 15.0f);
         // Record initial starting position
         startingPosition = transform.position;
     }
 
-    void Patrol()
+    void UpdateWalkingAnimatorParameters()
     {
-        if (transform.position.x >= startingPosition.x + maxHorizontalMovement)
-        {
-            right = false;
-            left = true;
-        }
-        else if (transform.position.x <= startingPosition.x - minHorizontalMovement)
-        {
-            right = true;
-            left = false;
-        }
-
-        if (transform.position.y >= startingPosition.y + maxVerticalMovement)
-        {
-            up = false;
-            down = true;
-        }
-        else if (transform.position.y <= startingPosition.y - minVerticalMovement)
-        {
-            up = true;
-            down = false;
-        }
-
-        if (patrolHorizontal)
-        {
-            if (right)
-            {
-                properties.rigidBody.velocity = new Vector2(1.0f, 0.0f) * properties.speed;
-            }
-            else if (left)
-            {
-                properties.rigidBody.velocity = new Vector2(-1.0f, 0.0f) * properties.speed;
-            }
-        }
-        else if (patrolVertical)
-        {
-            if (up)
-            {
-                properties.rigidBody.velocity = new Vector2(0.0f, 1.0f) * properties.speed;
-            }
-            else if (down)
-            {
-                properties.rigidBody.velocity = new Vector2(0.0f, -1.0f) * properties.speed;
-            }
-        }
-
         animator.SetFloat("HorizontalMagnitude", properties.rigidBody.velocity.x);
         animator.SetFloat("VerticalMagnitude", properties.rigidBody.velocity.y);
-        animator.SetBool("Moving", properties.rigidBody.velocity != Vector2.zero);
+        animator.SetBool("Moving", properties.rigidBody.velocity.y != 0.0f || properties.rigidBody.velocity.x != 0);
+    }
 
+    void PatrolBoundsUpdate()
+    {
+        if (patrolMode == PatrolMode.HorizontallyRight && transform.position.x >= startingPosition.x + maxHorizontalMovement)
+        {
+            patrolMode = PatrolMode.HorizontallyLeft;
+        }
+        else if (patrolMode == PatrolMode.HorizontallyLeft && transform.position.x <= startingPosition.x - minHorizontalMovement)
+        {
+            patrolMode = PatrolMode.HorizontallyRight;
+        }
+        else if (patrolMode == PatrolMode.VerticallyUp && transform.position.y >= startingPosition.y + maxVerticalMovement)
+        {
+            patrolMode = PatrolMode.VerticallyDown;
+        }
+        else if (patrolMode == PatrolMode.VerticallyDown && transform.position.y <= startingPosition.y - minVerticalMovement)
+        {
+            patrolMode = PatrolMode.VerticallyUp;
+        }
+    }
+
+    void Patrol()
+    {
+        PatrolBoundsUpdate();
+
+        Vector2 direction;
+
+        switch (patrolMode)
+        {
+            case PatrolMode.HorizontallyLeft:
+                direction = new Vector2(-1.0f, 0.0f);
+                break;
+            case PatrolMode.HorizontallyRight:
+                direction = new Vector2(1.0f, 0.0f);
+                break;
+            case PatrolMode.VerticallyUp:
+                direction = new Vector2(0.0f, 1.0f);
+                break;
+            case PatrolMode.VerticallyDown:
+                direction = new Vector2(0.0f, -1.0f);
+                break;
+            default:
+                direction = new Vector2(0.0f, 0.0f);
+                break;
+        }
+
+        properties.rigidBody.velocity = direction * properties.speed;
+        UpdateWalkingAnimatorParameters();
 
         //check if player is within sight radius
         var colliders = Physics2D.OverlapCircleAll(transform.position, sightRadius);
-        foreach(Collider2D collider in colliders)
+        foreach (Collider2D collider in colliders)
         {
             if (collider.tag == "Player")
             {
-                movementMode = Mode.Pursuit;
+                movementMode = MovementMode.Pursuit;
                 playerReference = collider.GetComponentInParent<Player>();
                 break;
             }
@@ -116,20 +123,18 @@ public class Skeleton : MonoBehaviour
 
     void Pursuit()
     {
-        Vector2 direction = playerReference.transform.position - transform.position;
-        Vector2 newVelocity = direction.normalized * properties.speed;
+        Vector2 playerDirection = playerReference.transform.position - transform.position;
+        Vector2 newVelocity = playerDirection.normalized * properties.speed;
         properties.rigidBody.velocity = Vector2.SmoothDamp(properties.rigidBody.velocity, newVelocity, ref smoothVelocityReference, 0.1f);
 
-        animator.SetFloat("HorizontalMagnitude", properties.rigidBody.velocity.x);
-        animator.SetFloat("VerticalMagnitude", properties.rigidBody.velocity.y);
-        animator.SetBool("Moving", properties.rigidBody.velocity != Vector2.zero);
+        UpdateWalkingAnimatorParameters();
 
-        var colliders = Physics2D.OverlapCircleAll(transform.position, attackRadius);
+        var colliders = Physics2D.OverlapCircleAll(transform.position - new Vector3(0.0f, 0.05f, 0.0f), attackRadius);
         foreach (Collider2D collider in colliders)
         {
             if (collider.tag == "Player")
             {
-                movementMode = Mode.Attack;
+                movementMode = MovementMode.Attack;
                 break;
             }
         }
@@ -141,7 +146,7 @@ public class Skeleton : MonoBehaviour
 
         if (!animator.GetCurrentAnimatorStateInfo(0).IsTag("pauseInput"))
         {
-            var colliders = Physics2D.OverlapCircleAll(transform.position, attackRadius);
+            var colliders = Physics2D.OverlapCircleAll(transform.position - new Vector3(0.0f, 0.05f, 0.0f), attackRadius);
             foreach (Collider2D collider in colliders)
             {
                 if (collider.tag == "Player")
@@ -152,7 +157,7 @@ public class Skeleton : MonoBehaviour
                 }
             }
 
-            movementMode = Mode.Pursuit;
+            movementMode = MovementMode.Pursuit;
         }
 
         properties.rigidBody.velocity = Vector2.zero;
@@ -165,7 +170,7 @@ public class Skeleton : MonoBehaviour
     {
         if (properties.health <= 0)
         {
-            movementMode = Mode.Disabled;
+            movementMode = MovementMode.Disabled;
         }   
     }
 
@@ -173,16 +178,16 @@ public class Skeleton : MonoBehaviour
     {
         switch (movementMode)
         {
-            case Mode.Sentry:
+            case MovementMode.Patrol:
                 Patrol();
                 break;
-            case Mode.Pursuit:
+            case MovementMode.Pursuit:
                 Pursuit();
                 break;
-            case Mode.Attack:
+            case MovementMode.Attack:
                 Attack();
                 break;
-            case Mode.Disabled:
+            case MovementMode.Disabled:
                 properties.rigidBody.velocity = Vector2.zero;
                 if (!animator.GetBool("Disabled"))
                 {
@@ -191,7 +196,7 @@ public class Skeleton : MonoBehaviour
                     gameObject.GetComponent<Collider2D>().enabled = false;
                 }
                 break;
-            case Mode.Dead:
+            case MovementMode.Dead:
                 break;
         }
     }
