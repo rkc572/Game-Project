@@ -51,12 +51,12 @@ public class PropertiesManager : MonoBehaviour
 
     public void InflictPhysicalDamage(float damage)
     {
-        mob.health = Mathf.Max(mob.health - damage * mob.physicalAttackMultiplier * mob.damageTakenMultiplier, 0);
+        mob.health = Mathf.Max(mob.health - damage * mob.physicalDamageTakenMultiplier * mob.damageTakenMultiplier, 0);
     }
 
     public void InflictElementalDamage(float damage)
     {
-        mob.health = Mathf.Max(mob.health - damage * mob.elementalAttackMultiplier * mob.damageTakenMultiplier, 0);
+        mob.health = Mathf.Max(mob.health - damage * mob.elementalDamageTakenMultiplier * mob.damageTakenMultiplier, 0);
     }
 
     // Use Set* functions whenever you have to bypass any limits and additional computation

@@ -144,7 +144,8 @@ public class Skeleton : MonoBehaviour
     {
         float damageAmount = 25.0f;
 
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsTag("pauseInput"))
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsTag("pauseInput") &&
+            !playerReference.PlayerTakingDamage())
         {
             var colliders = Physics2D.OverlapCircleAll(transform.position - new Vector3(0.0f, 0.05f, 0.0f), attackRadius);
             foreach (Collider2D collider in colliders)
