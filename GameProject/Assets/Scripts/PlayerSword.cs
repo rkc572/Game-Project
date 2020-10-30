@@ -10,7 +10,9 @@ public class PlayerSword : PlayerItem
 
     public override void Action()
     {
-        var colliders = Physics2D.OverlapCircleAll(player.transform.position, 0.3f);
+        Vector3 attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.3f, player.animator.GetFloat("VerticalMagnitude") * 0.3f - 0.05f, 0.0f);
+
+        var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.3f);
         foreach (Collider2D collider in colliders)
         {
             if (collider.tag == "Enemy")
