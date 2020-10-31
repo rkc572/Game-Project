@@ -5,7 +5,6 @@ using UnityEngine;
 public class Mob : MonoBehaviour
 {
     public PropertiesManager propertiesManager;
-
     public Rigidbody2D rigidBody;
 
     [Header("Stats")]
@@ -31,5 +30,6 @@ public class Mob : MonoBehaviour
     {
         // Can test effect states like this
         // propertiesManager.ToggleEffectState(new SlowedEffect(propertiesManager, 10.5f));
+        //propertiesManager.ToggleEffectState(new VulnerableEffect(propertiesManager, 10.5f));
     }
 }
