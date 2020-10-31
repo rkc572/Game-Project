@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameObject player;
     public Mob properties;
     public Animator animator;
     public PlayerItem sword;
@@ -42,17 +43,13 @@ public class Player : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        /*if (PlayerTakingDamage())
+        if (PlayerTakingDamage())
         {
-            properties.damageTakenMultiplier = 0;
-            properties.physicalDamageTakenMultiplier = 0;
-            properties.elementalDamageTakenMultiplier = 0;
+            player.tag = "PlayerHurt";
         }
         else
         {
-            properties.damageTakenMultiplier = 1f;
-            properties.physicalDamageTakenMultiplier = 1f;
-            properties.elementalDamageTakenMultiplier = 1f;
-        }*/
+            player.tag = "Player";
+        }
     }
 }

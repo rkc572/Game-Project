@@ -718,6 +718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36706e9aa5d1604449c7e53060d61f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1008078698}
   properties: {fileID: 1008078702}
   animator: {fileID: 1008078703}
   gold: 0
@@ -826,6 +827,7 @@ MonoBehaviour:
   sightRadius: 0.4
   attackRadius: 0.1
   movementMode: 0
+  patrolMode: 0
 --- !u!114 &1757214099
 MonoBehaviour:
   m_ObjectHideFlags: 0
