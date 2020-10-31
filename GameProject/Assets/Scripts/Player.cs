@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
 
         // For presentation use only, remove in production
         // properties.propertiesManager.ToggleEffectState(new SlowedEffect(properties.propertiesManager, 10.5f));
+        //properties.propertiesManager.ToggleEffectState(new WeakenedEffect(properties.propertiesManager, 10.5f));
+        //operties.propertiesManager.ToggleEffectState(new StunnedEffect(properties.propertiesManager, 10.5f));
     }
 
     private void Update()
