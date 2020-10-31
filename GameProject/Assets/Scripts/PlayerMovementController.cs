@@ -42,12 +42,7 @@ public class PlayerMovementController : MonoBehaviour
 
         if (player.animator.GetCurrentAnimatorStateInfo(0).IsName("Move"))
         {
-            player.animator.speed = player.properties.rigidBody.velocity.magnitude;
-        }
-        else
-        {
-            // change to 1.0f if other animations should not be affected by players speed
-            player.animator.speed = player.properties.speed;
+            player.animator.SetFloat("MoveAnimationSpeedMultiplier", player.properties.rigidBody.velocity.magnitude);
         }
     }
 
