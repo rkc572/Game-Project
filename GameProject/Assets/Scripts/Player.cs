@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameObject player;
     public Mob properties;
     public Animator animator;
     public PlayerItem sword;
@@ -21,13 +22,19 @@ public class Player : MonoBehaviour
         return animator.GetCurrentAnimatorStateInfo(0).IsTag("pauseInput");
     }
 
+    public bool PlayerTakingDamage()
+    {
+        return animator.GetCurrentAnimatorStateInfo(1).IsTag("hurt");
+    }
+
     private void Awake()
     {
         sword = new PlayerSword(this);
 
+        DontDestroyOnLoad(gameObject);
+
         // For presentation use only, remove in production
         // properties.propertiesManager.ToggleEffectState(new SlowedEffect(properties.propertiesManager, 10.5f));
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
@@ -35,6 +42,15 @@ public class Player : MonoBehaviour
         if (properties.health <= 0)
         {
             Destroy(this.gameObject);
+        }
+
+        if (PlayerTakingDamage())
+        {
+            player.tag = "PlayerHurt";
+        }
+        else
+        {
+            player.tag = "Player";
         }
     }
 
