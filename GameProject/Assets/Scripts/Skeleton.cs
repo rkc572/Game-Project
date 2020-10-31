@@ -154,6 +154,7 @@ public class Skeleton : MonoBehaviour
                     animator.SetTrigger("Attack");
                     playerReference.properties.propertiesManager.InflictPhysicalDamage(damageAmount * properties.physicalAttackMultiplier);
                     playerReference.animator.SetTrigger("PlayerHurt");
+                    playerReference.properties.propertiesManager.ToggleEffectState(new RepulsedEffect(playerReference.properties.propertiesManager, 0.1f, new Vector2(animator.GetFloat("HorizontalMagnitude"), animator.GetFloat("VerticalMagnitude")), 4.0f));
                 }
             }
 

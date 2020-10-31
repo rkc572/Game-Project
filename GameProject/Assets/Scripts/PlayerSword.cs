@@ -10,9 +10,17 @@ public class PlayerSword : PlayerItem
 
     public override void Action()
     {
-        Vector3 attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.3f, player.animator.GetFloat("VerticalMagnitude") * 0.3f - 0.05f, 0.0f);
+        Vector3 attackOffset;
+        if (player.animator.GetFloat("VerticalMagnitude") <= 0.0f)
+        {
+            attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.1f, player.animator.GetFloat("VerticalMagnitude") * 0.15f, 0.0f);
+        }
+        else
+        {
+            attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.1f, player.animator.GetFloat("VerticalMagnitude") * 0.15f - 0.05f, 0.0f);
+        }
 
-        var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.3f);
+        var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.15f);
         foreach (Collider2D collider in colliders)
         {
             if (collider.tag == "Enemy")
@@ -20,6 +28,7 @@ public class PlayerSword : PlayerItem
                 var enemyMob = collider.GetComponentInParent<Mob>();
                 enemyMob.GetComponentInParent<Animator>().SetTrigger("TookDamage");
                 enemyMob.propertiesManager.InflictPhysicalDamage(25.0f * player.properties.physicalAttackMultiplier);
+                enemyMob.propertiesManager.ToggleEffectState(new RepulsedEffect(enemyMob.propertiesManager, 0.1f, new Vector2(player.animator.GetFloat("HorizontalMagnitude"), player.animator.GetFloat("VerticalMagnitude")), 4.0f));
                 break;
             }
         }
