@@ -23,20 +23,20 @@ public class PlayerMovementController : MonoBehaviour
 
         Vector2 smoothenedVelocity = Vector2.SmoothDamp(player.properties.rigidBody.velocity, newVelocity, ref moveVelocity, 0.2f);
 
-        // player.properties.rigidBody.velocity = smoothenedVelocity;
-        player.properties.rigidBody.velocity = new Vector2(math.abs(horizontalVelocity) == 1 ? smoothenedVelocity.x : 0.0f, math.abs(verticalVelocity) == 1 ? smoothenedVelocity.y : 0.0f);
+        newVelocity = new Vector2(math.abs(horizontalVelocity) == 1 ? smoothenedVelocity.x : 0.0f, math.abs(verticalVelocity) == 1 ? smoothenedVelocity.y : 0.0f);
 
-        bool playerIsMoving = newVelocity != Vector2.zero;
+        bool playerIsMoving = moveUp || moveDown || moveLeft || moveRight;
 
         player.animator.SetBool("Moving", playerIsMoving);
+
         if (playerIsMoving)
         {
+            player.properties.rigidBody.velocity = newVelocity;
             player.animator.SetFloat("HorizontalMagnitude", horizontalVelocity);
             player.animator.SetFloat("VerticalMagnitude", verticalVelocity);
         }
         else
         {
-            // player.properties.rigidBody.velocity = Vector2.zero;
             player.properties.rigidBody.velocity = Vector2.SmoothDamp(player.properties.rigidBody.velocity, Vector2.zero, ref moveVelocity, 0.02f);
         }
 

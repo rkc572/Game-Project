@@ -10,7 +10,28 @@ public class RepulsedEffect : EffectState
     public RepulsedEffect(PropertiesManager propertiesManager, float effectDuration, Vector2 direction, float strength) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
-        this.direction = direction;
+
+        var scaledDirection = direction;
+
+        if (scaledDirection.y > 0)
+        {
+            scaledDirection.y = 1;
+        }
+        else if (scaledDirection.y < 0)
+        {
+            scaledDirection.y = -1;
+        }
+
+        if (scaledDirection.x > 0)
+        {
+            scaledDirection.x = 1;
+        }
+        else if (scaledDirection.x < 0)
+        {
+            scaledDirection.x = -1;
+        }
+
+        this.direction = scaledDirection;
         this.strength = strength;
     }
 

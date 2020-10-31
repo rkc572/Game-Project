@@ -28,7 +28,7 @@ public class PlayerSword : PlayerItem
                 var enemyMob = collider.GetComponentInParent<Mob>();
                 enemyMob.GetComponentInParent<Animator>().SetTrigger("TookDamage");
                 enemyMob.propertiesManager.InflictPhysicalDamage(25.0f * player.properties.physicalAttackMultiplier);
-                enemyMob.propertiesManager.ToggleEffectState(new RepulsedEffect(enemyMob.propertiesManager, 0.1f, new Vector2(player.animator.GetFloat("HorizontalMagnitude"), player.animator.GetFloat("VerticalMagnitude")), 4.0f));
+                enemyMob.propertiesManager.ToggleEffectState(new RepulsedEffect(enemyMob.propertiesManager, 0.1f, new Vector2(player.animator.GetFloat("HorizontalMagnitude"), player.animator.GetFloat("VerticalMagnitude")), 3.0f));
                 break;
             }
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Skeleton : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class Skeleton : MonoBehaviour
 
     public Mob properties;
     public Animator animator;
+    public SortingGroup sortingGroup;
     public float goldDropOnDeath = 1.0f;
     public float sightRadius = 0.4f;
     public float attackRadius = 0.15f;
@@ -154,7 +156,7 @@ public class Skeleton : MonoBehaviour
                     animator.SetTrigger("Attack");
                     playerReference.properties.propertiesManager.InflictPhysicalDamage(damageAmount * properties.physicalAttackMultiplier);
                     playerReference.animator.SetTrigger("PlayerHurt");
-                    playerReference.properties.propertiesManager.ToggleEffectState(new RepulsedEffect(playerReference.properties.propertiesManager, 0.1f, new Vector2(animator.GetFloat("HorizontalMagnitude"), animator.GetFloat("VerticalMagnitude")), 4.0f));
+                    playerReference.properties.propertiesManager.ToggleEffectState(new RepulsedEffect(playerReference.properties.propertiesManager, 0.1f, new Vector2(animator.GetFloat("HorizontalMagnitude"), animator.GetFloat("VerticalMagnitude")), 2.0f));
                 }
             }
 
@@ -195,6 +197,7 @@ public class Skeleton : MonoBehaviour
                     animator.SetTrigger("Disable");
                     animator.SetBool("Disabled", true);
                     gameObject.GetComponent<Collider2D>().enabled = false;
+                    sortingGroup.sortingOrder = -1;
                 }
                 break;
             case MovementMode.Dead:
