@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerSounds : MonoBehaviour
 {
+    public AudioSource playerMovementAudioSource;
+    public AudioSource playerVoxAudioSource;
+
     public AudioClip playerDamage;
 
     public AudioClip leftFootstep;
@@ -21,30 +24,46 @@ public class PlayerSounds : MonoBehaviour
 
     private void Start()
     {
+        playerMovementAudioSource = gameObject.AddComponent<AudioSource>();
+        playerMovementAudioSource.outputAudioMixerGroup = AudioManager.Instance.audioMixer.FindMatchingGroups("FX")[0];
+        playerVoxAudioSource = gameObject.AddComponent<AudioSource>();
+        playerVoxAudioSource.outputAudioMixerGroup = AudioManager.Instance.audioMixer.FindMatchingGroups("FX")[0];
         swordSwings = new AudioClip[] {swordSwingOne, swordSwingTwo, swordSwingThree, swordSwingFour};
         lastSwing = Time.time;
     }
 
+    public void PlayMovementClip(AudioClip clip)
+    {
+        playerMovementAudioSource.clip = clip;
+        playerMovementAudioSource.Play();
+    }
+
+    public void PlayVoxClip(AudioClip clip)
+    {
+        playerVoxAudioSource.clip = clip;
+        playerVoxAudioSource.Play();
+    }
+
     public void playLeftFootstepSound()
     {
-        AudioManager.Instance.Play(leftFootstep);
+        PlayMovementClip(leftFootstep);
     }
 
     public void playRightFootstepSound()
     {
-        AudioManager.Instance.Play(rightFootstep);
+        PlayMovementClip(rightFootstep);
     }
 
     public void playSwordSwingSound()
     {
-        AudioManager.Instance.Play(swordSwings[swingCount % 4]);
+        PlayMovementClip(swordSwings[swingCount % 4]);
         swingCount++;
         lastSwing = Time.time;
     }
 
     public void playPlayerDamageSound()
     {
-        AudioManager.Instance.Play(playerDamage);
+        PlayVoxClip(playerDamage);
     }
 
     private void Update()

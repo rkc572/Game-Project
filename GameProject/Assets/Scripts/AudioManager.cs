@@ -8,8 +8,7 @@ public class AudioManager : MonoBehaviour
 {
 	// Audio players components.
 	public AudioMixer audioMixer;
-	public AudioSource EffectsSource;
-	public AudioSource MusicSource;
+	public AudioSource musicSource;
 
 	// Singleton instance.
 	public static AudioManager Instance = null;
@@ -43,18 +42,11 @@ public class AudioManager : MonoBehaviour
 		DontDestroyOnLoad(gameObject);
 	}
 
-	// Play a single clip through the sound effects source.
-	public void Play(AudioClip clip)
-	{
-		EffectsSource.clip = clip;
-		EffectsSource.Play();
-	}
-
 	// Play a single clip through the music source.
 	public void PlayMusic(AudioClip clip)
 	{
-		MusicSource.clip = clip;
-		MusicSource.Play();
+		musicSource.clip = clip;
+		musicSource.Play();
 	}
 
 	// Reset Sounds Levels
