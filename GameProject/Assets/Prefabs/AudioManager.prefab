@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7225215727613489171}
   - component: {fileID: 7225215727613489168}
   - component: {fileID: 7225215727613489169}
-  - component: {fileID: 7225215727613489175}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -46,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aae926fede28214fb93582e001d1b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 5747e28b4b0789b4b9c4ffc0a0a83ba3, type: 2}
   EffectsSource: {fileID: 7225215727613489168}
   MusicSource: {fileID: 7225215727613489169}
 --- !u!82 &7225215727613489168
@@ -57,9 +57,9 @@ AudioSource:
   m_GameObject: {fileID: 7225215727613489180}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1694365316111512771, guid: 5747e28b4b0789b4b9c4ffc0a0a83ba3, type: 2}
+  OutputAudioMixerGroup: {fileID: -5072277407685967302, guid: 5747e28b4b0789b4b9c4ffc0a0a83ba3, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -153,12 +153,12 @@ AudioSource:
   m_GameObject: {fileID: 7225215727613489180}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -3830981239983571401, guid: 5747e28b4b0789b4b9c4ffc0a0a83ba3, type: 2}
+  OutputAudioMixerGroup: {fileID: -1635475594646291894, guid: 5747e28b4b0789b4b9c4ffc0a0a83ba3, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -240,16 +240,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7225215727613489175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7225215727613489180}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b1736b7b1004fc4ebc325f5d6794ce1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BattleMusic: {fileID: 8300000, guid: 42b7dd30619810d49b1280dead3e057d, type: 3}
