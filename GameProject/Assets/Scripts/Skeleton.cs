@@ -154,7 +154,7 @@ public class Skeleton : MonoBehaviour
                 if (collider.tag == "Player")
                 {
                     animator.SetTrigger("Attack");
-                    playerReference.properties.propertiesManager.InflictPhysicalDamage(damageAmount * properties.physicalAttackMultiplier);
+                    playerReference.properties.propertiesManager.InflictPhysicalDamage(damageAmount * properties.physicalAttackMultiplier * properties.attackMultiplier);
                     playerReference.animator.SetTrigger("PlayerHurt");
                     playerReference.properties.propertiesManager.ToggleEffectState(new RepulsedEffect(playerReference.properties.propertiesManager, 0.1f, new Vector2(animator.GetFloat("HorizontalMagnitude"), animator.GetFloat("VerticalMagnitude")), 2.0f));
                 }

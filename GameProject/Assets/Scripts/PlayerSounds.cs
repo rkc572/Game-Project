@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerSounds : MonoBehaviour
 {
     public AudioSource playerMovementAudioSource;
+    public AudioSource playerAttackAudioSource;
+    public AudioSource playerElementalAttackAudioSource;
     public AudioSource playerVoxAudioSource;
 
     public AudioClip playerDamage;
@@ -17,6 +19,11 @@ public class PlayerSounds : MonoBehaviour
     public AudioClip swordSwingThree;
     public AudioClip swordSwingFour;
 
+    public AudioClip waterAttackSFX;
+    public AudioClip fireAttackSFX;
+    public AudioClip earthAttackSFX;
+    public AudioClip windAttackSFX;
+
     AudioClip[] swordSwings;
 
     int swingCount = 0;
@@ -26,6 +33,10 @@ public class PlayerSounds : MonoBehaviour
     {
         playerMovementAudioSource = gameObject.AddComponent<AudioSource>();
         playerMovementAudioSource.outputAudioMixerGroup = AudioManager.Instance.audioMixer.FindMatchingGroups("FX")[0];
+        playerAttackAudioSource = gameObject.AddComponent<AudioSource>();
+        playerAttackAudioSource.outputAudioMixerGroup = AudioManager.Instance.audioMixer.FindMatchingGroups("FX")[0];
+        playerElementalAttackAudioSource = gameObject.AddComponent<AudioSource>();
+        playerElementalAttackAudioSource.outputAudioMixerGroup = AudioManager.Instance.audioMixer.FindMatchingGroups("FX")[0];
         playerVoxAudioSource = gameObject.AddComponent<AudioSource>();
         playerVoxAudioSource.outputAudioMixerGroup = AudioManager.Instance.audioMixer.FindMatchingGroups("FX")[0];
         swordSwings = new AudioClip[] {swordSwingOne, swordSwingTwo, swordSwingThree, swordSwingFour};
@@ -36,6 +47,18 @@ public class PlayerSounds : MonoBehaviour
     {
         playerMovementAudioSource.clip = clip;
         playerMovementAudioSource.Play();
+    }
+
+    public void PlayAttackClip(AudioClip clip)
+    {
+        playerAttackAudioSource.clip = clip;
+        playerAttackAudioSource.Play();
+    }
+
+    public void PlayElementalAttackClip(AudioClip clip)
+    {
+        playerElementalAttackAudioSource.clip = clip;
+        playerElementalAttackAudioSource.Play();
     }
 
     public void PlayVoxClip(AudioClip clip)
@@ -56,7 +79,7 @@ public class PlayerSounds : MonoBehaviour
 
     public void playSwordSwingSound()
     {
-        PlayMovementClip(swordSwings[swingCount % 4]);
+        PlayAttackClip(swordSwings[swingCount % 4]);
         swingCount++;
         lastSwing = Time.time;
     }
@@ -64,6 +87,26 @@ public class PlayerSounds : MonoBehaviour
     public void playPlayerDamageSound()
     {
         PlayVoxClip(playerDamage);
+    }
+
+    public void PlayWaterSFX()
+    {
+        PlayElementalAttackClip(waterAttackSFX);
+    }
+
+    public void PlayFireSFX()
+    {
+        PlayElementalAttackClip(fireAttackSFX);
+    }
+
+    public void PlayEarthSFX()
+    {
+        PlayElementalAttackClip(earthAttackSFX);
+    }
+
+    public void PlayWindSFX()
+    {
+        PlayElementalAttackClip(windAttackSFX);
     }
 
     private void Update()

@@ -596,6 +596,7 @@ MonoBehaviour:
   player: {fileID: 1008078698}
   properties: {fileID: 1008078702}
   animator: {fileID: 1008078703}
+  sounds: {fileID: 1008078709}
   gold: 0
 --- !u!114 &1008078709
 MonoBehaviour:
@@ -609,7 +610,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab3661f3ce5d844c84f18c491caa897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAudioSource: {fileID: 0}
+  playerMovementAudioSource: {fileID: 0}
+  playerAttackAudioSource: {fileID: 0}
+  playerElementalAttackAudioSource: {fileID: 0}
+  playerVoxAudioSource: {fileID: 0}
   playerDamage: {fileID: 8300000, guid: 0f1552be9c1313842a51b099b57f202c, type: 3}
   leftFootstep: {fileID: 8300000, guid: 649880bb81090774abb4a96feccd6b28, type: 3}
   rightFootstep: {fileID: 8300000, guid: 2416fa80d63aa1d47a9325ed9204e6f1, type: 3}
@@ -617,6 +621,10 @@ MonoBehaviour:
   swordSwingTwo: {fileID: 8300000, guid: 92f293ddbce606b4abdacddf8f5d9e38, type: 3}
   swordSwingThree: {fileID: 8300000, guid: 5508bdfbdbfa87149b5b7731d0da64b0, type: 3}
   swordSwingFour: {fileID: 8300000, guid: 0e10ebf9d3f47764cab4bb057c64850e, type: 3}
+  waterAttackSFX: {fileID: 8300000, guid: a0fb059c00bb70b4ab8cf2b86a4a1053, type: 3}
+  fireAttackSFX: {fileID: 8300000, guid: e8736662228a9794a837b883133d3448, type: 3}
+  earthAttackSFX: {fileID: 8300000, guid: cdf3031895a3db147aed095bc9e490b0, type: 3}
+  windAttackSFX: {fileID: 8300000, guid: 5e25aab022dbc3540939e484f78390b9, type: 3}
 --- !u!212 &1008078710
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -906,5 +914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ad414150222414fba908835e9f941c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skeletonMovementAudioSource: {fileID: 0}
+  skeletonVoxAudioSource: {fileID: 0}
   skeletonDamage: {fileID: 8300000, guid: c0386e1ae13da254585726fcc99253cf, type: 3}
   attack: {fileID: 8300000, guid: 2c82824791e6c88438eeb283cc2f3f0d, type: 3}

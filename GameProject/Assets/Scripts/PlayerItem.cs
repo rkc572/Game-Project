@@ -12,7 +12,7 @@ public enum ElementalAttribute{
 }
 public abstract class PlayerItem
 {
-    protected ElementalAttribute elementalAttribute = ElementalAttribute.None;
+    public ElementalAttribute elementalAttribute = ElementalAttribute.None;
     protected Player player;
 
     public PlayerItem(Player player)

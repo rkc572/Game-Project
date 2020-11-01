@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public PlayerItem sword;
     public PlayerItem selectedArtifact = null;
+    public PlayerSounds sounds;
 
     public float gold = 0.0f;
 
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         sword = new PlayerSword(this);
+        sword.elementalAttribute = ElementalAttribute.Fire;
 
         DontDestroyOnLoad(gameObject);
 

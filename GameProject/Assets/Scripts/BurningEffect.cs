@@ -15,7 +15,8 @@ public class BurningEffect : EffectState
     protected override void Effect()
     {
         Debug.Log($"im burning at {Time.time}");
-        propertiesManager.InflictDamage(10.0f);
+        propertiesManager.InflictElementalDamage(10.0f);
+        propertiesManager.GetComponentInParent<Animator>().SetTrigger("TookDamage");
     }
 
     public override void ApplyEffect()
