@@ -46,8 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 5747e28b4b0789b4b9c4ffc0a0a83ba3, type: 2}
-  EffectsSource: {fileID: 7225215727613489168}
-  MusicSource: {fileID: 7225215727613489169}
+  musicSource: {fileID: 7225215727613489169}
 --- !u!82 &7225215727613489168
 AudioSource:
   m_ObjectHideFlags: 0

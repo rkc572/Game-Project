@@ -25,7 +25,12 @@ public class Skeleton : MonoBehaviour
     public Mob properties;
     public Animator animator;
     public SortingGroup sortingGroup;
-    public float goldDropOnDeath = 1.0f;
+
+    public bool droppedGold = false;
+    public GameObject goldCoinPrefab;
+    public GameObject goldBarPrefab;
+    public GameObject goldStackPrefab;
+
     public float sightRadius = 0.4f;
     public float attackRadius = 0.15f;
 
@@ -49,8 +54,6 @@ public class Skeleton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Assign random range of gold to drop upon death
-        goldDropOnDeath = Random.Range(0.0f, 15.0f);
         // Record initial starting position
         startingPosition = transform.position;
     }
@@ -167,6 +170,26 @@ public class Skeleton : MonoBehaviour
 
     }
 
+    void Disable()
+    {
+        properties.rigidBody.velocity = Vector2.zero;
+        if (!animator.GetBool("Disabled"))
+        {
+            animator.SetTrigger("Disable");
+            animator.SetBool("Disabled", true);
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            sortingGroup.sortingOrder = -1;
+        }
+
+        if (!droppedGold)
+        {
+            List<GameObject> goldDrops = new List<GameObject> {goldCoinPrefab, goldBarPrefab, goldStackPrefab};
+            // Drop random gold drop
+            Instantiate(goldDrops[Random.Range(0, goldDrops.Count)], transform.position, Quaternion.identity);
+            droppedGold = true;
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -191,14 +214,7 @@ public class Skeleton : MonoBehaviour
                 Attack();
                 break;
             case MovementMode.Disabled:
-                properties.rigidBody.velocity = Vector2.zero;
-                if (!animator.GetBool("Disabled"))
-                {
-                    animator.SetTrigger("Disable");
-                    animator.SetBool("Disabled", true);
-                    gameObject.GetComponent<Collider2D>().enabled = false;
-                    sortingGroup.sortingOrder = -1;
-                }
+                Disable();
                 break;
             case MovementMode.Dead:
                 break;

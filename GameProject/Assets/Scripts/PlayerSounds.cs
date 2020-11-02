@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,6 +24,8 @@ public class PlayerSounds : MonoBehaviour
     public AudioClip fireAttackSFX;
     public AudioClip earthAttackSFX;
     public AudioClip windAttackSFX;
+
+    public AudioClip goldSFX;
 
     AudioClip[] swordSwings;
 
@@ -107,6 +110,11 @@ public class PlayerSounds : MonoBehaviour
     public void PlayWindSFX()
     {
         PlayElementalAttackClip(windAttackSFX);
+    }
+
+    public void PlayGoldPickupSFX()
+    {
+        PlayVoxClip(goldSFX);
     }
 
     private void Update()
