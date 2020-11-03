@@ -24,9 +24,9 @@ public class Prologue : MonoBehaviour
     List<string> prologueLines = new List<string>() {
         "Long ago, when the world was first created, four beings were brought into existence.",
         "These beings represented the four aspects of life necessary to maintain balance in the world: water, earth, fire, and air.",
-        "They are known as the elemental entities, and for millennia, they have roamed the world, acting in harmony to preserve balance and to protect the world from being corrupted.",
+        "They are known as the elemental entities, and for millennia they have roamed the world, acting in harmony to preserve balance and to protect the world from being corrupted.",
         "The entities were regarded as deities by humanity for their influence over the world.",
-        "Temples were built for them and in the capital city of Creley, the Knights Templar was formed, for the entities are not all powerful, and there are some who seek to take advantage of their benevolent and pacifist nature.",
+        "Temples were built for them and in the capital city of Creley, the Knights Templar was formed, for the entities are not all-powerful, and there are some who seek to take advantage of their benevolent and pacifist nature.",
         "Many have tried to seize the entities so that they may hold their power in their own hands, but the Knights Templar have always managed to prevent their efforts.",
         "Except for Aldruin’s.",
         "Aldruin is a powerful sorcerer of unknown origin.",
@@ -38,7 +38,8 @@ public class Prologue : MonoBehaviour
         "However, when word arrived that the templars at Nightwell Keep had been wiped out, humanity fell into despair, and the remaining templars all lost heart.",
         "All but you.",
         "Refusing to give up, you bided your time and trained, preparing for your encounter with Aldruin.",
-        "As the fateful day approaches, you set out to Nightwell Keep, located deep within a forest now known as the Wretched Woods."
+        "As the fateful day approaches, you set out to Nightwell Keep, located deep within a forest now known as the Wretched Woods.",
+        "end"
     };
 
 
@@ -59,14 +60,19 @@ public class Prologue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >  timeStarted + 3.0f)
+        if (Time.time >  timeStarted + 2.5f)
         {
             if (!lineComplete)
             {
                 if (Time.time >= timeSinceLastCharacter + timePerCharacter)
                 {
+                    timePerCharacter = 0.05f;
                     prologueText.text = prologueLines[prologueLineIndex].Substring(0, characterIndex);
                     audioSource.Play();
+                    if (prologueLines[prologueLineIndex][Mathf.Min(characterIndex, prologueLines[prologueLineIndex].Length - 1)] == ',' || prologueLines[prologueLineIndex][Mathf.Min(characterIndex, prologueLines[prologueLineIndex].Length - 1)] == ':')
+                    {
+                        timePerCharacter = 0.5f;
+                    }
                     characterIndex++;
                     lineComplete = characterIndex == prologueLines[prologueLineIndex].Length + 1;
                     timeSinceLastCharacter = Time.time;
