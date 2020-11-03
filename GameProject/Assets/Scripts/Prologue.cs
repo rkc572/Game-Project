@@ -11,16 +11,6 @@ public class Prologue : MonoBehaviour
     public AudioSource audioSource;
     public Image fadeOutImage;
 
-    bool startFading = false;
-    float sentencePauseTime;
-    float timePerCharacter = 0.05f;
-    //float timePerCharacter = 0.0f;
-    float timeStarted;
-    float timeSinceLastCharacter;
-    bool lineComplete = false;
-    int prologueLineIndex = 0;
-    int characterIndex = 0;
-
     List<string> prologueLines = new List<string>() {
         "Long ago, when the world was first created, four beings were brought into existence.",
         "These beings represented the four aspects of life necessary to maintain balance in the world: water, earth, fire, and air.",
@@ -38,18 +28,12 @@ public class Prologue : MonoBehaviour
         "However, when word arrived that the templars at Nightwell Keep had been wiped out, humanity fell into despair, and the remaining templars all lost heart.",
         "All but you.",
         "Refusing to give up, you bided your time and trained, preparing for your encounter with Aldruin.",
-        "As the fateful day approaches, you set out to Nightwell Keep, located deep within a forest now known as the Wretched Woods.",
-        "end"
+        "As the fateful day approaches, you set out to Nightwell Keep, located deep within a forest now known as the Wretched Woods."
     };
 
-
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        timeStarted = Time.time;
-        timeSinceLastCharacter = Time.time;
+        StartCoroutine(ReadPrologue());
     }
 
     void StartGameplay()
@@ -57,55 +41,48 @@ public class Prologue : MonoBehaviour
         GameSceneManager.Instance.LoadNextScene("Sandbox");
     }
 
-    // Update is called once per frame
-    void Update()
+    // Start is called before the first frame update
+    IEnumerator ReadPrologue()
     {
-        if (Time.time >  timeStarted + 2.5f)
+        prologueText.text = "";
+
+        // Wait 2.5 seconds before starting dialogue
+        yield return new WaitForSeconds(2.5f);
+
+        // Iterate over each dialogue line in the prologue
+        foreach (string dialogueLine in prologueLines)
         {
-            if (!lineComplete)
+            // Iterate over each character in the dialogue line
+            foreach (char character in dialogueLine)
             {
-                if (Time.time >= timeSinceLastCharacter + timePerCharacter)
+                // Append to TMP prologueText current character
+                prologueText.text += character;
+                // Play dialogue blip sound
+                audioSource.Play();
+                // Pause for 0.05 seconds after each character
+                yield return new WaitForSeconds(0.05f);
+                // if character is a comma or colon pause for an extra second
+                if (character == ',' || character == ':')
                 {
-                    timePerCharacter = 0.05f;
-                    prologueText.text = prologueLines[prologueLineIndex].Substring(0, characterIndex);
-                    audioSource.Play();
-                    if (prologueLines[prologueLineIndex][Mathf.Min(characterIndex, prologueLines[prologueLineIndex].Length - 1)] == ',' || prologueLines[prologueLineIndex][Mathf.Min(characterIndex, prologueLines[prologueLineIndex].Length - 1)] == ':')
-                    {
-                        timePerCharacter = 0.5f;
-                    }
-                    characterIndex++;
-                    lineComplete = characterIndex == prologueLines[prologueLineIndex].Length + 1;
-                    timeSinceLastCharacter = Time.time;
+                    yield return new WaitForSeconds(1.0f);
                 }
             }
-            else
-            {
-                if (Time.time >= timeSinceLastCharacter + prologueLines[Mathf.Min(prologueLineIndex, prologueLines.Count - 1)].Length * timePerCharacter * 1.2f)
-                {
-                    lineComplete = false;
-                    characterIndex = 0;
-                    prologueLineIndex++;
-                }
-                if (prologueLineIndex == prologueLines.Count - 1)
-                {
-                    lineComplete = true;
-                }
-            }
-
-            if (lineComplete && prologueLineIndex == prologueLines.Count - 1)
-            {
-                Invoke("StartGameplay", 10.0f);
-                startFading = true;
-            }
-
-            if (startFading)
-            {
-                if (Time.time > timeSinceLastCharacter + timePerCharacter)
-                {
-                    timeSinceLastCharacter = Time.time;
-                    fadeOutImage.color = new Color(0, 0, 0, Mathf.Min(255, fadeOutImage.color.a + + 0.008f));
-                }
-            }
+            // Pause for 4 seconds after each line
+            yield return new WaitForSeconds(4.0f);
+            // Clear TMP prologueText
+            prologueText.text = "";
         }
+
+        // After dialogue completes start fading to black
+        for (int i = 0; i < 100; i++)
+        {
+            fadeOutImage.color = new Color(0, 0, 0, Mathf.Min(1, fadeOutImage.color.a + +0.01f));
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        // Pause one second before tranisitioning from black to sandbox
+        yield return new WaitForSeconds(1.0f);
+        StartGameplay();
     }
+
 }
