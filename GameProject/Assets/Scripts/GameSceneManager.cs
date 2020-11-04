@@ -18,8 +18,6 @@ public class GameSceneManager : MonoBehaviour
         {
             Invoke("loadStartMenu", 4f);
         }
-
-        DontDestroyOnLoad(gameObject);
     }
 
     void loadStartMenu()

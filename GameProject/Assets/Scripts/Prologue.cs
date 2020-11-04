@@ -64,7 +64,7 @@ public class Prologue : MonoBehaviour
                 // if character is a comma or colon pause for an extra second
                 if (character == ',' || character == ':')
                 {
-                    yield return new WaitForSeconds(1.0f);
+                    yield return new WaitForSeconds(0.25f);
                 }
             }
             // Pause for 4 seconds after each line
