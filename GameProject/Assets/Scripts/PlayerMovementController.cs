@@ -25,7 +25,7 @@ public class PlayerMovementController : MonoBehaviour
 
         newVelocity = new Vector2(math.abs(horizontalVelocity) == 1 ? smoothenedVelocity.x : 0.0f, math.abs(verticalVelocity) == 1 ? smoothenedVelocity.y : 0.0f);
 
-        bool playerIsMoving = moveUp || moveDown || moveLeft || moveRight;
+        bool playerIsMoving = newVelocity != Vector2.zero;
 
         player.animator.SetBool("Moving", playerIsMoving);
 

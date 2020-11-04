@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using UnityEditor.Presets;
 
 public class PlayerSword : PlayerItem
 {
@@ -77,6 +79,74 @@ public class PlayerSword : PlayerItem
             attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.1f, player.animator.GetFloat("VerticalMagnitude") * 0.15f - 0.05f, 0.0f);
         }
 
+        // facing up
+        if (player.animator.GetFloat("VerticalMagnitude") == 1 && player.animator.GetFloat("HorizontalMagnitude") == 0)
+        {
+            var fireSwingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Fire Swing.prefab", typeof(GameObject));
+            var fireSwingObject = GameObject.Instantiate(fireSwingPrefab, player.transform.position + new Vector3(0, 0.15f, 0), Quaternion.identity);
+            fireSwingObject.transform.eulerAngles = new Vector3(fireSwingObject.transform.position.x, fireSwingObject.transform.position.y, 180);
+            Object.Destroy(fireSwingObject, 0.6f);
+        }
+        // facing down
+        else if (player.animator.GetFloat("VerticalMagnitude") == -1 && player.animator.GetFloat("HorizontalMagnitude") == 0)
+        {
+            var fireSwingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Fire Swing.prefab", typeof(GameObject));
+            var fireSwingObject = GameObject.Instantiate(fireSwingPrefab, player.transform.position + new Vector3(0, -0.15f, 0), Quaternion.identity);
+            fireSwingObject.transform.eulerAngles = new Vector3(fireSwingObject.transform.position.x, fireSwingObject.transform.position.y, 0);
+            Object.Destroy(fireSwingObject, 0.6f);
+        }
+        // facing left
+        else if (player.animator.GetFloat("VerticalMagnitude") == 0 && player.animator.GetFloat("HorizontalMagnitude") == -1)
+        {
+            var fireSwingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Fire Swing.prefab", typeof(GameObject));
+            var fireSwingObject = GameObject.Instantiate(fireSwingPrefab, player.transform.position + new Vector3(-0.15f, 0, 0), Quaternion.identity);
+            fireSwingObject.transform.eulerAngles = new Vector3(fireSwingObject.transform.position.x, fireSwingObject.transform.position.y, 270);
+            Object.Destroy(fireSwingObject, 0.6f);
+        }
+        // facing right
+        else if (player.animator.GetFloat("VerticalMagnitude") == 0 && player.animator.GetFloat("HorizontalMagnitude") == 1)
+        {
+            var fireSwingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Fire Swing.prefab", typeof(GameObject));
+            var fireSwingObject = GameObject.Instantiate(fireSwingPrefab, player.transform.position + new Vector3(0.15f, 0, 0), Quaternion.identity);
+            fireSwingObject.transform.eulerAngles = new Vector3(fireSwingObject.transform.position.x, fireSwingObject.transform.position.y, 90);
+            Object.Destroy(fireSwingObject, 0.6f);
+        }
+
+        // facing up right
+        if (player.animator.GetFloat("VerticalMagnitude") == 1 && player.animator.GetFloat("HorizontalMagnitude") == 1)
+        {
+            var fireSwingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Fire Swing.prefab", typeof(GameObject));
+            var fireSwingObject = GameObject.Instantiate(fireSwingPrefab, player.transform.position + new Vector3(0.15f, 0.15f, 0), Quaternion.identity);
+            fireSwingObject.transform.eulerAngles = new Vector3(fireSwingObject.transform.position.x, fireSwingObject.transform.position.y, 135);
+            Object.Destroy(fireSwingObject, 0.6f);
+        }
+        // facing down right
+        else if (player.animator.GetFloat("VerticalMagnitude") == -1 && player.animator.GetFloat("HorizontalMagnitude") == 1)
+        {
+            var fireSwingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Fire Swing.prefab", typeof(GameObject));
+            var fireSwingObject = GameObject.Instantiate(fireSwingPrefab, player.transform.position + new Vector3(0.15f, -0.15f, 0), Quaternion.identity);
+            fireSwingObject.transform.eulerAngles = new Vector3(fireSwingObject.transform.position.x, fireSwingObject.transform.position.y, 45);
+            Object.Destroy(fireSwingObject, 0.6f);
+        }
+        // facing up left
+        if (player.animator.GetFloat("VerticalMagnitude") == 1 && player.animator.GetFloat("HorizontalMagnitude") == -1)
+        {
+            var fireSwingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Fire Swing.prefab", typeof(GameObject));
+            var fireSwingObject = GameObject.Instantiate(fireSwingPrefab, player.transform.position + new Vector3(-0.15f, 0.15f, 0), Quaternion.identity);
+            fireSwingObject.transform.eulerAngles = new Vector3(fireSwingObject.transform.position.x, fireSwingObject.transform.position.y, 225);
+            Object.Destroy(fireSwingObject, 0.6f);
+        }
+        // facing down left
+        else if (player.animator.GetFloat("VerticalMagnitude") == -1 && player.animator.GetFloat("HorizontalMagnitude") == -1)
+        {
+            var fireSwingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Fire Swing.prefab", typeof(GameObject));
+            var fireSwingObject = GameObject.Instantiate(fireSwingPrefab, player.transform.position + new Vector3(-0.15f, -0.15f, 0), Quaternion.identity);
+            fireSwingObject.transform.eulerAngles = new Vector3(fireSwingObject.transform.position.x, fireSwingObject.transform.position.y, 315);
+            Object.Destroy(fireSwingObject, 0.6f);
+        }
+
+
+
         var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.15f);
         foreach (Collider2D collider in colliders)
         {
@@ -91,6 +161,7 @@ public class PlayerSword : PlayerItem
                 break;
             }
         }
+
         player.sounds.PlayFireSFX();
         player.animator.SetTrigger("SwingSword");
     }

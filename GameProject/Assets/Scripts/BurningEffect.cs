@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 public class BurningEffect : EffectState
 {
     float effectDuration;
     float lastInflictionTime = 0.0f;
     float actionInterval;
+    bool particlesActive = false;
+    GameObject fireParticles;
 
     public BurningEffect(PropertiesManager propertiesManager, float actionInterval, float effectDuration) : base(propertiesManager)
     {
@@ -27,6 +30,15 @@ public class BurningEffect : EffectState
             lastInflictionTime = Time.time;
         }
 
+        if (!particlesActive)
+        {
+            var fireParticlesPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/MobOnFire.prefab", typeof(GameObject));
+            fireParticles = GameObject.Instantiate(fireParticlesPrefab, Vector3.zero, Quaternion.identity);
+            fireParticles.transform.position = Vector3.zero;
+            fireParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            particlesActive = true;
+        }
+
         // Check if EffectState is still active
         if (Time.time < effectInitializedTime + effectDuration && !complete)
         {
@@ -44,6 +56,7 @@ public class BurningEffect : EffectState
         {
             // Set complete to true if Effect state has run out and was not marked complete
             complete = true;
+            GameObject.Destroy(fireParticles);
             Debug.Log($"im done burning at {Time.time}");
         }
     }
