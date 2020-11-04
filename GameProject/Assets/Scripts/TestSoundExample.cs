@@ -8,6 +8,9 @@ public class TestSoundExample : MonoBehaviour
 
     void Start()
     {
-        AudioManager.Instance.PlayMusic(BattleMusic);
+        if (AudioManager.Instance.musicSource.clip != BattleMusic)
+        {
+            AudioManager.Instance.PlayMusic(BattleMusic);
+        }
     }
 }
