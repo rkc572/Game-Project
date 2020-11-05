@@ -66,6 +66,28 @@ public class AudioManager : MonoBehaviour
         }
 	}
 
+	public void UpdateSliderLevels()
+	{
+		var sliders = FindObjectsOfType<Slider>();
+		foreach (Slider slider in sliders)
+		{
+			if (slider.tag == "VolumeSlider")
+			{
+				if (slider.name == "Master Slider")
+                {
+					slider.value = masterVolumeLevel;
+				}
+				else if (slider.name == "FX Slider")
+                {
+					slider.value = sfxVolumeLevel;
+				}
+				else if (slider.name == "Music Slider")
+				{
+					slider.value = musicVolumeLevel;
+				}
+			}
+		}
+	}
 
 	void UpdateMixerLevels()
     {

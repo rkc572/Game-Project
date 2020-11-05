@@ -7,6 +7,11 @@ public class SetVolume : MonoBehaviour
 {
     public string audioName;
 
+    private void Awake()
+    {
+        AudioManager.Instance.UpdateSliderLevels();
+    }
+
     public void SetLevel(float sliderValue)
     {
         AudioManager.Instance.SetLevel(audioName, sliderValue);
