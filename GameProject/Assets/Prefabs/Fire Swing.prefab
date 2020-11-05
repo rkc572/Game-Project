@@ -106,7 +106,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4930380071423182353}
   serializedVersion: 6
-  lengthInSec: 0.7
+  lengthInSec: 0.82
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -181,7 +181,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.14
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -234,7 +234,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -350,7 +350,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.01
+      scalar: 0.02
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -726,14 +726,14 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 2
-    angle: 45
+    angle: 75
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0.76
+    radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: -0.01, z: 0}
     m_Rotation: {x: 90, y: 90, z: 0}
-    m_Scale: {x: 1, y: 0.1, z: 1}
+    m_Scale: {x: 1.25, y: 0.25, z: 0.5}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -808,11 +808,11 @@ ParticleSystem:
     m_TextureColorAffectsParticles: 1
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
-    randomDirectionAmount: 0.05
-    sphericalDirectionAmount: 0.03
-    randomPositionAmount: 0.08
+    randomDirectionAmount: 0
+    sphericalDirectionAmount: 0
+    randomPositionAmount: 0.03
     radius:
-      value: 0.26
+      value: 0.0001
       mode: 0
       spread: 0
       speed:
@@ -869,7 +869,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 360
+      value: 359.97
       mode: 0
       spread: 0
       speed:
