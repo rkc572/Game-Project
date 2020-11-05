@@ -7,12 +7,13 @@ public class TriggerZone : MonoBehaviour
 {
     public GameSceneManager sceneManager;
     public string scene;
+    public Vector3 location;
 
     void OnTriggerEnter2D (Collider2D collider)
     {
         if (collider.tag == "Player")
         {
-            sceneManager.LoadNextScene(scene);
+            sceneManager.LoadSceneMovePlayer(scene, location);
         }
     }
 
