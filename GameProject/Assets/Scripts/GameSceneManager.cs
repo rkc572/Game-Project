@@ -8,8 +8,6 @@ public class GameSceneManager : MonoBehaviour
     // Singleton
     public static GameSceneManager Instance = null;
 
-    public GameObject player;
-
     private void Awake()
     {
         Instance = this;
@@ -37,6 +35,7 @@ public class GameSceneManager : MonoBehaviour
 
     public void LoadSceneMovePlayer(string sceneName, Vector3 pos)
     {
+        var player = FindObjectOfType<Player>();
         SceneManager.LoadScene(sceneName);
         player.transform.position = pos;
     }
