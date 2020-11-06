@@ -66,17 +66,18 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
+
+        float colliderYoffset = 0.09f;
         Vector3 attackOffset;
-        if (animator.GetFloat("VerticalMagnitude") <= 0.0f)
-        {
-            attackOffset = new Vector3(animator.GetFloat("HorizontalMagnitude") * 0.1f, animator.GetFloat("VerticalMagnitude") * 0.15f, 0.0f);
-        }
-        else
-        {
-            attackOffset = new Vector3(animator.GetFloat("HorizontalMagnitude") * 0.1f, animator.GetFloat("VerticalMagnitude") * 0.15f - 0.05f, 0.0f);
-        }
-        Gizmos.DrawWireSphere(properties.rigidBody.transform.position + attackOffset, 0.08f);
+
+        attackOffset = new Vector3(animator.GetFloat("HorizontalMagnitude") * 0.13f, animator.GetFloat("VerticalMagnitude") * 0.13f + colliderYoffset, 0.0f);
+        Gizmos.DrawWireSphere(properties.rigidBody.transform.position + attackOffset, 0.09f);
+
+        // up Gizmos.DrawWireSphere(properties.rigidBody.transform.position + new Vector3(0.0f, 0.21f, 0.0f), 0.09f);
+        // down Gizmos.DrawWireSphere(properties.rigidBody.transform.position + new Vector3(0.0f, -0.03f, 0.0f), 0.09f);
+        // right Gizmos.DrawWireSphere(properties.rigidBody.transform.position + new Vector3(0.12f, 0.09f, 0.0f), 0.09f);
+        // left Gizmos.DrawWireSphere(properties.rigidBody.transform.position + new Vector3(0.12f, 0.09f, 0.0f), 0.09f);
     }
 }
