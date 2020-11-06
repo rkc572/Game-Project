@@ -1,0 +1,1705 @@
+fileFormatVersion: 2
+guid: ecacd3dd2fade7844b0d0dbd88d44089
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8324471471097755896
+    second: ch_base_knight_00_0
+  - first:
+      213: 4620517171161827508
+    second: ch_base_knight_00_1
+  - first:
+      213: 2887869112961687165
+    second: ch_base_knight_00_2
+  - first:
+      213: 4123417420819317137
+    second: ch_base_knight_00_3
+  - first:
+      213: -5496827629686150760
+    second: ch_base_knight_00_4
+  - first:
+      213: 7502089955981559342
+    second: ch_base_knight_00_5
+  - first:
+      213: -2501329172427725393
+    second: ch_base_knight_00_6
+  - first:
+      213: 732073179579275609
+    second: ch_base_knight_00_7
+  - first:
+      213: 5883513140059902215
+    second: ch_base_knight_00_8
+  - first:
+      213: 8853968529063324109
+    second: ch_base_knight_00_9
+  - first:
+      213: 591042346835609065
+    second: ch_base_knight_00_10
+  - first:
+      213: -7081650744998339580
+    second: ch_base_knight_00_11
+  - first:
+      213: 721472550236837303
+    second: ch_base_knight_00_12
+  - first:
+      213: 8592251348526559889
+    second: ch_base_knight_00_13
+  - first:
+      213: 6394975795673551849
+    second: ch_base_knight_00_14
+  - first:
+      213: -5032782243923370574
+    second: ch_base_knight_00_15
+  - first:
+      213: -4406343872404640967
+    second: ch_base_knight_00_16
+  - first:
+      213: 6802512662607826268
+    second: ch_base_knight_00_17
+  - first:
+      213: -199299404327759138
+    second: ch_base_knight_00_18
+  - first:
+      213: -3950880714067948663
+    second: ch_base_knight_00_19
+  - first:
+      213: -2775234956212671185
+    second: ch_base_knight_00_20
+  - first:
+      213: -837978500657674401
+    second: ch_base_knight_00_21
+  - first:
+      213: 758375651435203628
+    second: ch_base_knight_00_22
+  - first:
+      213: 814324792448953560
+    second: ch_base_knight_00_23
+  - first:
+      213: 520335958642868330
+    second: ch_base_knight_00_24
+  - first:
+      213: -4473152661866798487
+    second: ch_base_knight_00_25
+  - first:
+      213: 3554296098945395830
+    second: ch_base_knight_00_26
+  - first:
+      213: 3684009504905002310
+    second: ch_base_knight_00_27
+  - first:
+      213: -9114650435984584632
+    second: ch_base_knight_00_28
+  - first:
+      213: -5391011503191317127
+    second: ch_base_knight_00_29
+  - first:
+      213: -2637597574289591269
+    second: ch_base_knight_00_30
+  - first:
+      213: -7002035625622091173
+    second: ch_base_knight_00_31
+  - first:
+      213: -121660972684167286
+    second: ch_base_knight_00_32
+  - first:
+      213: 4781193576121590908
+    second: ch_base_knight_00_33
+  - first:
+      213: -3061527260886120742
+    second: ch_base_knight_00_34
+  - first:
+      213: 8686510462193836231
+    second: ch_base_knight_00_35
+  - first:
+      213: 4542004234986914846
+    second: ch_base_knight_00_36
+  - first:
+      213: -1702145554201594534
+    second: ch_base_knight_00_37
+  - first:
+      213: -3160728894684140995
+    second: ch_base_knight_00_38
+  - first:
+      213: 6423910447956792360
+    second: ch_base_knight_00_39
+  - first:
+      213: 3282493815932326286
+    second: ch_base_knight_00_40
+  - first:
+      213: 1373183882292759095
+    second: ch_base_knight_00_41
+  - first:
+      213: -5585248849600290708
+    second: ch_base_knight_00_42
+  - first:
+      213: 6983297636763987130
+    second: ch_base_knight_00_43
+  - first:
+      213: 5928628246909942121
+    second: ch_base_knight_00_44
+  - first:
+      213: -2137908911805640268
+    second: ch_base_knight_00_45
+  - first:
+      213: -8703069915294950462
+    second: ch_base_knight_00_46
+  - first:
+      213: -6316788809360233250
+    second: ch_base_knight_00_47
+  - first:
+      213: 7152978162881040043
+    second: ch_base_knight_00_48
+  - first:
+      213: 3847702165587881264
+    second: ch_base_knight_00_49
+  - first:
+      213: 4256737867224263325
+    second: ch_base_knight_00_50
+  - first:
+      213: -5061577921390672686
+    second: ch_base_knight_00_51
+  - first:
+      213: 5847387000179111890
+    second: ch_base_knight_00_52
+  - first:
+      213: 6392510385370332493
+    second: ch_base_knight_00_53
+  - first:
+      213: -4461418691561651082
+    second: ch_base_knight_00_54
+  - first:
+      213: 5362570085017450548
+    second: ch_base_knight_00_55
+  - first:
+      213: 4319651116497389893
+    second: ch_base_knight_00_56
+  - first:
+      213: -4739357303031648094
+    second: ch_base_knight_00_57
+  - first:
+      213: 4532828168177126984
+    second: ch_base_knight_00_58
+  - first:
+      213: 1040733669363422126
+    second: ch_base_knight_00_59
+  - first:
+      213: 8398097168071004984
+    second: ch_base_knight_00_60
+  - first:
+      213: -4737390862332257638
+    second: ch_base_knight_00_61
+  - first:
+      213: 5694866419679878429
+    second: ch_base_knight_00_62
+  - first:
+      213: -4513813614181096942
+    second: ch_base_knight_00_63
+  - first:
+      213: -961074543810226953
+    second: ch_base_knight_00_64
+  - first:
+      213: -5087279081750600047
+    second: ch_base_knight_00_65
+  - first:
+      213: -2044155222873239841
+    second: ch_base_knight_00_66
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ch_base_knight_00_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 376
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f8b7a1b2b6768370800000000000000
+      internalID: 8324471471097755896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 376
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b881b9f2ef5f1040800000000000000
+      internalID: 4620517171161827508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_2
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 375
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e57eb58a5c31820800000000000000
+      internalID: 2887869112961687165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_3
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 376
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191c7942c42593930800000000000000
+      internalID: 4123417420819317137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_4
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 375
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899210de46857b3b0800000000000000
+      internalID: -5496827629686150760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_5
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 352
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e268e433117cc1860800000000000000
+      internalID: 7502089955981559342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 352
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa5af1bce5e794dd0800000000000000
+      internalID: -2501329172427725393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_7
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 350
+        width: 18
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959d96a9da8d82a00800000000000000
+      internalID: 732073179579275609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 352
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7011d98570076a150800000000000000
+      internalID: 5883513140059902215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_9
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 350
+        width: 18
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9ae43877d9fda70800000000000000
+      internalID: 8853968529063324109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_10
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 328
+        width: 13
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e5895a02edc33800800000000000000
+      internalID: 591042346835609065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_11
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 328
+        width: 13
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c5ef8ea2ce8bd90800000000000000
+      internalID: -7081650744998339580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_12
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 327
+        width: 13
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b5df00467f230a00800000000000000
+      internalID: 721472550236837303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_13
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 328
+        width: 13
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192fbc9e31fcd3770800000000000000
+      internalID: 8592251348526559889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_14
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 327
+        width: 13
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3d758aa948fb850800000000000000
+      internalID: 6394975795673551849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_15
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 304
+        width: 13
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bddd07c637f72ab0800000000000000
+      internalID: -5032782243923370574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_16
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 304
+        width: 13
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b2a17089589d2c0800000000000000
+      internalID: -4406343872404640967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_17
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 303
+        width: 13
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d06d2b931676e50800000000000000
+      internalID: 6802512662607826268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_18
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 304
+        width: 13
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed2d8196f32fb3df0800000000000000
+      internalID: -199299404327759138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_19
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 303
+        width: 13
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98bc9085ce6ab29c0800000000000000
+      internalID: -3950880714067948663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_20
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 270
+        width: 20
+        height: 23
+      alignment: 9
+      pivot: {x: 0.69900846, y: 0.192071}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d62bad2826c79d0800000000000000
+      internalID: -2775234956212671185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_21
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 265
+        width: 15
+        height: 29
+      alignment: 9
+      pivot: {x: 0.55853194, y: 0.3607346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5782e25ef6ee54f0800000000000000
+      internalID: -837978500657674401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_22
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 262
+        width: 15
+        height: 30
+      alignment: 9
+      pivot: {x: 0.54689384, y: 0.40855816}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2cc91e03aa468a00800000000000000
+      internalID: 758375651435203628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_23
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 264
+        width: 25
+        height: 28
+      alignment: 9
+      pivot: {x: 0.35650635, y: 0.37690517}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dca6b195101d4b00800000000000000
+      internalID: 814324792448953560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_24
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 266
+        width: 27
+        height: 26
+      alignment: 9
+      pivot: {x: 0.33326778, y: 0.3241495}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6045ca2cca983700800000000000000
+      internalID: 520335958642868330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_25
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 224
+        width: 21
+        height: 23
+      alignment: 9
+      pivot: {x: 0.36, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96226539a5b2ce1c0800000000000000
+      internalID: -4473152661866798487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_26
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 225
+        width: 21
+        height: 30
+      alignment: 9
+      pivot: {x: 0.47, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c62347875635130800000000000000
+      internalID: 3554296098945395830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_27
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 226
+        width: 15
+        height: 31
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d7601402b302330800000000000000
+      internalID: 3684009504905002310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_28
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 225
+        width: 21
+        height: 30
+      alignment: 9
+      pivot: {x: 0.7, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 840974f48b1428180800000000000000
+      internalID: -9114650435984584632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_29
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 227
+        width: 28
+        height: 22
+      alignment: 9
+      pivot: {x: 0.8, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 975ac34c9974f25b0800000000000000
+      internalID: -5391011503191317127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_30
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 192
+        width: 19
+        height: 24
+      alignment: 9
+      pivot: {x: 0.76376075, y: 0.05706787}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1479041bfe556bd0800000000000000
+      internalID: -2637597574289591269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_31
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 28
+        height: 21
+      alignment: 9
+      pivot: {x: 0.825419, y: 0.10588074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a4a2662b5c3de90800000000000000
+      internalID: -7002035625622091173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_32
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 191
+        width: 30
+        height: 21
+      alignment: 9
+      pivot: {x: 0.8366277, y: 0.11311195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a87b12c6df5cf4ef0800000000000000
+      internalID: -121660972684167286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_33
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 185
+        width: 26
+        height: 27
+      alignment: 9
+      pivot: {x: 0.8212465, y: 0.28064305}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c746b13c9363a5240800000000000000
+      internalID: 4781193576121590908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_34
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 183
+        width: 21
+        height: 30
+      alignment: 9
+      pivot: {x: 0.78926086, y: 0.35066783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad645b84d254385d0800000000000000
+      internalID: -3061527260886120742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_35
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 152
+        width: 19
+        height: 24
+      alignment: 9
+      pivot: {x: 0.24023573, y: 0.06339582}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c027c40e3fac8870800000000000000
+      internalID: 8686510462193836231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_36
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 152
+        width: 28
+        height: 21
+      alignment: 9
+      pivot: {x: 0.18000467, y: 0.11672828}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1407b289c0780f30800000000000000
+      internalID: 4542004234986914846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_37
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 151
+        width: 30
+        height: 21
+      alignment: 9
+      pivot: {x: 0.14565481, y: 0.1275751}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55bdc503a3c068e0800000000000000
+      internalID: -1702145554201594534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_38
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 145
+        width: 26
+        height: 27
+      alignment: 9
+      pivot: {x: 0.17291202, y: 0.28064305}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3ae90901d5d224d0800000000000000
+      internalID: -3160728894684140995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_39
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 143
+        width: 21
+        height: 30
+      alignment: 9
+      pivot: {x: 0.21796963, y: 0.3481374}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 824926f5480562950800000000000000
+      internalID: 6423910447956792360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_40
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 112
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5000003, y: 0.059944153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e811014fbb2cd8d20800000000000000
+      internalID: 3282493815932326286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_41
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 111
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.49451277, y: 0.06525383}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73a0a5b27778e0310800000000000000
+      internalID: 1373183882292759095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_42
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 108
+        width: 18
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1958951}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c606a6163c53d72b0800000000000000
+      internalID: -5585248849600290708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_43
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 103
+        width: 18
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5040109, y: 0.32227266}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc64289338a9e060800000000000000
+      internalID: 6983297636763987130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_44
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 102
+        width: 18
+        height: 27
+      alignment: 9
+      pivot: {x: 0.49598864, y: 0.35024828}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 969f966baf7b64250800000000000000
+      internalID: 5928628246909942121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_45
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 102
+        width: 18
+        height: 27
+      alignment: 9
+      pivot: {x: 0.49598864, y: 0.3903605}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1deadfb2f9452e0800000000000000
+      internalID: -2137908911805640268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_46
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 80
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.50401086, y: 0.07039986}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb947bd50c783780800000000000000
+      internalID: -8703069915294950462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_47
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 79
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.51203346, y: 0.084840395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edcabe0bb024658a0800000000000000
+      internalID: -6316788809360233250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_48
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 77
+        width: 18
+        height: 21
+      alignment: 9
+      pivot: {x: 0.49598864, y: 0.11836243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae86a4bdbb744360800000000000000
+      internalID: 7152978162881040043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_49
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 77
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.49598864, y: 0.12816124}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03ded5dcbb8c56530800000000000000
+      internalID: 3847702165587881264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_50
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 77
+        width: 19
+        height: 19
+      alignment: 9
+      pivot: {x: 0.4733991, y: 0.12759118}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a2bdd7988f21b30800000000000000
+      internalID: 4256737867224263325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_51
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 77
+        width: 21
+        height: 19
+      alignment: 9
+      pivot: {x: 0.42436, y: 0.13519126}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d48c88a2b9a1c9b0800000000000000
+      internalID: -5061577921390672686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_52
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 48
+        width: 11
+        height: 21
+      alignment: 9
+      pivot: {x: 0.48687208, y: 0.025531406}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7b9e1fe77162150800000000000000
+      internalID: 5847387000179111890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_53
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 11
+        height: 21
+      alignment: 9
+      pivot: {x: 0.49999964, y: 0.015216827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d7ef69352c6b850800000000000000
+      internalID: 6392510385370332493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_54
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 48
+        width: 11
+        height: 21
+      alignment: 9
+      pivot: {x: 0.50656337, y: 0.015216827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6740e2f665bd512c0800000000000000
+      internalID: -4461418691561651082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_55
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 11
+        height: 20
+      alignment: 9
+      pivot: {x: 0.50988907, y: 0.03772545}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438f998841dab6a40800000000000000
+      internalID: 5362570085017450548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_56
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 47
+        width: 15
+        height: 20
+      alignment: 9
+      pivot: {x: 0.37672833, y: 0.07579555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5494270ddcb72fb30800000000000000
+      internalID: 4319651116497389893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_57
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 43
+        width: 17
+        height: 24
+      alignment: 9
+      pivot: {x: 0.3080525, y: 0.23713844}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a03521a4ab6a3eb0800000000000000
+      internalID: -4739357303031648094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_58
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 41
+        width: 18
+        height: 25
+      alignment: 9
+      pivot: {x: 0.28850386, y: 0.3042134}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e0518f337d7ee30800000000000000
+      internalID: 4532828168177126984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_59
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 16
+        width: 11
+        height: 21
+      alignment: 9
+      pivot: {x: 0.4703355, y: 0.018302826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea3123c12cd617e00800000000000000
+      internalID: 1040733669363422126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_60
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 16
+        width: 11
+        height: 21
+      alignment: 9
+      pivot: {x: 0.4901123, y: 0.02866191}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 833161c11e80c8470800000000000000
+      internalID: 8398097168071004984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_61
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 16
+        width: 11
+        height: 21
+      alignment: 9
+      pivot: {x: 0.49357328, y: 0.02871159}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a11884c18614eb0800000000000000
+      internalID: -4737390862332257638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_62
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 16
+        width: 11
+        height: 20
+      alignment: 9
+      pivot: {x: 0.49357328, y: 0.022819806}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1dd15406da380f40800000000000000
+      internalID: 5694866419679878429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_63
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 15
+        width: 15
+        height: 20
+      alignment: 9
+      pivot: {x: 0.6413864, y: 0.07937479}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212e960ee66bb51c0800000000000000
+      internalID: -4513813614181096942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_64
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 11
+        width: 17
+        height: 24
+      alignment: 9
+      pivot: {x: 0.7037632, y: 0.2643555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4558d5bc399a2f0800000000000000
+      internalID: -961074543810226953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_65
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 9
+        width: 18
+        height: 25
+      alignment: 9
+      pivot: {x: 0.7317166, y: 0.33599114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 196eaf2f0aa5669b0800000000000000
+      internalID: -5087279081750600047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

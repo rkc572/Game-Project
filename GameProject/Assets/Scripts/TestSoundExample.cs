@@ -10,6 +10,7 @@ public class TestSoundExample : MonoBehaviour
     {
         if (AudioManager.Instance.musicSource.clip != BattleMusic)
         {
+            AudioManager.Instance.musicSource.loop = true;
             AudioManager.Instance.PlayMusic(BattleMusic);
         }
     }

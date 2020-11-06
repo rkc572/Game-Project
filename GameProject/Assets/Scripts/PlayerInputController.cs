@@ -17,6 +17,8 @@ public class PlayerInputController : MonoBehaviour
     public PlayerMovementController playerMovementController;
     float currTime;
 
+    public bool readInput = true;
+
     bufferItem playerAttackActionBuffer = new bufferItem();
 
     private void DetectPlayerMovementInput()
@@ -74,19 +76,21 @@ public class PlayerInputController : MonoBehaviour
 
     private void Update()
     {
-        // execute attack actions in queue
-        if (!player.AnimatorIsPlaying())
-        {
-            currTime = Time.time;
-            if ((currTime - playerAttackActionBuffer.timeOf) <= 0.25f && playerAttackActionBuffer.action != null)
+        if (readInput) {
+            // execute attack actions in queue
+            if (!player.AnimatorIsPlaying())
             {
-                playerAttackActionBuffer.action();
-                playerAttackActionBuffer.action = null;
+                currTime = Time.time;
+                if ((currTime - playerAttackActionBuffer.timeOf) <= 0.25f && playerAttackActionBuffer.action != null)
+                {
+                    playerAttackActionBuffer.action();
+                    playerAttackActionBuffer.action = null;
+                }
             }
-        }
 
-        DetectPlayerAttackInput();
-        DetectPlayerMovementInput();
+            DetectPlayerAttackInput();
+            DetectPlayerMovementInput();
+        }
     }
 
 }

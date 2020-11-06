@@ -128,6 +128,12 @@ public class Skeleton : MonoBehaviour
 
     void Pursuit()
     {
+        if (playerReference == null)
+        {
+            movementMode = MovementMode.Patrol;
+            return;
+        }
+
         Vector2 playerDirection = playerReference.transform.position - transform.position;
         Vector2 newVelocity = playerDirection.normalized * properties.speed;
         properties.rigidBody.velocity = Vector2.SmoothDamp(properties.rigidBody.velocity, newVelocity, ref smoothVelocityReference, 0.1f);
@@ -147,6 +153,12 @@ public class Skeleton : MonoBehaviour
 
     void Attack()
     {
+        if (playerReference == null)
+        {
+            movementMode = MovementMode.Patrol;
+            return;
+        }
+
         float damageAmount = 25.0f;
 
         if (!animator.GetCurrentAnimatorStateInfo(0).IsTag("pauseInput"))

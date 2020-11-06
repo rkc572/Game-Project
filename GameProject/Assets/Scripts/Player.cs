@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
     public GameObject player;
+    public PlayerInputController playerInputController;
     public Mob properties;
     public Animator animator;
     public PlayerItem sword;
     public PlayerItem selectedArtifact = null;
     public PlayerSounds sounds;
+
+    public float lastRecordedHealth;
+    public float lastRecordedMana;
+    public Vector2 lastRecordedPosition;
 
     public float gold = 0.0f;
 
@@ -33,6 +39,10 @@ public class Player : MonoBehaviour
         sword = new PlayerSword(this);
         sword.elementalAttribute = ElementalAttribute.Fire;
 
+        lastRecordedHealth = properties.health;
+        lastRecordedMana = properties.mana;
+        lastRecordedPosition = transform.parent.position;
+
         // For presentation use only, remove in production
         // properties.propertiesManager.ToggleEffectState(new SlowedEffect(properties.propertiesManager, 10.5f));
         //properties.propertiesManager.ToggleEffectState(new WeakenedEffect(properties.propertiesManager, 10.5f));
@@ -41,9 +51,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (properties.health <= 0)
+        if (properties.health <= 0 && !GameSceneManager.Instance.deathSceneActive)
         {
-            Destroy(this.gameObject);
+            StartCoroutine(GameSceneManager.Instance.PlayerDied(this));
         }
 
         if (PlayerTakingDamage())
