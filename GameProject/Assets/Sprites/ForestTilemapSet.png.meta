@@ -1,0 +1,2449 @@
+fileFormatVersion: 2
+guid: 39daefd039501824aaa2d01b87d14b3a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7716351149642420140
+    second: ForestTilemapSet_0
+  - first:
+      213: -2672581767327160456
+    second: ForestTilemapSet_1
+  - first:
+      213: -4019344464898307205
+    second: ForestTilemapSet_2
+  - first:
+      213: 4720504333460262776
+    second: ForestTilemapSet_3
+  - first:
+      213: -6379953791409976971
+    second: ForestTilemapSet_4
+  - first:
+      213: 8961786210191671540
+    second: ForestTilemapSet_5
+  - first:
+      213: 4486295684524386367
+    second: ForestTilemapSet_6
+  - first:
+      213: 810680394595670874
+    second: ForestTilemapSet_7
+  - first:
+      213: -5955185470614903827
+    second: ForestTilemapSet_8
+  - first:
+      213: 8318450259792833565
+    second: ForestTilemapSet_9
+  - first:
+      213: 566405593895339628
+    second: ForestTilemapSet_10
+  - first:
+      213: 2286223778760573209
+    second: ForestTilemapSet_11
+  - first:
+      213: 9112239921365144009
+    second: ForestTilemapSet_12
+  - first:
+      213: -3430429976142998097
+    second: ForestTilemapSet_13
+  - first:
+      213: 8848628025119854320
+    second: ForestTilemapSet_14
+  - first:
+      213: 8249972681437852747
+    second: ForestTilemapSet_15
+  - first:
+      213: -2021984651135188349
+    second: ForestTilemapSet_16
+  - first:
+      213: 4907439250908815188
+    second: ForestTilemapSet_17
+  - first:
+      213: 3174999712412080479
+    second: ForestTilemapSet_18
+  - first:
+      213: 1728569265336810903
+    second: ForestTilemapSet_19
+  - first:
+      213: 3048331905840611819
+    second: ForestTilemapSet_20
+  - first:
+      213: -5643152857114553239
+    second: ForestTilemapSet_21
+  - first:
+      213: -1175608997318950812
+    second: ForestTilemapSet_22
+  - first:
+      213: 2847420400699413786
+    second: ForestTilemapSet_23
+  - first:
+      213: -746439165055248580
+    second: ForestTilemapSet_24
+  - first:
+      213: 4871663416349279701
+    second: ForestTilemapSet_25
+  - first:
+      213: 7471612834549000960
+    second: ForestTilemapSet_26
+  - first:
+      213: 4798352309689866540
+    second: ForestTilemapSet_27
+  - first:
+      213: -780599384308211453
+    second: ForestTilemapSet_28
+  - first:
+      213: -8605608127809808688
+    second: ForestTilemapSet_29
+  - first:
+      213: 258743371506938408
+    second: ForestTilemapSet_30
+  - first:
+      213: 766419560224296710
+    second: ForestTilemapSet_31
+  - first:
+      213: 5649387334862720953
+    second: ForestTilemapSet_32
+  - first:
+      213: -2156852512439471319
+    second: ForestTilemapSet_33
+  - first:
+      213: 6494133002041492702
+    second: ForestTilemapSet_34
+  - first:
+      213: -237152443916227976
+    second: ForestTilemapSet_35
+  - first:
+      213: 3923039708086390604
+    second: ForestTilemapSet_36
+  - first:
+      213: -5190152648043970859
+    second: ForestTilemapSet_37
+  - first:
+      213: -5648943658922210278
+    second: ForestTilemapSet_38
+  - first:
+      213: 8071747967119727584
+    second: ForestTilemapSet_39
+  - first:
+      213: -8829264603237224817
+    second: ForestTilemapSet_40
+  - first:
+      213: -3410600915137036717
+    second: ForestTilemapSet_41
+  - first:
+      213: 863114485016451247
+    second: ForestTilemapSet_42
+  - first:
+      213: 6044781208687382879
+    second: ForestTilemapSet_43
+  - first:
+      213: 1769053276116099580
+    second: ForestTilemapSet_44
+  - first:
+      213: 7783453926745359180
+    second: ForestTilemapSet_45
+  - first:
+      213: 762481906188765806
+    second: ForestTilemapSet_46
+  - first:
+      213: 2196941594651489040
+    second: ForestTilemapSet_47
+  - first:
+      213: 2463774151378443829
+    second: ForestTilemapSet_48
+  - first:
+      213: 5738261752306494236
+    second: ForestTilemapSet_49
+  - first:
+      213: 5070914406811236377
+    second: ForestTilemapSet_50
+  - first:
+      213: 4435866018245941214
+    second: ForestTilemapSet_51
+  - first:
+      213: -1208416291426208103
+    second: ForestTilemapSet_52
+  - first:
+      213: -4878258581495938412
+    second: ForestTilemapSet_53
+  - first:
+      213: 3881199167820264948
+    second: ForestTilemapSet_54
+  - first:
+      213: 1903114418464304641
+    second: ForestTilemapSet_55
+  - first:
+      213: 5333549705087255417
+    second: ForestTilemapSet_56
+  - first:
+      213: -4393043653732239239
+    second: ForestTilemapSet_57
+  - first:
+      213: -4576792993782179707
+    second: ForestTilemapSet_58
+  - first:
+      213: 35533045991324582
+    second: ForestTilemapSet_59
+  - first:
+      213: 969533614606228547
+    second: ForestTilemapSet_60
+  - first:
+      213: -3841018517592039079
+    second: ForestTilemapSet_61
+  - first:
+      213: -9218965002099075
+    second: ForestTilemapSet_62
+  - first:
+      213: -8160683561327402748
+    second: ForestTilemapSet_63
+  - first:
+      213: 2209285857359367663
+    second: ForestTilemapSet_64
+  - first:
+      213: -4843585503626288583
+    second: ForestTilemapSet_65
+  - first:
+      213: 64681142035625772
+    second: ForestTilemapSet_66
+  - first:
+      213: -3962580672803223810
+    second: ForestTilemapSet_29
+  - first:
+      213: 4390211506505637422
+    second: ForestTilemapSet_67
+  - first:
+      213: 9070347706099909205
+    second: ForestTilemapSet_68
+  - first:
+      213: -1300437633928176234
+    second: ForestTilemapSet_69
+  - first:
+      213: 3513346329459426887
+    second: ForestTilemapSet_70
+  - first:
+      213: -4166766731022583331
+    second: ForestTilemapSet_71
+  - first:
+      213: 9074399754995056112
+    second: ForestTilemapSet_72
+  - first:
+      213: -8309838840723940426
+    second: ForestTilemapSet_73
+  - first:
+      213: 7567088754726248457
+    second: ForestTilemapSet_74
+  - first:
+      213: 351173143790912083
+    second: ForestTilemapSet_75
+  - first:
+      213: 2957318577969255070
+    second: ForestTilemapSet_76
+  - first:
+      213: 3682942961019696838
+    second: ForestTilemapSet_77
+  - first:
+      213: 7606736599644988512
+    second: ForestTilemapSet_78
+  - first:
+      213: 1085973886251455784
+    second: ForestTilemapSet_79
+  - first:
+      213: 1297126451597112374
+    second: ForestTilemapSet_80
+  - first:
+      213: -5368634104247022614
+    second: ForestTilemapSet_81
+  - first:
+      213: 2212610544874570252
+    second: ForestTilemapSet_82
+  - first:
+      213: 8422483214135942609
+    second: ForestTilemapSet_83
+  - first:
+      213: -6619739260796254722
+    second: ForestTilemapSet_84
+  - first:
+      213: -5646466168891658390
+    second: ForestTilemapSet_85
+  - first:
+      213: -7288807651624354067
+    second: ForestTilemapSet_86
+  - first:
+      213: -9069087752951772285
+    second: ForestTilemapSet_87
+  - first:
+      213: -3387354888758700999
+    second: ForestTilemapSet_88
+  - first:
+      213: -5117195259167501182
+    second: ForestTilemapSet_89
+  - first:
+      213: -2155371251978163637
+    second: ForestTilemapSet_90
+  - first:
+      213: -2100811821972008145
+    second: ForestTilemapSet_91
+  - first:
+      213: 5060949181443581994
+    second: ForestTilemapSet_92
+  - first:
+      213: 5574622962261792554
+    second: ForestTilemapSet_93
+  - first:
+      213: -4159051729015887498
+    second: ForestTilemapSet_94
+  - first:
+      213: 5145391026598230535
+    second: ForestTilemapSet_95
+  - first:
+      213: 3512531305194738340
+    second: ForestTilemapSet_96
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ForestTilemapSet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 525
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 450f26b23830ae490800000000000000
+      internalID: -7716351149642420140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 525
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8776745ea0519ead0800000000000000
+      internalID: -2672581767327160456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 525
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7bcdcb218b6838c0800000000000000
+      internalID: -4019344464898307205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 525
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f47945ea9928140800000000000000
+      internalID: 4720504333460262776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 525
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5790a9344d9d577a0800000000000000
+      internalID: -6379953791409976971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 492
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0087b9319ae5c70800000000000000
+      internalID: 8961786210191671540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_6
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 492
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f38a179d726824e30800000000000000
+      internalID: 4486295684524386367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_7
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 492
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b9f32168d104b00800000000000000
+      internalID: 810680394595670874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_8
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 492
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de36e6ccd5eea5da0800000000000000
+      internalID: -5955185470614903827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_9
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 459
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1c25b03072117370800000000000000
+      internalID: 8318450259792833565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_10
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 427
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c660deef2e64cd700800000000000000
+      internalID: 566405593895339628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_11
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 427
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9114312f96c4abf10800000000000000
+      internalID: 2286223778760573209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_12
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 427
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c15a150eed257e70800000000000000
+      internalID: 9112239921365144009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_13
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 427
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa51525ac1aa460d0800000000000000
+      internalID: -3430429976142998097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_14
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 427
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fec5da8e44acca70800000000000000
+      internalID: 8848628025119854320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_15
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 425
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44b7cb817acd7270800000000000000
+      internalID: 8249972681437852747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 426
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3828bc73ca770f3e0800000000000000
+      internalID: -2021984651135188349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_17
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 361
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45f9a3b7ff9ba1440800000000000000
+      internalID: 4907439250908815188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_18
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 362
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f591a44aa6ddf0c20800000000000000
+      internalID: 3174999712412080479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_19
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 362
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79dfe06a69c1df710800000000000000
+      internalID: 1728569265336810903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_20
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 362
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be18e15b7b9dd4a20800000000000000
+      internalID: 3048331905840611819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_21
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 362
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964d47a006e7fa1b0800000000000000
+      internalID: -5643152857114553239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_22
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 360
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4600d0878d56fafe0800000000000000
+      internalID: -1175608997318950812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_23
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 360
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1593e5a4c1148720800000000000000
+      internalID: 2847420400699413786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_24
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 265
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c375170c88d14a5f0800000000000000
+      internalID: -746439165055248580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_25
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 329
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d5c3c4e010ab9340800000000000000
+      internalID: 4871663416349279701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_26
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 329
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00bea86694080b760800000000000000
+      internalID: 7471612834549000960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_27
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 329
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c295d3eb00c279240800000000000000
+      internalID: 4798352309689866540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_28
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 328
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301ab6aeef0ca25f0800000000000000
+      internalID: -780599384308211453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_30
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 459
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82278aab9bd379300800000000000000
+      internalID: 258743371506938408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_31
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 459
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60f8414878ed2aa00800000000000000
+      internalID: 766419560224296710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_32
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 427
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf451d69d7a66e40800000000000000
+      internalID: 5649387334862720953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_33
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 459
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 923f22341125112e0800000000000000
+      internalID: -2156852512439471319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_34
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 459
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed403d6de8bcf1a50800000000000000
+      internalID: 6494133002041492702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_35
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 427
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87ae1c6db1775bcf0800000000000000
+      internalID: -237152443916227976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_36
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 459
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4fcd3054df617630800000000000000
+      internalID: 3923039708086390604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_37
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 459
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de394b4aafd8f7b0800000000000000
+      internalID: -5190152648043970859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_38
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 427
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c0fbdebabea91b0800000000000000
+      internalID: -5648943658922210278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_39
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 459
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eb17a8920c940070800000000000000
+      internalID: 8071747967119727584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_40
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 459
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e6d107f96287580800000000000000
+      internalID: -8829264603237224817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_41
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 427
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e72aea98c1ba0d0800000000000000
+      internalID: -3410600915137036717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_42
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 459
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa856e71d066afb00800000000000000
+      internalID: 863114485016451247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_43
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 459
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5194c09b7063e350800000000000000
+      internalID: 6044781208687382879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_44
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 427
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf124afe490fc8810800000000000000
+      internalID: 1769053276116099580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_45
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 457
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43c64d9b12640c60800000000000000
+      internalID: 7783453926745359180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_46
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 457
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a4b0ef041e49a00800000000000000
+      internalID: 762481906188765806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_47
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 425
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0137b7d8dba1d7e10800000000000000
+      internalID: 2196941594651489040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_48
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 393
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e93bb7985113220800000000000000
+      internalID: 2463774151378443829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_49
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 394
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b607e39a662af40800000000000000
+      internalID: 5738261752306494236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_50
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 394
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918f46049c18f5640800000000000000
+      internalID: 5070914406811236377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_51
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 362
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed796c034ac5f8d30800000000000000
+      internalID: 4435866018245941214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_52
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 362
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996feb019c7da3fe0800000000000000
+      internalID: -1208416291426208103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_53
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 394
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4920f6f8aa1fc4cb0800000000000000
+      internalID: -4878258581495938412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_54
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 394
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5f774641accd530800000000000000
+      internalID: 3881199167820264948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_55
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 394
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10e2d7ffa78396a10800000000000000
+      internalID: 1903114418464304641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_56
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 394
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9738d9bc233940a40800000000000000
+      internalID: 5333549705087255417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_57
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 362
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97871808216c803c0800000000000000
+      internalID: -4393043653732239239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_58
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 394
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 588dd136507fb70c0800000000000000
+      internalID: -4576792993782179707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_59
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 394
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6abb918fd1d3e7000800000000000000
+      internalID: 35533045991324582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_60
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 362
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c97688fa9747d00800000000000000
+      internalID: 969533614606228547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_61
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 392
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 951aa334206f1bac0800000000000000
+      internalID: -3841018517592039079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_62
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 392
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d766ad1766f3fdff0800000000000000
+      internalID: -9218965002099075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_63
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 360
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401e5b2c98d6fbe80800000000000000
+      internalID: -8160683561327402748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_64
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 392
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed033f28c5f8ae10800000000000000
+      internalID: 2209285857359367663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_65
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 392
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 932af1995a028ccb0800000000000000
+      internalID: -4843585503626288583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_66
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 360
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2733bee72bc5e000800000000000000
+      internalID: 64681142035625772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_29
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 297
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef64cbb6fd51209c0800000000000000
+      internalID: -3962580672803223810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_67
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 329
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ed916da1a2dec30800000000000000
+      internalID: 4390211506505637422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_68
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 265
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5524d539e2950ed70800000000000000
+      internalID: 9070347706099909205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_69
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 297
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d5929acdae3fde0800000000000000
+      internalID: -1300437633928176234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_70
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 329
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7460a544fd9e1c030800000000000000
+      internalID: 3513346329459426887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_71
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 297
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9bb7f0cbbac26c0800000000000000
+      internalID: -4166766731022583331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_72
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 265
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd3f5abf7ebeed70800000000000000
+      internalID: 9074399754995056112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_73
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 329
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbd7ed0a958dac80800000000000000
+      internalID: -8309838840723940426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_74
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 297
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900af495123b30960800000000000000
+      internalID: 7567088754726248457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_75
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 265
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352805a1d1e9fd400800000000000000
+      internalID: 351173143790912083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_76
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 297
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e92558ff3918a0920800000000000000
+      internalID: 2957318577969255070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_77
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 265
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6ba972c117c1330800000000000000
+      internalID: 3682942961019696838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_78
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 329
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0646dc992ae809960800000000000000
+      internalID: 7606736599644988512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_79
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 297
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8255e5dee77221f00800000000000000
+      internalID: 1085973886251455784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_80
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 265
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6347530a2a1500210800000000000000
+      internalID: 1297126451597112374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_81
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 297
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb0f47f9b7ce75b0800000000000000
+      internalID: -5368634104247022614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_82
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 265
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0248815195c4be10800000000000000
+      internalID: 2212610544874570252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_83
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 329
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd5349ebdba2e470800000000000000
+      internalID: 8422483214135942609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_84
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 297
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef548861736f124a0800000000000000
+      internalID: -6619739260796254722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_85
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 265
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6fa3f68fe8b3a1b0800000000000000
+      internalID: -5646466168891658390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_86
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 328
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deef7c00f04f8da90800000000000000
+      internalID: -7288807651624354067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_87
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 296
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38bc6702db0242280800000000000000
+      internalID: -9069087752951772285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_88
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 264
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 934da57fca2bdf0d0800000000000000
+      internalID: -3387354888758700999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_89
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 328
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 284120b16021cf8b0800000000000000
+      internalID: -5117195259167501182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_90
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 296
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4aa0c614459612e0800000000000000
+      internalID: -2155371251978163637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_91
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 264
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23da6b47ca68d2e0800000000000000
+      internalID: -2100811821972008145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_92
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 296
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a28af3a677a1c3640800000000000000
+      internalID: 5060949181443581994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_93
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 264
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27995e6c0a0d5d40800000000000000
+      internalID: 5574622962261792554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_94
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 328
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 679a881fc741846c0800000000000000
+      internalID: -4159051729015887498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_95
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 296
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70abed290e9186740800000000000000
+      internalID: 5145391026598230535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTilemapSet_96
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 264
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a25294ac940fb030800000000000000
+      internalID: 3512531305194738340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
