@@ -39,6 +39,13 @@ public class PlayerSword : PlayerItem
 
         attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.13f, player.animator.GetFloat("VerticalMagnitude") * 0.13f + colliderYoffset, 0.0f);
 
+        // create water swing prefab
+        var angle = Mathf.Atan2(player.animator.GetFloat("VerticalMagnitude"), player.animator.GetFloat("HorizontalMagnitude")) * Mathf.Rad2Deg + 90.0f;
+        var swingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Earth Swing.prefab", typeof(GameObject));
+        var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
+        swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
+        Object.Destroy(swingObject, 0.6f);
+
         var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.09f);
         foreach (Collider2D collider in colliders)
         {
@@ -65,10 +72,10 @@ public class PlayerSword : PlayerItem
 
         // create fire swing prefab
         var angle = Mathf.Atan2(player.animator.GetFloat("VerticalMagnitude"), player.animator.GetFloat("HorizontalMagnitude")) * Mathf.Rad2Deg + 90.0f;
-        var fireSwingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Fire Swing.prefab", typeof(GameObject));
-        var fireSwingObject = GameObject.Instantiate(fireSwingPrefab, player.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
-        fireSwingObject.transform.eulerAngles = new Vector3(fireSwingObject.transform.position.x, fireSwingObject.transform.position.y, angle);
-        Object.Destroy(fireSwingObject, 0.6f);
+        var swingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Fire Swing.prefab", typeof(GameObject));
+        var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
+        swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
+        Object.Destroy(swingObject, 0.6f);
 
 
         var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.09f);
@@ -95,6 +102,13 @@ public class PlayerSword : PlayerItem
         float colliderYoffset = 0.09f;
         Vector3 attackOffset;
         attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.13f, player.animator.GetFloat("VerticalMagnitude") * 0.13f + colliderYoffset, 0.0f);
+
+        // create water swing prefab
+        var angle = Mathf.Atan2(player.animator.GetFloat("VerticalMagnitude"), player.animator.GetFloat("HorizontalMagnitude")) * Mathf.Rad2Deg + 90.0f;
+        var swingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Water Swing.prefab", typeof(GameObject));
+        var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
+        swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
+        Object.Destroy(swingObject, 0.6f);
 
         var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.09f);
         foreach (Collider2D collider in colliders)
@@ -124,6 +138,13 @@ public class PlayerSword : PlayerItem
         Vector3 attackOffset;
         attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.13f, player.animator.GetFloat("VerticalMagnitude") * 0.13f + colliderYoffset, 0.0f);
 
+        // create Wind swing prefab
+        var angle = Mathf.Atan2(player.animator.GetFloat("VerticalMagnitude"), player.animator.GetFloat("HorizontalMagnitude")) * Mathf.Rad2Deg + 90.0f;
+        var swingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Wind Swing.prefab", typeof(GameObject));
+        var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
+        swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
+        Object.Destroy(swingObject, 0.6f);
+
         //increased range
         var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.15f);
         foreach (Collider2D collider in colliders)
@@ -146,7 +167,7 @@ public class PlayerSword : PlayerItem
                 }
 
                 //slightly longer knockback
-                enemyMob.propertiesManager.ToggleEffectState(new RepulsedEffect(enemyMob.propertiesManager, 0.12f, new Vector2(player.animator.GetFloat("HorizontalMagnitude"), player.animator.GetFloat("VerticalMagnitude")), 3.0f));
+                enemyMob.propertiesManager.ToggleEffectState(new RepulsedEffect(enemyMob.propertiesManager, 0.16f, new Vector2(player.animator.GetFloat("HorizontalMagnitude"), player.animator.GetFloat("VerticalMagnitude")), 3.0f));
                 break;
             }
         }

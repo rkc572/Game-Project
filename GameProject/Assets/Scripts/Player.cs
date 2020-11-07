@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         sword = new PlayerSword(this);
-        sword.elementalAttribute = ElementalAttribute.Fire;
+        sword.elementalAttribute = ElementalAttribute.Wind;
 
         lastRecordedHealth = properties.health;
         lastRecordedMana = properties.mana;
@@ -74,10 +74,5 @@ public class Player : MonoBehaviour
 
         attackOffset = new Vector3(animator.GetFloat("HorizontalMagnitude") * 0.13f, animator.GetFloat("VerticalMagnitude") * 0.13f + colliderYoffset, 0.0f);
         Gizmos.DrawWireSphere(properties.rigidBody.transform.position + attackOffset, 0.09f);
-
-        // up Gizmos.DrawWireSphere(properties.rigidBody.transform.position + new Vector3(0.0f, 0.21f, 0.0f), 0.09f);
-        // down Gizmos.DrawWireSphere(properties.rigidBody.transform.position + new Vector3(0.0f, -0.03f, 0.0f), 0.09f);
-        // right Gizmos.DrawWireSphere(properties.rigidBody.transform.position + new Vector3(0.12f, 0.09f, 0.0f), 0.09f);
-        // left Gizmos.DrawWireSphere(properties.rigidBody.transform.position + new Vector3(0.12f, 0.09f, 0.0f), 0.09f);
     }
 }
