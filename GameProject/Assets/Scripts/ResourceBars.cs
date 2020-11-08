@@ -14,6 +14,10 @@ public class ResourceBars : MonoBehaviour
     void Start ()
     {
         player = FindObjectOfType<Player>();
+        if (resourceType)
+            bar.maxValue = player.properties.MAX_HEALTH;
+        else
+            bar.maxValue = player.properties.MAX_MANA;
     }
 
     void Update ()
