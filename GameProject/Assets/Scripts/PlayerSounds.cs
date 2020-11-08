@@ -26,6 +26,8 @@ public class PlayerSounds : MonoBehaviour
     public AudioClip windAttackSFX;
 
     public AudioClip goldSFX;
+    public AudioClip healthSFX;
+    public AudioClip manaSFX;
 
     AudioClip[] swordSwings;
 
@@ -115,6 +117,16 @@ public class PlayerSounds : MonoBehaviour
     public void PlayGoldPickupSFX()
     {
         PlayVoxClip(goldSFX);
+    }
+
+    public void PlayHealthPickupSFX()
+    {
+        PlayVoxClip(healthSFX);
+    }
+
+    public void PlayManaPickupSFX()
+    {
+        PlayVoxClip(manaSFX);
     }
 
     private void Update()
