@@ -38,7 +38,7 @@ public class Prologue : MonoBehaviour
 
     void StartGameplay()
     {
-        GameSceneManager.Instance.LoadNextScene("Sandbox");
+        GameSceneManager.Instance.LoadNextScene("Forest scene 1");
     }
 
     // Start is called before the first frame update
