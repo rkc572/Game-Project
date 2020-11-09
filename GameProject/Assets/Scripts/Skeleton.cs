@@ -41,10 +41,10 @@ public class Skeleton : MonoBehaviour
 
 
     // Patrol Mode variables;
-    float minHorizontalMovement = 1.0f;
-    float maxHorizontalMovement = 1.0f;
-    float minVerticalMovement = 1.0f;
-    float maxVerticalMovement = 1.0f;
+    public float minHorizontalMovement = 1.0f;
+    public float maxHorizontalMovement = 1.0f;
+    public float minVerticalMovement = 1.0f;
+    public float maxVerticalMovement = 1.0f;
     Vector3 startingPosition;
 
 

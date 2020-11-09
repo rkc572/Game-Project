@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraFollower : MonoBehaviour
 {
     Player player;
+    public float minX, maxX, minY, maxY;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,9 @@ public class CameraFollower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+        transform.position = new Vector3(
+            Mathf.Clamp(player.transform.parent.position.x, minX, maxX),
+            Mathf.Clamp(player.transform.parent.position.y, minY, maxY),
+            transform.position.z);
     }
 }

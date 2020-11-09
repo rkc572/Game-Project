@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TriggerZone : MonoBehaviour
 {
@@ -29,6 +30,42 @@ public class TriggerZone : MonoBehaviour
         if (scene == "Random")
         {
             PickRandomScene(new string[] { "Forest scene 3", "Forest scene 4", "Forest scene 5" });
+        }
+
+        if (SceneManager.GetActiveScene().name == "Forest scene 2")
+        {
+            if (scene == "Forest scene 3")
+            {
+                location = new Vector3(1.25f, -2.25f, 0.0f);
+            }
+
+            if (scene == "Forest scene 4")
+            {
+                location = new Vector3(-1.9f, -2.25f, 0.0f);
+            }
+
+            if (scene == "Forest scene 5")
+            {
+                location = new Vector3(1.25f, -2.25f, 0.0f);
+            }
+        }
+
+        if (SceneManager.GetActiveScene().name == "Forest scene 6")
+        {
+            if (scene == "Forest scene 3")
+            {
+                location = new Vector3(-1.3f, 1.04f, 0.0f);
+            }
+
+            if (scene == "Forest scene 4")
+            {
+                location = new Vector3(1.59f, 1.04f, 0.0f);
+            }
+
+            if (scene == "Forest scene 5")
+            {
+                location = new Vector3(-1.0f, 1.07f, 0.0f);
+            }
         }
     }
 }
