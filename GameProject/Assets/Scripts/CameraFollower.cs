@@ -16,9 +16,19 @@ public class CameraFollower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(
-            Mathf.Clamp(player.transform.parent.position.x, minX, maxX),
-            Mathf.Clamp(player.transform.parent.position.y, minY, maxY),
-            transform.position.z);
+        if (GameSceneManager.Instance.deathSceneActive)
+        {
+            transform.position = new Vector3(
+                player.transform.parent.position.x,
+                player.transform.parent.position.y,
+                transform.position.z);
+        }
+        else
+        {
+            transform.position = new Vector3(
+                Mathf.Clamp(player.transform.parent.position.x, minX, maxX),
+                Mathf.Clamp(player.transform.parent.position.y, minY, maxY),
+                transform.position.z);
+        }
     }
 }

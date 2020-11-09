@@ -26,10 +26,13 @@ public class Skeleton : MonoBehaviour
     public Animator animator;
     public SortingGroup sortingGroup;
 
-    public bool droppedGold = false;
+    public bool droppedItem = false;
     public GameObject goldCoinPrefab;
     public GameObject goldBarPrefab;
     public GameObject goldStackPrefab;
+
+    public GameObject healthDropPrefab;
+    public GameObject manaDropPrefab;
 
     public float sightRadius = 0.4f;
     public float attackRadius = 0.15f;
@@ -193,12 +196,12 @@ public class Skeleton : MonoBehaviour
             sortingGroup.sortingOrder = -1;
         }
 
-        if (!droppedGold)
+        if (!droppedItem)
         {
-            List<GameObject> goldDrops = new List<GameObject> {goldCoinPrefab, goldBarPrefab, goldStackPrefab};
+            List<GameObject> drops = new List<GameObject> {goldCoinPrefab, goldBarPrefab, goldStackPrefab, healthDropPrefab, manaDropPrefab};
             // Drop random gold drop
-            Instantiate(goldDrops[Random.Range(0, goldDrops.Count)], transform.position, Quaternion.identity);
-            droppedGold = true;
+            Instantiate(drops[Random.Range(0, drops.Count)], transform.position, Quaternion.identity);
+            droppedItem = true;
         }
     }
 

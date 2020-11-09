@@ -245,6 +245,8 @@ MonoBehaviour:
   earthAttackSFX: {fileID: 8300000, guid: cdf3031895a3db147aed095bc9e490b0, type: 3}
   windAttackSFX: {fileID: 8300000, guid: 5e25aab022dbc3540939e484f78390b9, type: 3}
   goldSFX: {fileID: 8300000, guid: 09d6a44c5e5f27a45a8692d6a2f78dde, type: 3}
+  healthSFX: {fileID: 8300000, guid: a25a4d2607f8d4f499944d1befe314f4, type: 3}
+  manaSFX: {fileID: 8300000, guid: a25a4d2607f8d4f499944d1befe314f4, type: 3}
 --- !u!1 &7363211783726441025
 GameObject:
   m_ObjectHideFlags: 0
