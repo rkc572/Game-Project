@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
-using UnityEditor.Presets;
 
 public class PlayerSword : PlayerItem
 {
@@ -50,7 +48,8 @@ public class PlayerSword : PlayerItem
 
         // create water swing prefab
         var angle = Mathf.Atan2(player.animator.GetFloat("VerticalMagnitude"), player.animator.GetFloat("HorizontalMagnitude")) * Mathf.Rad2Deg + 90.0f;
-        var swingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Earth Swing.prefab", typeof(GameObject));
+
+        var swingPrefab = (GameObject)Resources.Load("prefabs/Earth Swing", typeof(GameObject));
         var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
         swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
         Object.Destroy(swingObject, 0.6f);
@@ -89,7 +88,7 @@ public class PlayerSword : PlayerItem
 
         // create fire swing prefab
         var angle = Mathf.Atan2(player.animator.GetFloat("VerticalMagnitude"), player.animator.GetFloat("HorizontalMagnitude")) * Mathf.Rad2Deg + 90.0f;
-        var swingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Fire Swing.prefab", typeof(GameObject));
+        var swingPrefab = (GameObject)Resources.Load("prefabs/Fire Swing", typeof(GameObject));
         var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
         swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
         Object.Destroy(swingObject, 0.6f);
@@ -131,7 +130,7 @@ public class PlayerSword : PlayerItem
 
         // create water swing prefab
         var angle = Mathf.Atan2(player.animator.GetFloat("VerticalMagnitude"), player.animator.GetFloat("HorizontalMagnitude")) * Mathf.Rad2Deg + 90.0f;
-        var swingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Water Swing.prefab", typeof(GameObject));
+        var swingPrefab = (GameObject)Resources.Load("prefabs/Water Swing", typeof(GameObject));
         var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
         swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
         Object.Destroy(swingObject, 0.6f);
@@ -175,7 +174,7 @@ public class PlayerSword : PlayerItem
 
         // create Wind swing prefab
         var angle = Mathf.Atan2(player.animator.GetFloat("VerticalMagnitude"), player.animator.GetFloat("HorizontalMagnitude")) * Mathf.Rad2Deg + 90.0f;
-        var swingPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Wind Swing.prefab", typeof(GameObject));
+        var swingPrefab = (GameObject)Resources.Load("prefabs/Wind Swing", typeof(GameObject));
         var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
         swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
         Object.Destroy(swingObject, 0.6f);

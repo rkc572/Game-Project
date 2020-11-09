@@ -1,5 +1,4 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BurningEffect : EffectState
 {
@@ -32,7 +31,7 @@ public class BurningEffect : EffectState
 
         if (!particlesActive)
         {
-            var fireParticlesPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/MobOnFire.prefab", typeof(GameObject));
+            var fireParticlesPrefab = (GameObject)Resources.Load("prefabs/MobOnFire", typeof(GameObject));
             fireParticles = GameObject.Instantiate(fireParticlesPrefab, Vector3.zero, Quaternion.identity);
             fireParticles.transform.position = Vector3.zero;
             fireParticles.transform.SetParent(propertiesManager.mob.transform, false);
