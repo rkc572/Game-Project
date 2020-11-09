@@ -73,6 +73,26 @@ public class PlayerInputController : MonoBehaviour
         }
     }
 
+    void DetectArtifactSelection()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            player.sword.elementalAttribute = ElementalAttribute.Earth;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            player.sword.elementalAttribute = ElementalAttribute.Fire;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            player.sword.elementalAttribute = ElementalAttribute.Water;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            player.sword.elementalAttribute = ElementalAttribute.Wind;
+        }
+    }
+
 
     private void Update()
     {
@@ -90,6 +110,7 @@ public class PlayerInputController : MonoBehaviour
 
             DetectPlayerAttackInput();
             DetectPlayerMovementInput();
+            DetectArtifactSelection();
         }
     }
 

@@ -37,7 +37,6 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         sword = new PlayerSword(this);
-        sword.elementalAttribute = ElementalAttribute.Wind;
 
         lastRecordedHealth = properties.health;
         lastRecordedMana = properties.mana;
@@ -51,7 +50,7 @@ public class Player : MonoBehaviour
         //properties.propertiesManager.ToggleEffectState(new JinxedEffect(properties.propertiesManager, 10.0f));
         //properties.propertiesManager.ToggleEffectState(new StrengthenedEffect(properties.propertiesManager, 10.0f));
         //properties.propertiesManager.ToggleEffectState(new EnchantedEffect(properties.propertiesManager, 10.0f));
-        //properties.propertiesManager.ToggleEffectState(new RegeneratingEffect(properties.propertiesManager, 5.0f, 5.0f));
+        //properties.propertiesManager.ToggleEffectState(new RegeneratingEffect(properties.propertiesManager, 1.0f, 50.0f));
         
     }
 

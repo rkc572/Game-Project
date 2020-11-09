@@ -34,6 +34,15 @@ public class PlayerSword : PlayerItem
 
     protected override void EarthAction()
     {
+        float manaCost = 50.0f;
+        if (player.properties.mana <= manaCost)
+        {
+            return;
+        }
+
+        player.properties.propertiesManager.ModifyManaByAmount(-manaCost);
+
+
         float colliderYoffset = 0.09f;
         Vector3 attackOffset;
 
@@ -66,6 +75,14 @@ public class PlayerSword : PlayerItem
 
     protected override void FireAction()
     {
+        float manaCost = 50.0f;
+        if (player.properties.mana <= manaCost)
+        {
+            return;
+        }
+
+        player.properties.propertiesManager.ModifyManaByAmount(-manaCost);
+
         float colliderYoffset = 0.09f;
         Vector3 attackOffset;
         attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.13f, player.animator.GetFloat("VerticalMagnitude") * 0.13f + colliderYoffset, 0.0f);
@@ -99,6 +116,15 @@ public class PlayerSword : PlayerItem
 
     protected override void WaterAction()
     {
+
+        float manaCost = 50.0f;
+        if (player.properties.mana <= manaCost)
+        {
+            return;
+        }
+
+        player.properties.propertiesManager.ModifyManaByAmount(-manaCost);
+
         float colliderYoffset = 0.09f;
         Vector3 attackOffset;
         attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.13f, player.animator.GetFloat("VerticalMagnitude") * 0.13f + colliderYoffset, 0.0f);
@@ -134,6 +160,15 @@ public class PlayerSword : PlayerItem
 
     protected override void WindAction()
     {
+
+        float manaCost = 50.0f;
+        if (player.properties.mana <= manaCost)
+        {
+            return;
+        }
+
+        player.properties.propertiesManager.ModifyManaByAmount(-manaCost);
+
         float colliderYoffset = 0.09f;
         Vector3 attackOffset;
         attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.13f, player.animator.GetFloat("VerticalMagnitude") * 0.13f + colliderYoffset, 0.0f);

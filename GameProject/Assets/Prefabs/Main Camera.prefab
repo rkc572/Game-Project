@@ -111,6 +111,100 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &5265215167749872317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5773500182671647128}
+  - component: {fileID: 7923839591293215249}
+  - component: {fileID: 7834227930544353253}
+  - component: {fileID: 6439632515325095392}
+  m_Layer: 5
+  m_Name: Sword Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5773500182671647128
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265215167749872317}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5926302422605871757}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -350}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7923839591293215249
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265215167749872317}
+  m_CullTransparentMesh: 0
+--- !u!114 &7834227930544353253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265215167749872317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c83889096455f7c4992b219c3f9c7054, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6439632515325095392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265215167749872317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5746aa128e006e74796255b8f5721e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 7834227930544353253}
+  swordIcon: {fileID: 21300000, guid: c83889096455f7c4992b219c3f9c7054, type: 3}
+  fireSwordIcon: {fileID: 21300000, guid: a8e9f93e13486e14db48879eff59b26b, type: 3}
+  waterSwordIcon: {fileID: 21300000, guid: c2fd398ed2f10c64e86cc68b3f2e1a58, type: 3}
+  windSwordIcon: {fileID: 21300000, guid: 1c70e2c433967374f98c76eb0ec1010c, type: 3}
+  earthSwordIcon: {fileID: 21300000, guid: 24c7986c50fbfe248936df211945ba89, type: 3}
 --- !u!1 &5572848425505923998
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +343,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -452, y: 235}
+  m_AnchoredPosition: {x: -499.5, y: 235}
   m_SizeDelta: {x: 256, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &64210281144063058
@@ -280,7 +374,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c6d326b38108c1a4aad16c5a04358665, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 30b987bd5b521a1439f7058cc2a644d8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -400,6 +494,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d929a9f4c8fffd54e84e97eea2823b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
 --- !u!1 &5926302422605871758
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +531,7 @@ RectTransform:
   - {fileID: 7736671565367545481}
   - {fileID: 3039009125279930710}
   - {fileID: 7956257314544736562}
+  - {fileID: 5773500182671647128}
   - {fileID: 5926302424040298038}
   m_Father: {fileID: 5926302422585532031}
   m_RootOrder: 0
@@ -532,7 +631,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5926302422605871757}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -713,8 +812,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 120.850006, y: -3.5499878}
-  m_SizeDelta: {x: -56.299995, y: -49.900024}
+  m_AnchoredPosition: {x: 143.895, y: -3.5499878}
+  m_SizeDelta: {x: -102.19, y: -49.900024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8957001182352978186
 CanvasRenderer:

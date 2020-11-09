@@ -1,45 +1,50 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
-//Incomplete Effect*******
 public class RegeneratingEffect : EffectState
 {
-    //Need to set conditional in Mob/Player class; ex. if player.curHealth < player.max_HP, etc
     float effectDuration;
-    float regenInterval;
+    float lastInflictionTime = 0.0f;
+    float actionInterval;
 
-    float regenAmount = 10.0f;
-
-    bool effectApplied = false;
-
-    public RegeneratingEffect(PropertiesManager propertiesManager, float effectDuration, float regenInterval) : base(propertiesManager)
+    public RegeneratingEffect(PropertiesManager propertiesManager, float actionInterval, float effectDuration) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
-        this.regenInterval = regenInterval;
-
+        this.actionInterval = actionInterval;
     }
 
     protected override void Effect()
     {
-        Debug.Log("I am regening");
-        propertiesManager.ModifyHealthByAmount(regenAmount);
-
+        Debug.Log($"im healing at {Time.time}");
+        propertiesManager.ModifyHealthByAmount(10.0f);
     }
+
     public override void ApplyEffect()
     {
-        //apply effect if not already
-        if (!effectApplied)
+        // Initialize lastInflictionTime
+        if (lastInflictionTime == 0.0f)
         {
-            Effect();
-            regenInterval -= Time.deltaTime;
-            effectApplied = true;
-        }
-        //after effect duration finishes, reset
-        if (Time.time > effectInitializedTime + effectDuration && regenInterval == 0 || complete && regenInterval == 0)
-        {
-            complete = true;
-            Debug.Log("I am no longer regening");
-            effectApplied = false;
+            lastInflictionTime = Time.time;
         }
 
+        // Check if EffectState is still active
+        if (Time.time < effectInitializedTime + effectDuration && !complete)
+        {
+            // Check if it is within the interval to apply effect
+            if (Time.time - lastInflictionTime >= actionInterval)
+            {
+                // Apply effect
+                Effect();
+
+                // Reset LastInflictionTime
+                lastInflictionTime = Time.time;
+            }
+        }
+        else
+        {
+            // Set complete to true if Effect state has run out and was not marked complete
+            complete = true;
+            Debug.Log($"im done regenerating at {Time.time}");
+        }
     }
 }
