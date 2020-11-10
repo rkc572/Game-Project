@@ -25,6 +25,14 @@ public class TriggerZone : MonoBehaviour
         scene = sceneList[num];
     }
 
+    void PickRandomLocation(Vector3[] locList)
+    {
+        System.Random rnd = new System.Random();
+        int num = rnd.Next(0, locList.Length);
+        location = locList[num];
+    }
+
+
     private void Awake()
     {
         if (scene == "Random")
@@ -66,6 +74,14 @@ public class TriggerZone : MonoBehaviour
             {
                 location = new Vector3(-1.0f, 1.07f, 0.0f);
             }
+        }
+
+        if (SceneManager.GetActiveScene().name == "Forest scene 3")
+        {
+            Vector3 left = new Vector3 (-1.58f, 0.85f, 0.0f);
+            Vector3 mid = new Vector3(0.0f, 0.85f, 0.0f);
+            Vector3 right = new Vector3(1.61f, 0.85f, 0.0f);
+            PickRandomLocation(new Vector3[] { left, mid, right }); // seems to usually pick mid?
         }
     }
 }
