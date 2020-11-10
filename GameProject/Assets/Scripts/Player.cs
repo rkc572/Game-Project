@@ -70,6 +70,8 @@ public class Player : MonoBehaviour
         }
     }
 
+    /*
+     * 
     void OnDrawGizmos()
     {
 
@@ -79,4 +81,6 @@ public class Player : MonoBehaviour
         attackOffset = new Vector3(animator.GetFloat("HorizontalMagnitude") * 0.13f, animator.GetFloat("VerticalMagnitude") * 0.13f + colliderYoffset, 0.0f);
         Gizmos.DrawWireSphere(properties.rigidBody.transform.position + attackOffset, 0.09f);
     }
+
+    */
 }

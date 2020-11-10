@@ -14,7 +14,7 @@ public class TriggerZone : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
-            sceneManager.LoadSceneMovePlayer(scene, location);
+            StartCoroutine(sceneManager.SceneFadeTransition(scene, location));
         }
     }
 
@@ -33,7 +33,7 @@ public class TriggerZone : MonoBehaviour
     }
 
 
-    private void Awake()
+    private void Start()
     {
         if (scene == "Random")
         {
@@ -83,5 +83,7 @@ public class TriggerZone : MonoBehaviour
             Vector3 right = new Vector3(1.61f, 0.85f, 0.0f);
             PickRandomLocation(new Vector3[] { left, mid, right }); // seems to usually pick mid?
         }
+
+        sceneManager = GameSceneManager.Instance;
     }
 }

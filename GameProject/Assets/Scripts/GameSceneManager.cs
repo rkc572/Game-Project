@@ -91,6 +91,44 @@ public class GameSceneManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public IEnumerator SceneFadeTransition(string sceneName, Vector3 pos)
+    {
+
+        var player = FindObjectOfType<Player>();
+
+        player.playerInputController.readInput = false;
+        player.playerInputController.playerMovementController.moveUp = false;
+        player.playerInputController.playerMovementController.moveDown = false;
+        player.playerInputController.playerMovementController.moveLeft = false;
+        player.playerInputController.playerMovementController.moveRight = false;
+
+        Image faderImage = GameObject.Find("Fader").GetComponent<Image>();
+        //FADE IN
+
+        for (int i = 0; i < 100; i++)
+        {
+            faderImage.color = new Color(0, 0, 0, Mathf.Min(1, faderImage.color.a + +0.01f));
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        player.playerInputController.readInput = false;
+        player.lastRecordedPosition = pos;
+
+        if (!deathSceneActive)
+        {
+            player.lastRecordedHealth = player.properties.health;
+            player.lastRecordedMana = player.properties.mana;
+        }
+
+        player.properties.health = player.lastRecordedHealth;
+        player.properties.mana = player.lastRecordedMana;
+
+        SceneManager.LoadScene(sceneName);
+        player.transform.parent.position = pos;
+        player.playerInputController.readInput = true;
+        player.animator.SetBool("Dead", false);
+    }
+
     public void LoadSceneMovePlayer(string sceneName, Vector3 pos)
     {
         var player = FindObjectOfType<Player>();
