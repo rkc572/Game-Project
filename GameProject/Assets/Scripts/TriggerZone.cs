@@ -76,7 +76,7 @@ public class TriggerZone : MonoBehaviour
             }
         }
 
-        if (SceneManager.GetActiveScene().name == "Forest scene 3")
+        if (scene == "Forest scene 2" && (SceneManager.GetActiveScene().name != "Forest scene 1"))
         {
             Vector3 left = new Vector3 (-1.58f, 0.85f, 0.0f);
             Vector3 mid = new Vector3(0.0f, 0.85f, 0.0f);

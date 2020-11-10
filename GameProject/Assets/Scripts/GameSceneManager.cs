@@ -123,10 +123,11 @@ public class GameSceneManager : MonoBehaviour
         player.properties.health = player.lastRecordedHealth;
         player.properties.mana = player.lastRecordedMana;
 
-        SceneManager.LoadScene(sceneName);
         player.transform.parent.position = pos;
         player.playerInputController.readInput = true;
         player.animator.SetBool("Dead", false);
+
+        SceneManager.LoadScene(sceneName);
     }
 
     public void LoadSceneMovePlayer(string sceneName, Vector3 pos)

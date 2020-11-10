@@ -471,6 +471,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnterSceneDungeon
       objectReference: {fileID: 0}
+    - target: {fileID: 4521212243399933502, guid: c41e4305545693748ac3bb6145020681, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7752428386804781395, guid: c41e4305545693748ac3bb6145020681, type: 3}
       propertyPath: scene
       value: 
