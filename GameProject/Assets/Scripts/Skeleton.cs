@@ -137,7 +137,9 @@ public class Skeleton : MonoBehaviour
             return;
         }
 
-        Vector2 playerDirection = playerReference.transform.position - transform.position;
+        Vector3 playerOffset = new Vector3(0.0f, 0.1f, 0.0f);
+
+        Vector2 playerDirection = (playerReference.transform.position + playerOffset) - transform.position;
         Vector2 newVelocity = playerDirection.normalized * properties.speed;
         properties.rigidBody.velocity = Vector2.SmoothDamp(properties.rigidBody.velocity, newVelocity, ref smoothVelocityReference, 0.1f);
 
