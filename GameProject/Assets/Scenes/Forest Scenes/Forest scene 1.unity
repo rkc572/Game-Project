@@ -2547,26 +2547,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 902553971, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
-      propertyPath: minX
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 902553971, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
-      propertyPath: maxX
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 902553971, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
-      propertyPath: minY
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 902553971, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
-      propertyPath: maxY
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117415903350491580, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1670108136725784645, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2582,10 +2562,6 @@ PrefabInstance:
     - target: {fileID: 4405161172777476614, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5773500182671647128, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 21.599976
       objectReference: {fileID: 0}
     - target: {fileID: 5926302422585532031, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2634,10 +2610,6 @@ PrefabInstance:
     - target: {fileID: 5926302422585532035, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 9180185866879111585, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
@@ -5234,6 +5206,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7363211783239268363, guid: c3ba85653d65dff418c9241f180bb430, type: 3}
       propertyPath: MAX_HEALTH
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363211783239268363, guid: c3ba85653d65dff418c9241f180bb430, type: 3}
+      propertyPath: health
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 7363211783726441025, guid: c3ba85653d65dff418c9241f180bb430, type: 3}

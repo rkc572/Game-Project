@@ -1,7 +1,34 @@
 fileFormatVersion: 2
 guid: 80541cf863ab44c4f854759cf2e5ae0b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6782654815433346215
+    second: ch_base_mage_attack_circle_00_0
+  - first:
+      213: 354403662697806502
+    second: ch_base_mage_attack_circle_00_1
+  - first:
+      213: 3549275004873529278
+    second: ch_base_mage_attack_circle_00_2
+  - first:
+      213: 1603567877702035024
+    second: ch_base_mage_attack_circle_00_3
+  - first:
+      213: -3741697648599745528
+    second: ch_base_mage_attack_circle_00_4
+  - first:
+      213: -5575757515951605052
+    second: ch_base_mage_attack_circle_00_5
+  - first:
+      213: -7447870447029107455
+    second: ch_base_mage_attack_circle_00_6
+  - first:
+      213: 4109787098887600283
+    second: ch_base_mage_attack_circle_00_7
+  - first:
+      213: -5998012673759180710
+    second: ch_base_mage_attack_circle_00_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +59,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,7 +68,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -66,7 +93,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -75,7 +126,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ch_base_mage_attack_circle_00_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 244
+        width: 29
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 953b004a16b2fd1a0800000000000000
+      internalID: -6782654815433346215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_mage_attack_circle_00_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 239
+        width: 41
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 0.59}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa3336e0481be400800000000000000
+      internalID: 354403662697806502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_mage_attack_circle_00_2
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 234
+        width: 53
+        height: 34
+      alignment: 9
+      pivot: {x: 0.52, y: 0.62}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7d8a3efce814130800000000000000
+      internalID: 3549275004873529278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_mage_attack_circle_00_3
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 228
+        width: 65
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.66}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05628ab1d74014610800000000000000
+      internalID: 1603567877702035024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_mage_attack_circle_00_4
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 125
+        width: 76
+        height: 53
+      alignment: 9
+      pivot: {x: 0.5, y: 0.68}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80c3c4e10d1d21cc0800000000000000
+      internalID: -3741697648599745528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_mage_attack_circle_00_5
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 121
+        width: 88
+        height: 62
+      alignment: 9
+      pivot: {x: 0.5, y: 0.72}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca7df3b41eee92b0800000000000000
+      internalID: -5575757515951605052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_mage_attack_circle_00_6
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 115
+        width: 100
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10543b7f949d3a890800000000000000
+      internalID: -7447870447029107455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_mage_attack_circle_00_7
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 11
+        width: 100
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b98bda38795e80930800000000000000
+      internalID: 4109787098887600283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_mage_attack_circle_00_8
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 11
+        width: 100
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a580b468047c2cca0800000000000000
+      internalID: -5998012673759180710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

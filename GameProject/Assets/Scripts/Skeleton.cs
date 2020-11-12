@@ -194,7 +194,7 @@ public class Skeleton : MonoBehaviour
         {
             animator.SetTrigger("Disable");
             animator.SetBool("Disabled", true);
-            gameObject.GetComponent<Collider2D>().enabled = false;
+            gameObject.GetComponent<Collider2D>().isTrigger = true;
             sortingGroup.sortingOrder = -1;
         }
 
@@ -205,6 +205,14 @@ public class Skeleton : MonoBehaviour
             Instantiate(drops[Random.Range(0, drops.Count)], transform.position, Quaternion.identity);
             droppedItem = true;
         }
+    }
+
+    public void Revive()
+    {
+        animator.SetBool("Disabled", false);
+        movementMode = MovementMode.Pursuit;
+        gameObject.GetComponent<Collider2D>().isTrigger = false;
+        properties.health = properties.MAX_HEALTH;
     }
 
 

@@ -68,7 +68,7 @@ public class Prologue : MonoBehaviour
                 }
             }
             // Pause for 4 seconds after each line
-            yield return new WaitForSeconds(4.0f);
+            yield return new WaitForSeconds(1.0f);
             // Clear TMP prologueText
             prologueText.text = "";
         }
