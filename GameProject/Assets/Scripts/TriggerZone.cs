@@ -20,15 +20,13 @@ public class TriggerZone : MonoBehaviour
 
     void PickRandomScene(string[] sceneList)
     {
-        System.Random rnd = new System.Random();
-        int num = rnd.Next(0, sceneList.Length);
+        int num = UnityEngine.Random.Range(0, sceneList.Length);
         scene = sceneList[num];
     }
 
     void PickRandomLocation(Vector3[] locList)
     {
-        System.Random rnd = new System.Random();
-        int num = rnd.Next(0, locList.Length);
+        int num = UnityEngine.Random.Range(0, locList.Length);
         location = locList[num];
     }
 
