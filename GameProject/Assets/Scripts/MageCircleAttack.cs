@@ -7,7 +7,7 @@ public class MageCircleAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Destroy(gameObject, 5.0f);
+        Destroy(transform.parent.gameObject, 5.0f);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -38,6 +38,7 @@ public class MageCircleAttack : MonoBehaviour
         else if (skeleton != null && skeleton.movementMode == Skeleton.MovementMode.Disabled)
         {
             skeleton.animator.SetTrigger("Revive");
+            skeleton.properties.propertiesManager.ToggleEffectState(new StrengthenedEffect(skeleton.properties.propertiesManager, 10.0f));
         }
     }
 

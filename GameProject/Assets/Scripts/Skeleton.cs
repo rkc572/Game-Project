@@ -201,7 +201,7 @@ public class Skeleton : MonoBehaviour
         if (!droppedItem)
         {
             List<GameObject> drops = new List<GameObject> {goldCoinPrefab, goldBarPrefab, goldStackPrefab, healthDropPrefab, manaDropPrefab};
-            // Drop random gold drop
+            // Drop random drop
             Instantiate(drops[Random.Range(0, drops.Count)], transform.position, Quaternion.identity);
             droppedItem = true;
         }

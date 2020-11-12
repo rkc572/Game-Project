@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   propertiesManager: {fileID: 3774354781307203594}
   rigidBody: {fileID: 3774354782640634643}
-  MAX_HEALTH: 1000
+  MAX_HEALTH: 250
   MAX_MANA: 1000
   MAX_SPEED: 1
   health: 250
@@ -177,7 +177,7 @@ MonoBehaviour:
   properties: {fileID: 3774354781307203597}
   animator: {fileID: 3774354781307203596}
   sortingGroup: {fileID: 3774354782640634640}
-  droppedGold: 0
+  droppedItem: 0
   goldCoinPrefab: {fileID: 3656401682837004836, guid: 3bb8206358dadfe47a362af2492d209a, type: 3}
   goldBarPrefab: {fileID: 1347304796871994264, guid: 954af307071eb6c4d9f4485f084d8bdc, type: 3}
   goldStackPrefab: {fileID: 7456040246850306748, guid: bc24217cde5e6854abc88723a9f4383f, type: 3}
