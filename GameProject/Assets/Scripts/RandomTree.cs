@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class RandomTree : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
-    public Sprite[] spriteList;
+    public SpriteRenderer referenceTree;
+    public GameObject[] treeList;
 
-    void ChooseSprite()
+    void ChooseTree()
     {
-        System.Random rnd = new System.Random();
-        int num = rnd.Next(0, 18);
-        spriteRenderer.sprite = spriteList[num];
+        int num = UnityEngine.Random.Range(0, 18);
+        GameObject tree = Instantiate(treeList[num], transform.position, Quaternion.identity);
+        tree.transform.parent = this.transform;
+
+        referenceTree.enabled = false;
     }
 
 void Start()
     {
-        ChooseSprite();
+        ChooseTree();
     }
 }
