@@ -666,6 +666,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5d1270d9a105c4ab24642275a6cdd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mageMovementAudioSource: {fileID: 0}
+  mageVoxAudioSource: {fileID: 0}
+  mageDamage: {fileID: 8300000, guid: d6a7350b0d17744418c94822e111ec75, type: 3}
+  mageDeath: {fileID: 8300000, guid: b39f81b7ca850fe42b54b4ab22f77549, type: 3}
+  attack: {fileID: 8300000, guid: 00c1f0399b4ec294f9607889c3a74bbb, type: 3}
 --- !u!114 &1155361744
 MonoBehaviour:
   m_ObjectHideFlags: 0
