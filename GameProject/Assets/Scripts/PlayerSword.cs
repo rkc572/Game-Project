@@ -14,20 +14,25 @@ public class PlayerSword : PlayerItem
         Vector3 attackOffset;
 
         attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.13f, player.animator.GetFloat("VerticalMagnitude") * 0.13f + colliderYoffset, 0.0f);
-
+        player.animator.SetTrigger("SwingSword");
         var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.09f);
         foreach (Collider2D collider in colliders)
         {
             if (collider.tag == "Enemy")
             {
                 var enemyMob = collider.GetComponentInParent<Mob>();
+                var skeleton = enemyMob.GetComponent<Skeleton>();
+                if (skeleton != null && skeleton.movementMode == Skeleton.MovementMode.Disabled) {
+                    return;
+                }
+
                 enemyMob.GetComponentInParent<Animator>().SetTrigger("TookDamage");
                 enemyMob.propertiesManager.InflictPhysicalDamage(25.0f * player.properties.physicalAttackMultiplier * player.properties.attackMultiplier);
                 enemyMob.propertiesManager.ToggleEffectState(new RepulsedEffect(enemyMob.propertiesManager, 0.1f, new Vector2(player.animator.GetFloat("HorizontalMagnitude"), player.animator.GetFloat("VerticalMagnitude")), 3.0f));
                 break;
             }
         }
-        player.animator.SetTrigger("SwingSword");
+
     }
 
     protected override void EarthAction()
@@ -54,12 +59,20 @@ public class PlayerSword : PlayerItem
         swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
         Object.Destroy(swingObject, 0.6f);
 
+        player.sounds.PlayEarthSFX();
+        player.animator.SetTrigger("SwingSword");
+
         var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.09f);
         foreach (Collider2D collider in colliders)
         {
             if (collider.tag == "Enemy")
             {
                 var enemyMob = collider.GetComponentInParent<Mob>();
+                var skeleton = enemyMob.GetComponent<Skeleton>();
+                if (skeleton != null && skeleton.movementMode == Skeleton.MovementMode.Disabled)
+                {
+                    return;
+                }
                 enemyMob.GetComponentInParent<Animator>().SetTrigger("TookDamage");
                 enemyMob.propertiesManager.InflictElementalDamage(25.0f * player.properties.elementalAttackMultiplier * player.properties.attackMultiplier);
                 enemyMob.propertiesManager.ToggleEffectState(new RepulsedEffect(enemyMob.propertiesManager, 0.1f, new Vector2(player.animator.GetFloat("HorizontalMagnitude"), player.animator.GetFloat("VerticalMagnitude")), 3.0f));
@@ -68,8 +81,6 @@ public class PlayerSword : PlayerItem
                 break;
             }
         }
-        player.sounds.PlayEarthSFX();
-        player.animator.SetTrigger("SwingSword");
     }
 
     protected override void FireAction()
@@ -93,6 +104,8 @@ public class PlayerSword : PlayerItem
         swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
         Object.Destroy(swingObject, 0.6f);
 
+        player.sounds.PlayFireSFX();
+        player.animator.SetTrigger("SwingSword");
 
         var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.09f);
         foreach (Collider2D collider in colliders)
@@ -100,6 +113,11 @@ public class PlayerSword : PlayerItem
             if (collider.tag == "Enemy")
             {
                 var enemyMob = collider.GetComponentInParent<Mob>();
+                var skeleton = enemyMob.GetComponent<Skeleton>();
+                if (skeleton != null && skeleton.movementMode == Skeleton.MovementMode.Disabled)
+                {
+                    return;
+                }
                 enemyMob.GetComponentInParent<Animator>().SetTrigger("TookDamage");
                 enemyMob.propertiesManager.InflictElementalDamage(25.0f * player.properties.elementalAttackMultiplier * player.properties.attackMultiplier);
                 // set mob on fire
@@ -108,9 +126,6 @@ public class PlayerSword : PlayerItem
                 break;
             }
         }
-
-        player.sounds.PlayFireSFX();
-        player.animator.SetTrigger("SwingSword");
     }
 
     protected override void WaterAction()
@@ -135,12 +150,20 @@ public class PlayerSword : PlayerItem
         swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
         Object.Destroy(swingObject, 0.6f);
 
+        player.sounds.PlayWaterSFX();
+        player.animator.SetTrigger("SwingSword");
+
         var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.09f);
         foreach (Collider2D collider in colliders)
         {
             if (collider.tag == "Enemy")
             {
                 var enemyMob = collider.GetComponentInParent<Mob>();
+                var skeleton = enemyMob.GetComponent<Skeleton>();
+                if (skeleton != null && skeleton.movementMode == Skeleton.MovementMode.Disabled)
+                {
+                    return;
+                }
                 enemyMob.GetComponentInParent<Animator>().SetTrigger("TookDamage");
                 float damageDealt = 25.0f * player.properties.physicalAttackMultiplier * player.properties.attackMultiplier;
                 enemyMob.propertiesManager.InflictElementalDamage(damageDealt);
@@ -153,8 +176,6 @@ public class PlayerSword : PlayerItem
                 break;
             }
         }
-        player.sounds.PlayWaterSFX();
-        player.animator.SetTrigger("SwingSword");
     }
 
     protected override void WindAction()
@@ -181,11 +202,18 @@ public class PlayerSword : PlayerItem
 
         //increased range
         var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.15f);
+        player.sounds.PlayWindSFX();
+        player.animator.SetTrigger("SwingSword");
         foreach (Collider2D collider in colliders)
         {
             if (collider.tag == "Enemy")
             {
                 var enemyMob = collider.GetComponentInParent<Mob>();
+                var skeleton = enemyMob.GetComponent<Skeleton>();
+                if (skeleton != null && skeleton.movementMode == Skeleton.MovementMode.Disabled)
+                {
+                    return;
+                }
                 enemyMob.GetComponentInParent<Animator>().SetTrigger("TookDamage");
                 enemyMob.propertiesManager.InflictElementalDamage(25.0f * player.properties.elementalAttackMultiplier * player.properties.attackMultiplier);
 
@@ -205,7 +233,5 @@ public class PlayerSword : PlayerItem
                 break;
             }
         }
-        player.sounds.PlayWindSFX();
-        player.animator.SetTrigger("SwingSword");
     }
 }

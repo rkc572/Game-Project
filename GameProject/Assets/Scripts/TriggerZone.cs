@@ -70,7 +70,7 @@ public class TriggerZone : MonoBehaviour
 
             if (scene == "Forest scene 5")
             {
-                location = new Vector3(-1.0f, 1.07f, 0.0f);
+                location = new Vector3(-1.0f, 0.87f, 0.0f);
             }
         }
 
