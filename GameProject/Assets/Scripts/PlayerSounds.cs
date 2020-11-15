@@ -20,6 +20,8 @@ public class PlayerSounds : MonoBehaviour
     public AudioClip swordSwingThree;
     public AudioClip swordSwingFour;
 
+    public AudioClip shieldSFX;
+
     public AudioClip waterAttackSFX;
     public AudioClip fireAttackSFX;
     public AudioClip earthAttackSFX;
@@ -112,6 +114,11 @@ public class PlayerSounds : MonoBehaviour
     public void PlayWindSFX()
     {
         PlayElementalAttackClip(windAttackSFX);
+    }
+
+    public void PlayShieldSFX()
+    {
+        PlayAttackClip(shieldSFX);
     }
 
     public void PlayGoldPickupSFX()

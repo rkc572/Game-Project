@@ -17,7 +17,7 @@ public class PlayerInputController : MonoBehaviour
     public PlayerMovementController playerMovementController;
     float currTime;
 
-    public bool readInput = true;
+    public bool readInput, readMovementInput = true;
 
     bufferItem playerAttackActionBuffer = new bufferItem();
 
@@ -59,6 +59,7 @@ public class PlayerInputController : MonoBehaviour
         // Right Mouse Click
         else if (Input.GetMouseButtonDown(1))
         {
+            readMovementInput = false;
             playerAttackActionBuffer.timeOf = Time.time;
 
             // Holding activateElemental action key
@@ -70,6 +71,20 @@ public class PlayerInputController : MonoBehaviour
             {
                 playerAttackActionBuffer.action = player.selectedArtifact.Action;
             }
+        }
+        // Right Mouse Click Up
+        else if (Input.GetMouseButtonUp(1))
+        {
+
+            if (player.selectedArtifact.GetType() == typeof(PlayerShield))
+            {
+                player.properties.damageTakenMultiplier = 1f;
+                player.properties.rigidBody.constraints.HasFlag(RigidbodyConstraints2D.None);
+                player.properties.rigidBody.constraints.HasFlag(RigidbodyConstraints2D.FreezeRotation);
+                player.animator.SetBool("Shield", false);
+            }
+
+            readMovementInput = true;
         }
     }
 
@@ -109,7 +124,10 @@ public class PlayerInputController : MonoBehaviour
             }
 
             DetectPlayerAttackInput();
-            DetectPlayerMovementInput();
+            if (readMovementInput)
+            {
+                DetectPlayerMovementInput();
+            }
             DetectArtifactSelection();
         }
     }

@@ -210,6 +210,7 @@ public class Skeleton : MonoBehaviour
     public void Revive()
     {
         animator.SetBool("Disabled", false);
+        sortingGroup.sortingOrder = 0;
         movementMode = MovementMode.Pursuit;
         gameObject.GetComponent<Collider2D>().isTrigger = false;
         properties.health = properties.MAX_HEALTH;

@@ -855,13 +855,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f73773059ea184947a58508919f71f72, type: 3}
---- !u!1001 &1704464263
+--- !u!1001 &1441462295
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7363211783239268364, guid: c3ba85653d65dff418c9241f180bb430, type: 3}
+      propertyPath: shieldSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 94d33031dae11674ba7b9bd391df1eeb, type: 3}
     - target: {fileID: 7363211783726441025, guid: c3ba85653d65dff418c9241f180bb430, type: 3}
       propertyPath: m_Name
       value: Player

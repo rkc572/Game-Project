@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
 
     public float gold = 0.0f;
 
-    List<PlayerItem> artifacts;
+    List<PlayerItem> artifacts = new List<PlayerItem>();
+
     // List<Potions> potions;
 
     // Detects if any animation is playing except walking and idle
@@ -36,6 +37,11 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         sword = new PlayerSword(this);
+
+        artifacts.Add(new PlayerShield(this));
+
+        selectedArtifact = artifacts[0];
+
 
         lastRecordedHealth = properties.health;
         lastRecordedMana = properties.mana;
