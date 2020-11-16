@@ -8,7 +8,7 @@ public class CameraFollower : MonoBehaviour
     public float minX, maxX, minY, maxY;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         player = FindObjectOfType<Player>();
     }
@@ -16,6 +16,12 @@ public class CameraFollower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (player == null)
+        {
+            player = FindObjectOfType<Player>();
+        }
+
         if (GameSceneManager.Instance.deathSceneActive)
         {
             transform.position = new Vector3(

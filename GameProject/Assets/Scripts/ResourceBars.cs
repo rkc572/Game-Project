@@ -22,6 +22,11 @@ public class ResourceBars : MonoBehaviour
 
     void Update ()
     {
+        if (player == null)
+        {
+            player = FindObjectOfType<Player>();
+        }
+
         if (resourceType)
             resource = player.GetComponent<Mob>().health;
         else
