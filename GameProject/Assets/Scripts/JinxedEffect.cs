@@ -1,22 +1,23 @@
 ﻿using UnityEngine;
-
+//This effect decreases Elemental Attack Multiplier
 public class JinxedEffect : EffectState
 {
     float effectDuration;
     float previousElementalAttackMultiplier;
-    float newElementalAttackMultipler = 0.5f;
+    float newElementalAttackMultiplier;
 
     bool effectApplied = false;
 
-    public JinxedEffect(PropertiesManager propertiesManager, float effectDuration) : base(propertiesManager)
+    public JinxedEffect(PropertiesManager propertiesManager, float effectDuration, float newElementalAttackMultiplier) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
+        this.newElementalAttackMultiplier = newElementalAttackMultiplier;
         previousElementalAttackMultiplier = propertiesManager.mob.elementalAttackMultiplier;
     }
 
     protected override void Effect()
     {
-        propertiesManager.SetElementalAttackMultiplier(newElementalAttackMultipler);
+        propertiesManager.SetElementalAttackMultiplier(newElementalAttackMultiplier);
         Debug.Log("I am jinxed - Elemental Attack Multiplier decreased");
 
     }

@@ -1,21 +1,23 @@
 ﻿using UnityEngine;
-
+//This effect allows regeneration
 public class RegeneratingEffect : EffectState
 {
     float effectDuration;
     float lastInflictionTime = 0.0f;
     float actionInterval;
+    float healthRegenAmount;
 
-    public RegeneratingEffect(PropertiesManager propertiesManager, float actionInterval, float effectDuration) : base(propertiesManager)
+    public RegeneratingEffect(PropertiesManager propertiesManager, float actionInterval, float effectDuration, float healthRegenAmount) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
         this.actionInterval = actionInterval;
+        this.healthRegenAmount = healthRegenAmount;
     }
 
     protected override void Effect()
     {
         Debug.Log($"im healing at {Time.time}");
-        propertiesManager.ModifyHealthByAmount(10.0f);
+        propertiesManager.ModifyHealthByAmount(healthRegenAmount);
     }
 
     public override void ApplyEffect()

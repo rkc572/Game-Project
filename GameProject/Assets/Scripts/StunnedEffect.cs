@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+//This effect stuns/freezes you
 public class StunnedEffect : EffectState
 {
     float effectDuration;

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+//Knockback effect
 public class RepulsedEffect : EffectState
 {
     float effectDuration;

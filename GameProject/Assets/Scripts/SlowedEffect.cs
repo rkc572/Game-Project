@@ -1,17 +1,18 @@
 ﻿using UnityEngine;
-
+//This effect decreases speed
 public class SlowedEffect : EffectState
 {
     float effectDuration;
 
     float previousSpeed;
-    float newSpeed = 0.5f;
+    float newSpeed;
 
     bool effectApplied = false;
 
-    public SlowedEffect(PropertiesManager propertiesManager, float effectDuration) : base(propertiesManager)
+    public SlowedEffect(PropertiesManager propertiesManager, float effectDuration, float newSpeed) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
+        this.newSpeed = newSpeed;
         previousSpeed = propertiesManager.mob.speed;
     }
     

@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
-
+//This effect increases Physical Attack Multiplier
 public class StrengthenedEffect : EffectState
 {
     float effectDuration;
     float previousPhysicalAttackMultiplier;
-    float newPhysicalAttackMultiplier = 1.5f;
+    float newPhysicalAttackMultiplier;
 
     bool effectApplied = false;
 
-    public StrengthenedEffect(PropertiesManager propertiesManager, float effectDuration) : base(propertiesManager)
+    public StrengthenedEffect(PropertiesManager propertiesManager, float effectDuration, float newPhysicalAttackMultiplier) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
+        this.newPhysicalAttackMultiplier = newPhysicalAttackMultiplier;
         previousPhysicalAttackMultiplier = propertiesManager.mob.physicalAttackMultiplier;
     }
 

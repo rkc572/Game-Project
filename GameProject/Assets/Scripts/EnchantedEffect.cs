@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
-
+//This effect increases Elemental Attack Multiplier
 public class EnchantedEffect : EffectState
 {
     float effectDuration;
     float previousElementalAttackMultiplier;
-    float newElementalAttackMultiplier = 1.5f;
+    float newElementalAttackMultiplier;
 
     bool effectApplied = false;
 
-    public EnchantedEffect(PropertiesManager propertiesManager, float effectDuration) : base(propertiesManager)
+    public EnchantedEffect(PropertiesManager propertiesManager, float effectDuration, float newElementalAttackMultiplier) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
+        this.newElementalAttackMultiplier = newElementalAttackMultiplier;
         previousElementalAttackMultiplier = propertiesManager.mob.elementalAttackMultiplier;
     }
 
