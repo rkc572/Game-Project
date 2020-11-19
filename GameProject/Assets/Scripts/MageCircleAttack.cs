@@ -18,15 +18,15 @@ public class MageCircleAttack : MonoBehaviour
         if (player != null)
         {
             // slow down player
-            player.properties.propertiesManager.ToggleEffectState(new SlowedEffect(player.properties.propertiesManager, 10.0f));
+            player.properties.propertiesManager.ToggleEffectState(new SlowedEffect(player.properties.propertiesManager, 10.0f, 0.5f));
 
             List<EffectState> randomEffects = new List<EffectState>{
-                    new BurningEffect(player.properties.propertiesManager, 0.8f, 6.0f),
-                    new FrozenEffect(player.properties.propertiesManager, 4.0f),
-                    new JinxedEffect(player.properties.propertiesManager, 4.0f),
-                    new WeakenedEffect(player.properties.propertiesManager, 4.0f),
-                    new VulnerableEffect(player.properties.propertiesManager, 4.0f),
-                    new StunnedEffect(player.properties.propertiesManager, 4.0f)
+                    new BurningEffect(player.properties.propertiesManager, 0.8f, 6.0f, 10.0f),
+                    new FrozenEffect(player.properties.propertiesManager, 4.0f, 1.5f),
+                    new JinxedEffect(player.properties.propertiesManager, 4.0f, 0.5f),
+                    new WeakenedEffect(player.properties.propertiesManager, 4.0f, 0.5f),
+                    new VulnerableEffect(player.properties.propertiesManager, 4.0f, 1.5f),
+                    new StunnedEffect(player.properties.propertiesManager, 4.0f),
                 };
 
             player.properties.propertiesManager.ToggleEffectState(randomEffects[Random.Range(0, randomEffects.Count)]);
@@ -38,7 +38,7 @@ public class MageCircleAttack : MonoBehaviour
         else if (skeleton != null && skeleton.movementMode == Skeleton.MovementMode.Disabled)
         {
             skeleton.animator.SetTrigger("Revive");
-            skeleton.properties.propertiesManager.ToggleEffectState(new StrengthenedEffect(skeleton.properties.propertiesManager, 10.0f));
+            skeleton.properties.propertiesManager.ToggleEffectState(new StrengthenedEffect(skeleton.properties.propertiesManager, 10.0f, 1.5f));
         }
     }
 

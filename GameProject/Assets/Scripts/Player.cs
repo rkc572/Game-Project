@@ -48,15 +48,18 @@ public class Player : MonoBehaviour
         lastRecordedPosition = transform.parent.position;
 
         // For presentation use only, remove in production
-        // properties.propertiesManager.ToggleEffectState(new SlowedEffect(properties.propertiesManager, 10.5f));
+        //properties.propertiesManager.ToggleEffectState(new AgileEffect(properties.propertiesManager, 10.0f, 3.0f));
+        //properties.propertiesManager.ToggleEffectState(new SlowedEffect(properties.propertiesManager, 10.5f, 0.3f));
         //properties.propertiesManager.ToggleEffectState(new WeakenedEffect(properties.propertiesManager, 10.5f));
         //properties.propertiesManager.ToggleEffectState(new StunnedEffect(properties.propertiesManager, 10.5f));
         //properties.propertiesManager.ToggleEffectState(new FrozenEffect(properties.propertiesManager, 1.0f));
-        //properties.propertiesManager.ToggleEffectState(new JinxedEffect(properties.propertiesManager, 10.0f));
+        //properties.propertiesManager.ToggleEffectState(new JinxedEffect(properties.propertiesManager, 10.0f, 0.7f));
         //properties.propertiesManager.ToggleEffectState(new StrengthenedEffect(properties.propertiesManager, 10.0f));
         //properties.propertiesManager.ToggleEffectState(new EnchantedEffect(properties.propertiesManager, 10.0f));
-        //properties.propertiesManager.ToggleEffectState(new RegeneratingEffect(properties.propertiesManager, 1.0f, 50.0f));
-        
+        //properties.propertiesManager.ToggleEffectState(new RegeneratingEffect(properties.propertiesManager, 1.0f, 50.0f, 5.0f));
+        //properties.propertiesManager.ToggleEffectState(new FortifiedEffect(properties.propertiesManager, 10.0f, 0.2f));
+        //properties.propertiesManager.ToggleEffectState(new BurningEffect(properties.propertiesManager, 10.0f, 10.0f, 20.0f));
+
     }
 
     private void Update()

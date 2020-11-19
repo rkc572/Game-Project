@@ -1,17 +1,18 @@
 ﻿using UnityEngine;
-
+//This effect increases damage taken multipler
 public class VulnerableEffect : EffectState
 {
     float effectDuration;
     float previousDamageTakenMultiplier;
     //Damage taken multiplier increases by 50%
-    float newDamageTakenMultiplier = 1.5f;
+    float newDamageTakenMultiplier;
 
     bool effectApplied = false;
 
-    public VulnerableEffect(PropertiesManager propertiesManager, float effectDuration) : base(propertiesManager)
+    public VulnerableEffect(PropertiesManager propertiesManager, float effectDuration, float newDamageTakenMultiplier) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
+        this.newDamageTakenMultiplier = newDamageTakenMultiplier;
         previousDamageTakenMultiplier = propertiesManager.mob.physicalDamageTakenMultiplier;
     }
 

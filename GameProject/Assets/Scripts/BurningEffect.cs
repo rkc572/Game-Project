@@ -1,23 +1,25 @@
 ﻿using UnityEngine;
-
+//This effect burns you
 public class BurningEffect : EffectState
 {
     float effectDuration;
     float lastInflictionTime = 0.0f;
     float actionInterval;
+    float damageValue;
     bool particlesActive = false;
     GameObject fireParticles;
 
-    public BurningEffect(PropertiesManager propertiesManager, float actionInterval, float effectDuration) : base(propertiesManager)
+    public BurningEffect(PropertiesManager propertiesManager, float actionInterval, float effectDuration, float damageValue) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
         this.actionInterval = actionInterval;
+        this.damageValue = damageValue;
     }
 
     protected override void Effect()
     {
         Debug.Log($"im burning at {Time.time}");
-        propertiesManager.InflictElementalDamage(10.0f);
+        propertiesManager.InflictElementalDamage(damageValue);
         propertiesManager.GetComponentInParent<Animator>().SetTrigger("TookDamage");
         propertiesManager.GetComponentInParent<Animator>().SetTrigger("PlayerHurt");
     }
@@ -28,6 +30,7 @@ public class BurningEffect : EffectState
         if (lastInflictionTime == 0.0f)
         {
             lastInflictionTime = Time.time;
+            Debug.Log("Im burning!");
         }
 
         if (!particlesActive)

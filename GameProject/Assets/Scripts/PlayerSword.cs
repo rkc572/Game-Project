@@ -121,7 +121,7 @@ public class PlayerSword : PlayerItem
                 enemyMob.GetComponentInParent<Animator>().SetTrigger("TookDamage");
                 enemyMob.propertiesManager.InflictElementalDamage(25.0f * player.properties.elementalAttackMultiplier * player.properties.attackMultiplier);
                 // set mob on fire
-                enemyMob.propertiesManager.ToggleEffectState(new BurningEffect(enemyMob.propertiesManager, 1.0f, 4.0f));
+                enemyMob.propertiesManager.ToggleEffectState(new BurningEffect(enemyMob.propertiesManager, 1.0f, 4.0f, 15.0f));
                 enemyMob.propertiesManager.ToggleEffectState(new RepulsedEffect(enemyMob.propertiesManager, 0.1f, new Vector2(player.animator.GetFloat("HorizontalMagnitude"), player.animator.GetFloat("VerticalMagnitude")), 3.0f));
                 break;
             }

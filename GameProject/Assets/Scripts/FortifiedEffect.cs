@@ -1,27 +1,24 @@
 ﻿using UnityEngine;
-//This effect freezes you and increases physical damage taken
-public class FrozenEffect : EffectState
+//This effect decreases physical damage taken multipler - Tank Effect
+public class FortifiedEffect : EffectState
 {
     float effectDuration;
-    float previousSpeed, previousPhysicalDamageTakenMultiplier;
-    float frozenSpeed = 0.0f;
+    float previousPhysicalDamageTakenMultiplier;
     float newPhysicalDamageTakenMultiplier;
 
     bool effectApplied = false;
 
-    public FrozenEffect(PropertiesManager propertiesManager, float effectDuration, float newPhysicalDamageTakenMultiplier) : base(propertiesManager)
+    public FortifiedEffect(PropertiesManager propertiesManager, float effectDuration, float newPhysicalDamageTakenMultiplier) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
         this.newPhysicalDamageTakenMultiplier = newPhysicalDamageTakenMultiplier;
-        previousSpeed = propertiesManager.mob.speed;
         previousPhysicalDamageTakenMultiplier = propertiesManager.mob.physicalDamageTakenMultiplier;
     }
 
     protected override void Effect()
     {
-        propertiesManager.SetMobSpeed(frozenSpeed);
         propertiesManager.SetPhysicalDamageTakenMultiplier(newPhysicalDamageTakenMultiplier);
-        Debug.Log("I am frozen and take more damage!");
+        Debug.Log("I am fortified - less phys.dmg taken");
     }
 
     public override void ApplyEffect()
@@ -36,14 +33,10 @@ public class FrozenEffect : EffectState
         if (Time.time > effectInitializedTime + effectDuration || complete)
         {
             complete = true;
-            propertiesManager.SetMobSpeed(previousSpeed);
             propertiesManager.SetPhysicalDamageTakenMultiplier(previousPhysicalDamageTakenMultiplier);
-            Debug.Log("I am no longer frozen");
+            Debug.Log("I am no longer fortified");
             effectApplied = false;
         }
     }
-
-
-
-
+    
 }

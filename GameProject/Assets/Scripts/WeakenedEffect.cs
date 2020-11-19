@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//This effect lowers Physical Attack Multiplier
 public class WeakenedEffect : EffectState
 {
     
@@ -7,13 +8,14 @@ public class WeakenedEffect : EffectState
 
     float previousDamageMultiplier;
     //Halves damage
-    float newDamageMultiplier = 0.5f;
+    float newDamageMultiplier;
 
     bool effectApplied = false;
 
-    public WeakenedEffect(PropertiesManager propertiesManager, float effectDuration) : base(propertiesManager)
+    public WeakenedEffect(PropertiesManager propertiesManager, float effectDuration, float newDamageMultiplier) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
+        this.newDamageMultiplier = newDamageMultiplier;
         previousDamageMultiplier = propertiesManager.mob.physicalAttackMultiplier;
     }
 
