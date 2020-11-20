@@ -14,6 +14,9 @@ public class AgileEffect : EffectState
 
     bool effectApplied = false;
 
+    bool particlesActive = false;
+    GameObject agileParticles;
+
     public AgileEffect(PropertiesManager propertiesManager, float effectDuration, float newSpeed) : base(propertiesManager)
     {
         //Get duration/new speed
@@ -38,11 +41,20 @@ public class AgileEffect : EffectState
             Effect();
             effectApplied = true;
         }
+        if (!particlesActive)
+        {
+            var agileParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsAgile", typeof(GameObject));
+            agileParticles = GameObject.Instantiate(agileParticlesPrefab, Vector3.zero, Quaternion.identity);
+            agileParticles.transform.position = Vector3.zero;
+            agileParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            particlesActive = true;
+        }
 
         // Reset after effect duration has run out
         if (Time.time > effectInitializedTime + effectDuration || complete)
         {
             complete = true;
+            GameObject.Destroy(agileParticles);
             propertiesManager.SetMobSpeed(previousSpeed);
             Debug.Log("I'm no longer fast!");
         }

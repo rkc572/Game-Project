@@ -940,6 +940,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4341998500285149537, guid: 66baa39d8c9ab0743b24a6f3ca7845ea, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4341998500503585242, guid: 66baa39d8c9ab0743b24a6f3ca7845ea, type: 3}
       propertyPath: m_Name
       value: PauseMenu
