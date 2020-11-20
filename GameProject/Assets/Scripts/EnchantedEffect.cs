@@ -8,6 +8,10 @@ public class EnchantedEffect : EffectState
 
     bool effectApplied = false;
 
+    bool particlesActive = false;
+    GameObject enchantedParticles;
+
+
     public EnchantedEffect(PropertiesManager propertiesManager, float effectDuration, float newElementalAttackMultiplier) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
@@ -29,10 +33,19 @@ public class EnchantedEffect : EffectState
             Effect();
             effectApplied = true;
         }
+        if (!particlesActive)
+        {
+            var enchantedParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsEnchanted", typeof(GameObject));
+            enchantedParticles = GameObject.Instantiate(enchantedParticlesPrefab, Vector3.zero, Quaternion.identity);
+            enchantedParticles.transform.position = Vector3.zero;
+            enchantedParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            particlesActive = true;
+        }
         //after effect duration finishes, reset
         if (Time.time > effectInitializedTime + effectDuration || complete)
         {
             complete = true;
+            GameObject.Destroy(enchantedParticles);
             propertiesManager.SetElementalAttackMultiplier(previousElementalAttackMultiplier);
             Debug.Log("I am no longer enchanted");
             effectApplied = false;
