@@ -7,6 +7,9 @@ public class RegeneratingEffect : EffectState
     float actionInterval;
     float healthRegenAmount;
 
+    bool particlesActive = false;
+    GameObject regenParticles;
+
     public RegeneratingEffect(PropertiesManager propertiesManager, float actionInterval, float effectDuration, float healthRegenAmount) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
@@ -28,6 +31,15 @@ public class RegeneratingEffect : EffectState
             lastInflictionTime = Time.time;
         }
 
+        if (!particlesActive)
+        {
+            var regenParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsRegenerating", typeof(GameObject));
+            regenParticles = GameObject.Instantiate(regenParticlesPrefab, Vector3.zero, Quaternion.identity);
+            regenParticles.transform.position = Vector3.zero;
+            regenParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            particlesActive = true;
+        }
+
         // Check if EffectState is still active
         if (Time.time < effectInitializedTime + effectDuration && !complete)
         {
@@ -45,6 +57,7 @@ public class RegeneratingEffect : EffectState
         {
             // Set complete to true if Effect state has run out and was not marked complete
             complete = true;
+            GameObject.Destroy(regenParticles);
             Debug.Log($"im done regenerating at {Time.time}");
         }
     }

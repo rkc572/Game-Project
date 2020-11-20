@@ -7,6 +7,8 @@ public class JinxedEffect : EffectState
     float newElementalAttackMultiplier;
 
     bool effectApplied = false;
+    bool particlesActive = false;
+    GameObject jinxedParticles;
 
     public JinxedEffect(PropertiesManager propertiesManager, float effectDuration, float newElementalAttackMultiplier) : base(propertiesManager)
     {
@@ -29,10 +31,19 @@ public class JinxedEffect : EffectState
             Effect();
             effectApplied = true;
         }
+        if (!particlesActive)
+        {
+            var jinxedParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsJinxed", typeof(GameObject));
+            jinxedParticles = GameObject.Instantiate(jinxedParticlesPrefab, Vector3.zero, Quaternion.identity);
+            jinxedParticles.transform.position = Vector3.zero;
+            jinxedParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            particlesActive = true;
+        }
         //after effect duration finishes, reset
         if (Time.time > effectInitializedTime + effectDuration || complete)
         {
             complete = true;
+            GameObject.Destroy(jinxedParticles);
             propertiesManager.SetElementalAttackMultiplier(previousElementalAttackMultiplier);
             Debug.Log("I am no longer jinxed");
             effectApplied = false;

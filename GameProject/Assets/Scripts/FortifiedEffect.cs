@@ -8,6 +8,9 @@ public class FortifiedEffect : EffectState
 
     bool effectApplied = false;
 
+    bool particlesActive = false;
+    GameObject fortifiedParticles;
+
     public FortifiedEffect(PropertiesManager propertiesManager, float effectDuration, float newPhysicalDamageTakenMultiplier) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
@@ -29,10 +32,21 @@ public class FortifiedEffect : EffectState
             Effect();
             effectApplied = true;
         }
+
+        if (!particlesActive)
+        {
+            var fortifiedParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsFortified", typeof(GameObject));
+            fortifiedParticles = GameObject.Instantiate(fortifiedParticlesPrefab, Vector3.zero, Quaternion.identity);
+            fortifiedParticles.transform.position = Vector3.zero;
+            fortifiedParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            particlesActive = true;
+        }
+
         //after effect duration finishes, reset
         if (Time.time > effectInitializedTime + effectDuration || complete)
         {
             complete = true;
+            GameObject.Destroy(fortifiedParticles);
             propertiesManager.SetPhysicalDamageTakenMultiplier(previousPhysicalDamageTakenMultiplier);
             Debug.Log("I am no longer fortified");
             effectApplied = false;

@@ -9,6 +9,9 @@ public class SlowedEffect : EffectState
 
     bool effectApplied = false;
 
+    bool particlesActive = false;
+    GameObject slowedParticles;
+
     public SlowedEffect(PropertiesManager propertiesManager, float effectDuration, float newSpeed) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
@@ -31,10 +34,20 @@ public class SlowedEffect : EffectState
             effectApplied = true;
         }
 
+        if (!particlesActive)
+        {
+            var slowedParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsSlowed", typeof(GameObject));
+            slowedParticles = GameObject.Instantiate(slowedParticlesPrefab, Vector3.zero, Quaternion.identity);
+            slowedParticles.transform.position = Vector3.zero;
+            slowedParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            particlesActive = true;
+        }
+
         // Reset after effect duration has run out
-        if(Time.time > effectInitializedTime + effectDuration || complete)
+        if (Time.time > effectInitializedTime + effectDuration || complete)
         {
             complete = true;
+            GameObject.Destroy(slowedParticles);
             propertiesManager.SetMobSpeed(previousSpeed);
             Debug.Log("I'm no longer slowed!");
         }
