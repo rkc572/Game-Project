@@ -9,6 +9,9 @@ public class VulnerableEffect : EffectState
 
     bool effectApplied = false;
 
+    bool particlesActive = false;
+    GameObject vulnerableParticles;
+
     public VulnerableEffect(PropertiesManager propertiesManager, float effectDuration, float newDamageTakenMultiplier) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
@@ -30,10 +33,21 @@ public class VulnerableEffect : EffectState
             Effect();
             effectApplied = true;
         }
+
+        if (!particlesActive)
+        {
+            var vulnerableParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsVulnerable", typeof(GameObject));
+            vulnerableParticles = GameObject.Instantiate(vulnerableParticlesPrefab, Vector3.zero, Quaternion.identity);
+            vulnerableParticles.transform.position = Vector3.zero;
+            vulnerableParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            particlesActive = true;
+        }
+
         //after effect duration finishes, reset
-        if(Time.time > effectInitializedTime + effectDuration || complete)
+        if (Time.time > effectInitializedTime + effectDuration || complete)
         {
             complete = true;
+            GameObject.Destroy(vulnerableParticles);
             propertiesManager.SetPhysicalDamageTakenMultiplier(previousDamageTakenMultiplier);
             Debug.Log("I am no longer vulnerable");
             effectApplied = false;

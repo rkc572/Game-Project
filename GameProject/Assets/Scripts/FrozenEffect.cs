@@ -9,6 +9,9 @@ public class FrozenEffect : EffectState
 
     bool effectApplied = false;
 
+    bool particlesActive = false;
+    GameObject frozenParticles;
+
     public FrozenEffect(PropertiesManager propertiesManager, float effectDuration, float newPhysicalDamageTakenMultiplier) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
@@ -32,10 +35,19 @@ public class FrozenEffect : EffectState
             Effect();
             effectApplied = true;
         }
+        if (!particlesActive)
+        {
+            var frozenParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsFrozen", typeof(GameObject));
+            frozenParticles = GameObject.Instantiate(frozenParticlesPrefab, Vector3.zero, Quaternion.identity);
+            frozenParticles.transform.position = Vector3.zero;
+            frozenParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            particlesActive = true;
+        }
         //after effect duration finishes, reset
         if (Time.time > effectInitializedTime + effectDuration || complete)
         {
             complete = true;
+            GameObject.Destroy(frozenParticles);
             propertiesManager.SetMobSpeed(previousSpeed);
             propertiesManager.SetPhysicalDamageTakenMultiplier(previousPhysicalDamageTakenMultiplier);
             Debug.Log("I am no longer frozen");

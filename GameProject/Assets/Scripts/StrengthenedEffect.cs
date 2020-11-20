@@ -8,6 +8,9 @@ public class StrengthenedEffect : EffectState
 
     bool effectApplied = false;
 
+    bool particlesActive = false;
+    GameObject strengthenedParticles;
+
     public StrengthenedEffect(PropertiesManager propertiesManager, float effectDuration, float newPhysicalAttackMultiplier) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
@@ -29,10 +32,21 @@ public class StrengthenedEffect : EffectState
             Effect();
             effectApplied = true;
         }
+
+        if (!particlesActive)
+        {
+            var strengthenedParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsStrengthened", typeof(GameObject));
+            strengthenedParticles = GameObject.Instantiate(strengthenedParticlesPrefab, Vector3.zero, Quaternion.identity);
+            strengthenedParticles.transform.position = Vector3.zero;
+            strengthenedParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            particlesActive = true;
+        }
+
         //after effect duration finishes, reset
         if (Time.time > effectInitializedTime + effectDuration || complete)
         {
             complete = true;
+            GameObject.Destroy(strengthenedParticles);
             propertiesManager.SetPhysicalAttackMultiplier(previousPhysicalAttackMultiplier);
             Debug.Log("I am no longer strengthened");
             effectApplied = false;

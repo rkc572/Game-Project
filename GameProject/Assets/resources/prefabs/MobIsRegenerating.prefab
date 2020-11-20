@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 830443443574259997}
   - component: {fileID: 830443443574259996}
   m_Layer: 0
-  m_Name: MobIsAgile
+  m_Name: MobIsRegenerating
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,11 +225,11 @@ ParticleSystem:
       maxColor: {r: 1, g: 0.40121153, b: 0.2028302, a: 0.79607844}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 0.6901961}
-        key1: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
-        key2: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
-        key3: {r: 1, g: 1, b: 1, a: 1}
-        key4: {r: 0, g: 0, b: 0, a: 1}
+        key0: {r: 0, g: 1, b: 0.13159084, a: 0.654902}
+        key1: {r: 0.3066038, g: 1, b: 0.3670641, a: 1}
+        key2: {r: 0.53799164, g: 1, b: 0.514151, a: 1}
+        key3: {r: 0.8160377, g: 1, b: 0.84169275, a: 1}
+        key4: {r: 1, g: 1, b: 1, a: 1}
         key5: {r: 0, g: 0, b: 0, a: 1}
         key6: {r: 0, g: 0, b: 0, a: 1}
         key7: {r: 0, g: 0, b: 0, a: 1}
@@ -237,7 +237,7 @@ ParticleSystem:
         ctime1: 30647
         ctime2: 52235
         ctime3: 59753
-        ctime4: 0
+        ctime4: 59753
         ctime5: 0
         ctime6: 0
         ctime7: 0

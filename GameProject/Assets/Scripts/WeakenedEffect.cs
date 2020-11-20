@@ -12,6 +12,9 @@ public class WeakenedEffect : EffectState
 
     bool effectApplied = false;
 
+    bool particlesActive;
+    GameObject weakenedParticles;
+
     public WeakenedEffect(PropertiesManager propertiesManager, float effectDuration, float newDamageMultiplier) : base(propertiesManager)
     {
         this.effectDuration = effectDuration;
@@ -34,10 +37,20 @@ public class WeakenedEffect : EffectState
             effectApplied = true;
         }
 
+        if (!particlesActive)
+        {
+            var weakenedParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsWeakened", typeof(GameObject));
+            weakenedParticles = GameObject.Instantiate(weakenedParticlesPrefab, Vector3.zero, Quaternion.identity);
+            weakenedParticles.transform.position = Vector3.zero;
+            weakenedParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            particlesActive = true;
+        }
+
         //After effect duration finishes, reset
-        if(Time.time > effectInitializedTime + effectDuration || complete)
+        if (Time.time > effectInitializedTime + effectDuration || complete)
         {
             complete = true;
+            GameObject.Destroy(weakenedParticles);
             propertiesManager.SetPhysicalAttackMultiplier(previousDamageMultiplier);
             Debug.Log("I'm not weakened!");
             effectApplied = false;

@@ -35,7 +35,7 @@ public class BurningEffect : EffectState
 
         if (!particlesActive)
         {
-            var fireParticlesPrefab = (GameObject)Resources.Load("prefabs/MobOnFire", typeof(GameObject));
+            var fireParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsBurning", typeof(GameObject));
             fireParticles = GameObject.Instantiate(fireParticlesPrefab, Vector3.zero, Quaternion.identity);
             fireParticles.transform.position = Vector3.zero;
             fireParticles.transform.SetParent(propertiesManager.mob.transform, false);
