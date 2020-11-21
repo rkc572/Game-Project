@@ -78,8 +78,8 @@ public class TriggerZone : MonoBehaviour
         {
             Vector3 left = new Vector3 (-1.58f, 0.85f, 0.0f);
             Vector3 mid = new Vector3(0.0f, 0.85f, 0.0f);
-            Vector3 right = new Vector3(1.61f, 0.85f, 0.0f);
-            PickRandomLocation(new Vector3[] { left, mid, right }); // seems to usually pick mid?
+            Vector3 right = new Vector3(1.93f, 0.85f, 0.0f);
+            PickRandomLocation(new Vector3[] { left, mid, right });
         }
 
         sceneManager = GameSceneManager.Instance;
