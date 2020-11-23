@@ -9,7 +9,7 @@ public class BurningEffect : EffectState
     bool particlesActive = false;
     GameObject fireParticles;
 
-    public BurningEffect(PropertiesManager propertiesManager, float actionInterval, float effectDuration, float damageValue) : base(propertiesManager)
+    public BurningEffect(Mob mob, float actionInterval, float effectDuration, float damageValue) : base(mob)
     {
         this.effectDuration = effectDuration;
         this.actionInterval = actionInterval;
@@ -19,9 +19,9 @@ public class BurningEffect : EffectState
     protected override void Effect()
     {
         Debug.Log($"im burning at {Time.time}");
-        propertiesManager.InflictElementalDamage(damageValue);
-        propertiesManager.GetComponentInParent<Animator>().SetTrigger("TookDamage");
-        propertiesManager.GetComponentInParent<Animator>().SetTrigger("PlayerHurt");
+        mob.InflictElementalDamage(damageValue);
+        mob.animator.SetTrigger("TookDamage");
+        mob.animator.SetTrigger("PlayerHurt");
     }
 
     public override void ApplyEffect()
@@ -38,7 +38,7 @@ public class BurningEffect : EffectState
             var fireParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsBurning", typeof(GameObject));
             fireParticles = GameObject.Instantiate(fireParticlesPrefab, Vector3.zero, Quaternion.identity);
             fireParticles.transform.position = Vector3.zero;
-            fireParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            fireParticles.transform.SetParent(mob.transform, false);
             particlesActive = true;
         }
 

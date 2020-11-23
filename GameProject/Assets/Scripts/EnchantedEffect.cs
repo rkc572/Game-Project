@@ -12,17 +12,17 @@ public class EnchantedEffect : EffectState
     GameObject enchantedParticles;
 
 
-    public EnchantedEffect(PropertiesManager propertiesManager, float effectDuration, float newElementalAttackMultiplier) : base(propertiesManager)
+    public EnchantedEffect(Mob mob, float effectDuration, float newElementalAttackMultiplier) : base(mob)
     {
         this.effectDuration = effectDuration;
         this.newElementalAttackMultiplier = newElementalAttackMultiplier;
-        previousElementalAttackMultiplier = propertiesManager.mob.elementalAttackMultiplier;
+        previousElementalAttackMultiplier = mob.elementalAttackMultiplier;
     }
 
     protected override void Effect()
     {
         Debug.Log("I am enchanted!");
-        propertiesManager.SetElementalAttackMultiplier(newElementalAttackMultiplier);
+        mob.SetElementalAttackMultiplier(newElementalAttackMultiplier);
     }
 
     public override void ApplyEffect()
@@ -38,7 +38,7 @@ public class EnchantedEffect : EffectState
             var enchantedParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsEnchanted", typeof(GameObject));
             enchantedParticles = GameObject.Instantiate(enchantedParticlesPrefab, Vector3.zero, Quaternion.identity);
             enchantedParticles.transform.position = Vector3.zero;
-            enchantedParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            enchantedParticles.transform.SetParent(mob.transform, false);
             particlesActive = true;
         }
         //after effect duration finishes, reset
@@ -46,7 +46,7 @@ public class EnchantedEffect : EffectState
         {
             complete = true;
             GameObject.Destroy(enchantedParticles);
-            propertiesManager.SetElementalAttackMultiplier(previousElementalAttackMultiplier);
+            mob.SetElementalAttackMultiplier(previousElementalAttackMultiplier);
             Debug.Log("I am no longer enchanted");
             effectApplied = false;
         }

@@ -1,135 +1,109 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-struct bufferItem
+public class PlayerInputController : InputController
 {
-    public Action action;
-    public float timeOf;
-}
-
-public class PlayerInputController : MonoBehaviour
-{
-
-    PlayerControls playerControls = new PlayerControls();
     public Player player;
-    public PlayerMovementController playerMovementController;
-    float currTime;
+    public PlayerMovementController movementController;
 
-    public bool readInput, readMovementInput = true;
-
-    bufferItem playerAttackActionBuffer = new bufferItem();
-
-    private void DetectPlayerMovementInput()
+    // Start is called before the first frame update
+    void Start()
     {
-        if (!player.AnimatorIsPlaying())
+    }
+
+    void PlayerItemActionInputDetection()
+    {
+        // Detect sword input
+        player.playerSword.DetectInput();
+
+        // Detect artifact input
+        player.selectedArtifact.DetectInput();
+    }
+
+    void PlayerMovementInputDetection()
+    {
+        // Detect player movement input
+        movementController.DetectInput();
+    }
+    
+    void PotionInputDetection()
+    {
+
+    }
+
+    void PlayerItemSwapInput()
+    {
+        int index = -1;
+
+        // Slot 1 picked
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
         {
-            playerMovementController.moveUp = Input.GetKey(playerControls.moveUpKey);
-            playerMovementController.moveDown = Input.GetKey(playerControls.moveDownKey);
-            playerMovementController.moveLeft = Input.GetKey(playerControls.moveLeftKey);
-            playerMovementController.moveRight = Input.GetKey(playerControls.moveRightKey);
+            index = 0;
+        }
+
+        // Slot 2 picked
+        else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            index = 1;
+        }
+
+        // Slot 3 picked
+        else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            index = 2;
+        }
+
+        // Slot 4 picked
+        else if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            index = 3;
+        }
+
+        // end function if no artifact selected
+        if (index == -1)
+        {
+            return;
+        }
+
+        //verify slot exists
+        if (player.artifacts.Count >= index + 1)
+        {
+            player.selectedArtifact = player.artifacts[index];
         }
         else
         {
-            playerMovementController.moveUp = false;
-            playerMovementController.moveDown = false;
-            playerMovementController.moveLeft = false;
-            playerMovementController.moveRight = false;
+
         }
     }
 
-    private void DetectPlayerAttackInput()
+
+    // Update is called once per frame
+    void Update()
     {
-        // Left Mouse Click
-        if (Input.GetMouseButtonDown(0))
+
+        // Do not proceed to read player input if false
+        if (!detectInput)
         {
-            playerAttackActionBuffer.timeOf = Time.time;
-
-            // Holding activateElemental action key
-            if (Input.GetKey(playerControls.activateElemental))
-            {
-                playerAttackActionBuffer.action = player.sword.ElementalAction;
-            }
-            else
-            {
-                playerAttackActionBuffer.action = player.sword.Action;
-            }
+            return;
         }
-        // Right Mouse Click
-        else if (Input.GetMouseButtonDown(1))
+
+        // Detect player item action input only if enabled
+        if (detectActionInput)
         {
-            readMovementInput = false;
-            playerAttackActionBuffer.timeOf = Time.time;
-
-            // Holding activateElemental action key
-            if (Input.GetKey(playerControls.activateElemental))
-            {
-                playerAttackActionBuffer.action = player.selectedArtifact.ElementalAction;
-            }
-            else
-            {
-                playerAttackActionBuffer.action = player.selectedArtifact.Action;
-            }
+            PlayerItemActionInputDetection();
         }
-        // Right Mouse Click Up
-        else if (Input.GetMouseButtonUp(1))
+
+        // Detect player movement input only if enabled
+        if (detectMovementInput)
         {
-
-            if (player.selectedArtifact.GetType() == typeof(PlayerShield))
-            {
-                player.properties.damageTakenMultiplier = 1f;
-                player.properties.rigidBody.constraints.HasFlag(RigidbodyConstraints2D.None);
-                player.properties.rigidBody.constraints.HasFlag(RigidbodyConstraints2D.FreezeRotation);
-                player.animator.SetBool("Shield", false);
-            }
-
-            readMovementInput = true;
+            PlayerMovementInputDetection();
         }
+
+        // Detect potion input
+        PotionInputDetection();
+
+        // Detect player artifact swap input
+        PlayerItemSwapInput();
     }
-
-    void DetectArtifactSelection()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            player.sword.elementalAttribute = ElementalAttribute.Earth;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            player.sword.elementalAttribute = ElementalAttribute.Fire;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
-        {
-            player.sword.elementalAttribute = ElementalAttribute.Water;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
-        {
-            player.sword.elementalAttribute = ElementalAttribute.Wind;
-        }
-    }
-
-
-    private void Update()
-    {
-        if (readInput) {
-            // execute attack actions in queue
-            if (!player.AnimatorIsPlaying())
-            {
-                currTime = Time.time;
-                if ((currTime - playerAttackActionBuffer.timeOf) <= 0.25f && playerAttackActionBuffer.action != null)
-                {
-                    playerAttackActionBuffer.action();
-                    playerAttackActionBuffer.action = null;
-                }
-            }
-
-            DetectPlayerAttackInput();
-            if (readMovementInput)
-            {
-                DetectPlayerMovementInput();
-            }
-            DetectArtifactSelection();
-        }
-    }
-
 }

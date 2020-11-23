@@ -10,7 +10,7 @@ public class RegeneratingEffect : EffectState
     bool particlesActive = false;
     GameObject regenParticles;
 
-    public RegeneratingEffect(PropertiesManager propertiesManager, float actionInterval, float effectDuration, float healthRegenAmount) : base(propertiesManager)
+    public RegeneratingEffect(Mob mob, float actionInterval, float effectDuration, float healthRegenAmount) : base(mob)
     {
         this.effectDuration = effectDuration;
         this.actionInterval = actionInterval;
@@ -20,7 +20,7 @@ public class RegeneratingEffect : EffectState
     protected override void Effect()
     {
         Debug.Log($"im healing at {Time.time}");
-        propertiesManager.ModifyHealthByAmount(healthRegenAmount);
+        mob.ModifyHealthByAmount(healthRegenAmount);
     }
 
     public override void ApplyEffect()
@@ -36,7 +36,7 @@ public class RegeneratingEffect : EffectState
             var regenParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsRegenerating", typeof(GameObject));
             regenParticles = GameObject.Instantiate(regenParticlesPrefab, Vector3.zero, Quaternion.identity);
             regenParticles.transform.position = Vector3.zero;
-            regenParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            regenParticles.transform.SetParent(mob.transform, false);
             particlesActive = true;
         }
 

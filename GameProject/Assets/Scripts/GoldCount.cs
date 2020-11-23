@@ -16,7 +16,7 @@ public class GoldCount : MonoBehaviour
 
     void Start()
     {
-        player = FindObjectOfType<Player>();
+        player = Player.Instance;
     }
 
     void Update()

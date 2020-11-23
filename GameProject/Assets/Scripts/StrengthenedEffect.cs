@@ -11,17 +11,17 @@ public class StrengthenedEffect : EffectState
     bool particlesActive = false;
     GameObject strengthenedParticles;
 
-    public StrengthenedEffect(PropertiesManager propertiesManager, float effectDuration, float newPhysicalAttackMultiplier) : base(propertiesManager)
+    public StrengthenedEffect(Mob mob, float effectDuration, float newPhysicalAttackMultiplier) : base(mob)
     {
         this.effectDuration = effectDuration;
         this.newPhysicalAttackMultiplier = newPhysicalAttackMultiplier;
-        previousPhysicalAttackMultiplier = propertiesManager.mob.physicalAttackMultiplier;
+        previousPhysicalAttackMultiplier = mob.physicalAttackMultiplier;
     }
 
     protected override void Effect()
     {
         Debug.Log("I am strengthened");
-        propertiesManager.SetPhysicalAttackMultiplier(newPhysicalAttackMultiplier);
+        mob.SetPhysicalAttackMultiplier(newPhysicalAttackMultiplier);
     }
 
     public override void ApplyEffect()
@@ -38,7 +38,7 @@ public class StrengthenedEffect : EffectState
             var strengthenedParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsStrengthened", typeof(GameObject));
             strengthenedParticles = GameObject.Instantiate(strengthenedParticlesPrefab, Vector3.zero, Quaternion.identity);
             strengthenedParticles.transform.position = Vector3.zero;
-            strengthenedParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            strengthenedParticles.transform.SetParent(mob.transform, false);
             particlesActive = true;
         }
 
@@ -47,7 +47,7 @@ public class StrengthenedEffect : EffectState
         {
             complete = true;
             GameObject.Destroy(strengthenedParticles);
-            propertiesManager.SetPhysicalAttackMultiplier(previousPhysicalAttackMultiplier);
+            mob.SetPhysicalAttackMultiplier(previousPhysicalAttackMultiplier);
             Debug.Log("I am no longer strengthened");
             effectApplied = false;
         }

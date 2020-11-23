@@ -22,8 +22,8 @@ public class ManaDrop : MonoBehaviour
         if (collision.tag == "Player")
         {
             var player = collision.GetComponent<Player>();
-            player.properties.propertiesManager.ModifyManaByAmount(value);
-            player.sounds.PlayManaPickupSFX();
+            player.ModifyManaByAmount(value);
+            player.playerSounds.PlayManaPickupSFX();
             Destroy(gameObject);
         }
     }

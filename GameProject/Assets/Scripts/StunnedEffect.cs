@@ -5,20 +5,20 @@ public class StunnedEffect : EffectState
     float effectDuration;
     float previousSpeed;
     //Stunned Effect - frozen cant move
-    float stunnedSpeed = 0.0f;
     bool effectApplied = false;
 
 
-    public StunnedEffect(PropertiesManager propertiesManager, float effectDuration) : base(propertiesManager)
+    public StunnedEffect(Mob mob, float effectDuration) : base(mob)
     {
         this.effectDuration = effectDuration;
-        previousSpeed = propertiesManager.mob.speed;
+        previousSpeed = mob.speed;
     }
 
     protected override void Effect()
     {
         Debug.Log("I am stunned - can't move");
-        propertiesManager.SetMobSpeed(stunnedSpeed);
+        mob.movementController.StopMoving();
+        mob.inputController.detectInput = false;
     }
 
     public override void ApplyEffect()
@@ -34,7 +34,7 @@ public class StunnedEffect : EffectState
         {
             complete = true;
             Debug.Log("I am no longer stunned - I can move");
-            propertiesManager.SetMobSpeed(previousSpeed);
+            mob.inputController.detectInput = true;
             effectApplied = false;
         }
     }

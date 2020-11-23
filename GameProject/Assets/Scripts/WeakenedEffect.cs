@@ -15,17 +15,17 @@ public class WeakenedEffect : EffectState
     bool particlesActive;
     GameObject weakenedParticles;
 
-    public WeakenedEffect(PropertiesManager propertiesManager, float effectDuration, float newDamageMultiplier) : base(propertiesManager)
+    public WeakenedEffect(Mob mob, float effectDuration, float newDamageMultiplier) : base(mob)
     {
         this.effectDuration = effectDuration;
         this.newDamageMultiplier = newDamageMultiplier;
-        previousDamageMultiplier = propertiesManager.mob.physicalAttackMultiplier;
+        previousDamageMultiplier = mob.physicalAttackMultiplier;
     }
 
     protected override void Effect()
     {
         Debug.Log("I'm weakened!");
-        propertiesManager.SetPhysicalAttackMultiplier(newDamageMultiplier);
+        mob.SetPhysicalAttackMultiplier(newDamageMultiplier);
     }
 
     public override void ApplyEffect()
@@ -42,7 +42,7 @@ public class WeakenedEffect : EffectState
             var weakenedParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsWeakened", typeof(GameObject));
             weakenedParticles = GameObject.Instantiate(weakenedParticlesPrefab, Vector3.zero, Quaternion.identity);
             weakenedParticles.transform.position = Vector3.zero;
-            weakenedParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            weakenedParticles.transform.SetParent(mob.transform, false);
             particlesActive = true;
         }
 
@@ -51,7 +51,7 @@ public class WeakenedEffect : EffectState
         {
             complete = true;
             GameObject.Destroy(weakenedParticles);
-            propertiesManager.SetPhysicalAttackMultiplier(previousDamageMultiplier);
+            mob.SetPhysicalAttackMultiplier(previousDamageMultiplier);
             Debug.Log("I'm not weakened!");
             effectApplied = false;
         }

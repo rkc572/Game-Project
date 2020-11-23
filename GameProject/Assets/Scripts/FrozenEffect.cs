@@ -12,18 +12,18 @@ public class FrozenEffect : EffectState
     bool particlesActive = false;
     GameObject frozenParticles;
 
-    public FrozenEffect(PropertiesManager propertiesManager, float effectDuration, float newPhysicalDamageTakenMultiplier) : base(propertiesManager)
+    public FrozenEffect(Mob mob, float effectDuration, float newPhysicalDamageTakenMultiplier) : base(mob)
     {
         this.effectDuration = effectDuration;
         this.newPhysicalDamageTakenMultiplier = newPhysicalDamageTakenMultiplier;
-        previousSpeed = propertiesManager.mob.speed;
-        previousPhysicalDamageTakenMultiplier = propertiesManager.mob.physicalDamageTakenMultiplier;
+        previousSpeed = mob.speed;
+        previousPhysicalDamageTakenMultiplier = mob.physicalDamageTakenMultiplier;
     }
 
     protected override void Effect()
     {
-        propertiesManager.SetMobSpeed(frozenSpeed);
-        propertiesManager.SetPhysicalDamageTakenMultiplier(newPhysicalDamageTakenMultiplier);
+        mob.SetMobSpeed(frozenSpeed);
+        mob.SetPhysicalDamageTakenMultiplier(newPhysicalDamageTakenMultiplier);
         Debug.Log("I am frozen and take more damage!");
     }
 
@@ -40,7 +40,7 @@ public class FrozenEffect : EffectState
             var frozenParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsFrozen", typeof(GameObject));
             frozenParticles = GameObject.Instantiate(frozenParticlesPrefab, Vector3.zero, Quaternion.identity);
             frozenParticles.transform.position = Vector3.zero;
-            frozenParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            frozenParticles.transform.SetParent(mob.transform, false);
             particlesActive = true;
         }
         //after effect duration finishes, reset
@@ -48,8 +48,8 @@ public class FrozenEffect : EffectState
         {
             complete = true;
             GameObject.Destroy(frozenParticles);
-            propertiesManager.SetMobSpeed(previousSpeed);
-            propertiesManager.SetPhysicalDamageTakenMultiplier(previousPhysicalDamageTakenMultiplier);
+            mob.SetMobSpeed(previousSpeed);
+            mob.SetPhysicalDamageTakenMultiplier(previousPhysicalDamageTakenMultiplier);
             Debug.Log("I am no longer frozen");
             effectApplied = false;
         }

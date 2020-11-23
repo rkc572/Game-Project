@@ -215,6 +215,18 @@ TextureImporter:
   - first:
       213: 4343676629229780934
     second: ch_base_knight_00_70
+  - first:
+      213: -8658842819154415387
+    second: ch_base_knight_00_71
+  - first:
+      213: -842500690338552281
+    second: ch_base_knight_00_72
+  - first:
+      213: 2829805198130688175
+    second: ch_base_knight_00_73
+  - first:
+      213: -189501124570940643
+    second: ch_base_knight_00_74
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1800,6 +1812,90 @@ TextureImporter:
       bones: []
       spriteID: 6cf386861e6d74c30800000000000000
       internalID: 4343676629229780934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_71
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 373
+        width: 31
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0fb5e155c95d780800000000000000
+      internalID: -8658842819154415387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_72
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 373
+        width: 31
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726695df516de44f0800000000000000
+      internalID: -842500690338552281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_73
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 369
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa03222b5dc754720800000000000000
+      internalID: 2829805198130688175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ch_base_knight_00_74
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 369
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b79613bb1ce5df0800000000000000
+      internalID: -189501124570940643
       vertices: []
       indices: 
       edges: []

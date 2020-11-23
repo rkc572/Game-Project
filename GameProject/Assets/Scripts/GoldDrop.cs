@@ -23,7 +23,7 @@ public class GoldDrop : MonoBehaviour
         {
             var player = collision.GetComponent<Player>();
             player.gold += value;
-            player.sounds.PlayGoldPickupSFX();
+            player.playerSounds.PlayGoldPickupSFX();
             Destroy(gameObject);
         } 
     }

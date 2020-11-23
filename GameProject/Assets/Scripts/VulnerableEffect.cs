@@ -12,16 +12,16 @@ public class VulnerableEffect : EffectState
     bool particlesActive = false;
     GameObject vulnerableParticles;
 
-    public VulnerableEffect(PropertiesManager propertiesManager, float effectDuration, float newDamageTakenMultiplier) : base(propertiesManager)
+    public VulnerableEffect(Mob mob, float effectDuration, float newDamageTakenMultiplier) : base(mob)
     {
         this.effectDuration = effectDuration;
         this.newDamageTakenMultiplier = newDamageTakenMultiplier;
-        previousDamageTakenMultiplier = propertiesManager.mob.physicalDamageTakenMultiplier;
+        previousDamageTakenMultiplier = mob.physicalDamageTakenMultiplier;
     }
 
     protected override void Effect()
     {
-        propertiesManager.SetPhysicalDamageTakenMultiplier(newDamageTakenMultiplier);
+        mob.SetPhysicalDamageTakenMultiplier(newDamageTakenMultiplier);
         Debug.Log("I am vulnerable!");
     }
 
@@ -39,7 +39,7 @@ public class VulnerableEffect : EffectState
             var vulnerableParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsVulnerable", typeof(GameObject));
             vulnerableParticles = GameObject.Instantiate(vulnerableParticlesPrefab, Vector3.zero, Quaternion.identity);
             vulnerableParticles.transform.position = Vector3.zero;
-            vulnerableParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            vulnerableParticles.transform.SetParent(mob.transform, false);
             particlesActive = true;
         }
 
@@ -48,7 +48,7 @@ public class VulnerableEffect : EffectState
         {
             complete = true;
             GameObject.Destroy(vulnerableParticles);
-            propertiesManager.SetPhysicalDamageTakenMultiplier(previousDamageTakenMultiplier);
+            mob.SetPhysicalDamageTakenMultiplier(previousDamageTakenMultiplier);
             Debug.Log("I am no longer vulnerable");
             effectApplied = false;
         }

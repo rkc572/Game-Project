@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Skeleton : MonoBehaviour
+public class Skeleton : Enemy
 {
     public enum MovementMode
     {
@@ -22,8 +22,6 @@ public class Skeleton : MonoBehaviour
         VerticallyDown,
     };
 
-    public Mob properties;
-    public Animator animator;
     public SortingGroup sortingGroup;
 
     public bool droppedItem = false;
@@ -63,9 +61,9 @@ public class Skeleton : MonoBehaviour
 
     void UpdateWalkingAnimatorParameters()
     {
-        animator.SetFloat("HorizontalMagnitude", properties.rigidBody.velocity.x);
-        animator.SetFloat("VerticalMagnitude", properties.rigidBody.velocity.y);
-        animator.SetBool("Moving", properties.rigidBody.velocity.y != 0.0f || properties.rigidBody.velocity.x != 0);
+        animator.SetFloat("HorizontalMagnitude", rigidBody.velocity.x);
+        animator.SetFloat("VerticalMagnitude", rigidBody.velocity.y);
+        animator.SetBool("Moving", rigidBody.velocity.y != 0.0f || rigidBody.velocity.x != 0);
     }
 
     void PatrolBoundsUpdate()
@@ -113,7 +111,7 @@ public class Skeleton : MonoBehaviour
                 break;
         }
 
-        properties.rigidBody.velocity = direction * properties.speed;
+        rigidBody.velocity = direction * speed;
         UpdateWalkingAnimatorParameters();
 
         //check if player is within sight radius
@@ -140,8 +138,8 @@ public class Skeleton : MonoBehaviour
         Vector3 playerOffset = new Vector3(0.0f, 0.1f, 0.0f);
 
         Vector2 playerDirection = (playerReference.transform.position + playerOffset) - transform.position;
-        Vector2 newVelocity = playerDirection.normalized * properties.speed;
-        properties.rigidBody.velocity = Vector2.SmoothDamp(properties.rigidBody.velocity, newVelocity, ref smoothVelocityReference, 0.1f);
+        Vector2 newVelocity = playerDirection.normalized * speed;
+        rigidBody.velocity = Vector2.SmoothDamp(rigidBody.velocity, newVelocity, ref smoothVelocityReference, 0.1f);
 
         UpdateWalkingAnimatorParameters();
 
@@ -174,22 +172,22 @@ public class Skeleton : MonoBehaviour
                 if (collider.tag == "Player")
                 {
                     animator.SetTrigger("Attack");
-                    playerReference.properties.propertiesManager.InflictPhysicalDamage(damageAmount * properties.physicalAttackMultiplier * properties.attackMultiplier);
+                    playerReference.InflictPhysicalDamage(damageAmount * physicalAttackMultiplier * attackMultiplier);
                     playerReference.animator.SetTrigger("PlayerHurt");
-                    playerReference.properties.propertiesManager.ToggleEffectState(new RepulsedEffect(playerReference.properties.propertiesManager, 0.1f, new Vector2(animator.GetFloat("HorizontalMagnitude"), animator.GetFloat("VerticalMagnitude")), 2.0f));
+                    playerReference.ToggleEffectState(new RepulsedEffect(playerReference, 0.1f, new Vector2(animator.GetFloat("HorizontalMagnitude"), animator.GetFloat("VerticalMagnitude")), 2.0f));
                 }
             }
 
             movementMode = MovementMode.Pursuit;
         }
 
-        properties.rigidBody.velocity = Vector2.zero;
+        rigidBody.velocity = Vector2.zero;
 
     }
 
     void Disable()
     {
-        properties.rigidBody.velocity = Vector2.zero;
+        rigidBody.velocity = Vector2.zero;
         if (!animator.GetBool("Disabled"))
         {
             animator.SetTrigger("Disable");
@@ -213,14 +211,14 @@ public class Skeleton : MonoBehaviour
         sortingGroup.sortingOrder = 0;
         movementMode = MovementMode.Pursuit;
         gameObject.GetComponent<Collider2D>().isTrigger = false;
-        properties.health = properties.MAX_HEALTH;
+        health = MAX_HEALTH;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (properties.health <= 0)
+        if (health <= 0)
         {
             movementMode = MovementMode.Disabled;
         }   

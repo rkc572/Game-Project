@@ -10,16 +10,16 @@ public class JinxedEffect : EffectState
     bool particlesActive = false;
     GameObject jinxedParticles;
 
-    public JinxedEffect(PropertiesManager propertiesManager, float effectDuration, float newElementalAttackMultiplier) : base(propertiesManager)
+    public JinxedEffect(Mob mob, float effectDuration, float newElementalAttackMultiplier) : base(mob)
     {
         this.effectDuration = effectDuration;
         this.newElementalAttackMultiplier = newElementalAttackMultiplier;
-        previousElementalAttackMultiplier = propertiesManager.mob.elementalAttackMultiplier;
+        previousElementalAttackMultiplier = mob.elementalAttackMultiplier;
     }
 
     protected override void Effect()
     {
-        propertiesManager.SetElementalAttackMultiplier(newElementalAttackMultiplier);
+        mob.SetElementalAttackMultiplier(newElementalAttackMultiplier);
         Debug.Log("I am jinxed - Elemental Attack Multiplier decreased");
 
     }
@@ -36,7 +36,7 @@ public class JinxedEffect : EffectState
             var jinxedParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsJinxed", typeof(GameObject));
             jinxedParticles = GameObject.Instantiate(jinxedParticlesPrefab, Vector3.zero, Quaternion.identity);
             jinxedParticles.transform.position = Vector3.zero;
-            jinxedParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            jinxedParticles.transform.SetParent(mob.transform, false);
             particlesActive = true;
         }
         //after effect duration finishes, reset
@@ -44,7 +44,7 @@ public class JinxedEffect : EffectState
         {
             complete = true;
             GameObject.Destroy(jinxedParticles);
-            propertiesManager.SetElementalAttackMultiplier(previousElementalAttackMultiplier);
+            mob.SetElementalAttackMultiplier(previousElementalAttackMultiplier);
             Debug.Log("I am no longer jinxed");
             effectApplied = false;
         }

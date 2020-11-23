@@ -4,234 +4,459 @@ using UnityEngine;
 
 public class PlayerSword : PlayerItem
 {
-    public PlayerSword(Player player) : base(player)
-    {
-    }
+    public Player player;
+    public Collider2D upCollider, leftCollider, downCollider, rightCollider;
+    public Collider2D airUpCollider, airLeftCollider, airDownCollider, airRightCollider;
 
-    public override void Action()
-    {
-        float colliderYoffset = 0.09f;
-        Vector3 attackOffset;
+    public Collider2D activeSwordSwingCollider;
+    public Collider2D airSwordSwingCollider;
 
-        attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.13f, player.animator.GetFloat("VerticalMagnitude") * 0.13f + colliderYoffset, 0.0f);
+    bool swungSword = false;
+    Vector2 attackDirection;
+
+    void RegularSwing()
+    {
+
+        // Stop player movement while attacking
+        swungSword = true;
+        player.inputController.detectMovementInput = false;
+        player.movementController.StopMoving();
+
+        // Play sword swing animation
         player.animator.SetTrigger("SwingSword");
-        var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.09f);
-        foreach (Collider2D collider in colliders)
-        {
-            if (collider.tag == "Enemy")
-            {
-                var enemyMob = collider.GetComponentInParent<Mob>();
-                var skeleton = enemyMob.GetComponent<Skeleton>();
-                if (skeleton != null && skeleton.movementMode == Skeleton.MovementMode.Disabled) {
-                    return;
-                }
 
-                enemyMob.GetComponentInParent<Animator>().SetTrigger("TookDamage");
-                enemyMob.propertiesManager.InflictPhysicalDamage(25.0f * player.properties.physicalAttackMultiplier * player.properties.attackMultiplier);
-                enemyMob.propertiesManager.ToggleEffectState(new RepulsedEffect(enemyMob.propertiesManager, 0.1f, new Vector2(player.animator.GetFloat("HorizontalMagnitude"), player.animator.GetFloat("VerticalMagnitude")), 3.0f));
-                break;
+        // do not do collider calculations if player is ethereal
+        if (player.isEthereal)
+            return;
+
+        // get active regular swing collider
+        Collider2D swordSwingCollider = activeSwordSwingCollider;
+
+        // Contact filter to only include colliders in Enemy layer
+        ContactFilter2D enemyFilter = new ContactFilter2D();
+        enemyFilter.SetLayerMask(LayerMask.GetMask("Enemy"));
+
+        // list to store all enemy colliders in swing
+        var enemyColliders = new List<Collider2D>();
+
+        // get all enemy colliders overlapping with sword swing collider
+        swordSwingCollider.OverlapCollider(enemyFilter, enemyColliders);
+
+        // inflict only sword swing damage
+        foreach (Collider2D enemyCollider in enemyColliders)
+        {
+            Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                // inflict damage
+                enemy.InflictPhysicalDamage(25.0f * player.physicalAttackMultiplier * player.attackMultiplier);
+                enemy.animator.SetTrigger("TookDamage");
+                // knockback enemy
+                StartCoroutine(enemy.KnockBack(attackDirection, 2.0f));
             }
         }
-
     }
 
-    protected override void EarthAction()
+    void EarthSwing()
     {
-        float manaCost = 50.0f;
-        if (player.properties.mana <= manaCost)
+        if (player.mana < 10)
         {
+            // end function player does not have enough mana
             return;
         }
 
-        player.properties.propertiesManager.ModifyManaByAmount(-manaCost);
-
+        // consume mana for action
+        player.ModifyManaByAmount(-10.0f);
 
         float colliderYoffset = 0.09f;
-        Vector3 attackOffset;
-
-        attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.13f, player.animator.GetFloat("VerticalMagnitude") * 0.13f + colliderYoffset, 0.0f);
-
-        // create water swing prefab
-        var angle = Mathf.Atan2(player.animator.GetFloat("VerticalMagnitude"), player.animator.GetFloat("HorizontalMagnitude")) * Mathf.Rad2Deg + 90.0f;
-
+        Vector3 attackOffset = new Vector3(attackDirection.x * 0.13f, attackDirection.y * 0.13f + colliderYoffset, 0.0f);
+        var angle = Mathf.Atan2(attackDirection.y, attackDirection.x) * Mathf.Rad2Deg + 90.0f;
         var swingPrefab = (GameObject)Resources.Load("prefabs/Earth Swing", typeof(GameObject));
         var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
         swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
         Object.Destroy(swingObject, 0.6f);
 
-        player.sounds.PlayEarthSFX();
-        player.animator.SetTrigger("SwingSword");
 
-        var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.09f);
-        foreach (Collider2D collider in colliders)
+        // Stop player movement while attacking
+        swungSword = true;
+        player.inputController.detectMovementInput = false;
+        player.movementController.StopMoving();
+
+
+        player.animator.SetTrigger("SwingSword");
+        playerSounds.PlayEarthSFX();
+
+        // do not do collider calculations if player is ethereal
+        if (player.isEthereal)
+            return;
+
+        // get active regular swing collider
+        Collider2D swordSwingCollider = activeSwordSwingCollider;
+
+        // Contact filter to only include colliders in Enemy layer
+        ContactFilter2D enemyFilter = new ContactFilter2D();
+        enemyFilter.SetLayerMask(LayerMask.GetMask("Enemy"));
+
+        // list to store all enemy colliders in regular swing
+        var enemyColliders = new List<Collider2D>();
+
+        // get all enemy colliders overlapping with sword swing collider
+        swordSwingCollider.OverlapCollider(enemyFilter, enemyColliders);
+
+        // inflict earth sword swing damage to enemies
+        foreach (Collider2D enemyCollider in enemyColliders)
         {
-            if (collider.tag == "Enemy")
+            Debug.Log("base damage only");
+            Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
             {
-                var enemyMob = collider.GetComponentInParent<Mob>();
-                var skeleton = enemyMob.GetComponent<Skeleton>();
-                if (skeleton != null && skeleton.movementMode == Skeleton.MovementMode.Disabled)
-                {
-                    return;
-                }
-                enemyMob.GetComponentInParent<Animator>().SetTrigger("TookDamage");
-                enemyMob.propertiesManager.InflictElementalDamage(25.0f * player.properties.elementalAttackMultiplier * player.properties.attackMultiplier);
-                enemyMob.propertiesManager.ToggleEffectState(new RepulsedEffect(enemyMob.propertiesManager, 0.1f, new Vector2(player.animator.GetFloat("HorizontalMagnitude"), player.animator.GetFloat("VerticalMagnitude")), 3.0f));
-                //stun mob
-                enemyMob.propertiesManager.ToggleEffectState(new StunnedEffect(enemyMob.propertiesManager, 2.0f));
-                break;
+                // inflict damage
+                enemy.InflictPhysicalDamage(25.0f * player.physicalAttackMultiplier * player.attackMultiplier);
+                enemy.animator.SetTrigger("TookDamage");
+
+                // knockback enemy
+                StartCoroutine(enemy.KnockBack(attackDirection, 2.0f));
+
+                // stun enemy
+                enemy.ToggleEffectState(new StunnedEffect(enemy, 2.0f));
             }
         }
     }
 
-    protected override void FireAction()
+    void WaterSwing()
     {
-        float manaCost = 50.0f;
-        if (player.properties.mana <= manaCost)
+        if (player.mana < 10)
         {
+            // end function player does not have enough mana
             return;
         }
 
-        player.properties.propertiesManager.ModifyManaByAmount(-manaCost);
+        // consume mana for action
+        player.ModifyManaByAmount(-10.0f);
 
         float colliderYoffset = 0.09f;
-        Vector3 attackOffset;
-        attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.13f, player.animator.GetFloat("VerticalMagnitude") * 0.13f + colliderYoffset, 0.0f);
-
-        // create fire swing prefab
-        var angle = Mathf.Atan2(player.animator.GetFloat("VerticalMagnitude"), player.animator.GetFloat("HorizontalMagnitude")) * Mathf.Rad2Deg + 90.0f;
-        var swingPrefab = (GameObject)Resources.Load("prefabs/Fire Swing", typeof(GameObject));
-        var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
-        swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
-        Object.Destroy(swingObject, 0.6f);
-
-        player.sounds.PlayFireSFX();
-        player.animator.SetTrigger("SwingSword");
-
-        var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.09f);
-        foreach (Collider2D collider in colliders)
-        {
-            if (collider.tag == "Enemy")
-            {
-                var enemyMob = collider.GetComponentInParent<Mob>();
-                var skeleton = enemyMob.GetComponent<Skeleton>();
-                if (skeleton != null && skeleton.movementMode == Skeleton.MovementMode.Disabled)
-                {
-                    return;
-                }
-                enemyMob.GetComponentInParent<Animator>().SetTrigger("TookDamage");
-                enemyMob.propertiesManager.InflictElementalDamage(25.0f * player.properties.elementalAttackMultiplier * player.properties.attackMultiplier);
-                // set mob on fire
-                enemyMob.propertiesManager.ToggleEffectState(new BurningEffect(enemyMob.propertiesManager, 1.0f, 4.0f, 15.0f));
-                enemyMob.propertiesManager.ToggleEffectState(new RepulsedEffect(enemyMob.propertiesManager, 0.1f, new Vector2(player.animator.GetFloat("HorizontalMagnitude"), player.animator.GetFloat("VerticalMagnitude")), 3.0f));
-                break;
-            }
-        }
-    }
-
-    protected override void WaterAction()
-    {
-
-        float manaCost = 50.0f;
-        if (player.properties.mana <= manaCost)
-        {
-            return;
-        }
-
-        player.properties.propertiesManager.ModifyManaByAmount(-manaCost);
-
-        float colliderYoffset = 0.09f;
-        Vector3 attackOffset;
-        attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.13f, player.animator.GetFloat("VerticalMagnitude") * 0.13f + colliderYoffset, 0.0f);
-
-        // create water swing prefab
-        var angle = Mathf.Atan2(player.animator.GetFloat("VerticalMagnitude"), player.animator.GetFloat("HorizontalMagnitude")) * Mathf.Rad2Deg + 90.0f;
+        Vector3 attackOffset = new Vector3(attackDirection.x * 0.13f, attackDirection.y * 0.13f + colliderYoffset, 0.0f);
+        var angle = Mathf.Atan2(attackDirection.y, attackDirection.x) * Mathf.Rad2Deg + 90.0f;
         var swingPrefab = (GameObject)Resources.Load("prefabs/Water Swing", typeof(GameObject));
         var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
         swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
         Object.Destroy(swingObject, 0.6f);
 
-        player.sounds.PlayWaterSFX();
+        // Stop player movement while attacking
+        swungSword = true;
+        player.inputController.detectMovementInput = false;
+        player.movementController.StopMoving();
+
+
         player.animator.SetTrigger("SwingSword");
+        playerSounds.PlayWaterSFX();
 
-        var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.09f);
-        foreach (Collider2D collider in colliders)
+        // do not do collider calculations if player is ethereal
+        if (player.isEthereal)
+            return;
+
+        // get active regular swing collider
+        Collider2D swordSwingCollider = activeSwordSwingCollider;
+
+        // Contact filter to only include colliders in Enemy layer
+        ContactFilter2D enemyFilter = new ContactFilter2D();
+        enemyFilter.SetLayerMask(LayerMask.GetMask("Enemy"));
+
+        // list to store all enemy colliders in regular swing
+        var enemyColliders = new List<Collider2D>();
+
+        // get all enemy colliders overlapping with sword swing collider
+        swordSwingCollider.OverlapCollider(enemyFilter, enemyColliders);
+
+        // inflict water sword swing damage to enemies
+        foreach (Collider2D enemyCollider in enemyColliders)
         {
-            if (collider.tag == "Enemy")
+            Debug.Log("base damage only");
+            Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
             {
-                var enemyMob = collider.GetComponentInParent<Mob>();
-                var skeleton = enemyMob.GetComponent<Skeleton>();
-                if (skeleton != null && skeleton.movementMode == Skeleton.MovementMode.Disabled)
-                {
-                    return;
-                }
-                enemyMob.GetComponentInParent<Animator>().SetTrigger("TookDamage");
-                float damageDealt = 25.0f * player.properties.physicalAttackMultiplier * player.properties.attackMultiplier;
-                enemyMob.propertiesManager.InflictElementalDamage(damageDealt);
-                enemyMob.propertiesManager.ToggleEffectState(new RepulsedEffect(enemyMob.propertiesManager, 0.1f, new Vector2(player.animator.GetFloat("HorizontalMagnitude"), player.animator.GetFloat("VerticalMagnitude")), 3.0f));
+                float damageDealt = 25.0f * player.physicalAttackMultiplier * player.attackMultiplier;
 
-                // Heals player for a small % of damage dealt
+                // inflict damage
+                enemy.InflictPhysicalDamage(damageDealt);
+                enemy.animator.SetTrigger("TookDamage");
+
+                // knockback enemy
+                StartCoroutine(enemy.KnockBack(attackDirection, 2.0f));
+
+                // leech health from enemy equal to a small % of damage dealt
                 // 20 percent
-                player.properties.propertiesManager.ModifyHealthByAmount(damageDealt * 0.2f);
-
-                break;
+                player.ModifyHealthByAmount(Mathf.Clamp(damageDealt * 0.2f, 0.0f, enemy.health));
             }
         }
     }
 
-    protected override void WindAction()
+    void FireSwing()
     {
-
-        float manaCost = 50.0f;
-        if (player.properties.mana <= manaCost)
+        if (player.mana < 10)
         {
+            // end function player does not have enough mana
             return;
         }
 
-        player.properties.propertiesManager.ModifyManaByAmount(-manaCost);
+        // consume mana for action
+        player.ModifyManaByAmount(-10.0f);
 
         float colliderYoffset = 0.09f;
-        Vector3 attackOffset;
-        attackOffset = new Vector3(player.animator.GetFloat("HorizontalMagnitude") * 0.13f, player.animator.GetFloat("VerticalMagnitude") * 0.13f + colliderYoffset, 0.0f);
+        Vector3 attackOffset = new Vector3(attackDirection.x * 0.13f, attackDirection.y * 0.13f + colliderYoffset, 0.0f);
+        var angle = Mathf.Atan2(attackDirection.y, attackDirection.x) * Mathf.Rad2Deg + 90.0f;
+        var swingPrefab = (GameObject)Resources.Load("prefabs/Fire Swing", typeof(GameObject));
+        var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
+        swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
+        Object.Destroy(swingObject, 0.6f);
 
-        // create Wind swing prefab
-        var angle = Mathf.Atan2(player.animator.GetFloat("VerticalMagnitude"), player.animator.GetFloat("HorizontalMagnitude")) * Mathf.Rad2Deg + 90.0f;
+        // Stop player movement while attacking
+        swungSword = true;
+        player.inputController.detectMovementInput = false;
+        player.movementController.StopMoving();
+
+
+        player.animator.SetTrigger("SwingSword");
+        playerSounds.PlayFireSFX();
+
+        // do not do collider calculations if player is ethereal
+        if (player.isEthereal)
+            return;
+
+        // get active regular swing collider
+        Collider2D swordSwingCollider = activeSwordSwingCollider;
+
+        // Contact filter to only include colliders in Enemy layer
+        ContactFilter2D enemyFilter = new ContactFilter2D();
+        enemyFilter.SetLayerMask(LayerMask.GetMask("Enemy"));
+
+        // list to store all enemy colliders in regular swing
+        var enemyColliders = new List<Collider2D>();
+
+        // get all enemy colliders overlapping with sword swing collider
+        swordSwingCollider.OverlapCollider(enemyFilter, enemyColliders);
+
+        // inflict fire sword swing damage to enemies
+        foreach (Collider2D enemyCollider in enemyColliders)
+        {
+            Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                // inflict damage
+                enemy.InflictPhysicalDamage(25.0f * player.physicalAttackMultiplier * player.attackMultiplier);
+                enemy.animator.SetTrigger("TookDamage");
+
+                // knockback enemy
+                StartCoroutine(enemy.KnockBack(attackDirection, 2.0f));
+
+                // set enemy on fire
+                enemy.ToggleEffectState(new BurningEffect(enemy, 1.0f, 4.0f, 10.0f));
+            }
+        }
+    }
+
+    void AirSwing()
+    {
+        if (player.mana < 10)
+        {
+            // end function player does not have enough mana
+            return;
+        }
+
+        // consume mana for action
+        player.ModifyManaByAmount(-10.0f);
+
+        float colliderYoffset = 0.09f;
+        Vector3 attackOffset = new Vector3(attackDirection.x * 0.13f, attackDirection.y * 0.13f + colliderYoffset, 0.0f);
+        var angle = Mathf.Atan2(attackDirection.y, attackDirection.x) * Mathf.Rad2Deg + 90.0f;
         var swingPrefab = (GameObject)Resources.Load("prefabs/Wind Swing", typeof(GameObject));
         var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
         swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
         Object.Destroy(swingObject, 0.6f);
 
-        //increased range
-        var colliders = Physics2D.OverlapCircleAll(player.transform.position + attackOffset, 0.15f);
-        player.sounds.PlayWindSFX();
+
+        // Stop player movement while attacking
+        swungSword = true;
+        player.inputController.detectMovementInput = false;
+        player.movementController.StopMoving();
+
+
         player.animator.SetTrigger("SwingSword");
-        foreach (Collider2D collider in colliders)
+        playerSounds.PlayWindSFX();
+
+        // do not do collider calculations if player is ethereal
+        if (player.isEthereal)
+            return;
+
+        // get active regular swing collider
+        Collider2D swordSwingCollider = activeSwordSwingCollider;
+
+        // get active air swing collider
+        Collider2D airSwingCollider = airSwordSwingCollider;
+
+        // Contact filter to only include colliders in Enemy layer
+        ContactFilter2D enemyFilter = new ContactFilter2D();
+        enemyFilter.SetLayerMask(LayerMask.GetMask("Enemy"));
+
+        // list to store all enemy colliders in regular swing
+        var enemyColliders = new List<Collider2D>();
+
+        // list to store all enemy colliders hit at the tip of air swing
+        var enemyCollidersHitAtTip = new List<Collider2D>();
+
+        // get all enemy colliders overlapping with sword swing collider
+        swordSwingCollider.OverlapCollider(enemyFilter, enemyColliders);
+
+        // get all enemy colliders overlapping with air swing collider
+        airSwingCollider.OverlapCollider(enemyFilter, enemyCollidersHitAtTip);
+
+        // remove enemy colliders also hit at the tip in enemyColliders
+        foreach (Collider2D enemyCollider in enemyCollidersHitAtTip)
         {
-            if (collider.tag == "Enemy")
+            enemyColliders.Remove(enemyCollider);
+        }
+
+        // inflict only sword swing damage to enemies not hit at the tip
+        foreach (Collider2D enemyCollider in enemyColliders)
+        {
+            Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
             {
-                var enemyMob = collider.GetComponentInParent<Mob>();
-                var skeleton = enemyMob.GetComponent<Skeleton>();
-                if (skeleton != null && skeleton.movementMode == Skeleton.MovementMode.Disabled)
-                {
-                    return;
-                }
-                enemyMob.GetComponentInParent<Animator>().SetTrigger("TookDamage");
-                enemyMob.propertiesManager.InflictElementalDamage(25.0f * player.properties.elementalAttackMultiplier * player.properties.attackMultiplier);
+                // inflict damage
+                enemy.InflictPhysicalDamage(25.0f * player.physicalAttackMultiplier * player.attackMultiplier);
+                enemy.animator.SetTrigger("TookDamage");
 
-                //if closer to player deal more damage
-                Vector2 mobPosition = enemyMob.transform.position;
-                Vector2 playerPosition = player.transform.position;
-                float distanceFromPlayer = Vector2.Distance(playerPosition, mobPosition);
-                //Debug.Log(distanceFromPlayer);
-                if (distanceFromPlayer > 0.3f && distanceFromPlayer < 0.4f)
-                {
-                    enemyMob.propertiesManager.InflictElementalDamage(10.0f);
-                    Debug.Log("hit at the tip with more damage");
-                }
-
-                //slightly longer knockback
-                enemyMob.propertiesManager.ToggleEffectState(new RepulsedEffect(enemyMob.propertiesManager, 0.16f, new Vector2(player.animator.GetFloat("HorizontalMagnitude"), player.animator.GetFloat("VerticalMagnitude")), 3.0f));
-                break;
+                // apply stronger repulsed effect
+                enemy.ToggleEffectState(new RepulsedEffect(enemy, 0.2f, attackDirection, 4.0f));
             }
+        }
+
+        // inflict bonus damage to enemies hit at the tip
+        foreach (Collider2D enemyCollider in enemyCollidersHitAtTip)
+        {
+            Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                // inflict damage
+                enemy.InflictPhysicalDamage(35.0f * player.physicalAttackMultiplier * player.attackMultiplier);
+                enemy.animator.SetTrigger("TookDamage");
+
+                // apply repulsed effect
+                enemy.ToggleEffectState(new RepulsedEffect(enemy, 0.2f, attackDirection, 3.0f));
+            }
+        }
+
+    }
+
+
+    public override void DetectInput()
+    {
+        // Mouse button left click to swing sword
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                ElementalSwordSwing();
+            }
+            else
+            {
+                SwordSwing();
+            }
+        }
+    }
+    
+    void ElementalSwordSwing()
+    {
+
+        LineOfSight lineOfSight = player.GetLineOfSight();
+
+        switch (lineOfSight)
+        {
+            case LineOfSight.UP:
+                attackDirection = new Vector2(0.0f, 1.0f);
+                activeSwordSwingCollider = upCollider;
+                airSwordSwingCollider = airUpCollider;
+                break;
+            case LineOfSight.LEFT:
+                attackDirection = new Vector2(-1.0f, 0.0f);
+                activeSwordSwingCollider = leftCollider;
+                airSwordSwingCollider = airLeftCollider;
+                break;
+            case LineOfSight.DOWN:
+                attackDirection = new Vector2(0.0f, -1.0f);
+                activeSwordSwingCollider = downCollider;
+                airSwordSwingCollider = airDownCollider;
+                break;
+            case LineOfSight.RIGHT:
+                attackDirection = new Vector2(1.0f, 0.0f);
+                activeSwordSwingCollider = rightCollider;
+                airSwordSwingCollider = airRightCollider;
+                break;
+        }
+
+        switch (elementalAttribute)
+        {
+            case ElementalAttribute.NONE:
+                RegularSwing();
+                break;
+            case ElementalAttribute.EARTH:
+                EarthSwing();
+                break;
+            case ElementalAttribute.FIRE:
+                FireSwing();
+                break;
+            case ElementalAttribute.WATER:
+                WaterSwing();
+                break;
+            case ElementalAttribute.AIR:
+                AirSwing();
+                break;
+        }
+    }
+
+    void SwordSwing()
+    {
+        LineOfSight lineOfSight = player.GetLineOfSight();
+
+        switch (lineOfSight)
+        {
+            case LineOfSight.UP:
+                attackDirection = new Vector2(0.0f, 1.0f);
+                activeSwordSwingCollider = upCollider;
+                airSwordSwingCollider = airUpCollider;
+                break;
+            case LineOfSight.LEFT:
+                attackDirection = new Vector2(-1.0f, 0.0f);
+                activeSwordSwingCollider = leftCollider;
+                airSwordSwingCollider = airLeftCollider;
+                break;
+            case LineOfSight.DOWN:
+                attackDirection = new Vector2(0.0f, -1.0f);
+                activeSwordSwingCollider = downCollider;
+                airSwordSwingCollider = airDownCollider;
+                break;
+            case LineOfSight.RIGHT:
+                attackDirection = new Vector2(1.0f, 0.0f);
+                activeSwordSwingCollider = rightCollider;
+                airSwordSwingCollider = airRightCollider;
+                break;
+        }
+
+        RegularSwing();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (swungSword && !player.animator.GetCurrentAnimatorStateInfo(0).IsTag("pauseInput"))
+        {
+            player.inputController.detectMovementInput = true;
+            swungSword = false;
         }
     }
 }

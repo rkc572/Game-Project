@@ -12,17 +12,17 @@ public class SlowedEffect : EffectState
     bool particlesActive = false;
     GameObject slowedParticles;
 
-    public SlowedEffect(PropertiesManager propertiesManager, float effectDuration, float newSpeed) : base(propertiesManager)
+    public SlowedEffect(Mob mob, float effectDuration, float newSpeed) : base(mob)
     {
         this.effectDuration = effectDuration;
         this.newSpeed = newSpeed;
-        previousSpeed = propertiesManager.mob.speed;
+        previousSpeed = mob.speed;
     }
     
     protected override void Effect()
     {
         Debug.Log($"I'm slowed down! {Time.time}");
-        propertiesManager.SetMobSpeed(newSpeed);
+        mob.SetMobSpeed(newSpeed);
     }
     
     public override void ApplyEffect()
@@ -39,7 +39,7 @@ public class SlowedEffect : EffectState
             var slowedParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsSlowed", typeof(GameObject));
             slowedParticles = GameObject.Instantiate(slowedParticlesPrefab, Vector3.zero, Quaternion.identity);
             slowedParticles.transform.position = Vector3.zero;
-            slowedParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            slowedParticles.transform.SetParent(mob.transform, false);
             particlesActive = true;
         }
 
@@ -48,7 +48,7 @@ public class SlowedEffect : EffectState
         {
             complete = true;
             GameObject.Destroy(slowedParticles);
-            propertiesManager.SetMobSpeed(previousSpeed);
+            mob.SetMobSpeed(previousSpeed);
             Debug.Log("I'm no longer slowed!");
         }
     }

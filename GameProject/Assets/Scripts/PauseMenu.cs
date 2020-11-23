@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour
     void Awake()
     {
         pauseMenuUI.SetActive(false);
-        player = FindObjectOfType<Player>();
+        player = Player.Instance;
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class PauseMenu : MonoBehaviour
 
         if (player == null)
         {
-            player = FindObjectOfType<Player>();
+            player = Player.Instance;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -43,7 +43,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        player.playerInputController.readInput = true;
+        player.inputController.detectInput = true;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1.0f;
         GameIsPaused = false;
@@ -51,7 +51,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-        player.playerInputController.readInput = false;
+        player.inputController.detectInput = false;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0.0f;
         GameIsPaused = true;

@@ -17,19 +17,19 @@ public class AgileEffect : EffectState
     bool particlesActive = false;
     GameObject agileParticles;
 
-    public AgileEffect(PropertiesManager propertiesManager, float effectDuration, float newSpeed) : base(propertiesManager)
+    public AgileEffect(Mob mob, float effectDuration, float newSpeed) : base(mob)
     {
         //Get duration/new speed
         this.effectDuration = effectDuration;
         this.newSpeed = newSpeed;
-        previousSpeed = propertiesManager.mob.speed;
+        previousSpeed = mob.speed;
     }
 
     protected override void Effect()
     {
         Debug.Log($"I'm faster! {Time.time}");
         //Set new speed
-        propertiesManager.SetMobSpeed(newSpeed);
+        mob.SetMobSpeed(newSpeed);
     }
 
     //Apply
@@ -46,7 +46,7 @@ public class AgileEffect : EffectState
             var agileParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsAgile", typeof(GameObject));
             agileParticles = GameObject.Instantiate(agileParticlesPrefab, Vector3.zero, Quaternion.identity);
             agileParticles.transform.position = Vector3.zero;
-            agileParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            agileParticles.transform.SetParent(mob.transform, false);
             particlesActive = true;
         }
 
@@ -55,7 +55,7 @@ public class AgileEffect : EffectState
         {
             complete = true;
             GameObject.Destroy(agileParticles);
-            propertiesManager.SetMobSpeed(previousSpeed);
+            mob.SetMobSpeed(previousSpeed);
             Debug.Log("I'm no longer fast!");
         }
     }

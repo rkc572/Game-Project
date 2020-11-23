@@ -2,13 +2,13 @@
 
 public abstract class EffectState
 {
-    protected PropertiesManager propertiesManager;
+    protected Mob mob;
     public bool complete = false;
     protected float effectInitializedTime;
 
-    public EffectState(PropertiesManager propertiesManager)
+    public EffectState(Mob mob)
     {
-        this.propertiesManager = propertiesManager;
+        this.mob = mob;
         effectInitializedTime = Time.time;
     }
 

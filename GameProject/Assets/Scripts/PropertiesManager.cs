@@ -23,6 +23,8 @@ public class PropertiesManager : MonoBehaviour
         {
             mob.effectStates.Add(effectState);
         }
+
+        // else reset
     }
 
     public void ModifyHealthByAmount(float amount)

@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Mage : MonoBehaviour
+public class Mage : Enemy
 {
-    public Mob properties;
-    public Animator animator;
     public SortingGroup sortingGroup;
 
     Skeleton closestSkeleton = null;
@@ -68,15 +66,15 @@ public class Mage : MonoBehaviour
                 skeletonDirection += new Vector2(Random.Range(-1, 1) * Random.value, Random.Range(-1, 1) * Random.value);
             }
 
-            Vector2 newVelocity = skeletonDirection.normalized * properties.speed;
-            properties.rigidBody.velocity = Vector2.SmoothDamp(properties.rigidBody.velocity, newVelocity, ref smoothVelocityReference, 0.1f);
+            Vector2 newVelocity = skeletonDirection.normalized * speed;
+            rigidBody.velocity = Vector2.SmoothDamp(rigidBody.velocity, newVelocity, ref smoothVelocityReference, 0.1f);
         }
         else
         {
             animator.SetFloat("HorizontalMagnitude", 0.0f);
             animator.SetFloat("VerticalMagnitude", -1.0f);
             var rotation = transform.parent.rotation;
-            properties.rigidBody.velocity = Vector2.SmoothDamp(properties.rigidBody.velocity, Vector2.zero, ref smoothVelocityReference, 0.5f);
+            rigidBody.velocity = Vector2.SmoothDamp(rigidBody.velocity, Vector2.zero, ref smoothVelocityReference, 0.5f);
             transform.parent.RotateAround(closestSkeleton.transform.parent.position, new Vector3(0.0f, 0.0f, 1.0f), Time.deltaTime * 50.0f);
             transform.parent.rotation = rotation;
         }
@@ -84,7 +82,7 @@ public class Mage : MonoBehaviour
 
     IEnumerator Attack()
     {
-        while (properties.health > 0) {
+        while (health > 0) {
             yield return new WaitForSeconds(8.0f);
             if (!dead)
             {
@@ -97,7 +95,7 @@ public class Mage : MonoBehaviour
     {
 
 
-        var scaledDirection = properties.rigidBody.velocity;
+        var scaledDirection = rigidBody.velocity;
 
         if (scaledDirection.y > 0)
         {
@@ -129,7 +127,7 @@ public class Mage : MonoBehaviour
     {
 
         sortingGroup.sortingOrder = -1;
-        properties.rigidBody.velocity = Vector2.zero;
+        rigidBody.velocity = Vector2.zero;
         gameObject.GetComponent<Collider2D>().enabled = false;
 
         animator.SetTrigger("Disable");
@@ -161,7 +159,7 @@ public class Mage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (properties.health > 0)
+        if (health > 0)
         {
             FindSkeletonToTail();
             TailSkeleton();

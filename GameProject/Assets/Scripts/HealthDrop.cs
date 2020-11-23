@@ -22,8 +22,8 @@ public class HealthDrop : MonoBehaviour
         if (collision.tag == "Player")
         {
             var player = collision.GetComponent<Player>();
-            player.properties.propertiesManager.ModifyHealthByAmount(value);
-            player.sounds.PlayHealthPickupSFX();
+            player.ModifyHealthByAmount(value);
+            player.playerSounds.PlayHealthPickupSFX();
             Destroy(gameObject);
         }
     }
