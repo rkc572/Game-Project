@@ -1,21 +1,26 @@
 ﻿using UnityEngine;
-
+//This effect allows regeneration
 public class RegeneratingEffect : EffectState
 {
     float effectDuration;
     float lastInflictionTime = 0.0f;
     float actionInterval;
+    float healthRegenAmount;
 
-    public RegeneratingEffect(PropertiesManager propertiesManager, float actionInterval, float effectDuration) : base(propertiesManager)
+    bool particlesActive = false;
+    GameObject regenParticles;
+
+    public RegeneratingEffect(Mob mob, float actionInterval, float effectDuration, float healthRegenAmount) : base(mob)
     {
         this.effectDuration = effectDuration;
         this.actionInterval = actionInterval;
+        this.healthRegenAmount = healthRegenAmount;
     }
 
     protected override void Effect()
     {
         Debug.Log($"im healing at {Time.time}");
-        propertiesManager.ModifyHealthByAmount(10.0f);
+        mob.ModifyHealthByAmount(healthRegenAmount);
     }
 
     public override void ApplyEffect()
@@ -24,6 +29,15 @@ public class RegeneratingEffect : EffectState
         if (lastInflictionTime == 0.0f)
         {
             lastInflictionTime = Time.time;
+        }
+
+        if (!particlesActive)
+        {
+            var regenParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsRegenerating", typeof(GameObject));
+            regenParticles = GameObject.Instantiate(regenParticlesPrefab, Vector3.zero, Quaternion.identity);
+            regenParticles.transform.position = Vector3.zero;
+            regenParticles.transform.SetParent(mob.transform, false);
+            particlesActive = true;
         }
 
         // Check if EffectState is still active
@@ -43,6 +57,7 @@ public class RegeneratingEffect : EffectState
         {
             // Set complete to true if Effect state has run out and was not marked complete
             complete = true;
+            GameObject.Destroy(regenParticles);
             Debug.Log($"im done regenerating at {Time.time}");
         }
     }

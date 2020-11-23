@@ -1,23 +1,28 @@
 ﻿using UnityEngine;
-
+//This effect increases Elemental Attack Multiplier
 public class EnchantedEffect : EffectState
 {
     float effectDuration;
     float previousElementalAttackMultiplier;
-    float newElementalAttackMultiplier = 1.5f;
+    float newElementalAttackMultiplier;
 
     bool effectApplied = false;
 
-    public EnchantedEffect(PropertiesManager propertiesManager, float effectDuration) : base(propertiesManager)
+    bool particlesActive = false;
+    GameObject enchantedParticles;
+
+
+    public EnchantedEffect(Mob mob, float effectDuration, float newElementalAttackMultiplier) : base(mob)
     {
         this.effectDuration = effectDuration;
-        previousElementalAttackMultiplier = propertiesManager.mob.elementalAttackMultiplier;
+        this.newElementalAttackMultiplier = newElementalAttackMultiplier;
+        previousElementalAttackMultiplier = mob.elementalAttackMultiplier;
     }
 
     protected override void Effect()
     {
         Debug.Log("I am enchanted!");
-        propertiesManager.SetElementalAttackMultiplier(newElementalAttackMultiplier);
+        mob.SetElementalAttackMultiplier(newElementalAttackMultiplier);
     }
 
     public override void ApplyEffect()
@@ -28,11 +33,20 @@ public class EnchantedEffect : EffectState
             Effect();
             effectApplied = true;
         }
+        if (!particlesActive)
+        {
+            var enchantedParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsEnchanted", typeof(GameObject));
+            enchantedParticles = GameObject.Instantiate(enchantedParticlesPrefab, Vector3.zero, Quaternion.identity);
+            enchantedParticles.transform.position = Vector3.zero;
+            enchantedParticles.transform.SetParent(mob.transform, false);
+            particlesActive = true;
+        }
         //after effect duration finishes, reset
         if (Time.time > effectInitializedTime + effectDuration || complete)
         {
             complete = true;
-            propertiesManager.SetElementalAttackMultiplier(previousElementalAttackMultiplier);
+            GameObject.Destroy(enchantedParticles);
+            mob.SetElementalAttackMultiplier(previousElementalAttackMultiplier);
             Debug.Log("I am no longer enchanted");
             effectApplied = false;
         }

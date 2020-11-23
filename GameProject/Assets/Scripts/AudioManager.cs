@@ -57,13 +57,13 @@ public class AudioManager : MonoBehaviour
 		musicVolumeLevel = musicVolumeDefault;
 
 		var sliders = FindObjectsOfType<Slider>();
-        foreach (Slider slider in sliders)
-        {
-            if (slider.tag == "VolumeSlider")
-            {
+		foreach (Slider slider in sliders)
+		{
+			if (slider.tag == "VolumeSlider")
+			{
 				slider.value = 1;
-            }
-        }
+			}
+		}
 	}
 
 	public void UpdateSliderLevels()
@@ -74,11 +74,11 @@ public class AudioManager : MonoBehaviour
 			if (slider.tag == "VolumeSlider")
 			{
 				if (slider.name == "Master Slider")
-                {
+				{
 					slider.value = masterVolumeLevel;
 				}
 				else if (slider.name == "FX Slider")
-                {
+				{
 					slider.value = sfxVolumeLevel;
 				}
 				else if (slider.name == "Music Slider")
@@ -90,16 +90,16 @@ public class AudioManager : MonoBehaviour
 	}
 
 	void UpdateMixerLevels()
-    {
+	{
 		audioMixer.SetFloat("MasterVol", Mathf.Log10(masterVolumeLevel) * 20);
 		audioMixer.SetFloat("FXVol", Mathf.Log10(sfxVolumeLevel) * 20);
 		audioMixer.SetFloat("MusicVol", Mathf.Log10(musicVolumeLevel) * 20);
 	}
 
 	public void SetLevel(string levelName, float levelValue)
-    {
-        switch (levelName)
-        {
+	{
+		switch (levelName)
+		{
 			case "MasterVol":
 				masterVolumeLevel = Mathf.Clamp(levelValue, 0, 1);
 				break;
@@ -110,10 +110,10 @@ public class AudioManager : MonoBehaviour
 				musicVolumeLevel = Mathf.Clamp(levelValue, 0, 1);
 				break;
 		}
-    }
+	}
 
 	private void Update()
-    {
+	{
 		UpdateMixerLevels();
-    }
+	}
 }

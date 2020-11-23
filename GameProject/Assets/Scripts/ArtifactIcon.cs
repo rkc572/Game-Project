@@ -19,27 +19,27 @@ public class ArtifactIcon : MonoBehaviour
 
     void Start()
     {
-        player = FindObjectOfType<Player>();
+        player = Player.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (player.sword.elementalAttribute)
+        switch (player.playerSword.elementalAttribute)
         {
-            case ElementalAttribute.None:
+            case ElementalAttribute.NONE:
                 icon.sprite = swordIcon;
                 break;
-            case ElementalAttribute.Earth:
+            case ElementalAttribute.EARTH:
                 icon.sprite = earthSwordIcon;
                 break;
-            case ElementalAttribute.Fire:
+            case ElementalAttribute.FIRE:
                 icon.sprite = fireSwordIcon;
                 break;
-            case ElementalAttribute.Water:
+            case ElementalAttribute.WATER:
                 icon.sprite = waterSwordIcon;
                 break;
-            case ElementalAttribute.Wind:
+            case ElementalAttribute.AIR:
                 icon.sprite = windSwordIcon;
                 break;
         }

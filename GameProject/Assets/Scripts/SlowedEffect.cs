@@ -1,24 +1,28 @@
 ﻿using UnityEngine;
-
+//This effect decreases speed
 public class SlowedEffect : EffectState
 {
     float effectDuration;
 
     float previousSpeed;
-    float newSpeed = 0.5f;
+    float newSpeed;
 
     bool effectApplied = false;
 
-    public SlowedEffect(PropertiesManager propertiesManager, float effectDuration) : base(propertiesManager)
+    bool particlesActive = false;
+    GameObject slowedParticles;
+
+    public SlowedEffect(Mob mob, float effectDuration, float newSpeed) : base(mob)
     {
         this.effectDuration = effectDuration;
-        previousSpeed = propertiesManager.mob.speed;
+        this.newSpeed = newSpeed;
+        previousSpeed = mob.speed;
     }
     
     protected override void Effect()
     {
         Debug.Log($"I'm slowed down! {Time.time}");
-        propertiesManager.SetMobSpeed(newSpeed);
+        mob.SetMobSpeed(newSpeed);
     }
     
     public override void ApplyEffect()
@@ -30,11 +34,21 @@ public class SlowedEffect : EffectState
             effectApplied = true;
         }
 
+        if (!particlesActive)
+        {
+            var slowedParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsSlowed", typeof(GameObject));
+            slowedParticles = GameObject.Instantiate(slowedParticlesPrefab, Vector3.zero, Quaternion.identity);
+            slowedParticles.transform.position = Vector3.zero;
+            slowedParticles.transform.SetParent(mob.transform, false);
+            particlesActive = true;
+        }
+
         // Reset after effect duration has run out
-        if(Time.time > effectInitializedTime + effectDuration || complete)
+        if (Time.time > effectInitializedTime + effectDuration || complete)
         {
             complete = true;
-            propertiesManager.SetMobSpeed(previousSpeed);
+            GameObject.Destroy(slowedParticles);
+            mob.SetMobSpeed(previousSpeed);
             Debug.Log("I'm no longer slowed!");
         }
     }

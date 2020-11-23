@@ -36,11 +36,9 @@ public class GameSceneManager : MonoBehaviour
         AudioManager.Instance.PlayMusic(deathMusic);
 
         deathSceneActive = true;
-        player.playerInputController.readInput = false;
-        player.playerInputController.playerMovementController.moveUp = false;
-        player.playerInputController.playerMovementController.moveDown = false;
-        player.playerInputController.playerMovementController.moveLeft = false;
-        player.playerInputController.playerMovementController.moveRight = false;
+        player.inputController.detectInput = false;
+
+        player.movementController.StopMoving();
 
         // kill all non player mobs
         var mobs = FindObjectsOfType<Mob>();
@@ -94,13 +92,11 @@ public class GameSceneManager : MonoBehaviour
     public IEnumerator SceneFadeTransition(string sceneName, Vector3 pos)
     {
 
-        var player = FindObjectOfType<Player>();
+        var player = Player.Instance;
 
-        player.playerInputController.readInput = false;
-        player.playerInputController.playerMovementController.moveUp = false;
-        player.playerInputController.playerMovementController.moveDown = false;
-        player.playerInputController.playerMovementController.moveLeft = false;
-        player.playerInputController.playerMovementController.moveRight = false;
+        player.inputController.detectInput = false;
+
+        player.movementController.StopMoving();
 
         Image faderImage = GameObject.Find("Fader").GetComponent<Image>();
         //FADE IN
@@ -111,20 +107,20 @@ public class GameSceneManager : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
 
-        player.playerInputController.readInput = false;
+        player.inputController.detectInput = false;
         player.lastRecordedPosition = pos;
 
         if (!deathSceneActive)
         {
-            player.lastRecordedHealth = player.properties.health;
-            player.lastRecordedMana = player.properties.mana;
+            player.lastRecordedHealth = player.health;
+            player.lastRecordedMana = player.mana;
         }
 
-        player.properties.health = player.lastRecordedHealth;
-        player.properties.mana = player.lastRecordedMana;
+        player.health = player.lastRecordedHealth;
+        player.mana = player.lastRecordedMana;
 
         player.transform.parent.position = pos;
-        player.playerInputController.readInput = true;
+        player.inputController.detectInput = true;
         player.animator.SetBool("Dead", false);
 
         SceneManager.LoadScene(sceneName);
@@ -132,23 +128,23 @@ public class GameSceneManager : MonoBehaviour
 
     public void LoadSceneMovePlayer(string sceneName, Vector3 pos)
     {
-        var player = FindObjectOfType<Player>();
+        var player = Player.Instance;
 
-        player.playerInputController.readInput = false;
+        player.inputController.detectInput = false;
         player.lastRecordedPosition = pos;
 
         if (!deathSceneActive)
         {
-            player.lastRecordedHealth = player.properties.health;
-            player.lastRecordedMana = player.properties.mana;
+            player.lastRecordedHealth = player.health;
+            player.lastRecordedMana = player.mana;
         }
 
-        player.properties.health = player.lastRecordedHealth;
-        player.properties.mana = player.lastRecordedMana;
+        player.health = player.lastRecordedHealth;
+        player.mana = player.lastRecordedMana;
 
         SceneManager.LoadScene(sceneName);
         player.transform.parent.position = pos;
-        player.playerInputController.readInput = true;
+        player.inputController.detectInput = true;
         player.animator.SetBool("Dead", false);
     }
 }

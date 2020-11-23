@@ -1,25 +1,27 @@
 ﻿using UnityEngine;
-
+//This effect burns you
 public class BurningEffect : EffectState
 {
     float effectDuration;
     float lastInflictionTime = 0.0f;
     float actionInterval;
+    float damageValue;
     bool particlesActive = false;
     GameObject fireParticles;
 
-    public BurningEffect(PropertiesManager propertiesManager, float actionInterval, float effectDuration) : base(propertiesManager)
+    public BurningEffect(Mob mob, float actionInterval, float effectDuration, float damageValue) : base(mob)
     {
         this.effectDuration = effectDuration;
         this.actionInterval = actionInterval;
+        this.damageValue = damageValue;
     }
 
     protected override void Effect()
     {
         Debug.Log($"im burning at {Time.time}");
-        propertiesManager.InflictElementalDamage(10.0f);
-        propertiesManager.GetComponentInParent<Animator>().SetTrigger("TookDamage");
-        propertiesManager.GetComponentInParent<Animator>().SetTrigger("PlayerHurt");
+        mob.InflictElementalDamage(damageValue);
+        mob.animator.SetTrigger("TookDamage");
+        mob.animator.SetTrigger("PlayerHurt");
     }
 
     public override void ApplyEffect()
@@ -28,14 +30,15 @@ public class BurningEffect : EffectState
         if (lastInflictionTime == 0.0f)
         {
             lastInflictionTime = Time.time;
+            Debug.Log("Im burning!");
         }
 
         if (!particlesActive)
         {
-            var fireParticlesPrefab = (GameObject)Resources.Load("prefabs/MobOnFire", typeof(GameObject));
+            var fireParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsBurning", typeof(GameObject));
             fireParticles = GameObject.Instantiate(fireParticlesPrefab, Vector3.zero, Quaternion.identity);
             fireParticles.transform.position = Vector3.zero;
-            fireParticles.transform.SetParent(propertiesManager.mob.transform, false);
+            fireParticles.transform.SetParent(mob.transform, false);
             particlesActive = true;
         }
 

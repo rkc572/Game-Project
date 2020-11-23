@@ -46,7 +46,7 @@ public class PlayerSounds : MonoBehaviour
         playerElementalAttackAudioSource.outputAudioMixerGroup = AudioManager.Instance.audioMixer.FindMatchingGroups("FX")[0];
         playerVoxAudioSource = gameObject.AddComponent<AudioSource>();
         playerVoxAudioSource.outputAudioMixerGroup = AudioManager.Instance.audioMixer.FindMatchingGroups("FX")[0];
-        swordSwings = new AudioClip[] {swordSwingOne, swordSwingTwo, swordSwingThree, swordSwingFour};
+        swordSwings = new AudioClip[] { swordSwingOne, swordSwingTwo, swordSwingThree, swordSwingFour };
         lastSwing = Time.time;
     }
 

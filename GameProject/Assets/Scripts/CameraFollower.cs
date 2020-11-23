@@ -10,7 +10,7 @@ public class CameraFollower : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        player = FindObjectOfType<Player>();
+        player = Player.Instance;
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class CameraFollower : MonoBehaviour
 
         if (player == null)
         {
-            player = FindObjectOfType<Player>();
+            player = Player.Instance;
         }
 
         if (GameSceneManager.Instance.deathSceneActive)

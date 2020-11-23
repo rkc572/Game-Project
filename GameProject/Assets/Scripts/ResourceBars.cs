@@ -13,24 +13,24 @@ public class ResourceBars : MonoBehaviour
 
     void Start ()
     {
-        player = FindObjectOfType<Player>();
+        player = Player.Instance;
         if (resourceType)
-            bar.maxValue = player.properties.MAX_HEALTH;
+            bar.maxValue = player.MAX_HEALTH;
         else
-            bar.maxValue = player.properties.MAX_MANA;
+            bar.maxValue = player.MAX_MANA;
     }
 
     void Update ()
     {
         if (player == null)
         {
-            player = FindObjectOfType<Player>();
+            player = Player.Instance;
         }
 
         if (resourceType)
-            resource = player.GetComponent<Mob>().health;
+            resource = player.health;
         else
-            resource = player.GetComponent<Mob>().mana;
+            resource = player.mana;
         bar.value = resource;
     }
 }

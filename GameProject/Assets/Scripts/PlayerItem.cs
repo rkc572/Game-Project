@@ -1,68 +1,36 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ElementalAttribute{
-    Earth,
-    Wind,
-    Fire,
-    Water,
-    None
-}
-public abstract class PlayerItem
+public enum ElementalAttribute
 {
-    public ElementalAttribute elementalAttribute = ElementalAttribute.None;
-    protected Player player;
+    NONE,
+    FIRE,
+    EARTH,
+    AIR,
+    WATER
+}
 
-    public PlayerItem(Player player)
+public class PlayerItem : MonoBehaviour
+{
+
+    public ElementalAttribute elementalAttribute;
+    public PlayerSounds playerSounds;
+
+    // Start is called before the first frame update
+    void Start()
     {
-        this.player = player;
+        
     }
 
-    // Regular Action
-    public abstract void Action();
-
-    // Elemental Actions
-    protected abstract void EarthAction();
-    protected abstract void WindAction();
-    protected abstract void FireAction();
-    protected abstract void WaterAction();
-    protected void MissingElementalAction()
+    // Update is called once per frame
+    void Update()
     {
-        // TODO: Decide what to do, play invalid input sound most likely
-        Debug.Log("missing implementation");
+        
     }
 
-    public void ElementalAction()
+    public virtual void DetectInput()
     {
-        switch (elementalAttribute)
-        {
-            case ElementalAttribute.Earth:
-                {
-                    EarthAction();
-                    break;
-                }
-            case ElementalAttribute.Wind:
-                {
-                    WindAction();
-                    break;
-                }
-            case ElementalAttribute.Fire:
-                {
-                    FireAction();
-                    break;
-                }
-            case ElementalAttribute.Water:
-                {
-                    WaterAction();
-                    break;
-                }
-            case ElementalAttribute.None:
-                {
-                    MissingElementalAction();
-                    break;
-                }
-        }
+
     }
 }
