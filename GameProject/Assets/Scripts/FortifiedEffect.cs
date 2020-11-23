@@ -11,28 +11,16 @@ public class FortifiedEffect : EffectState
     bool particlesActive = false;
     GameObject fortifiedParticles;
 
-<<<<<<< HEAD
-    public FortifiedEffect(PropertiesManager propertiesManager, float effectDuration, float newPhysicalDamageTakenMultiplier) : base(propertiesManager)
-    {
-        this.effectDuration = effectDuration;
-        this.newPhysicalDamageTakenMultiplier = newPhysicalDamageTakenMultiplier;
-        previousPhysicalDamageTakenMultiplier = propertiesManager.mob.physicalDamageTakenMultiplier;
-=======
     public FortifiedEffect(Mob mob, float effectDuration, float newPhysicalDamageTakenMultiplier) : base(mob)
     {
         this.effectDuration = effectDuration;
         this.newPhysicalDamageTakenMultiplier = newPhysicalDamageTakenMultiplier;
         previousPhysicalDamageTakenMultiplier = mob.physicalDamageTakenMultiplier;
->>>>>>> miguel-game-project-v2
     }
 
     protected override void Effect()
     {
-<<<<<<< HEAD
-        propertiesManager.SetPhysicalDamageTakenMultiplier(newPhysicalDamageTakenMultiplier);
-=======
         mob.SetPhysicalDamageTakenMultiplier(newPhysicalDamageTakenMultiplier);
->>>>>>> miguel-game-project-v2
         Debug.Log("I am fortified - less phys.dmg taken");
     }
 
@@ -50,11 +38,7 @@ public class FortifiedEffect : EffectState
             var fortifiedParticlesPrefab = (GameObject)Resources.Load("prefabs/MobIsFortified", typeof(GameObject));
             fortifiedParticles = GameObject.Instantiate(fortifiedParticlesPrefab, Vector3.zero, Quaternion.identity);
             fortifiedParticles.transform.position = Vector3.zero;
-<<<<<<< HEAD
-            fortifiedParticles.transform.SetParent(propertiesManager.mob.transform, false);
-=======
             fortifiedParticles.transform.SetParent(mob.transform, false);
->>>>>>> miguel-game-project-v2
             particlesActive = true;
         }
 
@@ -63,11 +47,7 @@ public class FortifiedEffect : EffectState
         {
             complete = true;
             GameObject.Destroy(fortifiedParticles);
-<<<<<<< HEAD
-            propertiesManager.SetPhysicalDamageTakenMultiplier(previousPhysicalDamageTakenMultiplier);
-=======
             mob.SetPhysicalDamageTakenMultiplier(previousPhysicalDamageTakenMultiplier);
->>>>>>> miguel-game-project-v2
             Debug.Log("I am no longer fortified");
             effectApplied = false;
         }

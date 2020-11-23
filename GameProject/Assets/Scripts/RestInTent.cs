@@ -10,7 +10,7 @@ public class RestInTent : MonoBehaviour
 
     void Awake()
     {
-        player = FindObjectOfType<Player>();
+        player = Player.Instance;
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -18,8 +18,8 @@ public class RestInTent : MonoBehaviour
         if (collider.tag == "Player")
         {
             StartCoroutine(gsm.SceneFadeTransition("Forest scene 1", new Vector3(0.66f, -0.6f, 0.0f)));
-            player.properties.propertiesManager.ModifyHealthByAmount(10000f);
-            player.properties.propertiesManager.ModifyManaByAmount(10000f);
+            player.ModifyHealthByAmount(player.MAX_HEALTH);
+            player.ModifyManaByAmount(player.MAX_MANA);
             player.animator.SetFloat("HorizontalMagnitude", 0);
             player.animator.SetFloat("VerticalMagnitude", -1);
         }

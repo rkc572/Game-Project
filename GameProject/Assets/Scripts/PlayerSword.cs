@@ -242,6 +242,10 @@ public class PlayerSword : PlayerItem
             Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
+
+                Debug.Log("ENEMY SET ON FIRE");
+
+
                 // inflict damage
                 enemy.InflictPhysicalDamage(25.0f * player.physicalAttackMultiplier * player.attackMultiplier);
                 enemy.animator.SetTrigger("TookDamage");

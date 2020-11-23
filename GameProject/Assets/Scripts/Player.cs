@@ -64,4 +64,9 @@ public class Player : Mob
         artifacts.Add(playerMagicStaff);
         artifacts.Add(playerEtherealPendant);
     }
+
+    protected override void Update()
+    {
+        base.Update();
+    }
 }

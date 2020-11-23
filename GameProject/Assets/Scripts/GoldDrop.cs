@@ -21,7 +21,7 @@ public class GoldDrop : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            var player = collision.GetComponent<Player>();
+            var player = Player.Instance;
             player.gold += value;
             player.playerSounds.PlayGoldPickupSFX();
             Destroy(gameObject);

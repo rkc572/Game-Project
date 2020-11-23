@@ -157,8 +157,10 @@ public class Mage : Enemy
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
+
         if (health > 0)
         {
             FindSkeletonToTail();
