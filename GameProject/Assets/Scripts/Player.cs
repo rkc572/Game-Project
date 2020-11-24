@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Player : Mob
@@ -26,6 +27,30 @@ public class Player : Mob
     public Vector3 lastRecordedPosition;
     public float gold;
     public float lastRecordedHealth, lastRecordedMana;
+
+
+    public void AddPotion(Potion potion)
+    {
+        // Add Potion only if not already in potion list
+        if (!potions.Any(inventoryPotion => inventoryPotion.GetType() == potion.GetType()))
+        {
+            potions.Add(potion);
+        }
+        // Else increment quantity
+        else
+        {
+            for (int i = 0; i < potions.Count; i++)
+            {
+                if (potions[i].GetType() == potion.GetType())
+                {
+                    potions[i].quantity++;
+                    break;
+                }
+            }
+        }
+        selectedPotion = potions[potions.Count / 2];
+    }
+
 
     public bool AnimatorIsPlaying()
     {

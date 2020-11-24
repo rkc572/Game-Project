@@ -95,7 +95,6 @@ public class Mob : MonoBehaviour
 
     public void ToggleEffectState(EffectState effectState)
     {
-
         // Add EffectState only if not already in Mob effectStates
         if (!effectStates.Any(mobEffectState => mobEffectState.GetType() == effectState.GetType()))
         {

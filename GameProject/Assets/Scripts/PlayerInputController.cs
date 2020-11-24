@@ -30,6 +30,42 @@ public class PlayerInputController : InputController
     void PotionInputDetection()
     {
 
+        if (player.potions.Count >= 1)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                // shift list to the left
+                player.potions.Add(player.potions[0]);
+                player.potions.RemoveAt(0);
+
+                // update selected potion
+                player.selectedPotion = player.potions[player.potions.Count / 2];
+
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                // shift list to the right
+                player.potions.Insert(0, player.potions[player.potions.Count - 1]);
+                player.potions.RemoveAt(player.potions.Count - 1);
+
+                // update selected potion
+                player.selectedPotion = player.potions[player.potions.Count / 2];
+
+            }
+            else if (Input.GetKeyDown(KeyCode.F))
+            {
+                player.selectedPotion.Consume();
+
+                // remove potion once runs out
+                if (player.selectedPotion.quantity <= 0)
+                {
+                    player.potions.Remove(player.selectedPotion);
+                    // update selected potion
+                    player.selectedPotion = player.potions[player.potions.Count / 2];
+                }
+            }
+        }
+
     }
 
     void PlayerItemSwapInput()
