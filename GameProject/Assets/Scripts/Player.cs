@@ -49,6 +49,14 @@ public class Player : Mob
             }
         }
         selectedPotion = potions[potions.Count / 2];
+        print("POTIONS: ");
+        foreach (Potion invPot in potions)
+        {
+            var name = invPot.GetType().Name;
+            var quant = invPot.quantity;
+            print($"{name} {quant}");
+        }
+        print($"Selected potion: {selectedPotion.GetType().Name} {selectedPotion.quantity}");
     }
 
 

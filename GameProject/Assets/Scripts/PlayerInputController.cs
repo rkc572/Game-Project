@@ -65,7 +65,21 @@ public class PlayerInputController : InputController
                     {
                         player.selectedPotion = player.potions[player.potions.Count / 2];
                     }
+                    else
+                    {
+                        player.selectedPotion = null;
+                    }
                 }
+
+                print("POTIONS: ");
+                foreach (Potion invPot in Player.Instance.potions)
+                {
+                    var name = invPot.GetType().Name;
+                    var quant = invPot.quantity;
+                    print($"{name} {quant}");
+                }
+
+                print($"Selected potion: {Player.Instance.selectedPotion.GetType().Name} {Player.Instance.selectedPotion.quantity}");
             }
         }
 

@@ -32,7 +32,7 @@ public class PotionShop : MonoBehaviour
     {
         //TODO money check
 
-        var regenerationPotion = new HealthPotion();
+        var regenerationPotion = new RegenerationPotion();
         regenerationPotion.sprite = regenerationPotionSprite;
         Player.Instance.AddPotion(regenerationPotion);
     }

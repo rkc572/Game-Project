@@ -13,9 +13,13 @@ public class PotionHUD : MonoBehaviour
     void Update()
     {
         //TODO IMPLEMENT CORRECTLY
-        leftPotionImage.sprite = Player.Instance.selectedPotion.sprite;
-        middlePotionImage.sprite = Player.Instance.selectedPotion.sprite;
-        rightPotionImage.sprite = Player.Instance.selectedPotion.sprite;
+
+        if (Player.Instance.potions.Count >= 1)
+        {
+            leftPotionImage.sprite = Player.Instance.potions[Mathf.Min((Player.Instance.potions.Count / 2) - 1, Player.Instance.potions.Count - 1)].sprite;
+            middlePotionImage.sprite = Player.Instance.potions[Mathf.Min((Player.Instance.potions.Count / 2), Player.Instance.potions.Count - 1)].sprite;
+            rightPotionImage.sprite = Player.Instance.potions[Mathf.Min((Player.Instance.potions.Count / 2) + 1, Player.Instance.potions.Count - 1)].sprite;
+        }
 
     }
 }
