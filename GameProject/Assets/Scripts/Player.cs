@@ -13,7 +13,7 @@ public class Player : Mob
 
     // potion variables
     public Potion selectedPotion;
-    public LinkedList<Potion> potions;
+    public List<Potion> potions = new List<Potion>();
 
     // player Ethereal status
     public bool isEthereal = false;
@@ -54,9 +54,6 @@ public class Player : Mob
         {
             Instance = this;
         }
-
-        Potion[] starterPotions = new Potion[] { new Potion("health", 3), new Potion("mana", 3), new Potion("strength", 1) };
-        potions = new LinkedList<Potion>(starterPotions);
     }
 
     private void Start()
