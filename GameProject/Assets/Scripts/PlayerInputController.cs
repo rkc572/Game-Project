@@ -61,7 +61,10 @@ public class PlayerInputController : InputController
                 {
                     player.potions.Remove(player.selectedPotion);
                     // update selected potion
-                    player.selectedPotion = player.potions[player.potions.Count / 2];
+                    if (player.potions.Count >= 1)
+                    {
+                        player.selectedPotion = player.potions[player.potions.Count / 2];
+                    }
                 }
             }
         }

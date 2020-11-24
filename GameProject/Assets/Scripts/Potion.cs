@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Potion : MonoBehaviour
+public abstract class Potion
 {
     public int quantity = 1;
     public Sprite sprite;
