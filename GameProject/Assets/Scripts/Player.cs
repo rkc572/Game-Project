@@ -27,6 +27,15 @@ public class Player : Mob
     public float gold;
     public float lastRecordedHealth, lastRecordedMana;
 
+    public bool AnimatorIsPlaying()
+    {
+        return animator.GetCurrentAnimatorStateInfo(0).IsTag("pauseInput");
+    }
+
+    public bool PlayerTakingDamage()
+    {
+        return animator.GetCurrentAnimatorStateInfo(1).IsTag("hurt");
+    }
 
     public override IEnumerator KnockBack(Vector2 attackDirection, float force)
     {
@@ -68,5 +77,19 @@ public class Player : Mob
     protected override void Update()
     {
         base.Update();
+
+        if (health <= 0 && !GameSceneManager.Instance.deathSceneActive)
+        {
+            StartCoroutine(GameSceneManager.Instance.PlayerDied(this));
+        }
+
+        if (PlayerTakingDamage())
+        {
+            gameObject.tag = "PlayerHurt";
+        }
+        else
+        {
+            gameObject.tag = "Player";
+        }
     }
 }

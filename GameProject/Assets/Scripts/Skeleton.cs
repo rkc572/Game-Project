@@ -5,244 +5,88 @@ using UnityEngine.Rendering;
 
 public class Skeleton : Enemy
 {
-    public enum MovementMode
+
+    public Collider2D skeletonCollider;
+    public Collider2D attackCollider;
+    bool attacking = false;
+
+
+    public override IEnumerator KnockBack(Vector2 attackDirection, float force)
     {
-        Patrol,
-        Pursuit,
-        Attack,
-        Disabled,
-        Dead
-    };
+        movementController.StopMoving();
 
-    public enum PatrolMode
-    {
-        HorizontallyRight,
-        HorizontallyLeft,
-        VerticallyUp,
-        VerticallyDown,
-    };
+        animator.SetFloat("HorizontalMagnitude", -attackDirection.x);
+        animator.SetFloat("VerticalMagnitude", -attackDirection.y);
 
-    public SortingGroup sortingGroup;
+        Debug.Log(attackDirection);
+        rigidBody.velocity = attackDirection * force;
 
-    public bool droppedItem = false;
-    public GameObject goldCoinPrefab;
-    public GameObject goldBarPrefab;
-    public GameObject goldStackPrefab;
-
-    public GameObject healthDropPrefab;
-    public GameObject manaDropPrefab;
-
-    public float sightRadius = 0.4f;
-    public float attackRadius = 0.15f;
-
-    public MovementMode movementMode = MovementMode.Patrol;
-    public PatrolMode patrolMode = PatrolMode.HorizontallyRight;
-
-    Player playerReference;
-
-
-    // Patrol Mode variables;
-    public float minHorizontalMovement = 1.0f;
-    public float maxHorizontalMovement = 1.0f;
-    public float minVerticalMovement = 1.0f;
-    public float maxVerticalMovement = 1.0f;
-    Vector3 startingPosition;
-
-
-    Vector2 smoothVelocityReference = Vector2.zero;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Record initial starting position
-        startingPosition = transform.position;
+        yield return new WaitForSeconds(0.05f);
+        rigidBody.velocity = Vector2.zero;
+        inputController.detectMovementInput = true;
     }
 
-    void UpdateWalkingAnimatorParameters()
+
+    IEnumerator Attack()
     {
-        animator.SetFloat("HorizontalMagnitude", rigidBody.velocity.x);
-        animator.SetFloat("VerticalMagnitude", rigidBody.velocity.y);
-        animator.SetBool("Moving", rigidBody.velocity.y != 0.0f || rigidBody.velocity.x != 0);
+        attacking = true;
+        var player = Player.Instance;
+        float damageAmount = 20;
+        animator.SetTrigger("Attack");
+        if (!attackBlocked && !player.isEthereal)
+        {
+            player.InflictPhysicalDamage(damageAmount * physicalAttackMultiplier * attackMultiplier);
+            player.animator.SetTrigger("PlayerHurt");
+            player.KnockBack(new Vector2(animator.GetFloat("HorizontalMagnitude"), animator.GetFloat("VerticalMagnitude")), 2.0f);
+        }
+        movementController.StopMoving();
+        yield return new WaitForSeconds(0.5f);
+        inputController.detectMovementInput = true;
+        attacking = false;
     }
 
-    void PatrolBoundsUpdate()
+    public void AttackDetection()
     {
-        if (patrolMode == PatrolMode.HorizontallyRight && transform.position.x >= startingPosition.x + maxHorizontalMovement)
+        if (!attacking)
         {
-            patrolMode = PatrolMode.HorizontallyLeft;
-        }
-        else if (patrolMode == PatrolMode.HorizontallyLeft && transform.position.x <= startingPosition.x - minHorizontalMovement)
-        {
-            patrolMode = PatrolMode.HorizontallyRight;
-        }
-        else if (patrolMode == PatrolMode.VerticallyUp && transform.position.y >= startingPosition.y + maxVerticalMovement)
-        {
-            patrolMode = PatrolMode.VerticallyDown;
-        }
-        else if (patrolMode == PatrolMode.VerticallyDown && transform.position.y <= startingPosition.y - minVerticalMovement)
-        {
-            patrolMode = PatrolMode.VerticallyUp;
-        }
-    }
+            // Contact filter to only include colliders in Player layer
+            ContactFilter2D playerFilter = new ContactFilter2D();
+            playerFilter.SetLayerMask(LayerMask.GetMask("Player"));
 
-    void Patrol()
-    {
-        PatrolBoundsUpdate();
+            // list to store all Player colliders in attack
+            var playerColliders = new List<Collider2D>();
 
-        Vector2 direction;
+            // get all Player colliders overlapping with attack collider
+            attackCollider.OverlapCollider(playerFilter, playerColliders);
 
-        switch (patrolMode)
-        {
-            case PatrolMode.HorizontallyLeft:
-                direction = new Vector2(-1.0f, 0.0f);
-                break;
-            case PatrolMode.HorizontallyRight:
-                direction = new Vector2(1.0f, 0.0f);
-                break;
-            case PatrolMode.VerticallyUp:
-                direction = new Vector2(0.0f, 1.0f);
-                break;
-            case PatrolMode.VerticallyDown:
-                direction = new Vector2(0.0f, -1.0f);
-                break;
-            default:
-                direction = new Vector2(0.0f, 0.0f);
-                break;
-        }
-
-        rigidBody.velocity = direction * speed;
-        UpdateWalkingAnimatorParameters();
-
-        //check if player is within sight radius
-        var colliders = Physics2D.OverlapCircleAll(transform.position, sightRadius);
-        foreach (Collider2D collider in colliders)
-        {
-            if (collider.tag == "Player")
+            foreach (Collider2D playerCollider in playerColliders)
             {
-                movementMode = MovementMode.Pursuit;
-                playerReference = collider.GetComponentInParent<Player>();
-                break;
-            }
-        }
-    }
-
-    void Pursuit()
-    {
-        if (playerReference == null)
-        {
-            movementMode = MovementMode.Patrol;
-            return;
-        }
-
-        Vector3 playerOffset = new Vector3(0.0f, 0.1f, 0.0f);
-
-        Vector2 playerDirection = (playerReference.transform.position + playerOffset) - transform.position;
-        Vector2 newVelocity = playerDirection.normalized * speed;
-        rigidBody.velocity = Vector2.SmoothDamp(rigidBody.velocity, newVelocity, ref smoothVelocityReference, 0.1f);
-
-        UpdateWalkingAnimatorParameters();
-
-        var colliders = Physics2D.OverlapCircleAll(transform.position - new Vector3(0.0f, 0.05f, 0.0f), attackRadius);
-        foreach (Collider2D collider in colliders)
-        {
-            if (collider.tag == "Player")
-            {
-                movementMode = MovementMode.Attack;
-                break;
-            }
-        }
-    }
-
-    void Attack()
-    {
-        if (playerReference == null)
-        {
-            movementMode = MovementMode.Patrol;
-            return;
-        }
-
-        float damageAmount = 25.0f;
-
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsTag("pauseInput"))
-        {
-            var colliders = Physics2D.OverlapCircleAll(transform.position - new Vector3(0.0f, 0.05f, 0.0f), attackRadius);
-            foreach (Collider2D collider in colliders)
-            {
-                if (collider.tag == "Player")
+                Player player = playerCollider.gameObject.GetComponentInParent<Player>();
+                if (player != null)
                 {
-                    animator.SetTrigger("Attack");
-                    playerReference.InflictPhysicalDamage(damageAmount * physicalAttackMultiplier * attackMultiplier);
-                    playerReference.animator.SetTrigger("PlayerHurt");
-                    playerReference.ToggleEffectState(new RepulsedEffect(playerReference, 0.1f, new Vector2(animator.GetFloat("HorizontalMagnitude"), animator.GetFloat("VerticalMagnitude")), 2.0f));
+                    StartCoroutine(Attack());
                 }
             }
-
-            movementMode = MovementMode.Pursuit;
-        }
-
-        rigidBody.velocity = Vector2.zero;
-
-    }
-
-    void Disable()
-    {
-        rigidBody.velocity = Vector2.zero;
-        if (!animator.GetBool("Disabled"))
-        {
-            animator.SetTrigger("Disable");
-            animator.SetBool("Disabled", true);
-            gameObject.GetComponent<Collider2D>().isTrigger = true;
-            sortingGroup.sortingOrder = -1;
-        }
-
-        if (!droppedItem)
-        {
-            List<GameObject> drops = new List<GameObject> {goldCoinPrefab, goldBarPrefab, goldStackPrefab, healthDropPrefab, manaDropPrefab};
-            // Drop random drop
-            Instantiate(drops[Random.Range(0, drops.Count)], transform.position, Quaternion.identity);
-            droppedItem = true;
         }
     }
+
 
     public void Revive()
     {
         animator.SetBool("Disabled", false);
         sortingGroup.sortingOrder = 0;
-        movementMode = MovementMode.Pursuit;
-        gameObject.GetComponent<Collider2D>().isTrigger = false;
+        ((SkeletonMovementController)movementController).movementMode = SkeletonMovementController.MovementMode.Patrol;
+        skeletonCollider.isTrigger = false;
         health = MAX_HEALTH;
     }
 
-
-    // Update is called once per frame
-    protected override void Update()
+    private void Update()
     {
         base.Update();
-        if (health <= 0)
+        if (inputController.detectInput && inputController.detectActionInput && health > 0)
         {
-            movementMode = MovementMode.Disabled;
-        }   
-    }
-
-    void FixedUpdate()
-    {
-        switch (movementMode)
-        {
-            case MovementMode.Patrol:
-                Patrol();
-                break;
-            case MovementMode.Pursuit:
-                Pursuit();
-                break;
-            case MovementMode.Attack:
-                Attack();
-                break;
-            case MovementMode.Disabled:
-                Disable();
-                break;
-            case MovementMode.Dead:
-                break;
+            AttackDetection();
         }
     }
+
 }

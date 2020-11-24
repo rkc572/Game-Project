@@ -18,7 +18,7 @@ public class RepulsedEffect : EffectState
     protected override void Effect()
     {
         mob.movementController.StopMoving();
-        mob.inputController.detectInput = false;
+        mob.inputController.detectMovementInput = false;
 
         //set mob velocity towards repulsion direction with magnitude of strength
         mob.rigidBody.velocity = direction * strength;
@@ -39,7 +39,7 @@ public class RepulsedEffect : EffectState
         {
             mob.rigidBody.velocity = Vector2.zero;
             complete = true;
-            mob.inputController.detectInput = true;
+            mob.inputController.detectMovementInput = true;
         }
     }
 }

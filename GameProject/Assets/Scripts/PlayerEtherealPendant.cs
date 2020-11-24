@@ -173,12 +173,24 @@ public class PlayerEtherealPendant : PlayerItem
 
     }
 
-    void Ethereal()
+    IEnumerator Ethereal()
     {
         Debug.Log("Turning ethereal");
         etherealStartTime = Time.time;
         ethereal = true;
         playerCollider.gameObject.layer = 11; // ETHEREAL LAYER
+
+
+        while (ethereal)
+        {
+            yield return null;
+        }
+
+        //Reset Ethereal
+        Debug.Log("UnTurning ethereal");
+        ethereal = false;
+        playerCollider.gameObject.layer = 10; // PLAYER LAYER
+
     }
 
     void ElementalEthereal()
@@ -188,7 +200,7 @@ public class PlayerEtherealPendant : PlayerItem
         switch (elementalAttribute)
         {
             case ElementalAttribute.NONE:
-                Ethereal();
+                StartCoroutine(Ethereal());
                 break;
             case ElementalAttribute.EARTH:
                 StartCoroutine(EarthEthereal());
@@ -215,7 +227,7 @@ public class PlayerEtherealPendant : PlayerItem
             }
             else
             {
-                Ethereal();
+                StartCoroutine(Ethereal());
             }
         }
         else if (ethereal && Input.GetMouseButtonDown(1))

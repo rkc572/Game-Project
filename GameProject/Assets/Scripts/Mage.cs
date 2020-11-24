@@ -5,6 +5,8 @@ using UnityEngine.Rendering;
 
 public class Mage : Enemy
 {
+
+    /*
     public SortingGroup sortingGroup;
 
     Skeleton closestSkeleton = null;
@@ -173,4 +175,6 @@ public class Mage : Enemy
             StartCoroutine(Die());
         }
     }
+
+    */
 }

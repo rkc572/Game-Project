@@ -18,7 +18,9 @@ public class StunnedEffect : EffectState
     {
         Debug.Log("I am stunned - can't move");
         mob.movementController.StopMoving();
+        mob.animator.SetBool("Moving", false);
         mob.inputController.detectInput = false;
+        mob.rigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     public override void ApplyEffect()
@@ -36,6 +38,7 @@ public class StunnedEffect : EffectState
             Debug.Log("I am no longer stunned - I can move");
             mob.inputController.detectInput = true;
             effectApplied = false;
+            mob.rigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 }

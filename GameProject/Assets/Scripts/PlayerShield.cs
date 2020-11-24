@@ -58,6 +58,12 @@ public class PlayerShield : PlayerItem
         player.movementController.StopMoving();
         player.animator.SetBool("Shield", true);
 
+        // ignore collider calculations if player is ethereal
+        if (player.isEthereal)
+        {
+            return;
+        }
+
         // get active shield collider
         Collider2D shieldCollider = activeShieldCollider;
 

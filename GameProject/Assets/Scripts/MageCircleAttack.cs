@@ -14,7 +14,7 @@ public class MageCircleAttack : MonoBehaviour
     {
         var player = collider.GetComponent<Player>();
         var skeleton = collider.GetComponent<Skeleton>();
-
+        /*
         if (player != null)
         {
             // slow down player
@@ -40,6 +40,7 @@ public class MageCircleAttack : MonoBehaviour
             skeleton.animator.SetTrigger("Revive");
             skeleton.ToggleEffectState(new StrengthenedEffect(skeleton, 10.0f, 1.5f));
         }
+        */
     }
 
 }

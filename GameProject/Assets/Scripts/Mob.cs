@@ -71,8 +71,10 @@ public class Mob : MonoBehaviour
 
     public virtual IEnumerator KnockBack(Vector2 attackDirection, float force)
     {
-
         movementController.StopMoving();
+
+        animator.SetFloat("HorizontalMagnitude", -attackDirection.x);
+        animator.SetFloat("VerticalMagnitude", -attackDirection.y);
 
         Debug.Log(attackDirection);
         rigidBody.velocity = attackDirection * force;
