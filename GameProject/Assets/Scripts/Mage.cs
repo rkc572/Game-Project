@@ -6,19 +6,22 @@ using UnityEngine.Rendering;
 public class Mage : Enemy
 {
 
-    /*
-    public SortingGroup sortingGroup;
-
-    Skeleton closestSkeleton = null;
-    Vector2 smoothVelocityReference = Vector2.zero;
     bool dead = false;
 
-    public GameObject goldCoinPrefab;
-    public GameObject goldBarPrefab;
-    public GameObject goldStackPrefab;
+    public override IEnumerator KnockBack(Vector2 attackDirection, float force)
+    {
+        movementController.StopMoving();
+        rigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        animator.SetFloat("HorizontalMagnitude", -attackDirection.x);
+        animator.SetFloat("VerticalMagnitude", -attackDirection.y);
 
-    public GameObject healthDropPrefab;
-    public GameObject manaDropPrefab;
+        Debug.Log(attackDirection);
+        rigidBody.velocity = attackDirection * force;
+
+        yield return new WaitForSeconds(0.05f);
+        rigidBody.velocity = Vector2.zero;
+        inputController.detectMovementInput = true;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -26,70 +29,14 @@ public class Mage : Enemy
         StartCoroutine(Attack());
     }
 
-
-    void FindSkeletonToTail()
-    {
-        var skeletons = Resources.FindObjectsOfTypeAll(typeof(Skeleton));
-        var mageDistance = transform.parent.position;
-        float closestDistance = -1.0f;
-        foreach (Skeleton skeleton in skeletons)
-        {
-            if (skeleton.isActiveAndEnabled)
-            {
-
-                if (skeleton.movementMode == Skeleton.MovementMode.Disabled)
-                {
-                    closestSkeleton = skeleton;
-                    return;
-                }
-
-
-                var distanceFromMage = (skeleton.transform.parent.position - mageDistance).magnitude;
-
-                if (distanceFromMage < closestDistance || closestDistance == -1.0f)
-                {
-                    closestDistance = distanceFromMage;
-                    closestSkeleton = skeleton;
-                }
-            }
-        }
-    }
-
-    void TailSkeleton()
-    {
-        var distanceFromSkeleton = (closestSkeleton.transform.parent.position - transform.parent.position).magnitude;
-
-        if (distanceFromSkeleton > 1.15f)
-        {
-            Vector2 skeletonDirection = closestSkeleton.transform.parent.position - transform.parent.position;
-
-            if (closestSkeleton.movementMode != Skeleton.MovementMode.Disabled)
-            {
-                skeletonDirection += new Vector2(Random.Range(-1, 1) * Random.value, Random.Range(-1, 1) * Random.value);
-            }
-
-            Vector2 newVelocity = skeletonDirection.normalized * speed;
-            rigidBody.velocity = Vector2.SmoothDamp(rigidBody.velocity, newVelocity, ref smoothVelocityReference, 0.1f);
-        }
-        else
-        {
-            animator.SetFloat("HorizontalMagnitude", 0.0f);
-            animator.SetFloat("VerticalMagnitude", -1.0f);
-            var rotation = transform.parent.rotation;
-            rigidBody.velocity = Vector2.SmoothDamp(rigidBody.velocity, Vector2.zero, ref smoothVelocityReference, 0.5f);
-            transform.parent.RotateAround(closestSkeleton.transform.parent.position, new Vector3(0.0f, 0.0f, 1.0f), Time.deltaTime * 50.0f);
-            transform.parent.rotation = rotation;
-        }
-    }
-
     IEnumerator Attack()
     {
         while (health > 0) {
-            yield return new WaitForSeconds(8.0f);
-            if (!dead)
+            if (!dead && inputController.detectActionInput && inputController.detectInput)
             {
                 animator.SetTrigger("Attack");
             }
+            yield return new WaitForSeconds(8.0f);
         }
     }
 
@@ -117,11 +64,8 @@ public class Mage : Enemy
             scaledDirection.x = -1;
         }
 
-        if (closestSkeleton.movementMode != Skeleton.MovementMode.Disabled)
-        {
-            animator.SetFloat("HorizontalMagnitude", scaledDirection.x);
-            animator.SetFloat("VerticalMagnitude", scaledDirection.y);
-        }
+        animator.SetFloat("HorizontalMagnitude", scaledDirection.x);
+        animator.SetFloat("VerticalMagnitude", scaledDirection.y);
         animator.SetBool("Moving", true);
     }
 
@@ -145,10 +89,6 @@ public class Mage : Enemy
             yield return new WaitForSeconds(0.02f);
         }
 
-        List<GameObject> drops = new List<GameObject> { goldCoinPrefab, goldBarPrefab, goldStackPrefab, healthDropPrefab, manaDropPrefab };
-        // Drop random drop
-        Instantiate(drops[Random.Range(0, drops.Count)], transform.position, Quaternion.identity);
-
         Destroy(transform.parent.gameObject, 1.0f);
     }
 
@@ -165,16 +105,14 @@ public class Mage : Enemy
 
         if (health > 0)
         {
-            FindSkeletonToTail();
-            TailSkeleton();
             UpdateWalkingAnimatorParameters();
         }
         else if(!dead)
         {
             dead = true;
+            inputController.detectInput = false;
             StartCoroutine(Die());
         }
     }
 
-    */
 }

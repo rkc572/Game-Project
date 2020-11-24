@@ -14,7 +14,7 @@ public class Skeleton : Enemy
     public override IEnumerator KnockBack(Vector2 attackDirection, float force)
     {
         movementController.StopMoving();
-
+        rigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         animator.SetFloat("HorizontalMagnitude", -attackDirection.x);
         animator.SetFloat("VerticalMagnitude", -attackDirection.y);
 
@@ -77,16 +77,8 @@ public class Skeleton : Enemy
         sortingGroup.sortingOrder = 0;
         ((SkeletonMovementController)movementController).movementMode = SkeletonMovementController.MovementMode.Patrol;
         skeletonCollider.isTrigger = false;
+        inputController.detectMovementInput = true;
         health = MAX_HEALTH;
-    }
-
-    private void Update()
-    {
-        base.Update();
-        if (inputController.detectInput && inputController.detectActionInput && health > 0)
-        {
-            AttackDetection();
-        }
     }
 
 }

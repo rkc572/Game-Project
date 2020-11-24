@@ -12,10 +12,10 @@ public class MageCircleAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        var player = collider.GetComponent<Player>();
-        var skeleton = collider.GetComponent<Skeleton>();
-        /*
-        if (player != null)
+        var player = collider.GetComponentInParent<Player>();
+        var skeleton = collider.GetComponentInParent<Skeleton>();
+
+        if (collider.CompareTag("Player") && !player.isEthereal)
         {
             // slow down player
             player.ToggleEffectState(new SlowedEffect(player, 10.0f, 0.5f));
@@ -35,12 +35,12 @@ public class MageCircleAttack : MonoBehaviour
             player.InflictElementalDamage(30.0f);
             player.animator.SetTrigger("PlayerHurt");
         }
-        else if (skeleton != null && skeleton.movementMode == Skeleton.MovementMode.Disabled)
+        
+        if (skeleton != null && ((SkeletonMovementController)skeleton.movementController).movementMode == SkeletonMovementController.MovementMode.Disabled)
         {
             skeleton.animator.SetTrigger("Revive");
             skeleton.ToggleEffectState(new StrengthenedEffect(skeleton, 10.0f, 1.5f));
         }
-        */
     }
 
 }

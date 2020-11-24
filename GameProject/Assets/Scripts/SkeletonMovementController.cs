@@ -52,7 +52,7 @@ public class SkeletonMovementController : MovementController
 
         var scaledDirection = newVelocity;
 
-        if (movementMode != MovementMode.Pursuit)
+        if (movementMode == MovementMode.Patrol)
         {
             scaledDirection = skeleton.rigidBody.velocity;
         }

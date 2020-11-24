@@ -15,7 +15,10 @@ public class SkeletonInputController : InputController
 
     void SkeletonActionInputDetection()
     {
-
+        if (skeleton.health > 0)
+        {
+            skeleton.AttackDetection();
+        }
     }
 
     void SkeletonMovementInputDetection()
@@ -23,7 +26,6 @@ public class SkeletonInputController : InputController
         movementController.Move();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         // Do not proceed to read player input if false
