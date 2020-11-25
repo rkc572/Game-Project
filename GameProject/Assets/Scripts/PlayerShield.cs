@@ -116,14 +116,14 @@ public class PlayerShield : PlayerItem
             return;
         }
 
-        if (player.mana < 10)
+        if (player.mana < 100)
         {
             // end function player does not have enough mana
             return;
         }
 
         // consume mana for action
-        player.ModifyManaByAmount(-10.0f);
+        player.ModifyManaByAmount(-100.0f);
 
         shieldDeployed = true;
         shieldDeploymentPosition = player.transform.position;
@@ -167,16 +167,196 @@ public class PlayerShield : PlayerItem
 
     void FireShield()
     {
+        if (shieldDeployed)
+        {
+            return;
+        }
 
+        if (player.mana < 100)
+        {
+            // end function player does not have enough mana
+            return;
+        }
+
+        // Contact filter to only include colliders in Enemy layer
+        ContactFilter2D enemyFilter = new ContactFilter2D();
+
+        // consume mana for action
+        player.ModifyManaByAmount(-100.0f);
+
+        var freezedColliders = new List<Collider2D>();
+        Physics2D.OverlapCircle(player.transform.position, 0.5f, enemyFilter, freezedColliders);
+
+        foreach (Collider2D enemyCollider in freezedColliders)
+        {
+            Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.ToggleEffectState(new BurningEffect(enemy, 1.0f, 6.0f, 5.0f));
+            }
+        }
+
+
+
+        shieldDeployed = true;
+        shieldDeploymentPosition = player.transform.position;
+        activeShieldCollider.gameObject.SetActive(true);
+        player.inputController.detectMovementInput = false;
+        player.inputController.detectActionInput = false;
+        player.movementController.StopMoving();
+        player.animator.SetBool("Shield", true);
+        playerSounds.PlayFireSFX();
+
+        // do not do collider calculations if player is ethereal
+        if (player.isEthereal)
+            return;
+
+        // get active shield collider
+        Collider2D shieldCollider = activeShieldCollider;
+
+        enemyFilter.SetLayerMask(LayerMask.GetMask("Enemy"));
+
+        // list to store all enemy colliders in shield collider
+        var enemyColliders = new List<Collider2D>();
+
+        // get all enemy colliders overlapping with shield collider
+        shieldCollider.OverlapCollider(enemyFilter, enemyColliders);
+
+        // iterate over all enemies blocked by shield
+        foreach (Collider2D enemyCollider in enemyColliders)
+        {
+            Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                // knockback enemies
+                StartCoroutine(enemy.KnockBack(attackDirection, 2.0f));
+            }
+        }
     }
 
     void WaterShield()
     {
 
+        if (shieldDeployed)
+        {
+            return;
+        }
+
+        if (player.mana < 100)
+        {
+            // end function player does not have enough mana
+            return;
+        }
+
+        // Contact filter to only include colliders in Enemy layer
+        ContactFilter2D enemyFilter = new ContactFilter2D();
+
+        // consume mana for action
+        player.ModifyManaByAmount(-100.0f);
+
+        var freezedColliders = new List<Collider2D>();
+        Physics2D.OverlapCircle(player.transform.position, 0.5f, enemyFilter, freezedColliders);
+
+        foreach (Collider2D enemyCollider in freezedColliders)
+        {
+            Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.ToggleEffectState(new FrozenEffect(enemy, 5.0f, 1.5f));
+            }
+        }
+        
+
+
+        shieldDeployed = true;
+        shieldDeploymentPosition = player.transform.position;
+        activeShieldCollider.gameObject.SetActive(true);
+        player.inputController.detectMovementInput = false;
+        player.inputController.detectActionInput = false;
+        player.movementController.StopMoving();
+        player.animator.SetBool("Shield", true);
+        playerSounds.PlayWaterSFX();
+
+        // do not do collider calculations if player is ethereal
+        if (player.isEthereal)
+            return;
+
+        // get active shield collider
+        Collider2D shieldCollider = activeShieldCollider;
+
+        enemyFilter.SetLayerMask(LayerMask.GetMask("Enemy"));
+
+        // list to store all enemy colliders in shield collider
+        var enemyColliders = new List<Collider2D>();
+
+        // get all enemy colliders overlapping with shield collider
+        shieldCollider.OverlapCollider(enemyFilter, enemyColliders);
+
+        // iterate over all enemies blocked by shield
+        foreach (Collider2D enemyCollider in enemyColliders)
+        {
+            Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                // knockback enemies
+                StartCoroutine(enemy.KnockBack(attackDirection, 2.0f));
+            }
+        }
     }
 
     void AirShield()
     {
+
+        if (shieldDeployed)
+        {
+            return;
+        }
+
+        if (player.mana < 100)
+        {
+            // end function player does not have enough mana
+            return;
+        }
+
+        // consume mana for action
+        player.ModifyManaByAmount(-100.0f);
+
+        shieldDeployed = true;
+        shieldDeploymentPosition = player.transform.position;
+        activeShieldCollider.gameObject.SetActive(true);
+        player.inputController.detectMovementInput = false;
+        player.inputController.detectActionInput = false;
+        player.movementController.StopMoving();
+        player.animator.SetBool("Shield", true);
+        playerSounds.PlayWindSFX();
+
+        // do not do collider calculations if player is ethereal
+        if (player.isEthereal)
+            return;
+
+        // get active shield collider
+        Collider2D shieldCollider = activeShieldCollider;
+
+        // Contact filter to only include colliders in Enemy layer
+        ContactFilter2D enemyFilter = new ContactFilter2D();
+        enemyFilter.SetLayerMask(LayerMask.GetMask("Enemy"));
+
+        // list to store all enemy colliders in shield collider
+        var enemyColliders = new List<Collider2D>();
+
+        // get all enemy colliders overlapping with shield collider
+        shieldCollider.OverlapCollider(enemyFilter, enemyColliders);
+
+        // iterate over all enemies blocked by shield
+        foreach (Collider2D enemyCollider in enemyColliders)
+        {
+            Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                // knockback enemies
+                StartCoroutine(enemy.KnockBack(attackDirection, 2.0f));
+            }
+        }
 
     }
 

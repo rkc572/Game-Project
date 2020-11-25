@@ -27,7 +27,33 @@ public class Mage : Enemy
     void Start()
     {
         StartCoroutine(Attack());
+        StartCoroutine(RangeAttack());
     }
+
+
+    IEnumerator RangeAttack()
+    {
+        while (health > 0)
+        {
+            if (!dead && inputController.detectActionInput && inputController.detectInput)
+            {
+                rigidBody.velocity = Vector2.zero;
+                Vector3 playerOffset = new Vector3(0.0f, 0.1f, 0.0f);
+                Vector3 target = (Player.Instance.transform.position + playerOffset);
+
+                var projectilePrefab = (MageProjectile)Resources.Load("prefabs/MageProjectile", typeof(MageProjectile));
+                var projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+
+                Vector2 targetDirection = target - projectile.transform.position;
+                Vector2 newVelocity = targetDirection.normalized * 1.75f;
+
+                projectile.rigidBody.velocity = newVelocity;
+                projectile.mage = this;
+            }
+            yield return new WaitForSeconds(6.0f);
+        }
+    }
+
 
     IEnumerator Attack()
     {

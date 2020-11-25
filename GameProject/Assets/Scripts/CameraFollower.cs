@@ -32,8 +32,8 @@ public class CameraFollower : MonoBehaviour
         else
         {
             transform.position = new Vector3(
-                Mathf.Clamp(player.transform.parent.position.x, minX, maxX),
-                Mathf.Clamp(player.transform.parent.position.y, minY, maxY),
+                Mathf.Clamp(player.transform.position.x, minX, maxX),
+                Mathf.Clamp(player.transform.position.y, minY, maxY),
                 transform.position.z);
         }
     }

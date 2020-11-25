@@ -22,6 +22,24 @@ public class ShieldBlock : MonoBehaviour
         if (Player.Instance.isEthereal)
             return;
 
+        if (collider.gameObject.layer == 12) // ENEMY PROJECTILE LAYER
+        {
+
+            if (Input.GetKey(KeyCode.Space) && Player.Instance.playerShield.elementalAttribute == ElementalAttribute.AIR)
+            {
+                var projectile = collider.GetComponentInParent<MageProjectile>();
+                if (projectile != null)
+                {
+                    projectile.ReturnToSender();
+                }
+            }
+            else
+            {
+                Destroy(collider.gameObject);
+            }
+
+        }
+
         if (collider.gameObject.layer == 9) // ENEMY LAYER
         {
             Enemy enemy = collider.gameObject.GetComponent<Enemy>();
