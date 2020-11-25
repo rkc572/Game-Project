@@ -24,6 +24,14 @@ public class FrozenEffect : EffectState
     {
         mob.SetMobSpeed(frozenSpeed);
         mob.SetPhysicalDamageTakenMultiplier(newPhysicalDamageTakenMultiplier);
+
+
+        mob.movementController.StopMoving();
+        mob.animator.SetBool("Moving", false);
+        mob.inputController.detectInput = false;
+        mob.rigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
+
+
         Debug.Log("I am frozen and take more damage!");
     }
 
@@ -52,6 +60,9 @@ public class FrozenEffect : EffectState
             mob.SetPhysicalDamageTakenMultiplier(previousPhysicalDamageTakenMultiplier);
             Debug.Log("I am no longer frozen");
             effectApplied = false;
+            mob.inputController.detectInput = true;
+            mob.inputController.detectMovementInput = true;
+            mob.rigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 

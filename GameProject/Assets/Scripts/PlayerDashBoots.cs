@@ -35,6 +35,7 @@ public class PlayerDashBoots : PlayerItem
         if (player.mana < 10)
         {
             // end function player does not have enough mana
+            StopDashing();
             yield break;
         }
 
@@ -152,6 +153,7 @@ public class PlayerDashBoots : PlayerItem
         if (player.mana < 100)
         {
             // end function player does not have enough mana
+            StopDashing();
             yield break;
         }
 
@@ -268,6 +270,7 @@ public class PlayerDashBoots : PlayerItem
         if (player.mana < 100)
         {
             // end function player does not have enough mana
+            StopDashing();
             yield break;
         }
 
@@ -390,6 +393,7 @@ public class PlayerDashBoots : PlayerItem
         if (player.mana < 100)
         {
             // end function player does not have enough mana
+            StopDashing();
             yield break;
         }
 
@@ -525,6 +529,7 @@ public class PlayerDashBoots : PlayerItem
         if (player.mana < 10)
         {
             // end function player does not have enough mana
+            StopDashing();
             yield break;
         }
 

@@ -37,6 +37,7 @@ public class StunnedEffect : EffectState
             complete = true;
             Debug.Log("I am no longer stunned - I can move");
             mob.inputController.detectInput = true;
+            mob.inputController.detectMovementInput = true;
             effectApplied = false;
             mob.rigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
