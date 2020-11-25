@@ -31,6 +31,17 @@ public class PlayerDashBoots : PlayerItem
 
     IEnumerator RegularDash()
     {
+
+        if (player.mana < 10)
+        {
+            // end function player does not have enough mana
+            yield break;
+        }
+
+        // consume mana for action
+        player.ModifyManaByAmount(-10.0f);
+
+
         // Move Player in direction player is facing
         LineOfSight lineOfSight = player.GetLineOfSight();
 
@@ -138,14 +149,14 @@ public class PlayerDashBoots : PlayerItem
     IEnumerator EarthDash()
     {
 
-        if (player.mana < 10)
+        if (player.mana < 100)
         {
             // end function player does not have enough mana
             yield break;
         }
 
         // consume mana for action
-        player.ModifyManaByAmount(-10.0f);
+        player.ModifyManaByAmount(-100.0f);
 
 
         // Move Player in direction player is facing
@@ -183,6 +194,7 @@ public class PlayerDashBoots : PlayerItem
         afterImage.gameObject.SetActive(true);
         bool startedDashingWhileTouchingWall = playerDashHitBox.IsTouchingLayers(LayerMask.GetMask("Wall"));
         player.playerSounds.playerMovementAudioSource.pitch = 3.0f;
+        player.playerSounds.PlayEarthSFX();
 
         while (Time.time < dashStartTime + dashTime)
         {
@@ -253,7 +265,7 @@ public class PlayerDashBoots : PlayerItem
     IEnumerator FireDash()
     {
 
-        if (player.mana < 10)
+        if (player.mana < 100)
         {
             // end function player does not have enough mana
             yield break;
@@ -297,12 +309,14 @@ public class PlayerDashBoots : PlayerItem
         afterImage.gameObject.SetActive(true);
         bool startedDashingWhileTouchingWall = playerDashHitBox.IsTouchingLayers(LayerMask.GetMask("Wall"));
         player.playerSounds.playerMovementAudioSource.pitch = 3.0f;
+        player.playerSounds.PlayFireSFX();
 
         while (Time.time < dashStartTime + dashTime)
         {
 
-            // TODO
             // GENERATE FIRE TRAIL
+            var fireTrailPrefab = (GameObject)Resources.Load("prefabs/FireTrail", typeof(GameObject));
+            GameObject.Instantiate(fireTrailPrefab, player.transform.position, Quaternion.identity);
 
             player.inputController.detectMovementInput = false;
             player.inputController.detectActionInput = false;
@@ -373,14 +387,14 @@ public class PlayerDashBoots : PlayerItem
     IEnumerator WaterDash()
     {
 
-        if (player.mana < 10)
+        if (player.mana < 100)
         {
             // end function player does not have enough mana
             yield break;
         }
 
         // consume mana for action
-        player.ModifyManaByAmount(-10.0f);
+        player.ModifyManaByAmount(-100.0f);
 
 
         // Move Player in direction player is facing
@@ -418,6 +432,7 @@ public class PlayerDashBoots : PlayerItem
         afterImage.gameObject.SetActive(true);
         bool startedDashingWhileTouchingWall = playerDashHitBox.IsTouchingLayers(LayerMask.GetMask("Wall"));
         player.playerSounds.playerMovementAudioSource.pitch = 3.0f;
+        player.playerSounds.PlayWaterSFX();
 
 
         //freeze enemies within freezeCollider
@@ -514,7 +529,7 @@ public class PlayerDashBoots : PlayerItem
         }
 
         // consume mana for action
-        player.ModifyManaByAmount(-10.0f);
+        player.ModifyManaByAmount(-100.0f);
 
         // Move Player in direction player is facing
         LineOfSight lineOfSight = player.GetLineOfSight();
@@ -551,6 +566,7 @@ public class PlayerDashBoots : PlayerItem
         afterImage.gameObject.SetActive(true);
         bool startedDashingWhileTouchingWall = playerDashHitBox.IsTouchingLayers(LayerMask.GetMask("Wall"));
         player.playerSounds.playerMovementAudioSource.pitch = 3.0f;
+        player.playerSounds.PlayWindSFX();
 
         while (Time.time < dashStartTime + (dashTime / 2.0f))
         {
