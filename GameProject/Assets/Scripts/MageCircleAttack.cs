@@ -22,11 +22,9 @@ public class MageCircleAttack : MonoBehaviour
 
             List<EffectState> randomEffects = new List<EffectState>{
                     new BurningEffect(player, 0.8f, 6.0f, 5.0f),
-                    new FrozenEffect(player, 4.0f, 1.5f),
                     new JinxedEffect(player, 4.0f, 0.5f),
                     new WeakenedEffect(player, 4.0f, 0.5f),
-                    new VulnerableEffect(player, 4.0f, 1.5f),
-                    new StunnedEffect(player, 4.0f)
+                    new VulnerableEffect(player, 4.0f, 1.5f)
                 };
 
             player.ToggleEffectState(randomEffects[Random.Range(0, randomEffects.Count)]);
