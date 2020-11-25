@@ -156,7 +156,7 @@ public class PlayerEtherealPendant : PlayerItem
                 if (enemy != null)
                 {
                     // enemies hit by collider slowed down
-                    enemy.ToggleEffectState(new SlowedEffect(enemy, 10.0f, 0.5f));
+                    enemy.ToggleEffectState(new SlowedEffect(enemy, 10.0f, 0.25f));
                 }
             }
 

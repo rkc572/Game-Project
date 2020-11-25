@@ -300,6 +300,10 @@ public class PlayerDashBoots : PlayerItem
 
         while (Time.time < dashStartTime + dashTime)
         {
+
+            // TODO
+            // GENERATE FIRE TRAIL
+
             player.inputController.detectMovementInput = false;
             player.inputController.detectActionInput = false;
 
@@ -422,21 +426,21 @@ public class PlayerDashBoots : PlayerItem
         enemyFilter.SetLayerMask(LayerMask.GetMask("Enemy"));
         // list to store all enemy colliders in swing
         var enemyColliders = new List<Collider2D>();
+
+        freezeCollider.OverlapCollider(enemyFilter, enemyColliders);
+
         foreach (Collider2D enemyCollider in enemyColliders)
         {
-            Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
+            Enemy enemy = enemyCollider.GetComponentInParent<Enemy>();
             if (enemy != null)
             {
-                Debug.Log("Dashed into enemy");
+                Debug.Log("Froze enemy");
                 enemy.ToggleEffectState(new FrozenEffect(enemy, 8.0f, 1.5f));
             }
         }
 
         while (Time.time < dashStartTime + dashTime)
         {
-
-            // TODO
-            // GENERATE FIRE TRAIL
 
 
             player.inputController.detectMovementInput = false;

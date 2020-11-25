@@ -111,6 +111,45 @@ public class Player : Mob
     {
         base.Update();
 
+
+
+
+        // TESTING/DEMO PURPOSES ONLY
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            playerSword.elementalAttribute = ElementalAttribute.AIR;
+            selectedArtifact.elementalAttribute = ElementalAttribute.AIR;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            playerSword.elementalAttribute = ElementalAttribute.EARTH;
+            selectedArtifact.elementalAttribute = ElementalAttribute.EARTH;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            playerSword.elementalAttribute = ElementalAttribute.FIRE;
+            selectedArtifact.elementalAttribute = ElementalAttribute.FIRE;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            playerSword.elementalAttribute = ElementalAttribute.WATER;
+            selectedArtifact.elementalAttribute = ElementalAttribute.WATER;
+        }
+
+        // TESTING/DEMO PURPOSES ONLY
+
+
+
+
+
+
+
+
+
+
+
+
         if (health <= 0 && !GameSceneManager.Instance.deathSceneActive)
         {
             StartCoroutine(GameSceneManager.Instance.PlayerDied(this));
