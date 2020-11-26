@@ -17,9 +17,14 @@ public class SubRoom1 : MonoBehaviour
             right.hasUpgrade = true;
         }
 
-        if (AllEnemyDead())
+        if (AllEnemyDead() || Player.Instance.clearedRooms[index])
         {
-            right.trigger = true;
+            Player.Instance.clearedRooms[index] = true;
+
+            if (left.entranceLeft)
+                right.trigger = true;
+            else if (right.entranceRight)
+                left.trigger = true;
         }
     }
 

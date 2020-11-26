@@ -19,7 +19,10 @@ public class SubRoom2 : MonoBehaviour
 
         if (Player.Instance.hasItems[index])
         {
-            right.trigger = true;
+            if (left.entranceLeft)
+                right.trigger = true;
+            else if (right.entranceRight)
+                left.trigger = true;
         }
     }
 }

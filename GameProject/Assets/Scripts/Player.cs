@@ -12,11 +12,17 @@ public class Player : Mob
     public PlayerItem playerSword, playerShield, playerDashBoots, playerMagicStaff, playerEtherealPendant, selectedArtifact;
     public List<PlayerItem> artifacts = new List<PlayerItem>();
 
-    // Acquired items and upgrades
+    // Acquired upgrades
     [Tooltip("0:fire, 1:water, 2:air, 3:earth")]
     public bool[] hasUpgrades = new bool[4];
+
+    // Acquired items
     [Tooltip("0:staff, 1:pendant, 2:boots, 3:shield")]
     public bool[] hasItems = new bool[4];
+
+    // Clear status of room 1 of each sub dungeon (to fix returning from room 2 to 1)
+    [Tooltip("0:staff, 1:pendant, 2:boots, 3:shield")]
+    public bool[] clearedRooms = new bool[4];
 
     // potion variables
     public Potion selectedPotion;

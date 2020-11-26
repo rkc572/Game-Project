@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SubRoom3 : MonoBehaviour
 {
-    public BlockedWalls left;
+    public BlockedWalls entrance;
     public int index;
 
     void Update()
@@ -12,7 +12,7 @@ public class SubRoom3 : MonoBehaviour
 
         if (Player.Instance.hasUpgrades[index])
         {
-            left.hasUpgrade = true;
+            entrance.hasUpgrade = true;
         }
     }
 }
