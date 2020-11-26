@@ -460,7 +460,8 @@ public class PlayerDashBoots : PlayerItem
 
         while (Time.time < dashStartTime + dashTime)
         {
-
+            var waterTrailPrefab = (GameObject)Resources.Load("prefabs/WaterTrail", typeof(GameObject));
+            GameObject.Instantiate(waterTrailPrefab, player.transform.position, Quaternion.identity);
 
             player.inputController.detectMovementInput = false;
             player.inputController.detectActionInput = false;
