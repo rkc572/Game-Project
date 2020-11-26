@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireTrail : MonoBehaviour
+public class WaterTrail : MonoBehaviour
 {
 
     private void Start()
@@ -15,7 +15,7 @@ public class FireTrail : MonoBehaviour
         var enemy = collision.GetComponentInParent<Enemy>();
         if (enemy != null)
         {
-            enemy.ToggleEffectState(new BurningEffect(enemy, 1.0f, 6.0f, 5.0f));
+            enemy.ToggleEffectState(new FrozenEffect(enemy, 3.0f, 1.5f));
         }
     }
 }

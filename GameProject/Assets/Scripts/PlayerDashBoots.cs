@@ -438,7 +438,7 @@ public class PlayerDashBoots : PlayerItem
         player.playerSounds.playerMovementAudioSource.pitch = 3.0f;
         player.playerSounds.PlayWaterSFX();
 
-
+        /*
         //freeze enemies within freezeCollider
         // Contact filter to only include colliders in Enemy layer
         ContactFilter2D enemyFilter = new ContactFilter2D();
@@ -457,6 +457,7 @@ public class PlayerDashBoots : PlayerItem
                 enemy.ToggleEffectState(new FrozenEffect(enemy, 8.0f, 1.5f));
             }
         }
+        */
 
         while (Time.time < dashStartTime + dashTime)
         {
