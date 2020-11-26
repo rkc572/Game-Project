@@ -438,14 +438,15 @@ public class PlayerDashBoots : PlayerItem
         player.playerSounds.playerMovementAudioSource.pitch = 3.0f;
         player.playerSounds.PlayWaterSFX();
 
-        /*
-        //freeze enemies within freezeCollider
         // Contact filter to only include colliders in Enemy layer
         ContactFilter2D enemyFilter = new ContactFilter2D();
         enemyFilter.SetLayerMask(LayerMask.GetMask("Enemy"));
         // list to store all enemy colliders in swing
         var enemyColliders = new List<Collider2D>();
 
+
+        /*
+        //freeze enemies within freezeCollider
         freezeCollider.OverlapCollider(enemyFilter, enemyColliders);
 
         foreach (Collider2D enemyCollider in enemyColliders)
