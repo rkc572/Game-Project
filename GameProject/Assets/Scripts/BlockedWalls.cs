@@ -31,7 +31,7 @@ public class BlockedWalls : MonoBehaviour
         }
         else if (entranceBot)
         {
-            if (Player.Instance.transform.position.y > transform.position.y + 0.65f && !hasUpgrade) // Close passage when entering from right
+            if (Player.Instance.transform.position.y > transform.position.y + 0.65f && !hasUpgrade) // Close passage when entering from bottom
             {
                 transform.GetChild(0).gameObject.SetActive(true);
                 transform.GetChild(1).gameObject.SetActive(true);
