@@ -250,6 +250,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7706251721577920758, guid: 11da428006f0aed4dbd59ded9341382d, type: 3}
   m_PrefabInstance: {fileID: 655837419}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &655837421 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2498252199570826386, guid: 11da428006f0aed4dbd59ded9341382d, type: 3}
+  m_PrefabInstance: {fileID: 655837419}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c62ec8f36de1b248955c016852a238c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &684300713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -614,6 +625,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1568268564}
+  - component: {fileID: 1568268565}
   m_Layer: 0
   m_Name: Blocked walls
   m_TagString: Untagged
@@ -636,6 +648,19 @@ Transform:
   m_Father: {fileID: 1401655897}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1568268565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568268563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f09221583e13344ba2655dfca98d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  left: {fileID: 655837421}
 --- !u!1001 &1571831955
 PrefabInstance:
   m_ObjectHideFlags: 0
