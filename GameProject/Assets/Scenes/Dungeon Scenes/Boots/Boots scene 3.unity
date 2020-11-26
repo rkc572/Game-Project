@@ -661,6 +661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   left: {fileID: 655837421}
+  index: 2
 --- !u!1001 &1571831955
 PrefabInstance:
   m_ObjectHideFlags: 0

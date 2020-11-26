@@ -12,6 +12,12 @@ public class Player : Mob
     public PlayerItem playerSword, playerShield, playerDashBoots, playerMagicStaff, playerEtherealPendant, selectedArtifact;
     public List<PlayerItem> artifacts = new List<PlayerItem>();
 
+    // Acquired items and upgrades
+    [Tooltip("0:fire, 1:water, 2:air, 3:earth")]
+    public bool[] hasUpgrades = new bool[4];
+    [Tooltip("0:staff, 1:pendant, 2:boots, 3:shield")]
+    public bool[] hasItems = new bool[4];
+
     // potion variables
     public Potion selectedPotion;
     public List<Potion> potions = new List<Potion>();

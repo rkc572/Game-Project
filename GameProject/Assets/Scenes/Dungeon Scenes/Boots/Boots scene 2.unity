@@ -859,6 +859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 2050117117}
   right: {fileID: 699807606}
+  index: 2
 --- !u!1 &295474791
 GameObject:
   m_ObjectHideFlags: 0
