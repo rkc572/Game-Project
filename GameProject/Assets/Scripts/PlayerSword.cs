@@ -111,7 +111,7 @@ public class PlayerSword : PlayerItem
             if (enemy != null)
             {
                 // inflict damage
-                enemy.InflictPhysicalDamage(25.0f * player.physicalAttackMultiplier * player.attackMultiplier);
+                enemy.InflictElementalDamage(25.0f * player.elementalAttackMultiplier * player.attackMultiplier);
                 enemy.animator.SetTrigger("TookDamage");
 
                 // knockback enemy
@@ -175,10 +175,10 @@ public class PlayerSword : PlayerItem
             Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
-                float damageDealt = 25.0f * player.physicalAttackMultiplier * player.attackMultiplier;
+                float damageDealt = 25.0f * player.elementalAttackMultiplier * player.attackMultiplier;
 
                 // inflict damage
-                enemy.InflictPhysicalDamage(damageDealt);
+                enemy.InflictElementalDamage(damageDealt);
                 enemy.animator.SetTrigger("TookDamage");
 
                 // knockback enemy
@@ -247,7 +247,7 @@ public class PlayerSword : PlayerItem
 
 
                 // inflict damage
-                enemy.InflictPhysicalDamage(25.0f * player.physicalAttackMultiplier * player.attackMultiplier);
+                enemy.InflictElementalDamage(25.0f * player.elementalAttackMultiplier * player.attackMultiplier);
                 enemy.animator.SetTrigger("TookDamage");
 
                 // knockback enemy
@@ -327,7 +327,7 @@ public class PlayerSword : PlayerItem
             if (enemy != null)
             {
                 // inflict damage
-                enemy.InflictPhysicalDamage(25.0f * player.physicalAttackMultiplier * player.attackMultiplier);
+                enemy.InflictElementalDamage(25.0f * player.elementalAttackMultiplier * player.attackMultiplier);
                 enemy.animator.SetTrigger("TookDamage");
 
                 // apply stronger repulsed effect

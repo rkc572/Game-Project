@@ -96,7 +96,7 @@ public class PlayerEtherealPendant : PlayerItem
                 {
                     // enemies hit by collider set on fire
                     Debug.Log("enemy set on fire");
-                    enemy.ToggleEffectState(new BurningEffect(enemy, 1.0f, 5.0f, 5.0f));
+                    enemy.ToggleEffectState(new BurningEffect(enemy, 1.0f, 5.0f, 5.0f * player.elementalAttackMultiplier));
                 }
             }
 
@@ -136,8 +136,8 @@ public class PlayerEtherealPendant : PlayerItem
                 if (enemy != null && Time.time > lastLeechTime + leechInterval)
                 {
                     // enemies hit by collider health leeched
-                    enemy.InflictElementalDamage(Mathf.Clamp(2.0f, 0.0f, enemy.health));
-                    player.ModifyHealthByAmount(Mathf.Clamp(2.0f, 0.0f, enemy.health));
+                    enemy.InflictElementalDamage(Mathf.Clamp(2.0f * player.elementalAttackMultiplier, 0.0f, enemy.health));
+                    player.ModifyHealthByAmount(Mathf.Clamp(2.0f * player.elementalAttackMultiplier, 0.0f, enemy.health));
                     lastLeechTime = Time.time;
                 }
             }
