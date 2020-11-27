@@ -32,7 +32,7 @@ public class PlayerInputController : InputController
 
         if (player.potions.Count >= 1)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 // shift list to the left
                 player.potions.Add(player.potions[0]);
@@ -42,7 +42,7 @@ public class PlayerInputController : InputController
                 player.selectedPotion = player.potions[player.potions.Count / 2];
 
             }
-            else if (Input.GetKeyDown(KeyCode.E))
+            else if (Input.GetKeyDown(KeyCode.Q))
             {
                 // shift list to the right
                 player.potions.Insert(0, player.potions[player.potions.Count - 1]);
@@ -70,7 +70,7 @@ public class PlayerInputController : InputController
                         player.selectedPotion = null;
                     }
                 }
-
+                /*
                 print("POTIONS: ");
                 foreach (Potion invPot in Player.Instance.potions)
                 {
@@ -80,6 +80,7 @@ public class PlayerInputController : InputController
                 }
 
                 print($"Selected potion: {Player.Instance.selectedPotion.GetType().Name} {Player.Instance.selectedPotion.quantity}");
+                */
             }
         }
 

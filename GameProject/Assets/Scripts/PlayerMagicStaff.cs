@@ -18,6 +18,7 @@ public class PlayerMagicStaff : PlayerItem
 
         Player.Instance.animator.SetTrigger("Magic");
 
+        Player.Instance.playerSounds.PlayMagicStaffSFX();
         Player.Instance.ModifyManaByAmount(-50.0f);
 
         var projectilePrefab = (PlayerMagicProjectile)Resources.Load("prefabs/PlayerMagicProjectile", typeof(PlayerMagicProjectile));
@@ -84,6 +85,7 @@ public class PlayerMagicStaff : PlayerItem
 
         Player.Instance.animator.SetTrigger("Magic");
         Player.Instance.ModifyManaByAmount(-100.0f);
+        Player.Instance.playerSounds.PlayMagicStaffSFX();
 
         var projectilePrefab = (PlayerMagicProjectile)Resources.Load("prefabs/PlayerMagicProjectile", typeof(PlayerMagicProjectile));
 

@@ -53,6 +53,7 @@ public class PlayerMagicProjectile : MonoBehaviour
             if (enemy != null)
             {
                 Effect(enemy);
+                Player.Instance.playerSounds.PlayMagicImpactSFX();
             }
         }
     }

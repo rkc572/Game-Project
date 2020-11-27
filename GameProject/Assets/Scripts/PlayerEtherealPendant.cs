@@ -14,6 +14,25 @@ public class PlayerEtherealPendant : PlayerItem
     float etherealMaxTime = 15.0f;
     float etherealStartTime = 0.0f;
 
+    IEnumerator ManaConsumption()
+    {
+
+        Player.Instance.playerSounds.PlayPendantActivationSFX();
+        while (ethereal)
+        {
+            if (Player.Instance.mana < 5.0f)
+            {
+                ethereal = false;
+                yield break;
+            }
+
+            Player.Instance.ModifyManaByAmount(5.0f);
+
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+
     IEnumerator EarthEthereal()
     {
         Debug.Log("Turning ethereal");
@@ -197,6 +216,8 @@ public class PlayerEtherealPendant : PlayerItem
     {
         Debug.Log("elemental ethereal");
 
+        StartCoroutine(ManaConsumption());
+
         switch (elementalAttribute)
         {
             case ElementalAttribute.NONE:
@@ -227,6 +248,7 @@ public class PlayerEtherealPendant : PlayerItem
             }
             else
             {
+                StartCoroutine(ManaConsumption());
                 StartCoroutine(Ethereal());
             }
         }
@@ -236,6 +258,8 @@ public class PlayerEtherealPendant : PlayerItem
             Debug.Log("UnTurning ethereal");
             ethereal = false;
             playerCollider.gameObject.layer = 10; // PLAYER LAYER
+
+            Player.Instance.playerSounds.PlayPendantDeactivationSFX();
         }
     }
 
@@ -252,6 +276,8 @@ public class PlayerEtherealPendant : PlayerItem
         if (ethereal && Time.time > etherealStartTime + etherealMaxTime)
         {
             ethereal = false;
+
+            Player.Instance.playerSounds.PlayPendantDeactivationSFX();
         }
 
         player.isEthereal = ethereal;

@@ -31,6 +31,12 @@ public class PlayerSounds : MonoBehaviour
     public AudioClip healthSFX;
     public AudioClip manaSFX;
 
+
+    public AudioClip magicLaunchSFX;
+    public AudioClip magicImpactSFX;
+    public AudioClip pendantActivateSFX;
+    public AudioClip pendantDectivateSFX;
+
     AudioClip[] swordSwings;
 
     int swingCount = 0;
@@ -135,6 +141,27 @@ public class PlayerSounds : MonoBehaviour
     {
         PlayVoxClip(manaSFX);
     }
+
+    public void PlayMagicStaffSFX()
+    {
+        PlayAttackClip(magicLaunchSFX);
+    }
+
+    public void PlayMagicImpactSFX()
+    {
+        PlayAttackClip(magicImpactSFX);
+    }
+
+    public void PlayPendantActivationSFX()
+    {
+        PlayAttackClip(pendantActivateSFX);
+    }
+
+    public void PlayPendantDeactivationSFX()
+    {
+        PlayAttackClip(pendantDectivateSFX);
+    }
+
 
     private void Update()
     {

@@ -9,22 +9,14 @@ public class PotionShop : MonoBehaviour
         manaPotionSprite,
         regenerationPotionSprite;
 
-    Player player;
-    public float totalGoldAmount;
-
     public const int HealthPotionPrice = 50;
     public const int ManaPotionPrice = 50;
     public const int RegenPotionPrice = 50;
 
    
-    void Awake()
-    {
-        totalGoldAmount = Player.Instance.gold;
-    }
-
     void Start()
     {
-        Debug.Log("Total Gold Count On Entry: " + totalGoldAmount);
+        Debug.Log("Total Gold Count On Entry: " + Player.Instance.gold);
     }
    
     public void SellHealthPotion()
@@ -34,11 +26,11 @@ public class PotionShop : MonoBehaviour
         var healthPotion = new HealthPotion(); 
         healthPotion.sprite = healthPotionSprite;
 
-        if(totalGoldAmount >= HealthPotionPrice)
+        if(Player.Instance.gold >= HealthPotionPrice)
         {
             Player.Instance.AddPotion(healthPotion);
-            totalGoldAmount -= HealthPotionPrice;
-            Debug.Log("Gold Count: " + totalGoldAmount);
+            Player.Instance.gold -= HealthPotionPrice;
+            Debug.Log("Gold Count: " + Player.Instance.gold);
         }
         else
         {
@@ -55,11 +47,11 @@ public class PotionShop : MonoBehaviour
         manaPotion.sprite = manaPotionSprite;
 
 
-        if (totalGoldAmount >= ManaPotionPrice)
+        if (Player.Instance.gold >= ManaPotionPrice)
         {
             Player.Instance.AddPotion(manaPotion);
-            totalGoldAmount -= ManaPotionPrice;
-            Debug.Log("Gold Count: " + totalGoldAmount);
+            Player.Instance.gold -= ManaPotionPrice;
+            Debug.Log("Gold Count: " + Player.Instance.gold);
         }
         else
         {
@@ -74,11 +66,11 @@ public class PotionShop : MonoBehaviour
         var regenerationPotion = new RegenerationPotion();
         regenerationPotion.sprite = regenerationPotionSprite;
 
-        if (totalGoldAmount >= RegenPotionPrice)
+        if (Player.Instance.gold >= RegenPotionPrice)
         {
             Player.Instance.AddPotion(regenerationPotion);
-            totalGoldAmount -= RegenPotionPrice;
-            Debug.Log("Gold Count: " + totalGoldAmount);
+            Player.Instance.gold -= RegenPotionPrice;
+            Debug.Log("Gold Count: " + Player.Instance.gold);
         }
         else
         {
