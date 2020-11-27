@@ -14,7 +14,7 @@ public class PotionHUD : MonoBehaviour
     {
         //TODO IMPLEMENT CORRECTLY
 
-        if (Player.Instance.potions.Count >= 1)
+        if (Player.Instance.potions.Count > 1)
         {
             leftPotionImage.sprite = Player.Instance.potions[Mathf.Min((Player.Instance.potions.Count / 2) - 1, Player.Instance.potions.Count - 1)].sprite;
             middlePotionImage.sprite = Player.Instance.potions[Mathf.Min((Player.Instance.potions.Count / 2), Player.Instance.potions.Count - 1)].sprite;
