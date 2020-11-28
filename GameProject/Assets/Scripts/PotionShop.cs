@@ -7,41 +7,35 @@ public class PotionShop : MonoBehaviour
     
     public Sprite healthPotionSprite,
         manaPotionSprite,
-        regenerationPotionSprite;
+        regenerationPotionSprite,
+        speedPotionSprite,
+        magicPotionSprite,
+        strengthPotionSprite;
 
-    Player player;
-    public float totalGoldAmount;
+    public const int HealthPotionPrice = 50;
+    public const int ManaPotionPrice = 50;
+    public const int RegenPotionPrice = 50;
+    public const int strengthPotionPrice = 50;
+    public const int magicPotionPrice = 50;
+    public const int speedPotionPrice = 50;
 
-    private const int HealthPotionPrice = 20;
-    private const int ManaPotionPrice = 20;
-    private const int RegenPotionPrice = 20;
-
-
-
-    /* Used for testing
-    void Awake()
-    {
-        totalGoldAmount = Player.Instance.gold;
-    }
 
     void Start()
     {
-        Debug.Log("Total Gold Count On Entry: " + player.Instance.);
+        Debug.Log("Total Gold Count On Entry: " + Player.Instance.gold);
     }
-    */
-
-    //Shouldn't need to deal w/ any negative value cases
+   
     public void SellHealthPotion()
-    { 
+    {
+
         var healthPotion = new HealthPotion(); 
         healthPotion.sprite = healthPotionSprite;
 
         if(Player.Instance.gold >= HealthPotionPrice)
         {
             Player.Instance.AddPotion(healthPotion);
-            //totalGoldAmount -= HealthPotionPrice;
             Player.Instance.gold -= HealthPotionPrice;
-            Debug.Log("New Gold Count: " + Player.Instance.gold);
+            Debug.Log("Gold Count: " + Player.Instance.gold);
         }
         else
         {
@@ -52,15 +46,16 @@ public class PotionShop : MonoBehaviour
 
     public void SellManaPotion()
     {
+
         var manaPotion = new ManaPotion();
         manaPotion.sprite = manaPotionSprite;
+
 
         if (Player.Instance.gold >= ManaPotionPrice)
         {
             Player.Instance.AddPotion(manaPotion);
-            //totalGoldAmount -= ManaPotionPrice;
             Player.Instance.gold -= ManaPotionPrice;
-            Debug.Log("New Gold Count: " + Player.Instance.gold);
+            Debug.Log("Gold Count: " + Player.Instance.gold);
         }
         else
         {
@@ -70,15 +65,69 @@ public class PotionShop : MonoBehaviour
 
     public void SellRegenerationPotion()
     {
-         var regenerationPotion = new RegenerationPotion();
+
+        var regenerationPotion = new RegenerationPotion();
         regenerationPotion.sprite = regenerationPotionSprite;
 
         if (Player.Instance.gold >= RegenPotionPrice)
         {
             Player.Instance.AddPotion(regenerationPotion);
-            //totalGoldAmount -= RegenPotionPrice;
             Player.Instance.gold -= RegenPotionPrice;
-            Debug.Log("New Gold Count: " + Player.Instance.gold);
+            Debug.Log("Gold Count: " + Player.Instance.gold);
+        }
+        else
+        {
+            Debug.Log("Not enough gold.");
+        }
+    }
+
+    public void SellSpeedBoostPotion()
+    {
+
+        var speedPotion = new SpeedBoostPotion();
+        speedPotion.sprite = speedPotionSprite;
+
+        if (Player.Instance.gold >= speedPotionPrice)
+        {
+            Player.Instance.AddPotion(speedPotion);
+            Player.Instance.gold -= speedPotionPrice;
+            Debug.Log("Gold Count: " + Player.Instance.gold);
+        }
+        else
+        {
+            Debug.Log("Not enough gold.");
+        }
+    }
+
+    public void SellMagicBoostPotion()
+    {
+
+        var magicPotion = new MagicBoostPotion();
+        magicPotion.sprite = magicPotionSprite;
+
+        if (Player.Instance.gold >= magicPotionPrice)
+        {
+            Player.Instance.AddPotion(magicPotion);
+            Player.Instance.gold -= magicPotionPrice;
+            Debug.Log("Gold Count: " + Player.Instance.gold);
+        }
+        else
+        {
+            Debug.Log("Not enough gold.");
+        }
+    }
+
+    public void SellStrengthPotion()
+    {
+
+        var strengthPotion = new StrengthPotion();
+        strengthPotion.sprite = strengthPotionSprite;
+
+        if (Player.Instance.gold >= strengthPotionPrice)
+        {
+            Player.Instance.AddPotion(strengthPotion);
+            Player.Instance.gold -= strengthPotionPrice;
+            Debug.Log("Gold Count: " + Player.Instance.gold);
         }
         else
         {

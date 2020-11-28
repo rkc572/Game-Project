@@ -13,11 +13,13 @@ public class PlayerMagicStaff : PlayerItem
         //return not enough mana
         if (Player.Instance.mana < 50.0f)
         {
+            Player.Instance.playerSounds.PlayInvalidInputSFX();
             return;
         }
 
         Player.Instance.animator.SetTrigger("Magic");
 
+        Player.Instance.playerSounds.PlayMagicStaffSFX();
         Player.Instance.ModifyManaByAmount(-50.0f);
 
         var projectilePrefab = (PlayerMagicProjectile)Resources.Load("prefabs/PlayerMagicProjectile", typeof(PlayerMagicProjectile));
@@ -27,7 +29,7 @@ public class PlayerMagicStaff : PlayerItem
         var angle = Mathf.Atan2(attackDirection.y, attackDirection.x) * Mathf.Rad2Deg + 90.0f;
         var projectile = GameObject.Instantiate(projectilePrefab, Player.Instance.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
         projectile.transform.eulerAngles = new Vector3(projectile.transform.position.x, projectile.transform.position.y, angle);
-        projectile.elementalAttribute = elementalAttribute;
+        projectile.elementalAttribute = ElementalAttribute.NONE;
         projectile.rigidBody.velocity = attackDirection * 1.5f;
     }
 
@@ -77,19 +79,22 @@ public class PlayerMagicStaff : PlayerItem
         }
 
         //return not enough mana
-        if (Player.Instance.mana < 100.0f)
+        if (Player.Instance.mana < 100.0f || elementalAttribute == ElementalAttribute.NONE)
         {
+            Player.Instance.playerSounds.PlayInvalidInputSFX();
             return;
         }
 
         Player.Instance.animator.SetTrigger("Magic");
         Player.Instance.ModifyManaByAmount(-100.0f);
+        Player.Instance.playerSounds.PlayMagicStaffSFX();
 
         var projectilePrefab = (PlayerMagicProjectile)Resources.Load("prefabs/PlayerMagicProjectile", typeof(PlayerMagicProjectile));
 
         switch (elementalAttribute)
         {
             case ElementalAttribute.NONE:
+                return;
                 break;
             case ElementalAttribute.EARTH:
                 projectilePrefab = (PlayerMagicProjectile)Resources.Load("prefabs/PlayerEarthMagicProjectile", typeof(PlayerMagicProjectile));

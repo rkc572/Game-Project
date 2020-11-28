@@ -5955,6 +5955,11 @@ MonoBehaviour:
   goldSFX: {fileID: 8300000, guid: 09d6a44c5e5f27a45a8692d6a2f78dde, type: 3}
   healthSFX: {fileID: 8300000, guid: a25a4d2607f8d4f499944d1befe314f4, type: 3}
   manaSFX: {fileID: 8300000, guid: a25a4d2607f8d4f499944d1befe314f4, type: 3}
+  magicLaunchSFX: {fileID: 8300000, guid: 9179cded4ab7f904788aa69d16dd7cc1, type: 3}
+  magicImpactSFX: {fileID: 8300000, guid: 3b68609b19671104c9b1655ef8217154, type: 3}
+  pendantActivateSFX: {fileID: 8300000, guid: 216a9b4c6257fc74f9c9658bdf4c19a7, type: 3}
+  pendantDectivateSFX: {fileID: 8300000, guid: 4931c5f1e9d874e41908f30c7df19b43, type: 3}
+  invalidInputSFX: {fileID: 8300000, guid: d9bede0b3a319cc4181a9866e0993679, type: 3}
 --- !u!1 &1322282747996547029
 GameObject:
   m_ObjectHideFlags: 0
@@ -6245,6 +6250,9 @@ MonoBehaviour:
   playerEtherealPendant: {fileID: 1322282746850705456}
   selectedArtifact: {fileID: 1322282747527711687}
   artifacts: []
+  hasUpgrades: 00000000
+  hasItems: 00000000
+  clearedRooms: 00000000
   isEthereal: 0
   isBlocking: 0
   playerSounds: {fileID: 1322282747931247082}

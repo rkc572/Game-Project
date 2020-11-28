@@ -45,6 +45,45 @@ EditorBuildSettings:
     path: Assets/Scenes/Dungeon Scenes/Dungeon scene.unity
     guid: d6a7c34127cf1be4aa57cf5f74262e64
   - enabled: 1
-    path: Assets/Scenes/Credits.unity
-    guid: fda43d37133e70740839ab8526c2d3bb
+    path: Assets/Scenes/Dungeon Scenes/Dungeon scene 1.unity
+    guid: b39aa9db312517d478c0b83e8b7d643d
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Dungeon scene 2.unity
+    guid: 8fe94e12dad045545b82448905c3d54c
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Boots/Boots scene 1.unity
+    guid: 905ea28cddf1ea648a96091c038c73fa
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Boots/Boots scene 2.unity
+    guid: 054da2e940e62d445b7c4aa0d8a09ca0
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Boots/Boots scene 3.unity
+    guid: 38c86307e958eed44aca1837a2e1de00
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Pendant/Pendant scene 1.unity
+    guid: 5b40204c6b3980f4aa197677e3b6b250
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Pendant/Pendant scene 2.unity
+    guid: fd83f9d2aad38434599958c9615b546c
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Pendant/Pendant scene 3.unity
+    guid: 99bffd9e278cc6e4281704cce66c622e
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Shield/Shield scene 1.unity
+    guid: 99ee9618d5ff6e6448fc93dea335cd54
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Shield/Shield scene 2.unity
+    guid: f1435301ae983344bb43dcdbdb136d6f
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Shield/Shield scene 3.unity
+    guid: 4cf635b938c7866479bb9fd818fba67a
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Staff/Staff scene 1.unity
+    guid: f016b8a062fa6154f8133df05da35410
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Staff/Staff scene 2.unity
+    guid: 1b00d39e80e77df4c95d65939db7d1c3
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Staff/Staff scene 3.unity
+    guid: 4e3997eb092d42b4dbade9b2aa4f6931
   m_configObjects: {}

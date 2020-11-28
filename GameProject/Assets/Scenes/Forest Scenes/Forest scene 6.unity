@@ -558,15 +558,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7752428386804781395, guid: c41e4305545693748ac3bb6145020681, type: 3}
       propertyPath: scene
-      value: Dungeon scene
+      value: Dungeon scene 1
       objectReference: {fileID: 0}
     - target: {fileID: 7752428386804781395, guid: c41e4305545693748ac3bb6145020681, type: 3}
       propertyPath: location.x
-      value: -0.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7752428386804781395, guid: c41e4305545693748ac3bb6145020681, type: 3}
       propertyPath: location.y
-      value: 0.7
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c41e4305545693748ac3bb6145020681, type: 3}
@@ -4240,7 +4240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4131667979021963306, guid: c41e4305545693748ac3bb6145020681, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.226
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 4131667979021963306, guid: c41e4305545693748ac3bb6145020681, type: 3}
       propertyPath: m_LocalPosition.z
