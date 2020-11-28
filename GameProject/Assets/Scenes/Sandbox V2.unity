@@ -493,6 +493,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Group
       objectReference: {fileID: 0}
+    - target: {fileID: 1322282748259602144, guid: 40aaecbfc6726d747a61b2c1adaa7d8f, type: 3}
+      propertyPath: hasItems.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322282748259602144, guid: 40aaecbfc6726d747a61b2c1adaa7d8f, type: 3}
+      propertyPath: hasItems.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322282748259602144, guid: 40aaecbfc6726d747a61b2c1adaa7d8f, type: 3}
+      propertyPath: hasItems.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322282748259602144, guid: 40aaecbfc6726d747a61b2c1adaa7d8f, type: 3}
+      propertyPath: hasItems.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1322282748791048587, guid: 40aaecbfc6726d747a61b2c1adaa7d8f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -776,6 +792,10 @@ PrefabInstance:
     - target: {fileID: 1937672767662619644, guid: 75c43484f8fca294395ceb6458dba78b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937672768787321862, guid: 75c43484f8fca294395ceb6458dba78b, type: 3}
+      propertyPath: health
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75c43484f8fca294395ceb6458dba78b, type: 3}
