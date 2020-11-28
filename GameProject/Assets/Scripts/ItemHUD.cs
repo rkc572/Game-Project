@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ItemHUD : MonoBehaviour
 {
     public Image selected, one, two, three, four;
+    public CanvasGroup alphaSelected, alphaOne, alphaTwo, alphaThree, alphaFour;
     public Sprite staff, boots, pendant, shield;
     public GameObject highlight;
 
@@ -18,7 +19,7 @@ public class ItemHUD : MonoBehaviour
         if (Player.Instance.selectedArtifact != null)
         {
             highlight.SetActive(true);
-            selected.color = Color.white;
+            alphaSelected.alpha = 1;
 
             if (Player.Instance.selectedArtifact == Player.Instance.playerMagicStaff)
                 selected.sprite = staff;
@@ -49,7 +50,7 @@ public class ItemHUD : MonoBehaviour
         // First slot
         if (Player.Instance.artifacts.Count >= 1)
         {
-            one.color = Color.white;
+            alphaOne.alpha = 1;
 
             if (Player.Instance.artifacts[0] == Player.Instance.playerMagicStaff)
                 one.sprite = staff; 
@@ -89,7 +90,7 @@ public class ItemHUD : MonoBehaviour
         // Second slot
         if (Player.Instance.artifacts.Count >= 2)
         {
-            two.color = Color.white;
+            alphaTwo.alpha = 1;
 
             if (Player.Instance.artifacts[1] == Player.Instance.playerMagicStaff)
                 two.sprite = staff;
@@ -129,7 +130,7 @@ public class ItemHUD : MonoBehaviour
         // Thrid slot
         if (Player.Instance.artifacts.Count >= 3)
         {
-            three.color = Color.white;
+            alphaThree.alpha = 1;
 
             if (Player.Instance.artifacts[2] == Player.Instance.playerMagicStaff)
                 three.sprite = staff;
@@ -169,7 +170,7 @@ public class ItemHUD : MonoBehaviour
         // Fourth slot
         if (Player.Instance.artifacts.Count >= 4)
         {
-            four.color = Color.white;
+            alphaFour.alpha = 1;
 
             if (Player.Instance.artifacts[3] == Player.Instance.playerMagicStaff)
                 four.sprite = staff;

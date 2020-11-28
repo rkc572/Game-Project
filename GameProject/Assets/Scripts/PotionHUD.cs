@@ -9,6 +9,7 @@ public class PotionHUD : MonoBehaviour
 {
 
     public Image leftPotionImage, middlePotionImage, rightPotionImage;
+    public CanvasGroup alphaLeft, alphaMid, alphaRight;
     public TextMeshProUGUI potCount;
 
     // Update is called once per frame
@@ -40,18 +41,19 @@ public class PotionHUD : MonoBehaviour
         }
 
         if (leftPotionImage.sprite != null)
-            leftPotionImage.color = Color.white;
+            alphaLeft.alpha = 1;
         else
-            leftPotionImage.color = new Color32(55, 55, 55, 100);
+            alphaLeft.alpha = 0;
+
         if (middlePotionImage.sprite != null)
-            middlePotionImage.color = Color.white;
+            alphaMid.alpha = 1;
         else
-            middlePotionImage.color = new Color32(55, 55, 55, 100);
+            alphaMid.alpha = 0;
 
         if (rightPotionImage.sprite != null)
-            rightPotionImage.color = Color.white;
+            alphaRight.alpha = 1;
         else
-            rightPotionImage.color = new Color32(55, 55, 55, 100);
+            alphaRight.alpha = 0;
 
     }
 }
