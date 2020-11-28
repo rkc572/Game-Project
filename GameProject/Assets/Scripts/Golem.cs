@@ -33,7 +33,7 @@ public class Golem : Enemy
 
 
         var scaledDirection = rigidBody.velocity;
-
+    /*
         if (scaledDirection.y > 0)
         {
             scaledDirection.y = 1;
@@ -52,6 +52,7 @@ public class Golem : Enemy
             scaledDirection.x = -1;
         }
 
+    */
         animator.SetFloat("HorizontalMagnitude", scaledDirection.x);
         animator.SetFloat("VerticalMagnitude", scaledDirection.y);
         animator.SetBool("Moving", true);
@@ -99,7 +100,7 @@ public class Golem : Enemy
 
     public void GroundPound()
     {
-        float damageAmount = 100.0f;
+        float damageAmount = 300.0f;
 
         if (!attacking)
         {
@@ -125,7 +126,7 @@ public class Golem : Enemy
                     {
                         player.InflictPhysicalDamage(damageAmount * physicalAttackMultiplier * attackMultiplier);
                         player.animator.SetTrigger("PlayerHurt");
-                        player.KnockBack(new Vector2(animator.GetFloat("HorizontalMagnitude"), animator.GetFloat("VerticalMagnitude")), 2.0f);
+                        StartCoroutine(player.KnockBack(new Vector2(animator.GetFloat("HorizontalMagnitude"), animator.GetFloat("VerticalMagnitude")), 5.0f));
                     }
                 }
             }
