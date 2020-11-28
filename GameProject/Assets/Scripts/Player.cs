@@ -113,10 +113,10 @@ public class Player : Mob
     private void Start()
     {
         // temporary add all artifacts
-        artifacts.Add(playerShield);
-        artifacts.Add(playerDashBoots);
-        artifacts.Add(playerMagicStaff);
-        artifacts.Add(playerEtherealPendant);
+        //artifacts.Add(playerShield);
+        //artifacts.Add(playerDashBoots);
+        //artifacts.Add(playerMagicStaff);
+        //artifacts.Add(playerEtherealPendant);
     }
 
     protected override void Update()

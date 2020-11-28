@@ -18,7 +18,8 @@ public class PlayerInputController : InputController
         player.playerSword.DetectInput();
 
         // Detect artifact input
-        player.selectedArtifact.DetectInput();
+        if (player.selectedArtifact != null)
+            player.selectedArtifact.DetectInput();
     }
 
     void PlayerMovementInputDetection()
