@@ -7,13 +7,19 @@ public class PotionShop : MonoBehaviour
     
     public Sprite healthPotionSprite,
         manaPotionSprite,
-        regenerationPotionSprite;
+        regenerationPotionSprite,
+        speedPotionSprite,
+        magicPotionSprite,
+        strengthPotionSprite;
 
     public const int HealthPotionPrice = 50;
     public const int ManaPotionPrice = 50;
     public const int RegenPotionPrice = 50;
+    public const int strengthPotionPrice = 50;
+    public const int magicPotionPrice = 50;
+    public const int speedPotionPrice = 50;
 
-   
+
     void Start()
     {
         Debug.Log("Total Gold Count On Entry: " + Player.Instance.gold);
@@ -21,7 +27,6 @@ public class PotionShop : MonoBehaviour
    
     public void SellHealthPotion()
     {
-        //TODO money check
 
         var healthPotion = new HealthPotion(); 
         healthPotion.sprite = healthPotionSprite;
@@ -41,7 +46,6 @@ public class PotionShop : MonoBehaviour
 
     public void SellManaPotion()
     {
-        //TODO money check
 
         var manaPotion = new ManaPotion();
         manaPotion.sprite = manaPotionSprite;
@@ -61,7 +65,6 @@ public class PotionShop : MonoBehaviour
 
     public void SellRegenerationPotion()
     {
-        //TODO money check
 
         var regenerationPotion = new RegenerationPotion();
         regenerationPotion.sprite = regenerationPotionSprite;
@@ -70,6 +73,60 @@ public class PotionShop : MonoBehaviour
         {
             Player.Instance.AddPotion(regenerationPotion);
             Player.Instance.gold -= RegenPotionPrice;
+            Debug.Log("Gold Count: " + Player.Instance.gold);
+        }
+        else
+        {
+            Debug.Log("Not enough gold.");
+        }
+    }
+
+    public void SellSpeedBoostPotion()
+    {
+
+        var speedPotion = new SpeedBoostPotion();
+        speedPotion.sprite = speedPotionSprite;
+
+        if (Player.Instance.gold >= speedPotionPrice)
+        {
+            Player.Instance.AddPotion(speedPotion);
+            Player.Instance.gold -= speedPotionPrice;
+            Debug.Log("Gold Count: " + Player.Instance.gold);
+        }
+        else
+        {
+            Debug.Log("Not enough gold.");
+        }
+    }
+
+    public void SellMagicBoostPotion()
+    {
+
+        var magicPotion = new MagicBoostPotion();
+        magicPotion.sprite = magicPotionSprite;
+
+        if (Player.Instance.gold >= magicPotionPrice)
+        {
+            Player.Instance.AddPotion(magicPotion);
+            Player.Instance.gold -= magicPotionPrice;
+            Debug.Log("Gold Count: " + Player.Instance.gold);
+        }
+        else
+        {
+            Debug.Log("Not enough gold.");
+        }
+    }
+
+    public void SellStrengthPotion()
+    {
+
+        var strengthPotion = new StrengthPotion();
+        strengthPotion.sprite = strengthPotionSprite;
+
+        if (Player.Instance.gold >= strengthPotionPrice)
+        {
+            Player.Instance.AddPotion(strengthPotion);
+            Player.Instance.gold -= strengthPotionPrice;
             Debug.Log("Gold Count: " + Player.Instance.gold);
         }
         else

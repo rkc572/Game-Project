@@ -16,13 +16,19 @@ public class PlayerEtherealPendant : PlayerItem
 
     IEnumerator ManaConsumption()
     {
-
-        Player.Instance.playerSounds.PlayPendantActivationSFX();
+        if (Player.Instance.mana >= 5.0f)
+            Player.Instance.playerSounds.PlayPendantActivationSFX();
+        else
+        {
+            yield break;
+        }
         while (ethereal)
         {
             if (Player.Instance.mana < 5.0f)
             {
+                player.playerSounds.PlayInvalidInputSFX();
                 ethereal = false;
+                Player.Instance.playerSounds.PlayPendantDeactivationSFX();
                 yield break;
             }
 
@@ -96,7 +102,7 @@ public class PlayerEtherealPendant : PlayerItem
                 {
                     // enemies hit by collider set on fire
                     Debug.Log("enemy set on fire");
-                    enemy.ToggleEffectState(new BurningEffect(enemy, 1.0f, 5.0f, 5.0f));
+                    enemy.ToggleEffectState(new BurningEffect(enemy, 1.0f, 5.0f, 5.0f * player.elementalAttackMultiplier));
                 }
             }
 
@@ -136,8 +142,8 @@ public class PlayerEtherealPendant : PlayerItem
                 if (enemy != null && Time.time > lastLeechTime + leechInterval)
                 {
                     // enemies hit by collider health leeched
-                    enemy.InflictElementalDamage(Mathf.Clamp(2.0f, 0.0f, enemy.health));
-                    player.ModifyHealthByAmount(Mathf.Clamp(2.0f, 0.0f, enemy.health));
+                    enemy.InflictElementalDamage(Mathf.Clamp(2.0f * player.elementalAttackMultiplier, 0.0f, enemy.health));
+                    player.ModifyHealthByAmount(Mathf.Clamp(2.0f * player.elementalAttackMultiplier, 0.0f, enemy.health));
                     lastLeechTime = Time.time;
                 }
             }
@@ -216,8 +222,6 @@ public class PlayerEtherealPendant : PlayerItem
     {
         Debug.Log("elemental ethereal");
 
-        StartCoroutine(ManaConsumption());
-
         switch (elementalAttribute)
         {
             case ElementalAttribute.NONE:
@@ -245,11 +249,12 @@ public class PlayerEtherealPendant : PlayerItem
             if (Input.GetKey(KeyCode.Space))
             {
                 ElementalEthereal();
+                StartCoroutine(ManaConsumption());
             }
             else
             {
-                StartCoroutine(ManaConsumption());
                 StartCoroutine(Ethereal());
+                StartCoroutine(ManaConsumption());
             }
         }
         else if (ethereal && Input.GetMouseButtonDown(1))

@@ -15,7 +15,7 @@ public class WaterTrail : MonoBehaviour
         var enemy = collision.GetComponentInParent<Enemy>();
         if (enemy != null)
         {
-            enemy.ToggleEffectState(new FrozenEffect(enemy, 3.0f, 1.5f));
+            enemy.ToggleEffectState(new FrozenEffect(enemy, 3.0f, 1.5f * Player.Instance.elementalAttackMultiplier));
         }
     }
 }

@@ -17,13 +17,16 @@ public class Skeleton : Enemy
         rigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         animator.SetFloat("HorizontalMagnitude", -attackDirection.x);
         animator.SetFloat("VerticalMagnitude", -attackDirection.y);
-
+        Debug.Log("SKELETON KNOCKBACK CALLED");
         Debug.Log(attackDirection);
         rigidBody.velocity = attackDirection * force;
 
         yield return new WaitForSeconds(0.05f);
+
         rigidBody.velocity = Vector2.zero;
         inputController.detectMovementInput = true;
+
+        Debug.Log("movement input reactived");
     }
 
 
@@ -37,7 +40,7 @@ public class Skeleton : Enemy
         {
             player.InflictPhysicalDamage(damageAmount * physicalAttackMultiplier * attackMultiplier);
             player.animator.SetTrigger("PlayerHurt");
-            player.KnockBack(new Vector2(animator.GetFloat("HorizontalMagnitude"), animator.GetFloat("VerticalMagnitude")), 2.0f);
+            StartCoroutine(player.KnockBack(new Vector2(animator.GetFloat("HorizontalMagnitude"), animator.GetFloat("VerticalMagnitude")), 2.0f));
         }
         movementController.StopMoving();
         yield return new WaitForSeconds(0.5f);
@@ -75,6 +78,7 @@ public class Skeleton : Enemy
     {
         animator.SetBool("Disabled", false);
         sortingGroup.sortingOrder = 0;
+        gameObject.layer = 9; // Enemy LAYER
         ((SkeletonMovementController)movementController).movementMode = SkeletonMovementController.MovementMode.Patrol;
         skeletonCollider.isTrigger = false;
         inputController.detectMovementInput = true;

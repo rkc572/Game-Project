@@ -179,6 +179,7 @@ public class SkeletonMovementController : MovementController
             skeleton.animator.SetBool("Disabled", true);
             skeleton.skeletonCollider.isTrigger = true;
             skeleton.sortingGroup.sortingOrder = -1;
+            skeleton.gameObject.layer = 14; // DEAD LAYER
         }
     }
 

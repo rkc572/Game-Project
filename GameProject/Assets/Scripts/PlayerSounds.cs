@@ -37,6 +37,8 @@ public class PlayerSounds : MonoBehaviour
     public AudioClip pendantActivateSFX;
     public AudioClip pendantDectivateSFX;
 
+    public AudioClip invalidInputSFX;
+
     AudioClip[] swordSwings;
 
     int swingCount = 0;
@@ -162,6 +164,10 @@ public class PlayerSounds : MonoBehaviour
         PlayAttackClip(pendantDectivateSFX);
     }
 
+    public void PlayInvalidInputSFX()
+    {
+        PlayVoxClip(invalidInputSFX);
+    }
 
     private void Update()
     {
