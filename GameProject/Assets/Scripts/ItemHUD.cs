@@ -10,7 +10,7 @@ public class ItemHUD : MonoBehaviour
     public Sprite staff, boots, pendant, shield;
     public GameObject highlight;
 
-    public Image iconOne, iconTwo, iconThree, iconFour;
+    public Image iconSelected, iconOne, iconTwo, iconThree, iconFour;
     public Sprite fire, water, air, earth;
 
     void Update()
@@ -45,6 +45,27 @@ public class ItemHUD : MonoBehaviour
 
             else if (Player.Instance.selectedArtifact == Player.Instance.artifacts[3])
                 highlight.transform.position = four.gameObject.transform.position;
+
+            if (Player.Instance.selectedArtifact.elementalAttribute != ElementalAttribute.NONE)
+            {
+                iconSelected.gameObject.SetActive(true);
+
+                switch (Player.Instance.selectedArtifact.elementalAttribute)
+                {
+                    case ElementalAttribute.FIRE:
+                        iconSelected.sprite = fire;
+                        break;
+                    case ElementalAttribute.WATER:
+                        iconSelected.sprite = water;
+                        break;
+                    case ElementalAttribute.AIR:
+                        iconSelected.sprite = air;
+                        break;
+                    case ElementalAttribute.EARTH:
+                        iconSelected.sprite = earth;
+                        break;
+                }
+            }
         }
 
         // First slot
