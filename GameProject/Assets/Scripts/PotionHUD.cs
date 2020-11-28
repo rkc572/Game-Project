@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PotionHUD : MonoBehaviour
 {
 
     public Image leftPotionImage, middlePotionImage, rightPotionImage;
-
+    public TextMeshProUGUI potCount;
 
     // Update is called once per frame
     void Update()
     {
+        if (Player.Instance.selectedPotion != null)
+            potCount.text = Player.Instance.selectedPotion.quantity.ToString();
+        else
+            potCount.text = null;
 
         if (Player.Instance.potions.Count >= 1)
         {
