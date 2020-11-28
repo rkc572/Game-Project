@@ -34,5 +34,19 @@ public class PotionHUD : MonoBehaviour
             rightPotionImage.sprite = null;
         }
 
+        if (leftPotionImage.sprite != null)
+            leftPotionImage.color = Color.white;
+        else
+            leftPotionImage.color = new Color32(55, 55, 55, 100);
+        if (middlePotionImage.sprite != null)
+            middlePotionImage.color = Color.white;
+        else
+            middlePotionImage.color = new Color32(55, 55, 55, 100);
+
+        if (rightPotionImage.sprite != null)
+            rightPotionImage.color = Color.white;
+        else
+            rightPotionImage.color = new Color32(55, 55, 55, 100);
+
     }
 }
