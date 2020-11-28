@@ -5126,7 +5126,7 @@ MonoBehaviour:
   MAX_HEALTH: 1000
   MAX_MANA: 1000
   MAX_SPEED: 1
-  health: 100
+  health: 1000
   mana: 1000
   speed: 0.25
   attackMultiplier: 1
