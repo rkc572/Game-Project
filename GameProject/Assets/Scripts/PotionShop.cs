@@ -12,12 +12,12 @@ public class PotionShop : MonoBehaviour
         magicPotionSprite,
         strengthPotionSprite;
 
-    public const int HealthPotionPrice = 50;
-    public const int ManaPotionPrice = 50;
-    public const int RegenPotionPrice = 50;
-    public const int strengthPotionPrice = 50;
-    public const int magicPotionPrice = 50;
-    public const int speedPotionPrice = 50;
+    public const int HealthPotionPrice = 30;
+    public const int ManaPotionPrice = 30;
+    public const int RegenPotionPrice = 20;
+    public const int strengthPotionPrice = 20;
+    public const int magicPotionPrice = 20;
+    public const int speedPotionPrice = 20;
 
 
     void Start()
