@@ -9,6 +9,9 @@ public class ItemHUD : MonoBehaviour
     public Sprite staff, boots, pendant, shield;
     public GameObject highlight;
 
+    public Image iconOne, iconTwo, iconThree, iconFour;
+    public Sprite fire, water, air, earth;
+
     void Update()
     {
         // Selected
@@ -59,6 +62,28 @@ public class ItemHUD : MonoBehaviour
 
             else if (Player.Instance.artifacts[0] == Player.Instance.playerShield)
                 one.sprite = shield;
+
+            // Element icon slot one
+            if (Player.Instance.artifacts[0].elementalAttribute != ElementalAttribute.NONE)
+            {
+                iconOne.gameObject.SetActive(true);
+
+                switch (Player.Instance.artifacts[0].elementalAttribute)
+                {
+                    case ElementalAttribute.FIRE:
+                        iconOne.sprite = fire;
+                        break;
+                    case ElementalAttribute.WATER:
+                        iconOne.sprite = water;
+                        break;
+                    case ElementalAttribute.AIR:
+                        iconOne.sprite = air;
+                        break;
+                    case ElementalAttribute.EARTH:
+                        iconOne.sprite = earth;
+                        break;
+                }
+            }
         }
 
         // Second slot
@@ -77,6 +102,28 @@ public class ItemHUD : MonoBehaviour
 
             else if (Player.Instance.artifacts[1] == Player.Instance.playerShield)
                 two.sprite = shield;
+
+            // Element icon slot two
+            if (Player.Instance.artifacts[1].elementalAttribute != ElementalAttribute.NONE)
+            {
+                iconTwo.gameObject.SetActive(true);
+
+                switch (Player.Instance.artifacts[1].elementalAttribute)
+                {
+                    case ElementalAttribute.FIRE:
+                        iconTwo.sprite = fire;
+                        break;
+                    case ElementalAttribute.WATER:
+                        iconTwo.sprite = water;
+                        break;
+                    case ElementalAttribute.AIR:
+                        iconTwo.sprite = air;
+                        break;
+                    case ElementalAttribute.EARTH:
+                        iconTwo.sprite = earth;
+                        break;
+                }
+            }
         }
 
         // Thrid slot
@@ -95,6 +142,28 @@ public class ItemHUD : MonoBehaviour
 
             else if (Player.Instance.artifacts[2] == Player.Instance.playerShield)
                 three.sprite = shield;
+
+            // Element icon slot three
+            if (Player.Instance.artifacts[2].elementalAttribute != ElementalAttribute.NONE)
+            {
+                iconThree.gameObject.SetActive(true);
+
+                switch (Player.Instance.artifacts[2].elementalAttribute)
+                {
+                    case ElementalAttribute.FIRE:
+                        iconThree.sprite = fire;
+                        break;
+                    case ElementalAttribute.WATER:
+                        iconThree.sprite = water;
+                        break;
+                    case ElementalAttribute.AIR:
+                        iconThree.sprite = air;
+                        break;
+                    case ElementalAttribute.EARTH:
+                        iconThree.sprite = earth;
+                        break;
+                }
+            }
         }
 
         // Fourth slot
@@ -113,6 +182,28 @@ public class ItemHUD : MonoBehaviour
 
             else if (Player.Instance.artifacts[3] == Player.Instance.playerShield)
                 four.sprite = shield;
+
+            // Element icon slot four
+            if (Player.Instance.artifacts[3].elementalAttribute != ElementalAttribute.NONE)
+            {
+                iconFour.gameObject.SetActive(true);
+
+                switch (Player.Instance.artifacts[3].elementalAttribute)
+                {
+                    case ElementalAttribute.FIRE:
+                        iconFour.sprite = fire;
+                        break;
+                    case ElementalAttribute.WATER:
+                        iconFour.sprite = water;
+                        break;
+                    case ElementalAttribute.AIR:
+                        iconFour.sprite = air;
+                        break;
+                    case ElementalAttribute.EARTH:
+                        iconFour.sprite = earth;
+                        break;
+                }
+            }
         }
     }
 }
