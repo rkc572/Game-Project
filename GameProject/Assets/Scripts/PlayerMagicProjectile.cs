@@ -10,20 +10,31 @@ public class PlayerMagicProjectile : MonoBehaviour
 
     void Effect(Enemy enemy)
     {
+
+        if (enemy.GetType() == typeof(Skeleton))
+        {
+            ((SkeletonMovementController)((Skeleton)enemy).movementController).movementMode = SkeletonMovementController.MovementMode.Pursuit;
+        }
+
+
         enemy.InflictElementalDamage(20.0f * Player.Instance.elementalAttackMultiplier);
         enemy.animator.SetTrigger("TookDamage");
 
         switch (elementalAttribute)
         {
             case ElementalAttribute.NONE:
+                Player.Instance.StartCoroutine(enemy.KnockBack(rigidBody.velocity.normalized, 2.0f));
                 break;
             case ElementalAttribute.EARTH:
+                Player.Instance.StartCoroutine(enemy.KnockBack(rigidBody.velocity.normalized, 2.0f));
                 enemy.ToggleEffectState(new StunnedEffect(enemy, 2.0f));
                 break;
             case ElementalAttribute.FIRE:
+                Player.Instance.StartCoroutine(enemy.KnockBack(rigidBody.velocity.normalized, 2.0f));
                 enemy.ToggleEffectState(new BurningEffect(enemy, 1.0f, 6.0f, 5.0f));
                 break;
             case ElementalAttribute.WATER:
+                Player.Instance.StartCoroutine(enemy.KnockBack(rigidBody.velocity.normalized, 2.0f));
                 enemy.ToggleEffectState(new FrozenEffect(enemy, 1.5f, 1.5f));
                 break;
             case ElementalAttribute.AIR:
@@ -31,6 +42,7 @@ public class PlayerMagicProjectile : MonoBehaviour
                 break;
         }
 
+        rigidBody.velocity = Vector2.zero;
         Destroy(gameObject);
     }
 

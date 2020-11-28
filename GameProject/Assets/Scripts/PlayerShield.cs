@@ -32,6 +32,8 @@ public class PlayerShield : PlayerItem
         }
         else if (shieldDeployed)
         {
+            Debug.Log("unshielding");
+            player.rigidBody.constraints = RigidbodyConstraints2D.None;
             shieldDeployed = false;
             activeShieldCollider.gameObject.SetActive(false);
             earthShieldCollider.gameObject.SetActive(false);
@@ -119,6 +121,7 @@ public class PlayerShield : PlayerItem
         if (player.mana < 100)
         {
             // end function player does not have enough mana
+            player.playerSounds.PlayInvalidInputSFX();
             return;
         }
 
@@ -175,6 +178,7 @@ public class PlayerShield : PlayerItem
         if (player.mana < 100)
         {
             // end function player does not have enough mana
+            player.playerSounds.PlayInvalidInputSFX();
             return;
         }
 
@@ -245,6 +249,7 @@ public class PlayerShield : PlayerItem
         if (player.mana < 100)
         {
             // end function player does not have enough mana
+            player.playerSounds.PlayInvalidInputSFX();
             return;
         }
 
@@ -315,6 +320,7 @@ public class PlayerShield : PlayerItem
         if (player.mana < 100)
         {
             // end function player does not have enough mana
+            player.playerSounds.PlayInvalidInputSFX();
             return;
         }
 
@@ -452,7 +458,12 @@ public class PlayerShield : PlayerItem
         {
             DetectInput();
             player.isBlocking = true;
-            player.transform.position = shieldDeploymentPosition;
+            player.rigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+        else
+        {
+            player.rigidBody.constraints = RigidbodyConstraints2D.None;
+            player.rigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 }

@@ -5959,6 +5959,7 @@ MonoBehaviour:
   magicImpactSFX: {fileID: 8300000, guid: 3b68609b19671104c9b1655ef8217154, type: 3}
   pendantActivateSFX: {fileID: 8300000, guid: 216a9b4c6257fc74f9c9658bdf4c19a7, type: 3}
   pendantDectivateSFX: {fileID: 8300000, guid: 4931c5f1e9d874e41908f30c7df19b43, type: 3}
+  invalidInputSFX: {fileID: 8300000, guid: d9bede0b3a319cc4181a9866e0993679, type: 3}
 --- !u!1 &1322282747996547029
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,7 +23,37 @@ public class GameSceneManager : MonoBehaviour
         {
             Invoke("loadStartMenu", 4f);
         }
+        else if (Player.Instance != null)
+        {
+            StartCoroutine(FadeIn());
+        }
     }
+
+    public IEnumerator FadeIn()
+    {
+
+        var player = Player.Instance;
+
+        player.inputController.detectInput = false;
+
+        player.movementController.StopMoving();
+
+        Image faderImage = GameObject.Find("Fader").GetComponent<Image>();
+
+        faderImage.color = new Color(0, 0, 0, 1);
+
+        for (int i = 0; i < 10; i++)
+        {
+            faderImage.color = new Color(0, 0, 0, Mathf.Max(0, faderImage.color.a - 0.1f));
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        faderImage.color = new Color(0, 0, 0, 0);
+
+        player.inputController.detectInput = true;
+        player.animator.SetBool("Dead", false);
+    }
+
 
     void loadStartMenu()
     {
@@ -101,9 +131,9 @@ public class GameSceneManager : MonoBehaviour
         Image faderImage = GameObject.Find("Fader").GetComponent<Image>();
         //FADE IN
 
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 30; i++)
         {
-            faderImage.color = new Color(0, 0, 0, Mathf.Min(1, faderImage.color.a + +0.01f));
+            faderImage.color = new Color(0, 0, 0, Mathf.Min(1, faderImage.color.a + 0.0333f));
             yield return new WaitForSeconds(0.01f);
         }
 
@@ -142,9 +172,11 @@ public class GameSceneManager : MonoBehaviour
         player.health = player.lastRecordedHealth;
         player.mana = player.lastRecordedMana;
 
-        SceneManager.LoadScene(sceneName);
+        
         player.transform.parent.position = pos;
         player.inputController.detectInput = true;
         player.animator.SetBool("Dead", false);
+
+        SceneManager.LoadScene(sceneName);
     }
 }

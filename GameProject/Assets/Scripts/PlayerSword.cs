@@ -62,6 +62,7 @@ public class PlayerSword : PlayerItem
         if (player.mana < 10)
         {
             // end function player does not have enough mana
+            player.playerSounds.PlayInvalidInputSFX();
             return;
         }
 
@@ -128,6 +129,7 @@ public class PlayerSword : PlayerItem
         if (player.mana < 10)
         {
             // end function player does not have enough mana
+            player.playerSounds.PlayInvalidInputSFX();
             return;
         }
 
@@ -196,6 +198,7 @@ public class PlayerSword : PlayerItem
         if (player.mana < 10)
         {
             // end function player does not have enough mana
+            player.playerSounds.PlayInvalidInputSFX();
             return;
         }
 
@@ -264,6 +267,7 @@ public class PlayerSword : PlayerItem
         if (player.mana < 10)
         {
             // end function player does not have enough mana
+            player.playerSounds.PlayInvalidInputSFX();
             return;
         }
 

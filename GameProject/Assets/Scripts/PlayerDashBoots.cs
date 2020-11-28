@@ -35,6 +35,7 @@ public class PlayerDashBoots : PlayerItem
         if (player.mana < 10)
         {
             // end function player does not have enough mana
+            player.playerSounds.PlayInvalidInputSFX();
             StopDashing();
             yield break;
         }
@@ -153,6 +154,7 @@ public class PlayerDashBoots : PlayerItem
         if (player.mana < 100)
         {
             // end function player does not have enough mana
+            player.playerSounds.PlayInvalidInputSFX();
             StopDashing();
             yield break;
         }
@@ -271,6 +273,8 @@ public class PlayerDashBoots : PlayerItem
         {
             // end function player does not have enough mana
             StopDashing();
+            player.playerSounds.PlayInvalidInputSFX();
+
             yield break;
         }
 
@@ -394,6 +398,8 @@ public class PlayerDashBoots : PlayerItem
         {
             // end function player does not have enough mana
             StopDashing();
+            player.playerSounds.PlayInvalidInputSFX();
+
             yield break;
         }
 
@@ -533,6 +539,8 @@ public class PlayerDashBoots : PlayerItem
         {
             // end function player does not have enough mana
             StopDashing();
+            player.playerSounds.PlayInvalidInputSFX();
+
             yield break;
         }
 
