@@ -385,8 +385,8 @@ public class PlayerShield : PlayerItem
             Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
-                // knockback enemies
-                StartCoroutine(enemy.KnockBack(attackDirection, 2.0f));
+                // apply repulsed effect
+                enemy.ToggleEffectState(new RepulsedEffect(enemy, 0.2f, attackDirection, 3.0f));
             }
         }
 
