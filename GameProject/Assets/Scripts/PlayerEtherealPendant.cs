@@ -68,6 +68,11 @@ public class PlayerEtherealPendant : PlayerItem
 
             yield return null;
         }
+        
+        
+        // player fortified
+        player.ToggleEffectState(new FortifiedEffect(player, 10.0f, 0.5f));
+        
         //Reset Ethereal
         Debug.Log("UnTurning ethereal");
         ethereal = false;
