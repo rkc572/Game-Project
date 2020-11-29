@@ -247,7 +247,7 @@ public class PlayerDashBoots : PlayerItem
                         Debug.Log("Dashed into enemy");
                         enemy.InflictElementalDamage(15.0f * player.elementalAttackMultiplier);
                         enemy.animator.SetTrigger("TookDamage");
-                        enemy.ToggleEffectState(new RepulsedEffect(enemy, 0.2f, attackDirection, 3.0f));
+                        enemy.ToggleEffectState(new RepulsedEffect(enemy, 0.2f, dashDirection, 3.0f));
                     }
                 }
 
