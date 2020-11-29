@@ -6248,7 +6248,7 @@ MonoBehaviour:
   playerDashBoots: {fileID: 1322282747527711687}
   playerMagicStaff: {fileID: 1322282748512799527}
   playerEtherealPendant: {fileID: 1322282746850705456}
-  selectedArtifact: {fileID: 1322282747527711687}
+  selectedArtifact: {fileID: 0}
   artifacts: []
   hasUpgrades: 00000000
   hasItems: 00000000
@@ -6481,7 +6481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad54695f7627f2a4a98d484e1e9dd15e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elementalAttribute: 2
+  elementalAttribute: 0
   playerSounds: {fileID: 1322282747931247082}
   player: {fileID: 1322282748259602144}
   upCollider: {fileID: 1322282747917580462}
