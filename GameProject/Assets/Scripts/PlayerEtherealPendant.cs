@@ -32,7 +32,7 @@ public class PlayerEtherealPendant : PlayerItem
                 yield break;
             }
 
-            Player.Instance.ModifyManaByAmount(5.0f);
+            Player.Instance.ModifyManaByAmount(-5.0f);
 
             yield return new WaitForSeconds(1);
         }
