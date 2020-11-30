@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class UpgradeItem : MonoBehaviour
 {
-    public Collider2D trigger;
     public GameObject upgradeUI;
+    public GameObject entity;
     public int index;
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -14,7 +14,9 @@ public class UpgradeItem : MonoBehaviour
         if (collider.tag == "Player")
         {
             upgradeUI.SetActive(true);
-            gameObject.SetActive(false);
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            Player.Instance.inputController.detectInput = false;
+            Player.Instance.movementController.StopMoving();
         }
     }
 
@@ -22,7 +24,7 @@ public class UpgradeItem : MonoBehaviour
     {
         if (AllEnemyDead() && !Player.Instance.hasUpgrades[index])
         {
-            trigger.enabled = true;
+            entity.SetActive(true);
         }
     }
 

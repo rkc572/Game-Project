@@ -5,6 +5,7 @@ using UnityEngine;
 public class GetItem : MonoBehaviour
 {
     public int index;
+    public GameObject canvas;
 
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -27,9 +28,10 @@ public class GetItem : MonoBehaviour
                     Player.Instance.artifacts.Add(Player.Instance.playerShield);
                     break;
             }
-
+            canvas.SetActive(true);
+            Player.Instance.inputController.detectInput = false;
+            Player.Instance.movementController.StopMoving();
             gameObject.SetActive(false);
-
         }
     }
     
@@ -39,5 +41,11 @@ public class GetItem : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    public void Continue()
+    {
+        canvas.SetActive(false);
+        Player.Instance.inputController.detectInput = true;
     }
 }
