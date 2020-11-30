@@ -16,7 +16,7 @@ public class PlayerEtherealPendant : PlayerItem
 
     IEnumerator ManaConsumption()
     {
-        if (Player.Instance.mana >= 5.0f)
+        if (Player.Instance.mana >= 50.0f)
             Player.Instance.playerSounds.PlayPendantActivationSFX();
         else
         {
@@ -24,7 +24,7 @@ public class PlayerEtherealPendant : PlayerItem
         }
         while (ethereal)
         {
-            if (Player.Instance.mana < 5.0f)
+            if (Player.Instance.mana < 50.0f)
             {
                 player.playerSounds.PlayInvalidInputSFX();
                 ethereal = false;
@@ -32,7 +32,7 @@ public class PlayerEtherealPendant : PlayerItem
                 yield break;
             }
 
-            Player.Instance.ModifyManaByAmount(-5.0f);
+            Player.Instance.ModifyManaByAmount(-50.0f);
 
             yield return new WaitForSeconds(1);
         }
@@ -147,8 +147,8 @@ public class PlayerEtherealPendant : PlayerItem
                 if (enemy != null && Time.time > lastLeechTime + leechInterval)
                 {
                     // enemies hit by collider health leeched
-                    enemy.InflictElementalDamage(Mathf.Clamp(2.0f * player.elementalAttackMultiplier, 0.0f, enemy.health));
-                    player.ModifyHealthByAmount(Mathf.Clamp(2.0f * player.elementalAttackMultiplier, 0.0f, enemy.health));
+                    enemy.InflictElementalDamage(Mathf.Clamp(10.0f * player.elementalAttackMultiplier, 0.0f, enemy.health));
+                    player.ModifyHealthByAmount(Mathf.Clamp(10.0f * player.elementalAttackMultiplier, 0.0f, enemy.health));
                     lastLeechTime = Time.time;
                 }
             }

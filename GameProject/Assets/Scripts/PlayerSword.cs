@@ -188,7 +188,7 @@ public class PlayerSword : PlayerItem
 
                 // leech health from enemy equal to a small % of damage dealt
                 // 20 percent
-                player.ModifyHealthByAmount(Mathf.Clamp(damageDealt * 0.2f, 0.0f, enemy.health));
+                player.ModifyHealthByAmount(Mathf.Clamp(damageDealt, 0.0f, enemy.health));
             }
         }
     }
