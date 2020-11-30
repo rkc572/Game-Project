@@ -29,6 +29,11 @@ public class Credits : MonoBehaviour
     private void Start()
     {
         StartCoroutine(StartCredits());
+
+        if (Player.Instance != null)
+        {
+            Destroy(Player.Instance.transform.parent.gameObject);
+        }
     }
 
     IEnumerator StartCredits()

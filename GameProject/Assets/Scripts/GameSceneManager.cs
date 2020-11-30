@@ -32,6 +32,15 @@ public class GameSceneManager : MonoBehaviour
     public IEnumerator FadeIn()
     {
 
+        if (SceneManager.GetActiveScene().name == "Credits")
+        {
+            if (Player.Instance != null)
+            {
+                Destroy(Player.Instance.transform.parent.gameObject);
+            }
+            yield break;
+        }
+
         var player = Player.Instance;
 
         player.inputController.detectInput = false;
@@ -106,6 +115,15 @@ public class GameSceneManager : MonoBehaviour
         camera.orthographicSize = 1.3f;
 
         var currentSceneName = SceneManager.GetActiveScene().name;
+        player.health = player.MAX_HEALTH;
+        player.mana = player.MAX_MANA;
+        player.speed = 1.0f;
+        player.attackMultiplier = 1.0f;
+        player.elementalAttackMultiplier = 1.0f;
+        player.physicalAttackMultiplier = 1.0f;
+        player.damageTakenMultiplier = 1.0f;
+        player.elementalDamageTakenMultiplier = 1.0f;
+        player.physicalDamageTakenMultiplier = 1.0f;
         LoadSceneMovePlayer(currentSceneName, player.lastRecordedPosition);
     }
 
@@ -140,6 +158,7 @@ public class GameSceneManager : MonoBehaviour
         player.inputController.detectInput = false;
         player.lastRecordedPosition = pos;
 
+        /*
         if (!deathSceneActive)
         {
             player.lastRecordedHealth = player.health;
@@ -148,6 +167,7 @@ public class GameSceneManager : MonoBehaviour
 
         player.health = player.lastRecordedHealth;
         player.mana = player.lastRecordedMana;
+        */
 
         player.transform.parent.position = pos;
         player.inputController.detectInput = true;
@@ -163,6 +183,8 @@ public class GameSceneManager : MonoBehaviour
         player.inputController.detectInput = false;
         player.lastRecordedPosition = pos;
 
+
+        /*
         if (!deathSceneActive)
         {
             player.lastRecordedHealth = player.health;
@@ -171,7 +193,7 @@ public class GameSceneManager : MonoBehaviour
 
         player.health = player.lastRecordedHealth;
         player.mana = player.lastRecordedMana;
-
+        */
         
         player.transform.parent.position = pos;
         player.inputController.detectInput = true;

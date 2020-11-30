@@ -1136,6 +1136,7 @@ GameObject:
   - component: {fileID: 1968880217}
   - component: {fileID: 1968880216}
   - component: {fileID: 1968880215}
+  - component: {fileID: 1968880219}
   m_Layer: 5
   m_Name: CreditsCanvas
   m_TagString: Untagged
@@ -1223,6 +1224,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1968880219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968880214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1736b7b1004fc4ebc325f5d6794ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BattleMusic: {fileID: 8300000, guid: 157d1e570338ac041bf3f6807481f960, type: 3}
 --- !u!1 &2116854931
 GameObject:
   m_ObjectHideFlags: 0

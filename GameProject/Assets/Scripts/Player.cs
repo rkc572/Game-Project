@@ -126,7 +126,7 @@ public class Player : Mob
 
 
 
-        // TESTING/DEMO PURPOSES ONLY
+        /* TESTING/DEMO PURPOSES ONLY
 
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
@@ -149,8 +149,8 @@ public class Player : Mob
             selectedArtifact.elementalAttribute = ElementalAttribute.WATER;
         }
 
-        // TESTING/DEMO PURPOSES ONLY
-
+        TESTING/DEMO PURPOSES ONLY
+        */
 
 
 

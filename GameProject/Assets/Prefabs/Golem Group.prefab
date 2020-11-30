@@ -5123,10 +5123,10 @@ MonoBehaviour:
   inputController: {fileID: 1937672768787321857}
   movementController: {fileID: 1937672768787321856}
   rigidBody: {fileID: 1937672767662619645}
-  MAX_HEALTH: 1000
+  MAX_HEALTH: 500
   MAX_MANA: 1000
   MAX_SPEED: 1
-  health: 1000
+  health: 500
   mana: 1000
   speed: 0.25
   attackMultiplier: 1
