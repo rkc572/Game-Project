@@ -188,6 +188,14 @@ public class PlayerShield : PlayerItem
         // consume mana for action
         player.ModifyManaByAmount(-100.0f);
 
+
+        var swingPrefab = (GameObject)Resources.Load("prefabs/Fire Shield", typeof(GameObject));
+        var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position, Quaternion.identity);
+        Object.Destroy(swingObject, 0.6f);
+
+
+
+
         var freezedColliders = new List<Collider2D>();
         Physics2D.OverlapCircle(player.transform.position, 0.5f, enemyFilter, freezedColliders);
 
@@ -252,6 +260,14 @@ public class PlayerShield : PlayerItem
             player.playerSounds.PlayInvalidInputSFX();
             return;
         }
+
+
+        var swingPrefab = (GameObject)Resources.Load("prefabs/Water Shield", typeof(GameObject));
+        var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position, Quaternion.identity);
+        Object.Destroy(swingObject, 0.6f);
+
+
+
 
         // Contact filter to only include colliders in Enemy layer
         ContactFilter2D enemyFilter = new ContactFilter2D();
@@ -336,6 +352,16 @@ public class PlayerShield : PlayerItem
         player.animator.SetBool("Shield", true);
         playerSounds.PlayWindSFX();
 
+
+        float colliderYoffset = 0.09f;
+        Vector3 attackOffset = new Vector3(attackDirection.x * 0.13f, attackDirection.y * 0.13f + colliderYoffset, 0.0f);
+        var angle = Mathf.Atan2(attackDirection.y, attackDirection.x) * Mathf.Rad2Deg + 90.0f;
+        var swingPrefab = (GameObject)Resources.Load("prefabs/Wind Swing", typeof(GameObject));
+        var swingObject = GameObject.Instantiate(swingPrefab, player.transform.position + attackOffset / 2.0f + new Vector3(0.0f, 0.03f, 0.0f), Quaternion.identity);
+        swingObject.transform.eulerAngles = new Vector3(swingObject.transform.position.x, swingObject.transform.position.y, angle);
+        Object.Destroy(swingObject, 0.6f);
+
+
         // do not do collider calculations if player is ethereal
         if (player.isEthereal)
             return;
@@ -359,8 +385,8 @@ public class PlayerShield : PlayerItem
             Enemy enemy = enemyCollider.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
-                // knockback enemies
-                StartCoroutine(enemy.KnockBack(attackDirection, 2.0f));
+                // apply repulsed effect
+                enemy.ToggleEffectState(new RepulsedEffect(enemy, 0.2f, attackDirection, 3.0f));
             }
         }
 
