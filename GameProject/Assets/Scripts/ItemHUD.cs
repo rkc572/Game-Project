@@ -66,6 +66,8 @@ public class ItemHUD : MonoBehaviour
                         break;
                 }
             }
+            else
+                iconSelected.gameObject.SetActive(false);
         }
 
         // First slot
