@@ -114,4 +114,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 3656401682837004837}
   timeToDestroy: 10
-  value: 1
+  value: 10
