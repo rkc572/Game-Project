@@ -22,7 +22,7 @@ public class UpgradeItem : MonoBehaviour
 
     void Update()
     {
-        if (AllEnemyDead() && !Player.Instance.hasUpgrades[index])
+        if (AllEnemyDead() && !Player.Instance.hasUpgrades[index] && Player.Instance.health > 0)
         {
             entity.SetActive(true);
         }
