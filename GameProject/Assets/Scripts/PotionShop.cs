@@ -12,13 +12,26 @@ public class PotionShop : MonoBehaviour
         magicPotionSprite,
         strengthPotionSprite;
 
-    public const int HealthPotionPrice = 30;
-    public const int ManaPotionPrice = 30;
-    public const int RegenPotionPrice = 20;
-    public const int strengthPotionPrice = 20;
-    public const int magicPotionPrice = 20;
-    public const int speedPotionPrice = 20;
+    public const int HealthPotionPrice = 20;
+    public const int ManaPotionPrice = 20;
+    public const int RegenPotionPrice = 30;
+    public const int strengthPotionPrice = 30;
+    public const int magicPotionPrice = 30;
+    public const int speedPotionPrice = 30;
 
+    public GameObject shopUI;
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag == "Player")
+            shopUI.SetActive(true);
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.tag == "Player")
+            shopUI.SetActive(false);
+    }
 
     void Start()
     {
