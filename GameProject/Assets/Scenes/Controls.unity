@@ -1666,7 +1666,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -360, y: -30}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 216.51, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &626846774
 MonoBehaviour:
@@ -1688,7 +1688,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Item Inventory
+  m_text: Potion Inventory
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d41f37de2426a54c8382b73dddcdb5c, type: 2}
   m_sharedMaterial: {fileID: 5853990872697297204, guid: 9d41f37de2426a54c8382b73dddcdb5c, type: 2}
@@ -3363,7 +3363,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Use Item:'
+  m_text: 'Use potion:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d41f37de2426a54c8382b73dddcdb5c, type: 2}
   m_sharedMaterial: {fileID: 5853990872697297204, guid: 9d41f37de2426a54c8382b73dddcdb5c, type: 2}
