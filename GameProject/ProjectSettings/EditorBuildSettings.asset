@@ -42,9 +42,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Forest Scenes/Forest scene 6.unity
     guid: 73afc3cc438e5c741aabfd43000c58df
   - enabled: 1
-    path: Assets/Scenes/Dungeon Scenes/Dungeon scene.unity
-    guid: d6a7c34127cf1be4aa57cf5f74262e64
-  - enabled: 1
     path: Assets/Scenes/Dungeon Scenes/Dungeon scene 1.unity
     guid: b39aa9db312517d478c0b83e8b7d643d
   - enabled: 1
@@ -86,4 +83,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon Scenes/Staff/Staff scene 3.unity
     guid: 4e3997eb092d42b4dbade9b2aa4f6931
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: fda43d37133e70740839ab8526c2d3bb
   m_configObjects: {}
