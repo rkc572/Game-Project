@@ -42,17 +42,17 @@ public class TriggerZone : MonoBehaviour
         {
             if (scene == "Forest scene 3")
             {
-                location = new Vector3(1.25f, -2.25f, 0.0f);
+                location = new Vector3(1.25f, -2.5f, 0.0f);
             }
 
             if (scene == "Forest scene 4")
             {
-                location = new Vector3(-1.9f, -2.25f, 0.0f);
+                location = new Vector3(-1.9f, -2.5f, 0.0f);
             }
 
             if (scene == "Forest scene 5")
             {
-                location = new Vector3(1.25f, -2.25f, 0.0f);
+                location = new Vector3(1.25f, -2.5f, 0.0f);
             }
         }
 
@@ -76,9 +76,9 @@ public class TriggerZone : MonoBehaviour
 
         if (scene == "Forest scene 2" && (SceneManager.GetActiveScene().name != "Forest scene 1"))
         {
-            Vector3 left = new Vector3 (-1.58f, 0.85f, 0.0f);
-            Vector3 mid = new Vector3(0.0f, 0.85f, 0.0f);
-            Vector3 right = new Vector3(1.93f, 0.85f, 0.0f);
+            Vector3 left = new Vector3 (-1.58f, 1.1f, 0.0f);
+            Vector3 mid = new Vector3(0.0f, 1.1f, 0.0f);
+            Vector3 right = new Vector3(1.93f, 1.1f, 0.0f);
             PickRandomLocation(new Vector3[] { left, mid, right });
         }
 
