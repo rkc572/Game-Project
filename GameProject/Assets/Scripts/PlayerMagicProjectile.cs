@@ -17,7 +17,7 @@ public class PlayerMagicProjectile : MonoBehaviour
         }
 
 
-        enemy.InflictElementalDamage(20.0f * Player.Instance.elementalAttackMultiplier);
+        enemy.InflictElementalDamage(50.0f * Player.Instance.elementalAttackMultiplier);
         enemy.animator.SetTrigger("TookDamage");
 
         switch (elementalAttribute)

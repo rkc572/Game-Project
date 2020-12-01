@@ -17,17 +17,15 @@ public class GolemMovementController : MovementController
 
     public void Move()
     {
-        var player = Player.Instance;
 
-
-        if (player.isEthereal)
+        if (Player.Instance.isEthereal)
         {
             golem.rigidBody.velocity = Vector2.zero;
             return;
         }
 
         Vector3 playerOffset = new Vector3(0.0f, 0.1f, 0.0f);
-        Vector3 target = (player.transform.position + playerOffset);
+        Vector3 target = (Player.Instance.transform.position + playerOffset);
         Vector2 targetDirection = target - transform.position;
         Vector2 newVelocity = targetDirection.normalized * golem.speed;
 

@@ -95,7 +95,6 @@ public class PlayerMagicStaff : PlayerItem
         {
             case ElementalAttribute.NONE:
                 return;
-                break;
             case ElementalAttribute.EARTH:
                 projectilePrefab = (PlayerMagicProjectile)Resources.Load("prefabs/PlayerEarthMagicProjectile", typeof(PlayerMagicProjectile));
                 playerSounds.PlayEarthSFX();

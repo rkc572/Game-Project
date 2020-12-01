@@ -86,6 +86,7 @@ public class Golem : Enemy
     IEnumerator Attack()
     {
 
+        yield return new WaitForSeconds(2.0f);
         while (health > 0)
         {
             movementController.StopMoving();
@@ -137,7 +138,9 @@ public class Golem : Enemy
 
     private void Start()
     {
-
+        inputController.detectInput = true;
+        inputController.detectMovementInput = true;
+        inputController.detectActionInput = true;
         StartCoroutine(Attack());
     }
 
