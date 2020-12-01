@@ -118,7 +118,7 @@ public class PlayerShield : PlayerItem
             return;
         }
 
-        if (player.mana < 100)
+        if (player.mana < 50.0f)
         {
             // end function player does not have enough mana
             player.playerSounds.PlayInvalidInputSFX();
@@ -126,7 +126,7 @@ public class PlayerShield : PlayerItem
         }
 
         // consume mana for action
-        player.ModifyManaByAmount(-100.0f);
+        player.ModifyManaByAmount(-50.0f);
 
         shieldDeployed = true;
         shieldDeploymentPosition = player.transform.position;
@@ -175,7 +175,7 @@ public class PlayerShield : PlayerItem
             return;
         }
 
-        if (player.mana < 100)
+        if (player.mana < 50.0f)
         {
             // end function player does not have enough mana
             player.playerSounds.PlayInvalidInputSFX();
@@ -186,7 +186,7 @@ public class PlayerShield : PlayerItem
         ContactFilter2D enemyFilter = new ContactFilter2D();
 
         // consume mana for action
-        player.ModifyManaByAmount(-100.0f);
+        player.ModifyManaByAmount(-50.0f);
 
 
         var swingPrefab = (GameObject)Resources.Load("prefabs/Fire Shield", typeof(GameObject));
@@ -254,7 +254,7 @@ public class PlayerShield : PlayerItem
             return;
         }
 
-        if (player.mana < 100)
+        if (player.mana < 50.0f)
         {
             // end function player does not have enough mana
             player.playerSounds.PlayInvalidInputSFX();
@@ -273,7 +273,7 @@ public class PlayerShield : PlayerItem
         ContactFilter2D enemyFilter = new ContactFilter2D();
 
         // consume mana for action
-        player.ModifyManaByAmount(-100.0f);
+        player.ModifyManaByAmount(-50.0f);
 
         var freezedColliders = new List<Collider2D>();
         Physics2D.OverlapCircle(player.transform.position, 0.5f, enemyFilter, freezedColliders);
@@ -333,7 +333,7 @@ public class PlayerShield : PlayerItem
             return;
         }
 
-        if (player.mana < 100)
+        if (player.mana < 50.0f)
         {
             // end function player does not have enough mana
             player.playerSounds.PlayInvalidInputSFX();
@@ -341,7 +341,7 @@ public class PlayerShield : PlayerItem
         }
 
         // consume mana for action
-        player.ModifyManaByAmount(-100.0f);
+        player.ModifyManaByAmount(-50.0f);
 
         shieldDeployed = true;
         shieldDeploymentPosition = player.transform.position;

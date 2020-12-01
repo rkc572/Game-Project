@@ -84,8 +84,8 @@ public class MageMovementController : MovementController
         }
         else
         {
-            mage.animator.SetFloat("HorizontalMagnitude", 0.0f);
-            mage.animator.SetFloat("VerticalMagnitude", -1.0f);
+            //mage.animator.SetFloat("HorizontalMagnitude", 0.0f);
+            //mage.animator.SetFloat("VerticalMagnitude", -1.0f);
             var rotation = transform.parent.rotation;
             mage.rigidBody.velocity = Vector2.SmoothDamp(mage.rigidBody.velocity, Vector2.zero, ref smoothVelocityReference, 0.5f);
             transform.parent.RotateAround(closestSkeleton.transform.parent.position, new Vector3(0.0f, 0.0f, 1.0f), Time.deltaTime * 50.0f);

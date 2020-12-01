@@ -11,7 +11,7 @@ public class PlayerEtherealPendant : PlayerItem
 
     public bool ethereal = false;
 
-    float etherealMaxTime = 15.0f;
+    float etherealMaxTime = 10.0f;
     float etherealStartTime = 0.0f;
 
     IEnumerator ManaConsumption()
@@ -147,8 +147,8 @@ public class PlayerEtherealPendant : PlayerItem
                 if (enemy != null && Time.time > lastLeechTime + leechInterval)
                 {
                     // enemies hit by collider health leeched
-                    enemy.InflictElementalDamage(Mathf.Clamp(10.0f * player.elementalAttackMultiplier, 0.0f, enemy.health));
-                    player.ModifyHealthByAmount(Mathf.Clamp(10.0f * player.elementalAttackMultiplier, 0.0f, enemy.health));
+                    enemy.InflictElementalDamage(Mathf.Clamp(30.0f * player.elementalAttackMultiplier, 0.0f, enemy.health));
+                    player.ModifyHealthByAmount(Mathf.Clamp(30.0f * player.elementalAttackMultiplier, 0.0f, enemy.health));
                     lastLeechTime = Time.time;
                 }
             }

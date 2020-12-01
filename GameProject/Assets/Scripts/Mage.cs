@@ -12,8 +12,8 @@ public class Mage : Enemy
     {
         movementController.StopMoving();
         rigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        animator.SetFloat("HorizontalMagnitude", -attackDirection.x);
-        animator.SetFloat("VerticalMagnitude", -attackDirection.y);
+        //animator.SetFloat("HorizontalMagnitude", -attackDirection.x);
+        //animator.SetFloat("VerticalMagnitude", -attackDirection.y);
 
         Debug.Log(attackDirection);
         rigidBody.velocity = attackDirection * force;
@@ -66,28 +66,35 @@ public class Mage : Enemy
         }
     }
 
+
     void UpdateWalkingAnimatorParameters()
     {
-
-
         var scaledDirection = rigidBody.velocity;
 
-        if (scaledDirection.y > 0)
+        if (scaledDirection.y > speed / 2)
         {
             scaledDirection.y = 1;
         }
-        else if (scaledDirection.y < 0)
+        else if (scaledDirection.y < -1 * (speed / 2))
         {
             scaledDirection.y = -1;
         }
+        else
+        {
+            scaledDirection.y = 0;
+        }
 
-        if (scaledDirection.x > 0)
+        if (scaledDirection.x > speed / 2)
         {
             scaledDirection.x = 1;
         }
-        else if (scaledDirection.x < 0)
+        else if (scaledDirection.x < -1 * (speed / 2))
         {
             scaledDirection.x = -1;
+        }
+        else
+        {
+            scaledDirection.x = 0;
         }
 
         animator.SetFloat("HorizontalMagnitude", scaledDirection.x);
@@ -121,7 +128,10 @@ public class Mage : Enemy
     public void CircleAttack()
     {
         var circleAttackPrefab = (GameObject)Resources.Load("prefabs/MageCircleAttack", typeof(GameObject));
-        GameObject.Instantiate(circleAttackPrefab, transform.parent.position - new Vector3(0.0f, 0.25f), Quaternion.identity);
+        if (FindObjectOfType<MageCircleAttack>() == null)
+        {
+            GameObject.Instantiate(circleAttackPrefab, transform.parent.position - new Vector3(0.0f, 0.25f), Quaternion.identity);
+        }
     }
 
     // Update is called once per frame
