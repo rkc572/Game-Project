@@ -1919,6 +1919,7 @@ GameObject:
   - component: {fileID: 5926302422585532032}
   - component: {fileID: 5926302422585532034}
   - component: {fileID: 902553971}
+  - component: {fileID: 1678891679001979612}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2008,6 +2009,20 @@ MonoBehaviour:
   maxX: 0.1
   minY: -1
   maxY: 0.15
+--- !u!114 &1678891679001979612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5926302422585532035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 509d45b9b261c6745882086558a650de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wantedAspectRatio: 1.7777778
+  landscapeModeOnly: 1
 --- !u!1 &6298880631434162455
 GameObject:
   m_ObjectHideFlags: 0
