@@ -61,6 +61,8 @@ public class Mage : Enemy
             if (!dead && inputController.detectActionInput && inputController.detectInput)
             {
                 animator.SetTrigger("Attack");
+                yield return new WaitForSeconds(0.08f);
+                CircleAttack();
             }
             yield return new WaitForSeconds(8.0f);
         }
@@ -128,10 +130,7 @@ public class Mage : Enemy
     public void CircleAttack()
     {
         var circleAttackPrefab = (GameObject)Resources.Load("prefabs/MageCircleAttack", typeof(GameObject));
-        if (FindObjectOfType<MageCircleAttack>() == null)
-        {
-            GameObject.Instantiate(circleAttackPrefab, transform.parent.position - new Vector3(0.0f, 0.25f), Quaternion.identity);
-        }
+        GameObject.Instantiate(circleAttackPrefab, transform.parent.position - new Vector3(0.0f, 0.25f), Quaternion.identity);
     }
 
     // Update is called once per frame
