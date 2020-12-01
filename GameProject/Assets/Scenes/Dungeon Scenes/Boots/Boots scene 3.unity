@@ -18353,7 +18353,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -15
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -22472,6 +22472,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4341998500285149537, guid: 66baa39d8c9ab0743b24a6f3ca7845ea, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341998500285149537, guid: 66baa39d8c9ab0743b24a6f3ca7845ea, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4341998500503585242, guid: 66baa39d8c9ab0743b24a6f3ca7845ea, type: 3}
