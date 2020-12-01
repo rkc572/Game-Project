@@ -17344,7 +17344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8192094248638594243, guid: ee223306827c4524bbcd35d29cd6b948, type: 3}
       propertyPath: patrolMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee223306827c4524bbcd35d29cd6b948, type: 3}
@@ -17369,6 +17369,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 902553971, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
       propertyPath: maxX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 272111982581827759, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 272111982581827759, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 272111982581827759, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1670108136725784645, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
