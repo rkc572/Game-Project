@@ -175,7 +175,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1336,6 +1336,7 @@ GameObject:
   - component: {fileID: 469370391}
   - component: {fileID: 469370393}
   - component: {fileID: 469370392}
+  - component: {fileID: 469370394}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1403,6 +1404,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469370390}
   m_CullTransparentMesh: 0
+--- !u!114 &469370394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469370390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 3
+  m_AspectRatio: 1.777778
 --- !u!1001 &473745513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3419,6 +3434,18 @@ PrefabInstance:
     - target: {fileID: 902553971, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
       propertyPath: maxX
       value: -0.965
+      objectReference: {fileID: 0}
+    - target: {fileID: 272111982581827759, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 272111982581827759, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 272111982581827759, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1670108136725784645, guid: c1945ad2832f88349a3a313d220fc0d6, type: 3}
       propertyPath: m_AnchorMax.x
